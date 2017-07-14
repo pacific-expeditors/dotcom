@@ -6,6 +6,18 @@
   "repository": "git@github.com:pacific-expeditors/dotcom-front-end.git",
   "author": "David Sims",
   "license": "UNLICENSED",
+  "scripts": {
+    "start": "http-server -c-1 dist",
+    "dev-server": "nodemon server.js --exec babel-node",
+    "dev-client": "webpack-dashboard -- webpack-dev-server",
+    "dev": "yarn run dev-server && yarn run dev-client",
+    "build": "rm -rf dist && webpack -p --config webpack.production.js",
+    "test": "yarn run mocha-all && yarn run flow",
+    "mocha": "mocha ./app/components/tests/Home.js -r mock-local-storage -r ignore-styles -r jsdom-global/register -r dotenv/config --compilers js:babel-register",
+    "mocha-all": "mocha ./app/components/tests/*.js -r mock-local-storage -r ignore-styles -r jsdom-global/register -r dotenv/config --compilers js:babel-register --recursive",
+    "mocha-watch": "mocha -w ./app/components/*/tests -r dotenv/config -r mock-local-storage --compilers js:babel-register -r jsdom-global/register -r dotenv/config -r ignore-styles -r isomorphic-fetch",
+    "flow": "flow"
+  },
   "dependencies": {
     "apollo-client": "^1.9.0-0",
     "babel-core": "^6.25.0",

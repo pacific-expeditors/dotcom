@@ -1,17 +1,15 @@
+const { GraphQLObjectType } = require('graphql');
 const {
-  GraphQLObjectType
-} = require('graphql');
-const cfGraphql = require('cf-graphql');
-
-// User queries
-const userQueries = require('../queries/User');
+  createQueryFields,
+  prepareSpaceGraph
+} = require('cf-graphql');
 
 // Fetches the contentful space and creates a graphql schema
 // Based on the space graph.
 const createSpaceQueries = client => {
   return client.getContentTypes()
-    .then(cfGraphql.prepareSpaceGraph)
-    .then(spaceGraph => cfGraphql.queryFields(spaceGraph));
+    .then(prepareSpaceGraph)
+    .then(spaceGraph => createQueryFields(spaceGraph));
 };
 
 // Create the RootQuery type.
@@ -21,7 +19,6 @@ const getRootQuery = client => {
       const rootQuery = new GraphQLObjectType({
         name: 'RootQueryType',
         fields: {
-          ...userQueries,
           ...queries
         }
       });
