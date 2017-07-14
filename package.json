@@ -1,0 +1,9 @@
+{
+  "name": "pacific-expeditors",
+  "version": "0.0.1",
+  "description": "Pacific Expeditors Website",
+  "main": "server.js",
+  "repository": "git@github.com:pacific-expeditors/dotcom-front-end.git",
+  "author": "David Sims",
+  "license": "UNLICENSED"
+}
