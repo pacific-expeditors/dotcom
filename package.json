@@ -7,7 +7,7 @@
   "author": "David Sims",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "http-server -c-1 dist",
+    "start": "node server.js",
     "dev-server": "nodemon server.js --exec babel-node",
     "dev-client": "webpack-dashboard -- webpack-dev-server",
     "dev": "yarn run dev-server && yarn run dev-client",
