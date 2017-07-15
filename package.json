@@ -33,6 +33,7 @@
     "body-parser": "^1.17.2",
     "cf-graphql": "^0.4.3",
     "chai": "^4.1.0",
+    "cloudflare": "^2.1.1",
     "css-loader": "^0.28.4",
     "dotenv": "^4.0.0",
     "enzyme": "^2.9.1",

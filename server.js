@@ -1,6 +1,10 @@
 // Express/GraphQL
 const express = require('express');
 const expressGraphQL = require('express-graphql');
+const cloudflare = require('cloudflare')({
+  email: process.env.CF_EMAIL,
+  key: process.env.CF_AUTH_KEY
+});
 
 // Middlewares
 const bodyParser = require('body-parser');
@@ -19,6 +23,19 @@ const client = cfGraphql.createClient({
   cmaToken: process.env.CONTENTFUL_CMA_TOKEN
 });
 
+// Purges Cloudflare Cache
+const purgeCache = (req, res) => {
+  cloudflare
+    .zones
+    .purgeCache(process.env.CF_ZONE_ID, {"purge_everything": true})
+    .then(response => {
+      res.send(response);
+    })
+    .catch(err => {
+      res.send(err);
+    });
+};
+
 // Starts up express and configures the GraphQL endpoint.
 const startServer = (client, schema) => {
   const app = express();
@@ -33,6 +50,9 @@ const startServer = (client, schema) => {
 
   // GraphQL endpoint
   app.use('/graphql', expressGraphQL(ext));
+
+  // Manually purge cache
+  app.post('/purge_cache', purgeCache);
 
   // Start the server
   const port = process.env.PORT || 5000;
