@@ -30,10 +30,10 @@ require('dotenv').config();
 // Configure the network setup so we can pass in
 // a JWT authentication header.
 var networkInterface = (0, _reactApollo.createNetworkInterface)({
-  uri: process.env.GRAPHQL_ENDPOINT
+  uri: process.env.GRAPHQL_ENDPOINT,
+  cachePolicy: { query: true, data: false }
 });
 
-// cachePolicy: { query: true, data: false }
 var client = new _reactApollo.ApolloClient({
   ssrMode: true,
   dataIdFromObject: function dataIdFromObject(o) {

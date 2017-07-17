@@ -13,7 +13,7 @@ class Root extends Component {
   render() {
     return (
       <Providers>
-        <Page refetch={this.props.refetch} slug={this.props.slug} />
+        <Page slug={this.props.slug} />
       </Providers>
     );
   }

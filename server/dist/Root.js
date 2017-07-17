@@ -35,7 +35,7 @@ var Root = function (_Component) {
       return _react2.default.createElement(
         _.Providers,
         null,
-        _react2.default.createElement(_.Page, { refetch: this.props.refetch, slug: this.props.slug })
+        _react2.default.createElement(_.Page, { slug: this.props.slug })
       );
     }
   }]);

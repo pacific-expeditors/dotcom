@@ -49,7 +49,7 @@ const renderUi = () => {
 
   app.all('*', (req, res) => {
     const Component = createElement(Root, {
-      slug: req.params[0].substring(1)
+      slug: req.params.length ? req.params[0].substring(1) : 'home'
     });
 
     renderToStringWithData(Component)
