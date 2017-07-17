@@ -10,7 +10,11 @@ class HeaderComponent extends Component {
     const header = get(data, 'header', {});
 
     return (
-      <Header logo={header.logo} navLinks={header.navigationLinks} title={header.title} />
+      <Header
+        logo={header.logo}
+        mobileLogo={header.mobileLogo}
+        navLinks={header.navigationLinks}
+        title={header.title} />
     );
   }
 }
@@ -20,6 +24,7 @@ export default graphql(gql`
     header(id:$id) {
       id
       logo
+      mobileLogo
       navigationLinks {
         href
         text

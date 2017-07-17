@@ -45,7 +45,8 @@ const purgeCache = (req, res) => {
 const renderUi = () => {
   const app = express();
   app.set('view engine', 'ejs');
-  const Root = require('./server/dist/Root').default;
+  const path = process.env.NODE_ENV === 'development' ? 'components' : 'dist';
+  const Root = require(`./server/${path}/Root`).default;
 
   app.all('*', (req, res) => {
     const Component = createElement(Root, {

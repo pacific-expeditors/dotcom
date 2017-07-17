@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      logo\n      navigationLinks {\n        href\n        text\n        alignment\n      }\n    }\n  }\n'], ['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      logo\n      navigationLinks {\n        href\n        text\n        alignment\n      }\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      logo\n      mobileLogo\n      navigationLinks {\n        href\n        text\n        alignment\n      }\n    }\n  }\n'], ['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      logo\n      mobileLogo\n      navigationLinks {\n        href\n        text\n        alignment\n      }\n    }\n  }\n']);
 
 var _react = require('react');
 
@@ -46,7 +46,11 @@ var HeaderComponent = function (_Component) {
 
       var header = (0, _lodash.get)(data, 'header', {});
 
-      return _react2.default.createElement(_Header2.default, { logo: header.logo, navLinks: header.navigationLinks, title: header.title });
+      return _react2.default.createElement(_Header2.default, {
+        logo: header.logo,
+        mobileLogo: header.mobileLogo,
+        navLinks: header.navigationLinks,
+        title: header.title });
     }
   }]);
 

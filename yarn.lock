@@ -4970,9 +4970,9 @@ p-map@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-1.1.1.tgz#05f5e4ae97a068371bc2a5cc86bfbdbc19c4ae7a"
 
-pacific-expeditors-styleguide@^0.0.34:
-  version "0.0.34"
-  resolved "https://registry.yarnpkg.com/pacific-expeditors-styleguide/-/pacific-expeditors-styleguide-0.0.34.tgz#7efc0965a895950c7be554ba9cbec3f201619bb0"
+pacific-expeditors-styleguide@^0.0.39:
+  version "0.0.39"
+  resolved "https://registry.yarnpkg.com/pacific-expeditors-styleguide/-/pacific-expeditors-styleguide-0.0.39.tgz#21a6af0453abed959a8ed121cb2aa4efbd70b99a"
   dependencies:
     "@kadira/storybook" "^2.35.3"
     "@storybook/react" "^3.1.8"
@@ -4988,6 +4988,7 @@ pacific-expeditors-styleguide@^0.0.34:
     react "^15.6.1"
     react-dom "^15.6.1"
     react-slick "^0.14.11"
+    url-loader "^0.5.9"
 
 package-json@^1.0.0:
   version "1.2.0"
@@ -6788,7 +6789,7 @@ url-join@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/url-join/-/url-join-1.1.0.tgz#741c6c2f4596c4830d6718460920d0c92202dc78"
 
-url-loader@^0.5.7, url-loader@^0.5.8:
+url-loader@^0.5.7, url-loader@^0.5.8, url-loader@^0.5.9:
   version "0.5.9"
   resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-0.5.9.tgz#cc8fea82c7b906e7777019250869e569e995c295"
   dependencies:
