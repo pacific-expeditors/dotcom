@@ -1,3 +1,4 @@
+/* @flow */
 const { GraphQLObjectType } = require('graphql');
 const {
   createQueryFields,
@@ -18,9 +19,7 @@ const getRootQuery = client => {
     return createSpaceQueries(client).then(queries => {
       const rootQuery = new GraphQLObjectType({
         name: 'RootQueryType',
-        fields: {
-          ...queries
-        }
+        fields: queries
       });
 
       resolve(rootQuery);

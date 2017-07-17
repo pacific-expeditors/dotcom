@@ -1,3 +1,4 @@
+/* @flow */
 const { GraphQLSchema } = require('graphql');
 const getRootQuery = require('./Root');
 
