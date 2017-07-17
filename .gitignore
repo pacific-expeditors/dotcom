@@ -3,7 +3,6 @@ node_modules/
 .DS_Store
 .cache
 npm-debug.log
-dist
 .yarnclean
 .flowconfig
 yarn-error.log
