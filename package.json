@@ -1,6 +1,6 @@
 {
   "name": "pacific-expeditors",
-  "version": "0.0.1",
+  "version": "0.0.10",
   "description": "Pacific Expeditors Website",
   "main": "server.js",
   "repository": "git@github.com:pacific-expeditors/dotcom-front-end.git",
@@ -14,12 +14,14 @@
     "dev-server": "nodemon server.js --exec babel-node",
     "dev-client": "webpack-dashboard -- webpack-dev-server",
     "dev": "yarn run dev-server && yarn run dev-client",
-    "build": "rm -rf dist && webpack -p --config webpack.production.js",
+    "build-client": "rm -rf dist && webpack -p --config webpack.production.js",
+    "build-server": "babel ./server/components --out-dir ./server/dist",
     "test": "yarn run mocha-all && yarn run flow",
     "mocha": "mocha ./app/components/tests/Home.js -r mock-local-storage -r ignore-styles -r jsdom-global/register -r dotenv/config --compilers js:babel-register",
     "mocha-all": "mocha ./app/components/tests/*.js -r mock-local-storage -r ignore-styles -r jsdom-global/register -r dotenv/config --compilers js:babel-register --recursive",
     "mocha-watch": "mocha -w ./app/components/*/tests -r dotenv/config -r mock-local-storage --compilers js:babel-register -r jsdom-global/register -r dotenv/config -r ignore-styles -r isomorphic-fetch",
-    "flow": "flow"
+    "flow": "flow",
+    "us": "yarn upgrade pacific-expeditors-styleguide"
   },
   "dependencies": {
     "babel-core": "^6.25.0",
@@ -56,7 +58,7 @@
     "mock-local-storage": "^1.0.2",
     "node-fetch": "^1.7.1",
     "nodemon": "^1.11.0",
-    "pacific-expeditors-styleguide": "^0.0.16",
+    "pacific-expeditors-styleguide": "^0.0.34",
     "react": "^15.6.1",
     "react-addons-test-utils": "^15.6.0",
     "react-apollo": "^1.4.3",

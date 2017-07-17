@@ -17,10 +17,9 @@
     <title><%= title %></title>
 
     <!-- CSS dependencies -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/pacific-expeditors-styleguide@0.0.34/components.min.css" />
+
     <link rel="canonical" href="http://localhost/" />
 
     <!-- Favicons -->
@@ -40,8 +39,24 @@
     <%- body %>
 
     <!-- CDN Dependencies -->
-    <script src="https://unpkg.com/react@15.4.2/dist/react.min.js"></script>
-    <script src="https://unpkg.com/react-dom@15.4.2/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+    <script>
+    window.onload = function() {
+      document.addEventListener('scroll', function(e) {
+        var header = document.querySelector(".header");
+        var logo = document.querySelector(".logo");
+
+        if (window.pageYOffset >= 400) {
+          TweenLite.to(header, .5, {backgroundColor:"rgba(0, 0, 0, .5)"});
+          TweenLite.to(logo, .5, {opacity:1});
+        } else {
+          TweenLite.to(header, .5, {backgroundColor:"transparent"});
+          TweenLite.to(logo, .5, {opacity:0});
+        }
+      });
+    };
+    </script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

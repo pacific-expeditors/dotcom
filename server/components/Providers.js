@@ -10,7 +10,8 @@ require('dotenv').config();
 // Configure the network setup so we can pass in
 // a JWT authentication header.
 const networkInterface = createNetworkInterface({
-  uri: process.env.GRAPHQL_ENDPOINT
+  uri: process.env.GRAPHQL_ENDPOINT,
+  // cachePolicy: { query: true, data: false }
 });
 
 const client = new ApolloClient({

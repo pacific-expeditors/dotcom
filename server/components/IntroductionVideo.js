@@ -7,21 +7,31 @@ import IntroVideo from 'pacific-expeditors-styleguide/IntroVideo';
 class IntroVideoComponent extends Component {
   render() {
     const { data } = this.props;
-    const introductionVideo = get(data, 'introductionVideo', {});
+    const introductionVideo = get(data, 'introductionVideo', {sources:[]});
+    const sources = introductionVideo.sources.map(source => ({
+      type: "video/mp4",
+      src: source.url
+    }));
 
     return (
       <IntroVideo
-        src={introductionVideo.src} />
+        autoPlay
+        loop
+        sources={sources}
+        logo={introductionVideo.logo}
+        src={introductionVideo.sources[0].url} />
     );
   }
 }
 
 export default graphql(gql`
-  query Header($id: ID!) {
+  query IntroVideo($id: ID!) {
     introductionVideo(id:$id) {
       id
-      src
-      title
+      logo
+      sources {
+        url
+      }
     }
   }
 `, {

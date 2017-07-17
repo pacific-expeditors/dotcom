@@ -10,12 +10,6 @@ type Props = {
 class Page extends Component {
   props: Props;
 
-  componentWillMount() {
-    if (this.props.refetch) {
-      this.props.data.refetch();
-    }
-  }
-
   render() {
     const { data } = this.props;
     const pages = get(data, 'pages', [{sections: []}]);
@@ -23,14 +17,13 @@ class Page extends Component {
     return (
       <div className="page">
         {pages[0].sections.map(section => {
-          console.log(section);
           const Section = require(`./${section.__typename}`).default;
 
           return (
             <Section
               key={section.sys.id}
               id={section.sys.id} />
-          )
+          );
         })}
       </div>
     );
@@ -51,5 +44,5 @@ export default graphql(gql`
     }
   }
 `, {
-  options: ({slug}) => ({ variables: { slug } })
+  options: ({slug}) => ({ variables: { slug: `fields.id=${slug}` } })
 })(Page);

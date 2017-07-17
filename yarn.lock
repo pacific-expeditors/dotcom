@@ -223,17 +223,9 @@
   version "2.0.40"
   resolved "https://registry.yarnpkg.com/@types/async/-/async-2.0.40.tgz#ac02de68e66c004a61b7cb16df8b1db3a254cca9"
 
-"@types/graphql@^0.8.0":
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.8.6.tgz#b34fb880493ba835b0c067024ee70130d6f9bb68"
-
 "@types/graphql@^0.9.0":
   version "0.9.4"
   resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.9.4.tgz#cdeb6bcbef9b6c584374b81aa7f48ecf3da404fa"
-
-"@types/isomorphic-fetch@0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@types/isomorphic-fetch/-/isomorphic-fetch-0.0.30.tgz#a21717624cde9a48c2db53a4e500fc5c32a99bbc"
 
 "@types/isomorphic-fetch@0.0.34":
   version "0.0.34"
@@ -360,20 +352,6 @@ anymatch@^1.3.0:
   dependencies:
     arrify "^1.0.0"
     micromatch "^2.1.5"
-
-apollo-client@^0.8.7:
-  version "0.8.7"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-0.8.7.tgz#73f52d1dd6dfe0f07e8bfe05a8e47c4bcd3bf7a3"
-  dependencies:
-    graphql-anywhere "^2.1.0"
-    graphql-tag "^1.1.1"
-    redux "^3.4.0"
-    symbol-observable "^1.0.2"
-    whatwg-fetch "^2.0.0"
-  optionalDependencies:
-    "@types/async" "^2.0.31"
-    "@types/graphql" "^0.8.0"
-    "@types/isomorphic-fetch" "0.0.30"
 
 apollo-client@^1.4.0:
   version "1.8.1"
@@ -1902,7 +1880,15 @@ classnames@^2.2.3, classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
-clean-css@4.1.x:
+clean-css-cli@^4.1.6:
+  version "4.1.6"
+  resolved "https://registry.yarnpkg.com/clean-css-cli/-/clean-css-cli-4.1.6.tgz#3ef2a2746b074f55ee0539228710a70db7a78389"
+  dependencies:
+    clean-css "^4.1.5"
+    commander "2.x"
+    glob "7.x"
+
+clean-css@4.1.x, clean-css@^4.1.5, clean-css@^4.1.7:
   version "4.1.7"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.7.tgz#b9aea4f85679889cf3eae8b40349ec4ebdfdd032"
   dependencies:
@@ -2006,7 +1992,7 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@2.9.0, commander@2.9.x, commander@^2.9.0, commander@~2.9.0:
+commander@2.9.0, commander@2.9.x, commander@2.x, commander@^2.9.0, commander@~2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.9.0.tgz#9c99094176e12240cb22d6c5146098400fe0f7d4"
   dependencies:
@@ -3319,7 +3305,7 @@ glob-parent@^2.0.0:
   dependencies:
     is-glob "^2.0.0"
 
-glob@7.1.1, glob@^7.0.0, glob@^7.0.3, glob@^7.0.5:
+glob@7.1.1, glob@7.x, glob@^7.0.0, glob@^7.0.3, glob@^7.0.5:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.1.tgz#805211df04faaf1c63a3600306cdf5ade50b2ec8"
   dependencies:
@@ -3398,10 +3384,6 @@ graphiql@^0.11.2:
     codemirror-graphql "^0.6.8"
     marked "0.3.6"
 
-graphql-anywhere@^2.1.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-2.2.0.tgz#652c3fa23a4a6cfeb98817512fb48100b97f3d5c"
-
 graphql-anywhere@^3.0.0, graphql-anywhere@^3.0.1:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-3.1.0.tgz#3ea0d8e8646b5cee68035016a9a7557c15c21e96"
@@ -3441,11 +3423,7 @@ graphql-language-service-utils@0.0.17:
     graphql "^0.10.1"
     graphql-language-service-types "0.0.21"
 
-graphql-tag@^1.1.1:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-1.3.2.tgz#7abb3a8fd9f3415d07163314ed237061c785b759"
-
-graphql-tag@^2.0.0, graphql-tag@^2.4.2:
+graphql-tag@^2.0.0:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.4.2.tgz#6a63297d8522d03a2b72d26f1b239aab343840cd"
 
@@ -4992,9 +4970,9 @@ p-map@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-1.1.1.tgz#05f5e4ae97a068371bc2a5cc86bfbdbc19c4ae7a"
 
-pacific-expeditors-styleguide@^0.0.16:
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/pacific-expeditors-styleguide/-/pacific-expeditors-styleguide-0.0.16.tgz#b6e82a997ddab55076a88f47f4601ecd86b75e93"
+pacific-expeditors-styleguide@^0.0.34:
+  version "0.0.34"
+  resolved "https://registry.yarnpkg.com/pacific-expeditors-styleguide/-/pacific-expeditors-styleguide-0.0.34.tgz#7efc0965a895950c7be554ba9cbec3f201619bb0"
   dependencies:
     "@kadira/storybook" "^2.35.3"
     "@storybook/react" "^3.1.8"
@@ -5005,6 +4983,8 @@ pacific-expeditors-styleguide@^0.0.16:
     babel-preset-flow "^6.23.0"
     babel-preset-react "^6.24.1"
     babel-preset-stage-0 "^6.24.1"
+    clean-css "^4.1.7"
+    clean-css-cli "^4.1.6"
     react "^15.6.1"
     react-dom "^15.6.1"
     react-slick "^0.14.11"
@@ -7107,13 +7087,9 @@ window-size@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.0.tgz#5438cd2ea93b202efa3a19fe8887aee7c94f9c9d"
 
-wordwrap@0.0.2:
+wordwrap@0.0.2, wordwrap@~0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.2.tgz#b79669bb42ecb409f83d583cad52ca17eaa1643f"
-
-wordwrap@~0.0.2:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
 
 wordwrap@~1.0.0:
   version "1.0.0"

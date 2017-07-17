@@ -45,17 +45,16 @@ const purgeCache = (req, res) => {
 const renderUi = () => {
   const app = express();
   app.set('view engine', 'ejs');
-  const Root = require('./server/components/Root').default;
+  const Root = require('./server/dist/Root').default;
 
   app.all('*', (req, res) => {
     const Component = createElement(Root, {
-      slug: req.params[0].substring(1),
-      refetch: req.query.refetch
+      slug: req.params[0].substring(1)
     });
 
     renderToStringWithData(Component)
       .then(body => res.render('template', {
-        title: 'Home',
+        title: 'Pacific Expeditors',
         body
       }))
       .catch(err => res.send(err));
