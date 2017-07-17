@@ -1,13 +1,17 @@
 // Express/GraphQL
 const express = require('express');
+const cors = require('cors');
 const expressGraphQL = require('express-graphql');
 const cloudflare = require('cloudflare')({
   email: process.env.CF_EMAIL,
   key: process.env.CF_AUTH_KEY
 });
 
+// React
+const { createElement } = require('react');
+const { renderToStringWithData } = require('react-apollo');
+
 // Middlewares
-const bodyParser = require('body-parser');
 const cfGraphql = require('cf-graphql');
 
 // GraphQL Schema
@@ -36,9 +40,36 @@ const purgeCache = (req, res) => {
     });
 };
 
+// React isomorphic server rendering.
+// Used for SEO and improved performance.
+const renderUi = () => {
+  const app = express();
+  app.set('view engine', 'ejs');
+  const Root = require('./server/components/Root').default;
+
+  app.all('*', (req, res) => {
+    const Component = createElement(Root, {
+      slug: req.params[0].substring(1),
+      refetch: req.query.refetch
+    });
+
+    renderToStringWithData(Component)
+      .then(body => res.render('template', {
+        title: 'Home',
+        body
+      }))
+      .catch(err => res.send(err));
+  });
+
+  return app;
+};
+
 // Starts up express and configures the GraphQL endpoint.
 const startServer = (client, schema) => {
   const app = express();
+
+  // Enable CORS
+  app.use(cors());
 
   // Graphiql route
   const ui = cfGraphql.helpers.graphiql({title: 'GraphQL Server'});
@@ -50,6 +81,9 @@ const startServer = (client, schema) => {
 
   // GraphQL endpoint
   app.use('/graphql', expressGraphQL(ext));
+
+  // Render some React
+  app.use('/', renderUi());
 
   // Manually purge cache
   app.post('/purge_cache', purgeCache);

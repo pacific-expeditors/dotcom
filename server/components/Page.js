@@ -1,0 +1,56 @@
+/* @flow */
+import React, { Component } from 'react';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
+import { get } from 'lodash';
+
+type Props = {
+  data: []
+};
+
+class Page extends Component {
+  props: Props;
+
+  componentWillMount() {
+    if (this.props.refetch) {
+      this.props.data.refetch();
+    }
+  }
+
+  render() {
+    const { data } = this.props;
+    const pages = get(data, 'pages', [{sections: []}]);
+
+    return (
+      <div className="page">
+        {pages[0].sections.map(section => {
+          console.log(section);
+          const Section = require(`./${section.__typename}`).default;
+
+          return (
+            <Section
+              key={section.sys.id}
+              id={section.sys.id} />
+          )
+        })}
+      </div>
+    );
+  }
+}
+
+export default graphql(gql`
+  query Page($slug: String!) {
+    pages(q:$slug) {
+      id
+      title
+      sections {
+        sys {
+          id
+        }
+        __typename
+      }
+    }
+  }
+`, {
+  options: ({slug}) => ({ variables: { slug } })
+})(Page);
