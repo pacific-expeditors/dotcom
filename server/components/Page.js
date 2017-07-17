@@ -1,7 +1,6 @@
 /* @flow */
 import React, { Component } from 'react';
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
+import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
 
 type Props = {

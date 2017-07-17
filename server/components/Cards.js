@@ -17,8 +17,8 @@ class IntroVideoComponent extends Component {
 }
 
 export default graphql(gql`
-  query Header($id: ID!) {
-    introductionVideo(id:$id) {
+  query Cards($id: ID!) {
+    cards(id:$id) {
       id
       src
       title
