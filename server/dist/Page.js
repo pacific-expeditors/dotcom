@@ -44,7 +44,7 @@ var Page = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'page' },
+        { className: 'page', style: { position: 'relative' } },
         pages[0].sections.map(function (section) {
           var Section = require('./' + section.__typename).default;
 

@@ -15,7 +15,7 @@ class Page extends Component {
     const pages = get(data, 'pages', [{sections: []}]);
 
     return (
-      <div className="page">
+      <div className="page" style={{position: 'relative'}}>
         {pages[0].sections.map(section => {
           const Section = require(`./${section.__typename}`).default;
 

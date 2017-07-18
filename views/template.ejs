@@ -18,7 +18,7 @@
 
     <!-- CSS dependencies -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/pacific-expeditors-styleguide@0.0.39/components.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/pacific-expeditors-styleguide@0.0.42/components.min.css" />
 
     <link rel="canonical" href="http://localhost/" />
 
@@ -56,6 +56,14 @@
           TweenLite.to(header, .5, {backgroundColor:"transparent"});
           TweenLite.to(logo, .5, {opacity:0});
         }
+      });
+
+      document.querySelector('.mobile-menu-link').addEventListener('click', function(e) {
+        document.querySelector('.header-mobile').style.display = 'block';
+      });
+
+      document.querySelector('.close-icon-link').addEventListener('click', function(e) {
+        document.querySelector('.header-mobile').style.display = 'none';
       });
     };
     </script>
