@@ -58,7 +58,7 @@
     "mock-local-storage": "^1.0.2",
     "node-fetch": "^1.7.1",
     "nodemon": "^1.11.0",
-    "pacific-expeditors-styleguide": "^0.1.0",
+    "pacific-expeditors-styleguide": "^0.1.1",
     "react": "^15.6.1",
     "react-addons-test-utils": "^15.6.0",
     "react-apollo": "^1.4.3",
