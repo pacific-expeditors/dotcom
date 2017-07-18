@@ -29,6 +29,12 @@ export default graphql(gql`
         href
         text
         alignment
+        subNavigationLinks {
+          ... on NavigationLinks {
+            href
+            text
+          }
+        }
       }
     }
   }

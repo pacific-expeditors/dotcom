@@ -4970,9 +4970,9 @@ p-map@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-1.1.1.tgz#05f5e4ae97a068371bc2a5cc86bfbdbc19c4ae7a"
 
-pacific-expeditors-styleguide@^0.0.42:
-  version "0.0.42"
-  resolved "https://registry.yarnpkg.com/pacific-expeditors-styleguide/-/pacific-expeditors-styleguide-0.0.42.tgz#ed7eb3a2c9d4b00c960ea171facaa57e98e93fe9"
+pacific-expeditors-styleguide@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/pacific-expeditors-styleguide/-/pacific-expeditors-styleguide-0.1.0.tgz#ee2da2f977f88a2eb46b13d292928278a7e136cd"
   dependencies:
     "@kadira/storybook" "^2.35.3"
     "@storybook/react" "^3.1.8"
