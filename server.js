@@ -1,18 +1,11 @@
-// Express/GraphQL
+// Express/GraphQL/React
 const express = require('express');
 const cors = require('cors');
 const expressGraphQL = require('express-graphql');
-const cloudflare = require('cloudflare')({
-  email: process.env.CF_EMAIL,
-  key: process.env.CF_AUTH_KEY
-});
 
 // React
 const { createElement } = require('react');
 const { renderToStringWithData } = require('react-apollo');
-
-// Middlewares
-const cfGraphql = require('cf-graphql');
 
 // GraphQL Schema
 const getSchema = require('./server/schema');
@@ -21,10 +14,17 @@ const getSchema = require('./server/schema');
 require('dotenv').load();
 
 // Create the GraphQL contentful client.
+const cfGraphql = require('cf-graphql');
 const client = cfGraphql.createClient({
   spaceId: process.env.CONTENTFUL_SPACE_ID,
   cdaToken: process.env.CONTENTFUL_CDA_TOKEN,
   cmaToken: process.env.CONTENTFUL_CMA_TOKEN
+});
+
+// Cloudflare
+const cloudflare = require('cloudflare')({
+  email: process.env.CF_EMAIL,
+  key: process.env.CF_AUTH_KEY
 });
 
 // Purges Cloudflare Cache
@@ -45,7 +45,7 @@ const purgeCache = (req, res) => {
 const renderUi = () => {
   const app = express();
   app.set('view engine', 'ejs');
-  const path = process.env.NODE_ENV === 'development' ? 'components' : 'dist';
+  const path = process.env.NODE_ENV === 'development' ? 'containers' : 'dist';
   const Root = require(`./server/${path}/Root`).default;
 
   app.all('*', (req, res) => {
@@ -54,10 +54,7 @@ const renderUi = () => {
     });
 
     renderToStringWithData(Component)
-      .then(body => res.render('template', {
-        title: 'Pacific Expeditors',
-        body
-      }))
+      .then(body => res.send(`<!doctype>${body}`))
       .catch(err => res.send(err));
   });
 

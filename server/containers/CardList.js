@@ -10,7 +10,7 @@ class CardsList extends Component {
     const cardList = get(data, 'cardList.cards', {});
     const cards = cardList.map(card => ({
       ...card,
-      image: `${card.image.url}?w=1024`
+      image: `${card.image.url}?w=1024&h=768&q=80`
     }));
 
     return (

@@ -1,32 +1,31 @@
 /* @flow */
-import React, { Component } from 'react';
-import { graphql, gql } from 'react-apollo';
-import { get } from 'lodash';
-import Footer from 'pacific-expeditors-styleguide/Footer';
+import React from 'react';
 
-class FooterComponent extends Component {
-  render() {
-    const { data } = this.props;
-    const footer = get(data, 'footer', {});
+type FooterProps = {
+  title: string,
+  logo: string,
+  footerLinks?: [string],
+  copyright: string
+};
 
-    return (
-      <Footer logo={footer.logo} copyright={footer.copyright} />
-    );
-  }
-}
+const Footer = ({logo, title, footerLinks = [], copyright}:FooterProps) => {
+  return (
+    <footer className="footer">
+      <div className="footer-row">
+        <div className="footer-logo">
+          <img src={logo} alt={title} className="footer-logo-img" />
+        </div>
+        {footerLinks.length ? <ul className="footer-links">
+          {footerLinks.map(link => <li><a href={link} className="footer-social-link">{link}</a></li>)}
+        </ul> : null}
+      </div>
+      <div className="footer-row">
+        <span className="copyright">
+          {copyright}
+        </span>
+      </div>
+    </footer>
+  );
+};
 
-export default graphql(gql`
-  query Footer($id: ID!) {
-    footer(id:$id) {
-      id
-      logo
-      copyright
-    }
-  }
-`, {
-  options: ({id}) => {
-    return {
-      variables: { id }
-    }
-  }
-})(FooterComponent);
+export default Footer;
