@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
-import TextWithHeading from 'pacific-expeditors-styleguide/TextWithHeading';
+import TextWithHeading from '../components/TextWithHeading';
 
 class TextWithHeadingComponent extends Component {
   render() {

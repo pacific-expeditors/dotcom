@@ -28,4 +28,4 @@ const getRootQuery = (client:any) => {
   return promise;
 };
 
-export default getRootQuery;
+module.exports = getRootQuery;

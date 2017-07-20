@@ -4,7 +4,7 @@ import { createFragmentContainer, graphql } from 'react-relay';
 import { get } from 'lodash';
 import Cards from '../Cards';
 
-class CardsList extends Component {
+class CardsContainer extends Component {
   render() {
     const { data } = this.props;
     const cardList = get(data, 'cardList.cards', {});
@@ -20,7 +20,7 @@ class CardsList extends Component {
 }
 
 export default createFragmentContainer(CardList, gql`
-  query CardList($id: ID!) {
+  fragment CardList($id: ID!) {
     cardList(id:$id) {
       id
       cards {

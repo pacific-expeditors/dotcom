@@ -1,6 +1,5 @@
 /* @flow */
 import React, { Component } from 'react';
-
 import { Providers, Page } from './';
 
 class Root extends Component {

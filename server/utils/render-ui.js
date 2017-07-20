@@ -2,14 +2,13 @@
 import express from 'express';
 import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
-import { ServerFetcher } from './fetcher';
-import Root from '../components/Root';
+import Root from '../containers/Root';
 
-const renderUi = () => {
+const renderUi = (req) => {
   const app = express();
-  const slug = req.params.length ? req.params[0].substring(1) : 'home';
 
   app.all('*', (req, res) => {
+    const slug = Object.values(req.params).length ? req.params[0].substring(1) : 'home';
     const Component = createElement(Root, { slug });
 
     renderToString(Component)

@@ -11,7 +11,7 @@ type CardsProps = {
   cards: [CardProps]
 };
 
-const Card = ({cards = []}:CardsProps) => {
+const Cards = ({cards = []}:CardsProps) => {
   return (
     <div className="cards">
       {cards.map(({link, heading, image}) => (
@@ -26,4 +26,4 @@ const Card = ({cards = []}:CardsProps) => {
   );
 };
 
-export default Card;
+export default Cards;

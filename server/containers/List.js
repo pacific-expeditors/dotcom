@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
-import List from 'pacific-expeditors-styleguide/List';
+import List from '../components/List';
 
 class ListComponent extends Component {
   render() {

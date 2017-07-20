@@ -1,6 +1,5 @@
 /* @flow */
 import React, { Component } from 'react';
-import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
 
 type Props = {
@@ -90,19 +89,4 @@ class Page extends Component {
   }
 }
 
-export default graphql(gql`
-  query Page($slug: String!) {
-    pages(q:$slug) {
-      id
-      title
-      sections {
-        sys {
-          id
-        }
-        __typename
-      }
-    }
-  }
-`, {
-  options: ({slug}) => ({ variables: { slug: `fields.id=${slug}` } })
-})(Page);
+export default Page;

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
-import IntroVideo from 'pacific-expeditors-styleguide/IntroVideo';
+import IntroVideo from '../components/IntroVideo';
 
 class IntroVideoComponent extends Component {
   render() {

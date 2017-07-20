@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
-import Header from 'pacific-expeditors-styleguide/Header';
+import Header from '../components/Header';
 
 class HeaderComponent extends Component {
   render() {

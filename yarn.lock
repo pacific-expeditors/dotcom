@@ -731,6 +731,13 @@ babel-plugin-react-docgen@^1.4.2, babel-plugin-react-docgen@^1.5.0:
     lodash "4.x.x"
     react-docgen "^2.15.0"
 
+babel-plugin-relay@^1.0.1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-relay/-/babel-plugin-relay-1.1.0.tgz#69dd3a8cd163b88d9f82bc4b02986eb9175bcbcf"
+  dependencies:
+    babel-runtime "^6.23.0"
+    graphql "^0.10.1"
+
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
@@ -1278,7 +1285,7 @@ babel-preset-es2017@^6.16.0, babel-preset-es2017@^6.24.1:
     babel-plugin-syntax-trailing-function-commas "^6.22.0"
     babel-plugin-transform-async-to-generator "^6.24.1"
 
-babel-preset-flow@^6.23.0, babel-preset-flow@^6.24.1:
+babel-preset-flow@^6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-preset-flow/-/babel-preset-flow-6.23.0.tgz#e71218887085ae9a24b5be4169affb599816c49d"
   dependencies:
@@ -3423,6 +3430,10 @@ graphql-language-service-utils@0.0.17:
   dependencies:
     graphql "^0.10.1"
     graphql-language-service-types "0.0.21"
+
+graphql-relay@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/graphql-relay/-/graphql-relay-0.5.2.tgz#40ff714efd60c2cd89e0bcc79e2afa6d87fa8673"
 
 graphql-tools@^1.1.0:
   version "1.1.0"

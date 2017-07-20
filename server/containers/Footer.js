@@ -2,9 +2,9 @@
 import React, { Component } from 'react';
 import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
-import Footer from 'pacific-expeditors-styleguide/Footer';
+import Footer from '../components/Footer';
 
-class FooterComponent extends Component {
+class FooterContainer extends Component {
   render() {
     const { data } = this.props;
     const footer = get(data, 'footer', {});
@@ -29,4 +29,4 @@ export default graphql(gql`
       variables: { id }
     }
   }
-})(FooterComponent);
+})(FooterContainer);

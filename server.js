@@ -1,9 +1,9 @@
+require('dotenv').load();
+
 const path = process.env.NODE_ENV === 'development' ? 'server' : 'dist';
 const cfGraphql = require('cf-graphql');
-const getSchema = require(`./${path}/schema`);
+const getSchema = require(`./${path}/schema/index.js`);
 const startServer = require(`./${path}/utils/start-server`);
-
-require('dotenv').load();
 
 const client = cfGraphql.createClient({
   spaceId: process.env.CONTENTFUL_SPACE_ID,
