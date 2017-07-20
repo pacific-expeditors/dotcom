@@ -1,8 +1,8 @@
 /* @flow */
 import React, { Component } from 'react';
-import { graphql, gql } from 'react-apollo';
+import { createFragmentContainer, graphql } from 'react-relay';
 import { get } from 'lodash';
-import Cards from 'pacific-expeditors-styleguide/Cards';
+import Cards from '../Cards';
 
 class CardsList extends Component {
   render() {
@@ -19,7 +19,7 @@ class CardsList extends Component {
   }
 }
 
-export default graphql(gql`
+export default createFragmentContainer(CardList, gql`
   query CardList($id: ID!) {
     cardList(id:$id) {
       id
@@ -43,4 +43,4 @@ export default graphql(gql`
       variables: { id }
     }
   }
-})(CardsList);
+});

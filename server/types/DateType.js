@@ -1,4 +1,4 @@
-const { GraphQLStringFactory } = require('graphql-type-factory');
+import { GraphQLStringFactory } from 'graphql-type-factory';
 
 module.exports = GraphQLStringFactory({
   name: 'Date',

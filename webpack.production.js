@@ -4,22 +4,12 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    'web-gl-map': './client/components/WebGlMap.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
   },
   externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'react-router': 'ReactRouter',
-    'lodash': 'lodash',
-    // 'graphql-tag': 'graphql-tag',
-    // 'apollo-client': 'ApolloClient',
-    // 'react-apollo': 'ApolloProvider',
-    'react-bootstrap': 'ReactBootstrap',
-    'mapbox-gl': 'mapboxgl'
   },
   module: {
     rules: [
@@ -63,7 +53,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production'),
-        'GRAPHQL_ENDPOINT': JSON.stringify('https://fierce-anchorage-57945.herokuapp.com/graphql')
+        'GRAPHQL_ENDPOINT': JSON.stringify('')
       }
     }),
     new webpack.optimize.UglifyJsPlugin({

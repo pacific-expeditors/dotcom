@@ -1,8 +1,8 @@
-const graphql = require('graphql');
+import graphql from 'graphql';
 const { GraphQLObjectType } = graphql;
-const signUp = require('./SignUp');
-const logIn = require('./LogIn');
-const user = require('./User');
+import signUp from './SignUp';
+import logIn from './LogIn';
+import user from './User';
 
 const Mutation = new GraphQLObjectType({
   name: 'Mutation',

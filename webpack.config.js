@@ -6,20 +6,12 @@ const path = require('path');
 module.exports = {
   devtool: 'eval',
   entry: {
-    'web-gl-map': './client/components/WebGlMap.js',
-    'react-mapbox-gl': 'react-mapbox-gl',
-    'material-ui': 'material-ui'
   },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
   },
   externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'react-apollo': '',
-    'apollo-client': '',
-    'mapbox-gl': 'mapboxgl'
   },
   module: {
     rules: [
@@ -41,16 +33,13 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['react-mapbox-gl', 'material-ui']
+      name: []
     }),
     new webpack.DefinePlugin({
       'process.env': {
         'GRAPHQL_ENDPOINT': JSON.stringify('http://localhost:3000/graphql')
       }
     }),
-    new DashboardPlugin(),
-    new HtmlWebpackPlugin({
-      template: `${__dirname}/views/client.ejs`
-    })
+    new DashboardPlugin()
   ]
 };
