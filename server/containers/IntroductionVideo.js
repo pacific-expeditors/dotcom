@@ -4,7 +4,13 @@ import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
 import IntroVideo from '../components/IntroVideo';
 
-class IntroVideoComponent extends Component {
+class IntroVideoContainer extends Component {
+  componentWillMount() {
+    if (this.props.refetch) {
+      this.props.data.refetch();
+    }
+  }
+  
   render() {
     const { data } = this.props;
     const introductionVideo = get(data, 'introductionVideo', {sources:[]});
@@ -40,4 +46,4 @@ export default graphql(gql`
       variables: { id }
     }
   }
-})(IntroVideoComponent);
+})(IntroVideoContainer);

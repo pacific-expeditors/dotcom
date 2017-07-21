@@ -5,6 +5,12 @@ import { get } from 'lodash';
 import Footer from '../components/Footer';
 
 class FooterContainer extends Component {
+  componentWillMount() {
+    if (this.props.refetch) {
+      this.props.data.refetch();
+    }
+  }
+  
   render() {
     const { data } = this.props;
     const footer = get(data, 'footer', {});

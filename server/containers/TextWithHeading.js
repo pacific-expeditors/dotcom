@@ -4,7 +4,13 @@ import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
 import TextWithHeading from '../components/TextWithHeading';
 
-class TextWithHeadingComponent extends Component {
+class TextWithHeadingContainer extends Component {
+  componentWillMount() {
+    if (this.props.refetch) {
+      this.props.data.refetch();
+    }
+  }
+
   render() {
     const { data } = this.props;
     const textWithHeading = get(data, 'textWithHeading', {});
@@ -29,4 +35,4 @@ export default graphql(gql`
       variables: { id }
     }
   }
-})(TextWithHeadingComponent);
+})(TextWithHeadingContainer);

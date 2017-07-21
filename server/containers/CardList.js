@@ -1,16 +1,22 @@
 /* @flow */
 import React, { Component } from 'react';
-import { createFragmentContainer, graphql } from 'react-relay';
+import { gql, graphql } from 'react-apollo';
 import { get } from 'lodash';
-import Cards from '../Cards';
+import Cards from '../components/Cards';
 
-class CardsContainer extends Component {
+class CardListContainer extends Component {
+  componentWillMount() {
+    if (this.props.refetch) {
+      this.props.data.refetch();
+    }
+  }
+
   render() {
     const { data } = this.props;
     const cardList = get(data, 'cardList.cards', {});
     const cards = cardList.map(card => ({
       ...card,
-      image: `${card.image.url}?w=1024&h=768&q=80`
+      image: `${card.image.url}?h=242&q=80`
     }));
 
     return (
@@ -19,8 +25,8 @@ class CardsContainer extends Component {
   }
 }
 
-export default createFragmentContainer(CardList, gql`
-  fragment CardList($id: ID!) {
+export default graphql(gql`
+  query CardList($id: ID!) {
     cardList(id:$id) {
       id
       cards {
@@ -43,4 +49,4 @@ export default createFragmentContainer(CardList, gql`
       variables: { id }
     }
   }
-});
+})(CardListContainer);

@@ -4,7 +4,13 @@ import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
 import Header from '../components/Header';
 
-class HeaderComponent extends Component {
+class HeaderContainer extends Component {
+  componentWillMount() {
+    if (this.props.refetch) {
+      this.props.data.refetch();
+    }
+  }
+
   render() {
     const { data } = this.props;
     const header = get(data, 'header', {});
@@ -44,4 +50,4 @@ export default graphql(gql`
       variables: { id }
     }
   }
-})(HeaderComponent);
+})(HeaderContainer);

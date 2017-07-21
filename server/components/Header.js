@@ -138,9 +138,9 @@ const DesktopHeader = ({logo, title, navLinks}:HeaderProps) => {
           let subNavLinks
           if (navLink.subNavigationLinks && navLink.subNavigationLinks.length) {
             subNavLinks = (
-              <nav className="header-sub-nav">
+              <nav key={navLink.id} className="header-sub-nav">
                 {navLink.subNavigationLinks.map(link => {
-                  return <a href={link.href} className="header-sub-nav-link">{link.text}</a>
+                  return <a href={link.href} key={link.id} className="header-sub-nav-link">{link.text}</a>
                 })}
               </nav>
             );
@@ -168,7 +168,7 @@ const DesktopHeader = ({logo, title, navLinks}:HeaderProps) => {
               subNavLinks = (
                 <nav className="header-sub-nav">
                   {navLink.subNavigationLinks.map(link => {
-                    return <a href={link.href} className="header-sub-nav-link">{link.text}</a>
+                    return <a href={link.href} key={link.href} className="header-sub-nav-link">{link.text}</a>
                   })}
                 </nav>
               );

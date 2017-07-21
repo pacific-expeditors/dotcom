@@ -4,7 +4,13 @@ import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
 import List from '../components/List';
 
-class ListComponent extends Component {
+class ListContainer extends Component {
+  componentWillMount() {
+    if (this.props.refetch) {
+      this.props.data.refetch();
+    }
+  }
+  
   render() {
     const { data } = this.props;
     const list = get(data, 'list', {});
@@ -33,4 +39,4 @@ export default graphql(gql`
       variables: { id }
     }
   }
-})(ListComponent);
+})(ListContainer);
