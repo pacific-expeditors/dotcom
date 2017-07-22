@@ -4,12 +4,12 @@ const path = require('path');
 
 module.exports = {
   entry: {
+    entry: "./server"
   },
+  target: "node",
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
-  },
-  externals: {
   },
   module: {
     rules: [
@@ -17,7 +17,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['es2015', 'stage-0', 'react']
+            presets: ['es2015', 'stage-2', 'react']
           }
         },
         test: /\.js$/,
@@ -43,17 +43,13 @@ module.exports = {
     ]
   },
   plugins: [
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: ['mapbox-gl', ]
-    // }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
-        'GRAPHQL_ENDPOINT': JSON.stringify('')
+        'NODE_ENV': JSON.stringify('production')
       }
     }),
     new webpack.optimize.UglifyJsPlugin({

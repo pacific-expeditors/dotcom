@@ -7,7 +7,7 @@ import purgeCache from './cache';
 
 const startServer = (client, schema) => {
   const app = express();
-  app.use('/static', express.static('assets'));
+  app.use('/static', express.static('dist/assets'));
 
   app.use(cors());
 

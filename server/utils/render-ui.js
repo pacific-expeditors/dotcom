@@ -8,9 +8,9 @@ const renderUi = (req) => {
   const app = express();
   app.use('/static', express.static('server/assets'));
 
-  app.get('/:slug', (req, res) => {
-    const slug = req.params.slug || 'home';
-    const refetch = req.query.refetch;
+  app.get('/:slug?', (req, res) => {
+    const slug = req.params.slug ? req.params.slug : 'home';
+    const refetch = !!req.query.refetch;
     const Component = createElement(Root, { slug, refetch });
 
     renderToStringWithData(Component)
