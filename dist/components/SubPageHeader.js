@@ -10,9 +10,17 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// @TODO: This should probably be refactored
+
 var styles = {
+  headerContainer: {
+    background: 'url(//images.contentful.com/i9tcznuksxng/5SDYhXr2DeccCuWcAW0AC4/3e7b42072dec2026e05e9e0d528ef5e4/subpageheader.jpg)',
+    backgroundSize: 'cover',
+    height: '70px',
+    padding: '15px 0'
+  },
   header: {
-    padding: '20px',
+    padding: '36px 20px',
     justifyContent: 'space-between',
     alignItems: 'center',
     position: 'fixed',
@@ -23,8 +31,7 @@ var styles = {
   },
   headerNavLink: {},
   logo: {
-    height: '28px',
-    opacity: 0
+    height: '28px'
   },
   navLeft: {
     flex: 1,
@@ -176,7 +183,11 @@ var DesktopHeader = function DesktopHeader(_ref2) {
         }
       })
     ),
-    _react2.default.createElement('img', { className: 'logo', style: styles.logo, src: logo, alt: title }),
+    _react2.default.createElement(
+      'a',
+      { href: '/' },
+      _react2.default.createElement('img', { className: 'logo', style: styles.logo, src: logo, alt: title })
+    ),
     _react2.default.createElement(
       'nav',
       { className: 'header-right-nav', key: 'rightNav', style: styles.navRight },
@@ -216,10 +227,10 @@ var DesktopHeader = function DesktopHeader(_ref2) {
   );
 };
 
-var Header = function Header(props) {
+var SubPageHeader = function SubPageHeader(props) {
   return _react2.default.createElement(
     'div',
-    { className: 'header-container' },
+    { className: 'header-container', style: styles.headerContainer },
     _react2.default.createElement(DesktopHeader, props),
     _react2.default.createElement(MobileHeader, props),
     _react2.default.createElement(
@@ -230,4 +241,4 @@ var Header = function Header(props) {
   );
 };
 
-exports.default = Header;
+exports.default = SubPageHeader;

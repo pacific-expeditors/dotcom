@@ -28,6 +28,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var typekit = 'try{Typekit.load({ async: true });}catch(e){}';
 
+var styles = {
+  page: {}
+};
+
 var Page = function (_Component) {
   _inherits(Page, _Component);
 
@@ -70,7 +74,7 @@ var Page = function (_Component) {
             pages[0].title
           ),
           _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css' }),
-          _react2.default.createElement('link', { rel: 'stylesheet', type: 'text/css', href: '/static/components.min.css' }),
+          _react2.default.createElement('link', { rel: 'stylesheet', type: 'text/css', href: '/static/components.css' }),
           _react2.default.createElement('link', { rel: 'shortcut icon', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=16' }),
           _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '60x60', href: '' }),
           _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '76x76', href: '' }),
@@ -89,7 +93,7 @@ var Page = function (_Component) {
           null,
           _react2.default.createElement(
             'div',
-            { className: 'page', style: { position: 'relative' } },
+            { className: 'page', style: styles.page },
             pages[0].sections.map(function (section) {
               var Section = require('./' + section.__typename).default;
               return _react2.default.createElement(Section, {

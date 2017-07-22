@@ -176,7 +176,11 @@ var DesktopHeader = function DesktopHeader(_ref2) {
         }
       })
     ),
-    _react2.default.createElement('img', { className: 'logo', style: styles.logo, src: logo, alt: title }),
+    _react2.default.createElement(
+      'a',
+      { href: '/' },
+      _react2.default.createElement('img', { className: 'logo', style: styles.logo, src: logo, alt: title })
+    ),
     _react2.default.createElement(
       'nav',
       { className: 'header-right-nav', key: 'rightNav', style: styles.navRight },

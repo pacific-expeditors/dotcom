@@ -20,6 +20,10 @@ var _Header = require('../components/Header');
 
 var _Header2 = _interopRequireDefault(_Header);
 
+var _SubPageHeader = require('../components/SubPageHeader');
+
+var _SubPageHeader2 = _interopRequireDefault(_SubPageHeader);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -52,6 +56,14 @@ var HeaderContainer = function (_Component) {
       var data = this.props.data;
 
       var header = (0, _lodash.get)(data, 'header', {});
+
+      if (header.id === 'sub-page-header') {
+        return _react2.default.createElement(_SubPageHeader2.default, {
+          logo: header.logo,
+          mobileLogo: header.mobileLogo,
+          navLinks: header.navigationLinks,
+          title: header.title });
+      }
 
       return _react2.default.createElement(_Header2.default, {
         logo: header.logo,
