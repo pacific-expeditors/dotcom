@@ -1,17 +1,15 @@
-// import Header from './Header';
+import Cards from './Cards';
+import Carousel from './Carousel';
 // import Contact from './Contact';
-import Page from './Page';
-import Providers from './Providers';
-// import CardList from './CardList';
-// import IntroductionVideo from './IntroductionVideo';
-// import TextWithHeading from './TextWithHeading';
+import Header from './Header';
+import IntroVideo from './IntroVideo';
+import TextWithHeading from './TextWithHeading';
+import List from './List';
 
-export {
-  // Header,
-  // CardList,
-  Providers,
-  Page,
-  // List,
-  // IntroductionVideo,
-  // TextWithHeading
-};
+module.exports = {
+  Cards,
+  Header,
+  IntroVideo,
+  List,
+  TextWithHeading
+}

@@ -1,8 +1,8 @@
 /* @flow */
-const { GraphQLSchema } = require('graphql');
-const getRootQuery = require('./Root');
+import { GraphQLSchema } from 'graphql';
+import getRootQuery from './Root';
 
-const schema = client => {
+const schema = (client:any) => {
   return new Promise((resolve, reject) => {
     getRootQuery(client).then(rootQuery => {
       const schema = new GraphQLSchema({

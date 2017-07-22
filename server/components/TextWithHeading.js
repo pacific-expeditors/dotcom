@@ -1,32 +1,41 @@
 /* @flow */
-import React, { Component } from 'react';
-import { graphql, gql } from 'react-apollo';
-import { get } from 'lodash';
-import TextWithHeading from 'pacific-expeditors-styleguide/TextWithHeading';
+import React from 'react';
 
-class TextWithHeadingComponent extends Component {
-  render() {
-    const { data } = this.props;
-    const textWithHeading = get(data, 'textWithHeading', {});
+type TextWithHeadingProps = {
+  title: string,
+  content: string
+};
 
-    return (
-      <TextWithHeading content={textWithHeading.content} title={textWithHeading.heading} />
-    );
-  }
-}
+const styles = {
+  container: {
 
-export default graphql(gql`
-  query TextWithHeading($id: ID!) {
-    textWithHeading(id:$id) {
-      id
-      content
-      heading
-    }
+  },
+  heading: {
+    textAlign: 'center',
+    fontFamily: 'Europa',
+    fontSize: 36,
+    fontWeight: 'normal',
+    textTransform: 'uppercase',
+    color: '#4F4F4F',
+    margin: '12px 0'
+  },
+  content: {
+    textAlign: 'center',
+    fontFamily: 'Europa',
+    fontSize: 16,
+    fontWeight: 300,
+    color: '#A6A6A6',
+    padding: '8px 0'
   }
-`, {
-  options: ({id}) => {
-    return {
-      variables: { id }
-    }
-  }
-})(TextWithHeadingComponent);
+};
+
+const TextWithHeading = ({title, content}:TextWithHeadingProps) => {
+  return (
+    <div style={styles.container}>
+      <h2 style={styles.heading}>{title}</h2>
+      <p style={styles.content}>{content}</p>
+    </div>
+  );
+};
+
+export default TextWithHeading;
