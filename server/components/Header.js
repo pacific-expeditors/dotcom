@@ -159,7 +159,9 @@ const DesktopHeader = ({logo, title, navLinks}:HeaderProps) => {
           }
         })}
       </nav>
-      <img className="logo" style={styles.logo} src={logo} alt={title} />
+      <a href="/">
+        <img className="logo" style={styles.logo} src={logo} alt={title} />
+      </a>
       <nav className="header-right-nav" key="rightNav" style={styles.navRight}>
         {navLinks.map(navLink => {
           if (navLink.alignment === 'right') {

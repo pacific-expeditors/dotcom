@@ -1,6 +1,8 @@
 /* @flow */
 import React from 'react';
 
+// @TODO: This should probably be refactored
+
 type NavLinks = {
   href: string,
   text: string,
@@ -15,22 +17,27 @@ type HeaderProps = {
 };
 
 const styles = {
+  headerContainer: {
+    background: 'url(//images.contentful.com/i9tcznuksxng/5SDYhXr2DeccCuWcAW0AC4/3e7b42072dec2026e05e9e0d528ef5e4/subpageheader.jpg)',
+    backgroundSize: 'cover',
+    height: '70px',
+    padding: '15px 0'
+  },
   header: {
-    padding: '20px',
+    padding: '36px 20px',
     justifyContent: 'space-between',
     alignItems: 'center',
     position: 'fixed',
     left: 0,
     right: 0,
     top: 0,
-    zIndex: 2
+    zIndex: 2,
   },
   headerNavLink: {
 
   },
   logo: {
-    height: '28px',
-    opacity: 0
+    height: '28px'
   },
   navLeft: {
     flex: 1,
@@ -159,7 +166,9 @@ const DesktopHeader = ({logo, title, navLinks}:HeaderProps) => {
           }
         })}
       </nav>
-      <img className="logo" style={styles.logo} src={logo} alt={title} />
+      <a href="/">
+        <img className="logo" style={styles.logo} src={logo} alt={title} />
+      </a>
       <nav className="header-right-nav" key="rightNav" style={styles.navRight}>
         {navLinks.map(navLink => {
           if (navLink.alignment === 'right') {
@@ -190,9 +199,9 @@ const DesktopHeader = ({logo, title, navLinks}:HeaderProps) => {
   );
 };
 
-const Header = (props:HeaderProps) => {
+const SubPageHeader = (props:HeaderProps) => {
   return (
-    <div className="header-container">
+    <div className="header-container" style={styles.headerContainer}>
       <DesktopHeader {...props} />
       <MobileHeader {...props} />
       <a href="#" className="mobile-menu-link" style={styles.menuIconLink}>
@@ -202,4 +211,4 @@ const Header = (props:HeaderProps) => {
   );
 };
 
-export default Header;
+export default SubPageHeader;

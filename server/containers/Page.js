@@ -9,6 +9,11 @@ type Props = {
 
 const typekit = 'try{Typekit.load({ async: true });}catch(e){}';
 
+const styles = {
+  page: {
+  }
+}
+
 class Page extends Component {
   props: Props;
 
@@ -33,7 +38,7 @@ class Page extends Component {
           <title>{pages[0].title}</title>
 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
-          <link rel="stylesheet" type="text/css" href="/static/components.min.css" />
+          <link rel="stylesheet" type="text/css" href="/static/components.css" />
 
           <link rel="shortcut icon" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=16" />
 
@@ -48,7 +53,7 @@ class Page extends Component {
           <base href="/" />
         </head>
         <body>
-          <div className="page" style={{position: 'relative'}}>
+          <div className="page" style={styles.page}>
             {pages[0].sections.map(section => {
               const Section = require(`./${section.__typename}`).default;
               return (

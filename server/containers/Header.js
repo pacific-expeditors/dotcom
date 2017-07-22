@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { graphql, gql } from 'react-apollo';
 import { get } from 'lodash';
 import Header from '../components/Header';
+import SubPageHeader from '../components/SubPageHeader';
 
 class HeaderContainer extends Component {
   componentWillMount() {
@@ -14,6 +15,16 @@ class HeaderContainer extends Component {
   render() {
     const { data } = this.props;
     const header = get(data, 'header', {});
+
+    if (header.id === 'sub-page-header') {
+      return (
+        <SubPageHeader
+          logo={header.logo}
+          mobileLogo={header.mobileLogo}
+          navLinks={header.navigationLinks}
+          title={header.title} />
+      );
+    }
 
     return (
       <Header
