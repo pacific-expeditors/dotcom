@@ -28,6 +28,7 @@
     "body-parser": "^1.17.2",
     "cf-graphql": "^0.4.3",
     "cloudflare": "^2.1.1",
+    "contentful": "^4.5.0",
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
@@ -42,7 +43,8 @@
     "react": "^15.6.1",
     "react-apollo": "^1.4.7",
     "react-dom": "^15.6.1",
-    "react-flow-types": "^0.1.1"
+    "react-flow-types": "^0.1.1",
+    "sendmail": "^1.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

@@ -33,6 +33,52 @@ body {
   margin-bottom: 116px;
 }
 
+/*================== HEADINGS *==================*/
+.h2 {
+  text-align: center;
+  font-family: Europa, sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #4F4F4F;
+  margin: 12px 0;
+}
+.h3 {
+  font-family: Europa, sans-serif;
+  font-size: 24px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #4F4F4F;
+  margin: 12px 0;
+}
+
+/*================== FORMS *==================*/
+.textfield, .select, .textarea {
+  font: normal 16px/1.5 "Europa", sans-serif;
+  background-color: #fff;
+  border: 1px solid #CCC;
+  margin: 7px 0;
+  padding: 3px;
+}
+
+.textfield, .textarea {
+  width: 100%;
+}
+
+.button {
+  background-color: #008DDB;
+  color: #fff;
+  border: none;
+  padding: 7px 12px;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+}
+
 /*================== HEADER *==================*/
 .header {
   display: none;
@@ -274,5 +320,31 @@ body {
   }
   .video-container {
     height: 90vh;
+  }
+}
+
+/*================== CONTACT *==================*/
+.contact {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.address {
+  flex: 1;
+}
+
+.form {
+  flex: 2;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+  .contact {
+    width: 1170px;
+    margin: 20px auto;
+    flex-direction: row;
   }
 }

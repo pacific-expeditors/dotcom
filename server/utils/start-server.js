@@ -4,6 +4,7 @@ import cors from 'cors';
 import cfGraphql from 'cf-graphql';
 import renderUi from './render-ui';
 import purgeCache from './cache';
+import contact from './contact';
 
 const startServer = (client, schema) => {
   const app = express();
@@ -21,6 +22,7 @@ const startServer = (client, schema) => {
   app.use('/', renderUi());
 
   app.post('/purge_cache', purgeCache);
+  app.post('/contact', contact);
 
   const port = process.env.PORT || 5000;
   app.listen(port, () => console.log(`Running on port ${port}`));
