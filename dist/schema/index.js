@@ -1,17 +1,14 @@
 'use strict';
 
-var _graphql = require('graphql');
+var _require = require('graphql'),
+    GraphQLSchema = _require.GraphQLSchema;
 
-var _Root = require('./Root');
-
-var _Root2 = _interopRequireDefault(_Root);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var getRootQuery = require('./Root');
 
 var schema = function schema(client) {
   return new Promise(function (resolve, reject) {
-    (0, _Root2.default)(client).then(function (rootQuery) {
-      var schema = new _graphql.GraphQLSchema({
+    getRootQuery(client).then(function (rootQuery) {
+      var schema = new GraphQLSchema({
         query: rootQuery
       });
 

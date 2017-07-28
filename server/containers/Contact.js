@@ -11,10 +11,6 @@ class ContactContainer extends Component {
     }
   }
 
-  onSubmit = () => {
-
-  }
-
   render() {
     const { data } = this.props;
 

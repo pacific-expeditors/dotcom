@@ -38,5 +38,4 @@ var Cards = function Cards(_ref) {
     })
   );
 };
-
 exports.default = Cards;

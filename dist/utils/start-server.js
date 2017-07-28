@@ -8,6 +8,10 @@ var _expressGraphql = require('express-graphql');
 
 var _expressGraphql2 = _interopRequireDefault(_expressGraphql);
 
+var _bodyParser = require('body-parser');
+
+var _bodyParser2 = _interopRequireDefault(_bodyParser);
+
 var _cors = require('cors');
 
 var _cors2 = _interopRequireDefault(_cors);
@@ -24,6 +28,10 @@ var _cache = require('./cache');
 
 var _cache2 = _interopRequireDefault(_cache);
 
+var _contact = require('./contact');
+
+var _contact2 = _interopRequireDefault(_contact);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var startServer = function startServer(client, schema) {
@@ -31,6 +39,7 @@ var startServer = function startServer(client, schema) {
   app.use('/static', _express2.default.static('dist/assets'));
 
   app.use((0, _cors2.default)());
+  app.use(_bodyParser2.default.json());
 
   var ui = _cfGraphql2.default.helpers.graphiql({ title: 'GraphQL Server' });
   app.get('/graphiql', function (_, res) {
@@ -44,6 +53,7 @@ var startServer = function startServer(client, schema) {
   app.use('/', (0, _renderUi2.default)());
 
   app.post('/purge_cache', _cache2.default);
+  app.post('/contact', _contact2.default);
 
   var port = process.env.PORT || 5000;
   app.listen(port, function () {

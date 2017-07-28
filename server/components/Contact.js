@@ -14,12 +14,30 @@ const Contact = () => {
         Santa Rosa, CA 95403
       </div>
       <div className="form">
-        <form>
+        <form id="form">
           <h2 className="h2">Contact Us</h2>
-          <input className="textfield" type="text" name="name" placeholder="Name" />
-          <input className="textfield" type="email" name="email" placeholder="Email" />
-          <input className="textfield" type="phone" name="phoneNumber" placeholder="Phone Number" />
-          <input className="textfield" type="company" name="company" placeholder="Company" />
+          <input
+            className="textfield"
+            pattern="[A-Za-z .]+"
+            type="text"
+            name="name"
+            placeholder="Name" />
+          <input
+            className="textfield"
+            type="email"
+            name="email"
+            placeholder="Email" />
+          <input
+            className="textfield"
+            type="text"
+            name="phoneNumber"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+            placeholder="Phone Number" />
+          <input
+            className="textfield"
+            type="text"
+            name="company"
+            placeholder="Company" />
           <select className="select" name="contactMethod">
             <option value="Email">Email</option>
             <option value="Phone">Phone</option>

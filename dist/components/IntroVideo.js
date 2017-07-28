@@ -38,6 +38,7 @@ var styles = {
   }
 };
 
+
 var IntroVideo = function IntroVideo(_ref) {
   var _ref$autoplay = _ref.autoplay,
       autoplay = _ref$autoplay === undefined ? true : _ref$autoplay,

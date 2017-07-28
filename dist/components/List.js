@@ -47,5 +47,4 @@ var List = function List(_ref) {
     )
   );
 };
-
 exports.default = List;

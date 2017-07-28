@@ -1,5 +1,6 @@
 import express from 'express';
 import expressGraphQL from 'express-graphql';
+import bodyParser from 'body-parser';
 import cors from 'cors';
 import cfGraphql from 'cf-graphql';
 import renderUi from './render-ui';
@@ -11,6 +12,7 @@ const startServer = (client, schema) => {
   app.use('/static', express.static('dist/assets'));
 
   app.use(cors());
+  app.use(bodyParser.json());
 
   const ui = cfGraphql.helpers.graphiql({title: 'GraphQL Server'});
   app.get('/graphiql', (_, res) => res.set(ui.headers).status(ui.statusCode).end(ui.body));

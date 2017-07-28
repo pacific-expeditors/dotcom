@@ -27,4 +27,38 @@ window.onload = function() {
 
   ga('create', 'UA-102592274-1', 'auto');
   ga('send', 'pageview');
+
+  document.querySelector('#form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var selectors = {
+      name: 'input[name="name"]',
+      email: 'input[name="email"]',
+      phoneNumber: 'input[name="phoneNumber"]',
+      company: 'input[name="company"]',
+      contactMethod: 'select[name="contactMethod"]',
+      msg: 'textarea[name="msg"]'
+    };
+
+    var request = {};
+    Object.keys(selectors).forEach(function(key) {
+      request[key] = document.querySelector(selectors[key]).value;
+    });
+
+    fetch('/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(request)
+    })
+    .then(function(res) {
+      return res.json();
+    })
+    .then(function(res) {
+      console.log(res);
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
+  });
 };

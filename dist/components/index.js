@@ -27,8 +27,6 @@ var _List2 = _interopRequireDefault(_List);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import Contact from './Contact';
-
-
 module.exports = {
   Cards: _Cards2.default,
   Header: _Header2.default,

@@ -21,8 +21,5 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // import Header from './Header';
 // import Contact from './Contact';
-exports.
-// Header,
-// CardList,
-Providers = _Providers2.default;
+exports.Providers = _Providers2.default;
 exports.Page = _Page2.default;

@@ -32,24 +32,21 @@ var styles = {
 };
 
 
-var TextWithHeading = function TextWithHeading(_ref) {
-  var title = _ref.title,
-      content = _ref.content;
-
+var Error404 = function Error404() {
   return _react2.default.createElement(
     'div',
-    { style: styles.container },
+    { className: 'error-404' },
     _react2.default.createElement(
       'h2',
       { style: styles.heading },
-      title
+      'Page Not Found'
     ),
     _react2.default.createElement(
       'p',
       { style: styles.content },
-      content
+      'Sorry the page you were looking for does not exist.'
     )
   );
 };
 
-exports.default = TextWithHeading;
+exports.default = Error404;

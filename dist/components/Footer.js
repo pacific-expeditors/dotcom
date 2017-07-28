@@ -55,5 +55,4 @@ var Footer = function Footer(_ref) {
     )
   );
 };
-
 exports.default = Footer;

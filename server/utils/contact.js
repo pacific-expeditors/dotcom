@@ -14,7 +14,7 @@ const sendMail = (req, res) => {
   sendmail({
     from: req.body.email,
     to: 'solutions@pacificexpeditors.com',
-    subject: 'Email from ' + req.body.from,
+    subject: 'Email from ' + req.body.email,
     html,
   }, (err, reply) => {
     if (err) {

@@ -1,17 +1,17 @@
 /* @flow */
-import { GraphQLObjectType } from 'graphql';
-import { createQueryFields, prepareSpaceGraph } from 'cf-graphql';
+const { GraphQLObjectType } = require('graphql');
+const { createQueryFields, prepareSpaceGraph } = require('cf-graphql');
 
 // Fetches the contentful space and creates a graphql schema
 // Based on the space graph.
-const createSpaceQueries = (client:any) => {
+const createSpaceQueries = (client) => {
   return client.getContentTypes()
     .then(prepareSpaceGraph)
     .then(spaceGraph => createQueryFields(spaceGraph));
 };
 
 // Create the RootQuery type.
-const getRootQuery = (client:any) => {
+const getRootQuery = (client) => {
   const promise = new Promise((resolve, reject) => {
     return createSpaceQueries(client).then(queries => {
       const rootQuery = new GraphQLObjectType({

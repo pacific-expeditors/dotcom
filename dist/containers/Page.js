@@ -16,6 +16,8 @@ var _lodash = require('lodash');
 
 var _reactApollo = require('react-apollo');
 
+var _fs = require('fs');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -55,7 +57,9 @@ var Page = function (_Component) {
 
       var data = this.props.data;
 
-      var pages = (0, _lodash.get)(data, 'pages', [{ sections: [], title: '404' }]);
+      var title = (0, _lodash.get)(data, 'pages[0].title', 404);
+      var sections = (0, _lodash.get)(data, 'pages[0].sections', [{ __typename: '404', sys: { id: 0 } }]);
+      var description = (0, _lodash.get)(data, 'pages[0].metaDescription', "");
 
       return _react2.default.createElement(
         'html',
@@ -67,11 +71,11 @@ var Page = function (_Component) {
           _react2.default.createElement('meta', { name: 'robots', content: 'noodp' }),
           _react2.default.createElement('meta', { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' }),
           _react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' }),
-          _react2.default.createElement('meta', { name: 'description', content: '' }),
+          _react2.default.createElement('meta', { name: 'description', content: description }),
           _react2.default.createElement(
             'title',
             null,
-            pages[0].title
+            title
           ),
           _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css' }),
           _react2.default.createElement('link', { rel: 'stylesheet', type: 'text/css', href: '/static/components.css' }),
@@ -94,8 +98,13 @@ var Page = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'page', style: styles.page },
-            pages[0].sections.map(function (section) {
-              var Section = require('./' + section.__typename).default;
+            sections.map(function (section) {
+              var path = __dirname + '/' + section.__typename + '.js';
+              if (!(0, _fs.existsSync)(path)) {
+                return;
+              }
+
+              var Section = require(path).default;
               return _react2.default.createElement(Section, {
                 refetch: _this2.props.refetch,
                 key: section.sys.id,
