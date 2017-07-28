@@ -11,15 +11,21 @@ var sendMail = function sendMail(req, res) {
 
   (0, _sendmail2.default)({
     from: req.body.email,
-    to: 'solutions@pacificexpeditors.com',
+    to: 'itsupport@pacificexpeditors.com',
     subject: 'Email from ' + req.body.email,
     html: html
   }, function (err, reply) {
     if (err) {
-      return res.send(err);
+      return res.send({
+        statusCode: 400,
+        msg: err
+      });
     }
 
-    res.send(reply);
+    res.send({
+      statusCode: 200,
+      msg: "Email sent."
+    });
   });
 };
 

@@ -13,15 +13,21 @@ const sendMail = (req, res) => {
 
   sendmail({
     from: req.body.email,
-    to: 'solutions@pacificexpeditors.com',
+    to: 'itsupport@pacificexpeditors.com',
     subject: 'Email from ' + req.body.email,
     html,
   }, (err, reply) => {
     if (err) {
-      return res.send(err);
+      return res.send({
+        statusCode: 400,
+        msg: err
+      });
     }
 
-    res.send(reply);
+    res.send({
+      statusCode: 200,
+      msg: "Email sent."
+    });
   });
 };
 
