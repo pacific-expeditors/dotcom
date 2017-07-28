@@ -21,17 +21,20 @@ const Contact = () => {
             pattern="[A-Za-z .]+"
             type="text"
             name="name"
+            required
             placeholder="Name" />
           <input
             className="textfield"
             type="email"
             name="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+            required
             placeholder="Email" />
           <input
             className="textfield"
-            type="text"
+            type="tel"
             name="phoneNumber"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+            required
             placeholder="Phone Number" />
           <input
             className="textfield"

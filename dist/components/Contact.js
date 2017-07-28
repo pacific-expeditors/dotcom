@@ -46,17 +46,20 @@ var Contact = function Contact() {
           pattern: "[A-Za-z .]+",
           type: "text",
           name: "name",
+          required: true,
           placeholder: "Name" }),
         _react2.default.createElement("input", {
           className: "textfield",
           type: "email",
           name: "email",
+          pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$",
+          required: true,
           placeholder: "Email" }),
         _react2.default.createElement("input", {
           className: "textfield",
-          type: "text",
+          type: "tel",
           name: "phoneNumber",
-          pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$",
+          required: true,
           placeholder: "Phone Number" }),
         _react2.default.createElement("input", {
           className: "textfield",
