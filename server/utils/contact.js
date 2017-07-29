@@ -1,8 +1,11 @@
 /* @flow */
-const sendmail = require('sendmail')();
+const ses = require('node-ses')({
+  key: '',
+  secret: ''
+});
 
 const contact = (req, res) => {
-  const html = `
+  const message = `
     Name: ${req.body.name}
     Email: ${req.body.email}
     Phone: ${req.body.phoneNumber}
@@ -11,12 +14,12 @@ const contact = (req, res) => {
     Message: ${req.body.msg}
   `;
 
-  sendmail({
+  ses({
     from: 'itsupport@pacificexpeditors.com',
     to: 'itsupport@pacificexpeditors.com',
     subject: `Email from ${req.body.name}`,
-    html
-  }, function(err, reply) {
+    message
+  }, function(err, data, info) {
     if (err) {
       return res.send({
         statusCode: 400,

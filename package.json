@@ -25,6 +25,7 @@
     "flow": "flow"
   },
   "dependencies": {
+    "aws-sdk": "^2.92.0",
     "body-parser": "^1.17.2",
     "cf-graphql": "^0.4.3",
     "cloudflare": "^2.1.1",
