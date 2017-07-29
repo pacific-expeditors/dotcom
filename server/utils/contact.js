@@ -1,22 +1,34 @@
 /* @flow */
-const sendmail = require('sendmail')();
+import { createClient } from 'node-ses';
+
+const client = createClient({
+  key: process.env.AWS_KEY,
+  secret: process.env.AWS_SECRET
+});
 
 const contact = (req, res) => {
-  const html = `
-    Name: ${req.body.name}
-    Email: ${req.body.email}
-    Phone: ${req.body.phoneNumber}
-    Company: ${req.body.company}
-    Preferred Method of Contact: ${req.body.contactMethod}
-    Message: ${req.body.msg}
+  if (!req.body.name || !req.body.email || !req.body.phoneNumber) {
+    return res.send({
+      statusCode: 400,
+      msg: "Missing one or more fields."
+    });
+  }
+  
+  const message = `
+    Name: ${req.body.name}<br />
+    Email: ${req.body.email}<br />
+    Phone: ${req.body.phoneNumber}<br />
+    Company: ${req.body.company}<br />
+    Preferred Method of Contact: ${req.body.contactMethod}<br />
+    Message: <p>${req.body.msg}</p>
   `;
 
-  sendmail({
+  client.sendEmail({
     from: 'itsupport@pacificexpeditors.com',
-    to: 'itsupport@pacificexpeditors.com',
+    to: 'solutions@pacificexpeditors.com',
     subject: `Email from ${req.body.name}`,
-    html
-  }, function(err, reply) {
+    message
+  }, function(err, data, info) {
     if (err) {
       return res.send({
         statusCode: 400,

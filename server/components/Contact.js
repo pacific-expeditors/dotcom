@@ -1,10 +1,6 @@
 /* @flow */
 import React from 'react';
 
-// type ContactProps = {
-//   onSubmit: void => {}
-// };
-
 const Contact = () => {
   return (
     <div className="contact">
@@ -16,6 +12,7 @@ const Contact = () => {
       <div className="form">
         <form id="form">
           <h2 className="h2">Contact Us</h2>
+          <div id="msg" className="msg"></div>
           <input
             className="textfield"
             pattern="[A-Za-z .]+"

@@ -10,10 +10,6 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// type ContactProps = {
-//   onSubmit: void => {}
-// };
-
 var Contact = function Contact() {
   return _react2.default.createElement(
     "div",
@@ -41,6 +37,7 @@ var Contact = function Contact() {
           { className: "h2" },
           "Contact Us"
         ),
+        _react2.default.createElement("div", { id: "msg", className: "msg" }),
         _react2.default.createElement("input", {
           className: "textfield",
           pattern: "[A-Za-z .]+",
