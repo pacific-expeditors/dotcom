@@ -330,6 +330,19 @@ body {
   flex-direction: column;
 }
 
+.msg {
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+.error {
+  color: #CC0000;
+}
+
+.success {
+  color: #006600;
+}
+
 .address {
   flex: 1;
 }

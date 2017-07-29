@@ -55,10 +55,14 @@ window.onload = function() {
       return res.json();
     })
     .then(function(res) {
-      console.log(res);
+      document.querySelector('#msg').classList.remove('error');
+      document.querySelector('#msg').classList.add('success');
+      document.querySelector('#msg').innerHTML = 'Thank you for contacting us. We will get back to you shortly.';
     })
     .catch(function(err) {
-      console.log(err);
+      document.querySelector('#msg').classList.remove('success');
+      document.querySelector('#msg').classList.add('error');
+      document.querySelector('#msg').innerHTML = 'Something went wrong. Please try again.';
     });
   });
 };
