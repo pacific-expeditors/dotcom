@@ -1,7 +1,7 @@
 'use strict';
 
 window.onload = function () {
-  objectFitImages('.card-image');
+  objectFitImages('img.card-image');
 
   document.addEventListener('scroll', function (e) {
     var header = document.querySelector(".header");
