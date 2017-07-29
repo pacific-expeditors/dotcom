@@ -26,7 +26,7 @@ class Page extends Component {
 
   render() {
     const { data } = this.props;
-    const title = get(data, 'pages[0].title', 404);
+    const title = get(data, 'pages[0].title', '404') + ' | Pacific Expeditors';
     const sections = get(data, 'pages[0].sections', [{__typename: '404', sys: {id: 0}}]);
     const description = get(data, 'pages[0].metaDescription', "");
 
@@ -38,7 +38,7 @@ class Page extends Component {
           <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <meta name="description" content={description} />
-          <title>{title} | Pacific Expeditors</title>
+          <title>{title}</title>
 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
           <link rel="stylesheet" type="text/css" href="/static/components.min.css" />
