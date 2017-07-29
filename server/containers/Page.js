@@ -74,7 +74,7 @@ class Page extends Component {
           </div>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
-          <script src={`/static/global.min.js?${process.env}`}></script>
+          <script src={`/static/global.min.js`}></script>
         </body>
       </html>
     );
