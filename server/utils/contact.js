@@ -13,7 +13,7 @@ const contact = (req, res) => {
       msg: "Missing one or more fields."
     });
   }
-  
+
   const message = `
     Name: ${req.body.name}<br />
     Email: ${req.body.email}<br />
@@ -25,7 +25,7 @@ const contact = (req, res) => {
 
   client.sendEmail({
     from: 'itsupport@pacificexpeditors.com',
-    to: 'solutions@pacificexpeditors.com',
+    to: 'itsupport@pacificexpeditors.com',
     subject: `Email from ${req.body.name}`,
     message
   }, function(err, data, info) {

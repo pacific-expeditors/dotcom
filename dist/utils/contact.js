@@ -20,7 +20,7 @@ var contact = function contact(req, res) {
 
   client.sendEmail({
     from: 'itsupport@pacificexpeditors.com',
-    to: 'solutions@pacificexpeditors.com',
+    to: 'itsupport@pacificexpeditors.com',
     subject: 'Email from ' + req.body.name,
     message: message
   }, function (err, data, info) {
