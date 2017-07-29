@@ -16,7 +16,7 @@ class FooterContainer extends Component {
     const footer = get(data, 'footer', {});
 
     return (
-      <Footer logo={footer.logo} title={footer.title} copyright={footer.copyright} />
+      <Footer logo={footer.logo} title={footer.copyright} copyright={footer.copyright} />
     );
   }
 }
@@ -26,7 +26,6 @@ export default graphql(gql`
     footer(id:$id) {
       id
       logo
-      title
       copyright
     }
   }
