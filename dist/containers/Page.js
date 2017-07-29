@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query Page($slug: String!) {\n    pages(q:$slug) {\n      id\n      title\n      sections {\n        sys {\n          id\n        }\n        __typename\n      }\n    }\n  }\n'], ['\n  query Page($slug: String!) {\n    pages(q:$slug) {\n      id\n      title\n      sections {\n        sys {\n          id\n        }\n        __typename\n      }\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  query Page($slug: String!) {\n    pages(q:$slug) {\n      id\n      title\n      metaDescription\n      sections {\n        sys {\n          id\n        }\n        __typename\n      }\n    }\n  }\n'], ['\n  query Page($slug: String!) {\n    pages(q:$slug) {\n      id\n      title\n      metaDescription\n      sections {\n        sys {\n          id\n        }\n        __typename\n      }\n    }\n  }\n']);
 
 var _react = require('react');
 
@@ -75,7 +75,8 @@ var Page = function (_Component) {
           _react2.default.createElement(
             'title',
             null,
-            title
+            title,
+            ' | Pacific Expeditors'
           ),
           _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css' }),
           _react2.default.createElement('link', { rel: 'stylesheet', type: 'text/css', href: '/static/components.min.css' }),

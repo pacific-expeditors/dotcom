@@ -38,7 +38,7 @@ class Page extends Component {
           <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <meta name="description" content={description} />
-          <title>{title}</title>
+          <title>{title} | Pacific Expeditors</title>
 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
           <link rel="stylesheet" type="text/css" href="/static/components.min.css" />
@@ -87,6 +87,7 @@ export default graphql(gql`
     pages(q:$slug) {
       id
       title
+      metaDescription
       sections {
         sys {
           id

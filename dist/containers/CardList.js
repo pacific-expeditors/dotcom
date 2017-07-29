@@ -56,7 +56,7 @@ var CardListContainer = function (_Component) {
       var cardList = (0, _lodash.get)(data, 'cardList.cards', {});
       var cards = cardList.map(function (card) {
         return _extends({}, card, {
-          image: card.image.url + '?h=242&q=80'
+          image: card.image.url + '?h=512&q=80'
         });
       });
 

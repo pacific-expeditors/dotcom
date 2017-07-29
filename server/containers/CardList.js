@@ -16,7 +16,7 @@ class CardListContainer extends Component {
     const cardList = get(data, 'cardList.cards', {});
     const cards = cardList.map(card => ({
       ...card,
-      image: `${card.image.url}?h=242&q=80`
+      image: `${card.image.url}?h=512&q=80`
     }));
 
     return (
