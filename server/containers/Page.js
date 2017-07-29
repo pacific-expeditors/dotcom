@@ -50,6 +50,7 @@ class Page extends Component {
           <link rel="apple-touch-icon-precomposed" sizes="120x120" href="" />
           <link rel="apple-touch-icon-precomposed" sizes="152x152" href="" />
 
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.min.js"></script>
           <script src="https://use.typekit.net/rnz3htj.js"></script>
           <script>{typekit}</script>
 

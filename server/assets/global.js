@@ -1,4 +1,6 @@
 window.onload = function() {
+  objectFitImages('.card-image');
+
   document.addEventListener('scroll', function(e) {
     var header = document.querySelector(".header");
     var logo = document.querySelector(".logo");

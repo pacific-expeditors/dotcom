@@ -84,6 +84,7 @@ var Page = function (_Component) {
           _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '76x76', href: '' }),
           _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '120x120', href: '' }),
           _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '152x152', href: '' }),
+          _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.min.js' }),
           _react2.default.createElement('script', { src: 'https://use.typekit.net/rnz3htj.js' }),
           _react2.default.createElement(
             'script',
