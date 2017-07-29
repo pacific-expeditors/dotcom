@@ -179,6 +179,7 @@ body {
   overflow: hidden;
   text-decoration: none;
   position: relative;
+  flex: 1 1 auto;
 }
 
 @media (min-width: 1200px) {
@@ -213,7 +214,7 @@ body {
 }
 
 .card-image {
-  object-fit: cover;
+  width: 100%;
 }
 
 /*================== LISTS *==================*/
