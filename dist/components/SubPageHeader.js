@@ -118,7 +118,7 @@ var MobileHeader = function MobileHeader(_ref) {
       _react2.default.createElement('img', { className: 'logo', style: styles.mobileLogo, src: mobileLogo, alt: title }),
       _react2.default.createElement(
         'a',
-        { href: '#', className: 'close-icon-link', style: styles.closeIconLink },
+        { href: '#', 'aria-label': 'Close', className: 'close-icon-link', style: styles.closeIconLink },
         _react2.default.createElement('span', { style: styles.closeIcon, dangerouslySetInnerHTML: { __html: closeIcon } })
       )
     ),
@@ -236,7 +236,7 @@ var SubPageHeader = function SubPageHeader(props) {
     _react2.default.createElement(MobileHeader, props),
     _react2.default.createElement(
       'a',
-      { href: '#', className: 'mobile-menu-link', style: styles.menuIconLink },
+      { href: '#', 'aria-label': 'Close', className: 'mobile-menu-link', style: styles.menuIconLink },
       _react2.default.createElement('span', { style: styles.menuIcon, dangerouslySetInnerHTML: { __html: menuIcon } })
     )
   );

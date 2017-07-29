@@ -109,7 +109,7 @@ const MobileHeader = ({mobileLogo, title, navLinks}:HeaderProps) => {
     <header style={styles.mobileMenu} className="header-mobile">
       <div style={styles.mobileTopRow}>
         <img className="logo" style={styles.mobileLogo} src={mobileLogo} alt={title} />
-        <a href="#" className="close-icon-link" style={styles.closeIconLink}>
+        <a href="#" aria-label="Close" className="close-icon-link" style={styles.closeIconLink}>
           <span style={styles.closeIcon} dangerouslySetInnerHTML={{__html: closeIcon}} />
         </a>
       </div>
@@ -197,7 +197,7 @@ const Header = (props:HeaderProps) => {
     <div className="header-container">
       <DesktopHeader {...props} />
       <MobileHeader {...props} />
-      <a href="#" className="mobile-menu-link" style={styles.menuIconLink}>
+      <a href="#" aria-label="Close" className="mobile-menu-link" style={styles.menuIconLink}>
         <span style={styles.menuIcon} dangerouslySetInnerHTML={{__html: menuIcon }} />
       </a>
     </div>

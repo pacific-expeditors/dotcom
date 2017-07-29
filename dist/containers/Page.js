@@ -57,34 +57,33 @@ var Page = function (_Component) {
 
       var data = this.props.data;
 
-      var title = (0, _lodash.get)(data, 'pages[0].title', 404);
+      var title = (0, _lodash.get)(data, 'pages[0].title', '404');
       var sections = (0, _lodash.get)(data, 'pages[0].sections', [{ __typename: '404', sys: { id: 0 } }]);
       var description = (0, _lodash.get)(data, 'pages[0].metaDescription', "");
 
       return _react2.default.createElement(
         'html',
-        null,
+        { lang: 'en' },
         _react2.default.createElement(
           'head',
           null,
           _react2.default.createElement('meta', { charset: 'UTF-8' }),
           _react2.default.createElement('meta', { name: 'robots', content: 'noodp' }),
           _react2.default.createElement('meta', { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' }),
-          _react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' }),
+          _react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0' }),
           _react2.default.createElement('meta', { name: 'description', content: description }),
           _react2.default.createElement(
             'title',
             null,
-            title,
-            ' | Pacific Expeditors'
+            title
           ),
           _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css' }),
           _react2.default.createElement('link', { rel: 'stylesheet', type: 'text/css', href: '/static/components.min.css' }),
           _react2.default.createElement('link', { rel: 'shortcut icon', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=16' }),
-          _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '60x60', href: '' }),
-          _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '76x76', href: '' }),
-          _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '120x120', href: '' }),
-          _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '152x152', href: '' }),
+          _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '60x60', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=60' }),
+          _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '76x76', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=76' }),
+          _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '120x120', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=120' }),
+          _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '152x152', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=152' }),
           _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.min.js' }),
           _react2.default.createElement('script', { src: 'https://use.typekit.net/rnz3htj.js' }),
           _react2.default.createElement(

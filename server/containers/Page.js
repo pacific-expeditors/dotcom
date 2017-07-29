@@ -26,17 +26,17 @@ class Page extends Component {
 
   render() {
     const { data } = this.props;
-    const title = get(data, 'pages[0].title', '404') + ' | Pacific Expeditors';
+    const title = get(data, 'pages[0].title', '404');
     const sections = get(data, 'pages[0].sections', [{__typename: '404', sys: {id: 0}}]);
     const description = get(data, 'pages[0].metaDescription', "");
 
     return (
-      <html>
+      <html lang="en">
         <head>
           <meta charset="UTF-8" />
           <meta name="robots" content="noodp" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-          <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0" />
           <meta name="description" content={description} />
           <title>{title}</title>
 
@@ -45,10 +45,10 @@ class Page extends Component {
 
           <link rel="shortcut icon" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=16" />
 
-          <link rel="apple-touch-icon-precomposed" sizes="60x60" href="" />
-          <link rel="apple-touch-icon-precomposed" sizes="76x76" href="" />
-          <link rel="apple-touch-icon-precomposed" sizes="120x120" href="" />
-          <link rel="apple-touch-icon-precomposed" sizes="152x152" href="" />
+          <link rel="apple-touch-icon-precomposed" sizes="60x60" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=60" />
+          <link rel="apple-touch-icon-precomposed" sizes="76x76" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=76" />
+          <link rel="apple-touch-icon-precomposed" sizes="120x120" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=120" />
+          <link rel="apple-touch-icon-precomposed" sizes="152x152" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=152" />
 
           <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.min.js"></script>
           <script src="https://use.typekit.net/rnz3htj.js"></script>
