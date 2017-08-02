@@ -179,13 +179,17 @@ body {
   overflow: hidden;
   text-decoration: none;
   position: relative;
-  flex: 1 1 50%;
+  flex: 1 1 auto;
+  height: 242px;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    flex: 1;
+  }
 }
 
 @media (min-width: 1200px) {
-  .card {
-    flex: 1;
-  }
   .card:first-child {
     margin-left: 0;
   }
