@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var _nodeSes = require('node-ses');
+var _nodeSes = require("node-ses");
 
 var client = (0, _nodeSes.createClient)({
   key: process.env.AWS_KEY,
@@ -16,12 +16,12 @@ var contact = function contact(req, res) {
     });
   }
 
-  var message = '\n    Name: ' + req.body.name + '<br />\n    Email: ' + req.body.email + '<br />\n    Phone: ' + req.body.phoneNumber + '<br />\n    Company: ' + req.body.company + '<br />\n    Preferred Method of Contact: ' + req.body.contactMethod + '<br />\n    Message: <p>' + req.body.msg + '</p>\n  ';
+  var message = "\n    Name: " + req.body.name + "<br />\n    Email: " + req.body.email + "<br />\n    Phone: " + req.body.phoneNumber + "<br />\n    Company: " + req.body.company + "<br />\n    Preferred Method of Contact: " + req.body.contactMethod + "<br />\n    Message: <p>" + req.body.msg + "</p>\n  ";
 
   client.sendEmail({
-    from: 'itsupport@pacificexpeditors.com',
-    to: 'itsupport@pacificexpeditors.com',
-    subject: 'Email from ' + req.body.name,
+    from: process.env.CONTACT_EMAIL,
+    to: process.env.CONTACT_EMAIL,
+    subject: "Email from " + req.body.name,
     message: message
   }, function (err, data, info) {
     if (err) {

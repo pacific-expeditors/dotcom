@@ -1,14 +1,35 @@
 /* @flow */
 import React from 'react';
 
-const Contact = () => {
+type AddressProps = {
+  id: string,
+  name: string,
+  streetName: string,
+  streetName2?: string,
+  city: string,
+  state: string,
+  zip: number,
+  phoneNumber?: string
+};
+
+type AddressesProps = {
+  addresses: [AddressesProps]
+};
+
+const Contact = ({addresses}:AddressesProps) => {
   return (
     <div className="contact">
-      <div className="address">
-        <h3 className="h3">Pacific Expeditors</h3>
-        1550 Airport Blvd. Suite 201<br />
-        Santa Rosa, CA 95403
-      </div>
+      {addresses.map(address => {
+        return (
+          <div className="address">
+            <h3 className="h3">{address.name}</h3>
+            <div>{address.streetName}</div>
+            {address.streetName2 && <div>{address.streetName2}</div>}
+            <div>{address.city}, {address.state} {address.zip}</div>
+            {address.phoneNumber && <div>{address.phoneNumber}</div>}
+          </div>
+        );
+      })}
       <div className="form">
         <form id="form">
           <h2 className="h2">Contact Us</h2>

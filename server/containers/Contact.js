@@ -13,9 +13,10 @@ class ContactContainer extends Component {
 
   render() {
     const { data } = this.props;
+    const addresses = get(data, 'contact.addresses', {});
 
     return (
-      <Contact />
+      <Contact addresses={addresses} />
     );
   }
 }
@@ -24,6 +25,18 @@ export default graphql(gql`
   query Contact($id: ID!) {
     contact(id:$id) {
       id
+      addresses {
+        ... on Address {
+          id
+          name
+          streetName
+          streetName2
+          city
+          state
+          zip
+          phoneNumber
+        }
+      }
     }
   }
 `, {

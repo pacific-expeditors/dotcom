@@ -24,8 +24,8 @@ const contact = (req, res) => {
   `;
 
   client.sendEmail({
-    from: 'itsupport@pacificexpeditors.com',
-    to: 'itsupport@pacificexpeditors.com',
+    from: process.env.CONTACT_EMAIL,
+    to: process.env.CONTACT_EMAIL,
     subject: `Email from ${req.body.name}`,
     message
   }, function(err, data, info) {

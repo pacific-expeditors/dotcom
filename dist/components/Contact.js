@@ -10,22 +10,47 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Contact = function Contact() {
+var Contact = function Contact(_ref) {
+  var addresses = _ref.addresses;
+
   return _react2.default.createElement(
     "div",
     { className: "contact" },
-    _react2.default.createElement(
-      "div",
-      { className: "address" },
-      _react2.default.createElement(
-        "h3",
-        { className: "h3" },
-        "Pacific Expeditors"
-      ),
-      "1550 Airport Blvd. Suite 201",
-      _react2.default.createElement("br", null),
-      "Santa Rosa, CA 95403"
-    ),
+    addresses.map(function (address) {
+      return _react2.default.createElement(
+        "div",
+        { className: "address" },
+        _react2.default.createElement(
+          "h3",
+          { className: "h3" },
+          address.name
+        ),
+        _react2.default.createElement(
+          "div",
+          null,
+          address.streetName
+        ),
+        address.streetName2 && _react2.default.createElement(
+          "div",
+          null,
+          address.streetName2
+        ),
+        _react2.default.createElement(
+          "div",
+          null,
+          address.city,
+          ", ",
+          address.state,
+          " ",
+          address.zip
+        ),
+        address.phoneNumber && _react2.default.createElement(
+          "div",
+          null,
+          address.phoneNumber
+        )
+      );
+    }),
     _react2.default.createElement(
       "div",
       { className: "form" },
