@@ -32,6 +32,10 @@ var _contact = require('./contact');
 
 var _contact2 = _interopRequireDefault(_contact);
 
+var _offline = require('./offline');
+
+var _offline2 = _interopRequireDefault(_offline);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var startServer = function startServer(client, schema) {
@@ -41,19 +45,23 @@ var startServer = function startServer(client, schema) {
   app.use((0, _cors2.default)());
   app.use(_bodyParser2.default.json());
 
-  var ui = _cfGraphql2.default.helpers.graphiql({ title: 'GraphQL Server' });
-  app.get('/graphiql', function (_, res) {
-    return res.set(ui.headers).status(ui.statusCode).end(ui.body);
-  });
+  if (!process.env.OFFLINE) {
+    var ui = _cfGraphql2.default.helpers.graphiql({ title: 'GraphQL Server' });
+    app.get('/graphiql', function (_, res) {
+      return res.set(ui.headers).status(ui.statusCode).end(ui.body);
+    });
 
-  var opts = { version: true, timeline: true, detailedErrors: false };
-  var ext = _cfGraphql2.default.helpers.expressGraphqlExtension(client, schema, opts);
+    var opts = { version: true, timeline: true, detailedErrors: false };
+    var ext = _cfGraphql2.default.helpers.expressGraphqlExtension(client, schema, opts);
 
-  app.use('/graphql', (0, _expressGraphql2.default)(ext));
-  app.use('/', (0, _renderUi2.default)());
+    app.use('/graphql', (0, _expressGraphql2.default)(ext));
+    app.use('/', (0, _renderUi2.default)());
 
-  app.post('/purge_cache', _cache2.default);
-  app.post('/contact', _contact2.default);
+    app.post('/purge_cache', _cache2.default);
+    app.post('/contact', _contact2.default);
+  } else {
+    app.use('/', (0, _offline2.default)());
+  }
 
   var port = process.env.PORT || 5000;
   app.listen(port, function () {
