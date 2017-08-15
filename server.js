@@ -5,14 +5,18 @@ const cfGraphql = require('cf-graphql');
 const getSchema = require(`./${path}/schema/index.js`);
 const startServer = require(`./${path}/utils/start-server`);
 
-const client = cfGraphql.createClient({
-  spaceId: process.env.CONTENTFUL_SPACE_ID,
-  cdaToken: process.env.CONTENTFUL_CDA_TOKEN,
-  cmaToken: process.env.CONTENTFUL_CMA_TOKEN
-});
+if (process.env.OFFLINE) {
+  startServer();
+} else {
+  const client = cfGraphql.createClient({
+    spaceId: process.env.CONTENTFUL_SPACE_ID,
+    cdaToken: process.env.CONTENTFUL_CDA_TOKEN,
+    cmaToken: process.env.CONTENTFUL_CMA_TOKEN
+  });
 
-getSchema(client).then(schema => {
-  startServer(client, schema);
-}).catch(err => {
-  console.error(err);
-});
+  getSchema(client).then(schema => {
+    startServer(client, schema);
+  }).catch(err => {
+    console.error(err);
+  });
+}
