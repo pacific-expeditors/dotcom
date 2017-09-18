@@ -1,9 +1,9 @@
 /* @flow */
 import React, { Component } from 'react';
 import { graphql, gql } from 'react-apollo';
-import { get } from 'lodash';
+import get from 'lodash.get';
 import Header from '../components/Header';
-import SubPageHeader from '../components/SubPageHeader';
+// import SubPageHeader from '../components/SubPageHeader';
 
 class HeaderContainer extends Component {
   componentWillMount() {
@@ -16,23 +16,14 @@ class HeaderContainer extends Component {
     const { data } = this.props;
     const header = get(data, 'header', {});
 
-    if (header.id === 'sub-page-header') {
-      return (
-        <SubPageHeader
-          logo={header.logo}
-          mobileLogo={header.mobileLogo}
-          navLinks={header.navigationLinks}
-          title={header.title} />
-      );
-    }
+    return (<div></div>)
 
-    return (
-      <Header
-        logo={header.logo}
-        mobileLogo={header.mobileLogo}
-        navLinks={header.navigationLinks}
-        title={header.title} />
-    );
+    // return (
+    //   <Header
+    //     logo={header.logo}
+    //     mobileLogo={header.mobileLogo}
+    //     siteTitle={header.siteTitle} />
+    // );
   }
 }
 
@@ -41,18 +32,8 @@ export default graphql(gql`
     header(id:$id) {
       id
       logo
+      siteTitle
       mobileLogo
-      navigationLinks {
-        href
-        text
-        alignment
-        subNavigationLinks {
-          ... on NavigationLinks {
-            href
-            text
-          }
-        }
-      }
     }
   }
 `, {

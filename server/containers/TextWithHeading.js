@@ -1,7 +1,7 @@
 /* @flow */
 import React, { Component } from 'react';
 import { graphql, gql } from 'react-apollo';
-import { get } from 'lodash';
+import get from 'lodash.get';
 import TextWithHeading from '../components/TextWithHeading';
 
 class TextWithHeadingContainer extends Component {

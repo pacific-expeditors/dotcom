@@ -11,18 +11,11 @@
   },
   "scripts": {
     "start": "node ./server.js",
-    "dev-server": "nodemon server.js --exec babel-node",
-    "dev-client": "webpack-dashboard -- webpack-dev-server",
-    "dev": "yarn run dev-server && yarn run dev-client",
-    "build-client": "rm -rf dist && webpack -p --config webpack.production.js",
-    "build-server": "rm -rf dist && babel ./server --out-dir ./dist && yarn run min-css && yarn run min-js",
+    "dev": "nodemon server.js --exec babel-node",
+    "build": "rm -rf dist && babel ./server --out-dir ./dist && yarn run min-css && yarn run min-js",
     "min-css": "cleancss ./server/assets/components.css -o ./dist/assets/components.min.css",
     "min-js": "uglifyjs ./server/assets/global.js -o ./dist/assets/global.min.js",
-    "test": "yarn run mocha-all && yarn run flow",
-    "mocha": "mocha ./app/components/tests/Home.js -r mock-local-storage -r ignore-styles -r jsdom-global/register -r dotenv/config --compilers js:babel-register",
-    "mocha-all": "mocha ./app/components/tests/*.js -r mock-local-storage -r ignore-styles -r jsdom-global/register -r dotenv/config --compilers js:babel-register --recursive",
-    "mocha-watch": "mocha -w ./app/components/*/tests -r dotenv/config -r mock-local-storage --compilers js:babel-register -r jsdom-global/register -r dotenv/config -r ignore-styles -r isomorphic-fetch",
-    "flow": "flow"
+    "test": "yarn run flow"
   },
   "dependencies": {
     "aws-sdk": "^2.92.0",
@@ -40,7 +33,7 @@
     "graphql-type-factory": "^0.1.0",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4",
-    "node-fetch": "^1.7.1",
+    "lodash.get": "^4.4.2",
     "node-ses": "^2.0.5",
     "react": "^15.6.1",
     "react-apollo": "^1.4.7",

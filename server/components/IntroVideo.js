@@ -30,20 +30,16 @@ const styles = {
     top: 0,
     bottom: 0,
     zIndex: 1
-  },
-  logo: {
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    bottom: 0,
-    right: 0,
-    zIndex: 3,
-    margin: 'auto',
-    border: 'none'
   }
 };
 
-const IntroVideo = ({ autoplay = true, loop = true, src, sources = [], logo }:IntroVideoProps) => {
+const IntroVideo = ({
+  autoplay = true,
+  loop = true,
+  src,
+  sources = [],
+  heading
+}:IntroVideoProps) => {
   return (
     <div className="video-container" style={styles.container}>
       <video
@@ -56,7 +52,9 @@ const IntroVideo = ({ autoplay = true, loop = true, src, sources = [], logo }:In
         {sources.map(({type, src}) => <source style={styles.source} type={type} src={src} />)}
       </video>
       <div className="video-overlay" style={styles.overlay} />
-      <img className="video-logo" style={styles.logo} src={logo} alt="" />
+      <div className="video-cta">
+        <h1 className="video-cta-heading">{}</h1>
+      </div>
     </div>
   );
 };

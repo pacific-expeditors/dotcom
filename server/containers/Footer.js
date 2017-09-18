@@ -1,7 +1,7 @@
 /* @flow */
 import React, { Component } from 'react';
 import { graphql, gql } from 'react-apollo';
-import { get } from 'lodash';
+import get from 'lodash.get';
 import Footer from '../components/Footer';
 
 class FooterContainer extends Component {
@@ -25,7 +25,6 @@ export default graphql(gql`
   query Footer($id: ID!) {
     footer(id:$id) {
       id
-      logo
       copyright
     }
   }

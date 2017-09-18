@@ -14,14 +14,6 @@
   -webkit-appearance: none;
 }
 
-@font-face {
-  font-family: 'Gotham Medium';
-  src: url('gotham_medium_regular-webfont.woff2') format('woff2'),
-       url('gotham_medium_regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 html {
   position: relative;
   min-height: 100%;

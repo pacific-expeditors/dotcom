@@ -5,7 +5,7 @@ const cfGraphql = require('cf-graphql');
 const getSchema = require(`./${path}/schema/index.js`);
 const startServer = require(`./${path}/utils/start-server`);
 
-if (process.env.OFFLINE) {
+if (process.env.OFFLINE === 'true') {
   startServer();
 } else {
   const client = cfGraphql.createClient({

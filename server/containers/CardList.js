@@ -1,7 +1,7 @@
 /* @flow */
 import React, { Component } from 'react';
 import { gql, graphql } from 'react-apollo';
-import { get } from 'lodash';
+import get from 'lodash.get';
 import Cards from '../components/Cards';
 
 class CardListContainer extends Component {

@@ -6,7 +6,6 @@
 * [Configuration](#configuration)
 * [Installation](#installation)
 * [Contributing](/CONTRIBUTING.md)
-* [Running Tests](#running-tests)
 * [Linting and Type Checking](#linting-and-type-checking)
 * [Building From Source](#building-from-source)
 * [Versioning](#versioning)
@@ -40,18 +39,7 @@ yarn install
 
 ## Running Tests
 
-Run:
-
-```
-yarn test
-```
-
-Unit and integration tests are created with mocha, chai, and enzyme.
-After creating a test, run the test by changing the line:
-
-```
-mocha -r mock-local-storage ./{MyTestFile}.js --no-timeouts --compilers js:babel-register --require ignore-styles
-```
+There are currently no tests in place, because most of the code does not require state management.
 
 ## Linting and Type Checking
 
@@ -114,7 +102,7 @@ git pull
 to update your local repo. Then once master is up to date create a new branch by using.
 
 ```
-git co -b my_branch_name
+git checkout -b my_branch_name
 ```
 
 As you work commit your code and then push your branch to GitHub and label then as review ready.

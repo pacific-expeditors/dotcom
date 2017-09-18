@@ -1,18 +1,19 @@
 /* @flow */
 import React, { Component } from 'react';
-import { get } from 'lodash';
+import type { OperationComponent } from 'react-apollo';
+import get from 'lodash.get';
 import { graphql, gql } from 'react-apollo';
 import { existsSync } from 'fs';
 
 type Props = {
-  data: []
+  data: OperationComponent,
+  refetch: boolean
 };
 
 const typekit = 'try{Typekit.load({ async: true });}catch(e){}';
 
 const styles = {
-  page: {
-  }
+  page: {}
 }
 
 class Page extends Component {
@@ -50,7 +51,6 @@ class Page extends Component {
           <link rel="apple-touch-icon-precomposed" sizes="120x120" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=120" />
           <link rel="apple-touch-icon-precomposed" sizes="152x152" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=152" />
 
-          <script src="https://use.typekit.net/rnz3htj.js"></script>
           <script>{typekit}</script>
 
           <base href="/" />
@@ -58,18 +58,21 @@ class Page extends Component {
         <body>
           <div className="page" style={styles.page}>
             {sections.map(section => {
-              const path = `${__dirname}/${section.__typename}.js`;
-              if (!existsSync(path)) {
-                return;
-              }
-
-              const Section = require(path).default;
-              return (
-                <Section
-                  refetch={this.props.refetch}
-                  key={section.sys.id}
-                  id={section.sys.id} />
-              );
+              return (<div>{section.__typename}</div>)
+              // if (section.__typename !== 'Header') return;
+              //
+              // const path = `${__dirname}/${section.__typename}.js`;
+              // if (!existsSync(path)) {
+              //   return;
+              // }
+              //
+              // const Section = require(path).default;
+              // return (
+              //   <Section
+              //     refetch={this.props.refetch}
+              //     key={section.sys.id}
+              //     id={section.sys.id} />
+              // );
             })}
           </div>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
