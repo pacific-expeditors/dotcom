@@ -25,18 +25,6 @@ export default graphql(gql`
   query Contact($id: ID!) {
     contact(id:$id) {
       id
-      addresses {
-        ... on Address {
-          id
-          name
-          streetName
-          streetName2
-          city
-          state
-          zip
-          phoneNumber
-        }
-      }
     }
   }
 `, {

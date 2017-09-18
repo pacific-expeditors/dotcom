@@ -2,11 +2,10 @@
 import React from 'react';
 
 type FooterProps = {
-  title: string,
   copyright: string
 };
 
-const Footer = ({logo, title, footerLinks = [], copyright}:FooterProps) => {
+const Footer = ({copyright}:FooterProps) => {
   return (
     <footer className="footer">
       <span className="copyright">

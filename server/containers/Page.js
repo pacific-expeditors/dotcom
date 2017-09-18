@@ -1,16 +1,14 @@
 /* @flow */
 import React, { Component } from 'react';
-import type { OperationComponent } from 'react-apollo';
 import get from 'lodash.get';
 import { graphql, gql } from 'react-apollo';
 import { existsSync } from 'fs';
+import CardsList from '../components/CardsList';
 
 type Props = {
-  data: OperationComponent,
+  data: [],
   refetch: boolean
 };
-
-const typekit = 'try{Typekit.load({ async: true });}catch(e){}';
 
 const styles = {
   page: {}
@@ -42,7 +40,8 @@ class Page extends Component {
           <title>{title}</title>
 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
-          <link rel="stylesheet" type="text/css" href="/static/components.min.css" />
+          <link rel="stylesheet" type="text/css" href="/static/components.css" />
+          <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
 
           <link rel="shortcut icon" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=16" />
 
@@ -51,14 +50,11 @@ class Page extends Component {
           <link rel="apple-touch-icon-precomposed" sizes="120x120" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=120" />
           <link rel="apple-touch-icon-precomposed" sizes="152x152" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=152" />
 
-          <script>{typekit}</script>
-
           <base href="/" />
         </head>
         <body>
           <div className="page" style={styles.page}>
-            {sections.map(section => {
-              return (<div>{section.__typename}</div>)
+            {/*sections.map(section => {
               // if (section.__typename !== 'Header') return;
               //
               // const path = `${__dirname}/${section.__typename}.js`;
@@ -73,7 +69,7 @@ class Page extends Component {
               //     key={section.sys.id}
               //     id={section.sys.id} />
               // );
-            })}
+            })*/}
           </div>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>

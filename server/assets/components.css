@@ -1,16 +1,16 @@
 /*================== BASE STYLES *==================*/
 *::-webkit-media-controls-panel {
-  display: none!important;
+  display: none !important;
   -webkit-appearance: none;
 }
 
 *::--webkit-media-controls-play-button {
-  display: none!important;
+  display: none !important;
   -webkit-appearance: none;
 }
 
 *::-webkit-media-controls-start-playback-button {
-  display: none!important;
+  display: none !important;
   -webkit-appearance: none;
 }
 
@@ -20,29 +20,13 @@ html {
 }
 
 body {
-  font: normal 16px/1.5 "Europa", sans-serif;
+  font: normal 16px/1.5 "Montserrat", sans-serif;
   color: #222;
   margin-bottom: 116px;
 }
 
 /*================== HEADINGS *==================*/
-.h2 {
-  text-align: center;
-  font-family: Europa, sans-serif;
-  font-size: 36px;
-  font-weight: normal;
-  text-transform: uppercase;
-  color: #4F4F4F;
-  margin: 12px 0;
-}
-.h3 {
-  font-family: Europa, sans-serif;
-  font-size: 24px;
-  font-weight: normal;
-  text-transform: uppercase;
-  color: #4F4F4F;
-  margin: 12px 0;
-}
+
 
 /*================== FORMS *==================*/
 .textfield, .select, .textarea {
@@ -57,18 +41,29 @@ body {
   width: 100%;
 }
 
+/*================== BUTTONS *==================*/
 .button {
-  background-color: #008DDB;
-  color: #fff;
-  border: none;
-  padding: 7px 12px;
-  text-transform: uppercase;
   font-size: 16px;
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 3px;
+  padding: 12px 25px;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.full-width {
   display: block;
-  cursor: pointer;
+}
+
+.button.primary {
+  background-color: #0f4c61;
+  color: #FFF;
+}
+
+.button.secondary {
+  background-color: #ebebeb;
+  color: #0f4c61;
 }
 
 /*================== HEADER *==================*/
@@ -104,25 +99,12 @@ body {
   display: none;
 }
 
-.mobile-menu-link {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 3;
-}
-
 @media (min-width: 1200px) {
   .header-container {
     background-color: transparent;
   }
   .header {
     display: flex;
-  }
-  .header-nav-left, .header-nav-right {
-    display: block;
-  }
-  .mobile-menu-link {
-    display: none;
   }
 }
 
@@ -168,11 +150,8 @@ body {
 
 .card {
   margin: 20px;
-  overflow: hidden;
-  text-decoration: none;
   position: relative;
   flex: 1 1 auto;
-  height: 242px;
 }
 
 @media (min-width: 768px) {
@@ -246,7 +225,7 @@ body {
 
 /*================== FOOTER *==================*/
 .footer {
-  background-color: #008DDB;
+  background-color: #ebebeb;
   padding: 20px 0;
   margin: 20px 0 0;
   position: absolute;
@@ -255,48 +234,10 @@ body {
   bottom: 0;
 }
 
-.footer-row {
-  width: 100%;
-  display: flex;
-  margin: 5px;
-  flex-direction: column;
-}
-
-@media (min-width: 768px) {
-  .footer-row {
-    width: 100%;
-    margin: 5px 20px;
-    flex-direction: row;
-  }
-}
-
-@media (min-width: 1200px) {
-  .footer-row {
-    width: 1170px;
-    margin: 10px auto;
-  }
-}
-
-.footer-logo {
-  flex: 1;
-}
-
-.footer-logo-img {
-  display: block;
-  margin: 0 auto;
-  height: 28px;
-}
-
-.footer-links {
-  flex: 1;
-}
-
 .copyright {
-  font-size: 12px;
-  text-align: center;
-  color: #fff;
+  font-size: 16px;
+  color: #999;
   display: block;
-  width: 100%;
 }
 
 /*================== VIDEO *==================*/
@@ -305,13 +246,7 @@ body {
   margin-left: -50%;
   margin-bottom: -6px;
 }
-.video-logo {
-  height: 10%;
-}
 @media (min-width: 1200px) {
-  .video-logo {
-    height: 20%;
-  }
   .video {
     width: 100%;
     height: auto;
