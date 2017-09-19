@@ -1,12 +1,13 @@
 /* @flow */
 import React from 'react';
+import Button from './Button';
 
 const Contact = () => {
   return (
     <div className="contact">
-      <div className="form">
-        <form id="form">
-          <h2 className="h2">Contact Us</h2>
+      <div className="form-container">
+        <form id="form" className="form">
+          <h2 className="contact-heading">Contact Us</h2>
           <div id="msg" className="msg"></div>
           <input
             className="textfield"

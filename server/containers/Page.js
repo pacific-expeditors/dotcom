@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 import get from 'lodash.get';
 import { graphql, gql } from 'react-apollo';
 import { existsSync } from 'fs';
-import CardsList from '../components/CardsList';
+import ContactForm from '../components/Contact';
+import Header from '../components/Header';
+import IntroVideo from '../components/IntroVideo';
+import Grid from '../components/Grid';
+import Cards from '../components/Cards';
+import CardWithBackground from '../components/CardWithBackground';
 
 type Props = {
   data: [],
@@ -41,7 +46,7 @@ class Page extends Component {
 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
           <link rel="stylesheet" type="text/css" href="/static/components.css" />
-          <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,900" rel="stylesheet" />
 
           <link rel="shortcut icon" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=16" />
 
@@ -54,6 +59,46 @@ class Page extends Component {
         </head>
         <body>
           <div className="page" style={styles.page}>
+            <Header logo="https://images.contentful.com/i9tcznuksxng/3a1uukIFrGSemquqI6MuOI/1a216d5b4ae4824cd9ba6261042fb5ad/PacExLogoDark.svg" />
+            <IntroVideo
+              src="//videos.contentful.com/i9tcznuksxng/1xGfj5KOqsugAYikaQQgqO/2ec3c5f4fbadfb9e5cf420523a82e4b0/out.mp4"
+              heading="Get The Confidence You Deserve"
+              subHeading="Secure the most accomplished cannabis distributor possible."
+              cta="Learn More"
+              link='#contact'
+              sources={[
+              {
+                src: "//videos.contentful.com/i9tcznuksxng/1xGfj5KOqsugAYikaQQgqO/2ec3c5f4fbadfb9e5cf420523a82e4b0/out.mp4",
+                type: "video/mp4"
+              }
+            ]} />
+          <Grid
+            heading='It Begins With An Unbreakable Alliance'
+            content={`
+            Your business is your passion. It consumes your
+attention and creative spirit; that is why it succeeds. For a business to grow, it must have capable teams, partnerships built on trust, and a shared vision, not just another vendor. Pacific Expeditors is our passion. We bring proficiency, experience, and concern for every detail to the distributor function.
+
+We’re Pacific Expeditors. Count on us for peace of mind.`}
+            linkText='Connect'
+            link='#contact'
+            align="end"
+            subText='We’re Pacific Expeditors. Count on us for peace of mind.'
+            image='//images.contentful.com/i9tcznuksxng/6N29WmTHVuOCkMsaImasWI/e9834c8610c9c96135aac8d368241a0b/iStock-578578754.jpg?w=512' />
+
+          <Grid
+            heading='It Begins With An Unbreakable Alliance'
+            content={`
+            Your business is your passion. It consumes your
+attention and creative spirit; that is why it succeeds. For a business to grow, it must have capable teams, partnerships built on trust, and a shared vision, not just another vendor. Pacific Expeditors is our passion. We bring proficiency, experience, and concern for every detail to the distributor function.
+
+We’re Pacific Expeditors. Count on us for peace of mind.`}
+            linkText='Connect'
+            link='#contact'
+            align="end"
+            subText='We’re Pacific Expeditors. Count on us for peace of mind.'
+            image='//images.contentful.com/i9tcznuksxng/6N29WmTHVuOCkMsaImasWI/e9834c8610c9c96135aac8d368241a0b/iStock-578578754.jpg?w=512' />
+
+          <CardWithBackground heading="Our Team" />
             {/*sections.map(section => {
               // if (section.__typename !== 'Header') return;
               //
@@ -73,14 +118,14 @@ class Page extends Component {
           </div>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
-          <script src={`/static/global.min.js`}></script>
         </body>
       </html>
     );
   }
 }
 
-export default graphql(gql`
+export default Page;
+/*export default graphql(gql`
   query Page($slug: String!) {
     pages(q:$slug) {
       id
@@ -96,4 +141,4 @@ export default graphql(gql`
   }
 `, {
   options: ({slug}) => ({ variables: { slug: `fields.id=${slug}` } })
-})(Page);
+})(Page);*/

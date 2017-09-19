@@ -19,25 +19,25 @@ type CardsProps = {
 const Cards = ({cards = []}:CardsProps) => {
   return (
     <div className="cards">
-      {cards.map(({id, heading, subHeading, image, srcset}) => (
-        <div key={id} className="card">
+      {cards.map((card) => (
+        <div key={card.id} className="card">
           <div className="card-image-container">
-            <img className="card-image" src={image} srcset={srcset} alt={heading} />
-            {overlayImage && (
+            <img className="card-image" src={card.image} srcset={card.srcset} alt={card.heading} />
+            {card.overlayImage && (
               <div className="card-overlay">
-                <h3 className="card-heading">{heading}</h3>
-                <h4 className="card-sub-heading">{subHeading}</h4>
+                <h3 className="card-heading">{card.heading}</h3>
+                <h4 className="card-sub-heading">{card.subHeading}</h4>
               </div>
             )}
           </div>
           <div className="card-content">
-            {!overlayImage && (
-              <h3 className="card-heading">{heading}</h3>
+            {!card.overlayImage && (
+              <h3 className="card-heading">{card.heading}</h3>
             )}
             <div className="card-text">
-              {content}
+              {card.content}
             </div>
-            {link && <Button style="primary">{linkText}</Button>}
+            {card.link && <Button style="primary">{card.linkText}</Button>}
           </div>
         </div>
       ))}

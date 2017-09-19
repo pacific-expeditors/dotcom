@@ -10,32 +10,31 @@ type HeaderProps = {
 const styles = {
   header: {
     padding: '20px',
-    justifyContent: 'space-between',
+    display: 'flex',
     alignItems: 'center',
-    position: 'fixed',
-    left: 0,
-    right: 0,
-    top: 0,
-    zIndex: 2
+    justifyContent: 'center'
+  },
+  logoLink: {
+    display: 'block'
   },
   logo: {
-    height: '28px',
-    opacity: 0
-  },
-  mobileLogo: {
-    height: '28px'
+    display: 'block',
+    height: '32px'
   }
 };
 
 const Header = (props:HeaderProps) => {
   return (
-    <div className="header-container">
-      <header className="header" style={styles.header}>
-        <a href="/">
-          <img className="logo" style={styles.logo} src={logo} setset="" alt={title} />
-        </a>
-      </header>
-    </div>
+    <header className="header" style={styles.header}>
+      <a href="/" style={styles.logoLink} className="logo-link">
+        <img
+          className="logo"
+          style={styles.logo}
+          src={props.logo}
+          setset={props.srcset}
+          alt={props.title} />
+      </a>
+    </header>
   );
 };
 
