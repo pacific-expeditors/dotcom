@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { graphql, gql } from 'react-apollo';
 import get from 'lodash.get';
 import Header from '../components/Header';
-// import SubPageHeader from '../components/SubPageHeader';
 
 class HeaderContainer extends Component {
   componentWillMount() {
@@ -16,14 +15,9 @@ class HeaderContainer extends Component {
     const { data } = this.props;
     const header = get(data, 'header', {});
 
-    return (<div></div>)
-
-    // return (
-    //   <Header
-    //     logo={header.logo}
-    //     mobileLogo={header.mobileLogo}
-    //     siteTitle={header.siteTitle} />
-    // );
+    return (
+      <Header siteTitle={header.siteTitle} logo={header.logo.url} />
+    );
   }
 }
 
@@ -31,9 +25,12 @@ export default graphql(gql`
   query Header($id: ID!) {
     header(id:$id) {
       id
-      logo
       siteTitle
-      mobileLogo
+      logo {
+        title
+        description
+        url
+      }
     }
   }
 `, {

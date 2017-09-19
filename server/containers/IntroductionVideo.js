@@ -23,9 +23,11 @@ class IntroVideoContainer extends Component {
       <IntroVideo
         autoPlay
         loop
-        sources={sources}
-        logo={introductionVideo.logo}
-        src={introductionVideo.sources[0].url} />
+        heading={introductionVideo.heading}
+        subHeading={introductionVideo.subHeading}
+        cta={introductionVideo.cta}
+        link={introductionVideo.link}
+        sources={sources} />
     );
   }
 }
@@ -34,6 +36,10 @@ export default graphql(gql`
   query IntroVideo($id: ID!) {
     introductionVideo(id:$id) {
       id
+      heading
+      subHeading
+      cta
+      link
       sources {
         url
       }

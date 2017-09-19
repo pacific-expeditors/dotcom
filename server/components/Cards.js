@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react';
+import Button from './Button';
 
 type CardProps = {
   link?: string,
@@ -37,7 +38,7 @@ const Cards = ({cards = []}:CardsProps) => {
             <div className="card-text">
               {card.content}
             </div>
-            {card.link && <Button style="primary">{card.linkText}</Button>}
+            {card.link && <Button link={card.link} style="primary">{card.cta}</Button>}
           </div>
         </div>
       ))}

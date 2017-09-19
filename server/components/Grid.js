@@ -4,7 +4,7 @@ import Button from './Button';
 
 type ColumnProps = {
   link?: string,
-  linkText?: string,
+  cta?: string,
   heading: string,
   content: string,
   image: string,
@@ -15,7 +15,7 @@ type GridProps = {
   columns: [ColumnProps]
 };
 
-const Grid = ({id, heading, content, subText, link, linkText, image, srcset, align = 'normal'}:GridProps) => {
+const Grid = ({id, heading, content, subText, link, cata, image, srcset, align = 'normal'}:GridProps) => {
   return (
     <div className={`grid ${align}`}>
       <div className="col col-content">
@@ -26,7 +26,7 @@ const Grid = ({id, heading, content, subText, link, linkText, image, srcset, ali
         <p className="col-sub-text">
           {subText}
         </p>
-        {link && <Button link={link} style="primary">{linkText}</Button>}
+        {link && <Button link={link} style="primary">{cta}</Button>}
       </div>
       <div className="col col-image-container">
         <img className="col-image" src={image} srcset={srcset} alt={heading} />

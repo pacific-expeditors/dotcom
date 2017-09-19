@@ -15,14 +15,15 @@ type CardProps = {
 
 type CardsProps = {
   heading: string,
+  background: string,
   cards: [CardProps]
 };
 
-const CardsWithBackground = ({heading, cards = []}:CardsProps) => {
+const CardsWithBackground = ({heading, background, cards = []}:CardsProps) => {
   return (
-    <div className="cards-with-bg">
-      <div className="card-with-bg-heading">
-        <h3 className="card-with-bg-heading">{heading}</h3>
+    <div className="cards-with-bg" style={{background: `url(${background}?h=640)`}}>
+      <div className="cards-with-bg-container">
+        <h3 className="cards-with-bg-heading">{heading}</h3>
       </div>
       <Cards cards={cards} />
     </div>

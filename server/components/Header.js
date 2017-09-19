@@ -9,7 +9,7 @@ type HeaderProps = {
 
 const styles = {
   header: {
-    padding: '20px',
+    padding: '24px 0',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
@@ -19,7 +19,7 @@ const styles = {
   },
   logo: {
     display: 'block',
-    height: '32px'
+    height: '52px'
   }
 };
 
@@ -32,7 +32,7 @@ const Header = (props:HeaderProps) => {
           style={styles.logo}
           src={props.logo}
           setset={props.srcset}
-          alt={props.title} />
+          alt={props.siteTitle} />
       </a>
     </header>
   );

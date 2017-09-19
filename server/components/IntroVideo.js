@@ -43,7 +43,7 @@ const styles = {
     width: '400px'
   },
   heading: {
-    fontSize: '40px',
+    fontSize: '48px',
     margin: 0,
     fontWeight: 500,
     letterSpacing: '1.5px',
@@ -53,12 +53,12 @@ const styles = {
   },
   hr: {
     background: '#fff',
-    width: '100px',
-    height: '3px',
+    width: '132px',
+    height: '4px',
     margin: '20px 0'
   },
   subHeading: {
-    fontSize: '16px',
+    fontSize: '22px',
     margin: 0,
     lineHeight: 1.5,
     color: '#fff',
@@ -84,13 +84,13 @@ const IntroVideo = ({
         autoPlay
         loop={loop}
         src={src}>
-        {sources.map(({type, src}) => <source key={src} style={styles.source} type={type} src={src} />)}
+        {sources.map(({type = "video/mp4", src}) => <source key={src} style={styles.source} type={type} src={src} />)}
       </video>
       <div className="video-overlay" style={styles.overlay}>
         <div className="video-overlay-container" style={styles.overlayContainer}>
           <div style={styles.cta} className="video-cta">
             <h1 style={styles.heading} className="video-cta-heading">{heading}</h1>
-            <div style={styles.hr}></div>
+            <div style={styles.hr} className="video-hr"></div>
             <div style={styles.subHeading} className="video-cta-subheading">{subHeading}</div>
             <Button link="#" style="secondary">{cta}</Button>
           </div>
