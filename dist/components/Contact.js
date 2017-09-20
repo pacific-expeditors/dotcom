@@ -28,6 +28,7 @@ var Contact = function Contact() {
         _react2.default.createElement(
           'form',
           { id: 'form', className: 'form' },
+          _react2.default.createElement('a', { name: 'contact' }),
           _react2.default.createElement(
             'h2',
             { className: 'form-heading' },

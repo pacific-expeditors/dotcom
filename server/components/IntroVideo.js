@@ -73,7 +73,8 @@ const IntroVideo = ({
   sources = [],
   heading,
   subHeading,
-  cta
+  cta,
+  link
 }:IntroVideoProps) => {
   return (
     <div className="video-container" style={styles.container}>
@@ -92,7 +93,7 @@ const IntroVideo = ({
             <h1 style={styles.heading} className="video-cta-heading">{heading}</h1>
             <div style={styles.hr} className="video-hr"></div>
             <div style={styles.subHeading} className="video-cta-subheading">{subHeading}</div>
-            <Button link="#" style="secondary">{cta}</Button>
+            <Button link={link} style="secondary">{cta}</Button>
           </div>
         </div>
       </div>

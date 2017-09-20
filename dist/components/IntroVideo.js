@@ -77,7 +77,8 @@ var IntroVideo = function IntroVideo(_ref) {
       sources = _ref$sources === undefined ? [] : _ref$sources,
       heading = _ref.heading,
       subHeading = _ref.subHeading,
-      cta = _ref.cta;
+      cta = _ref.cta,
+      link = _ref.link;
 
   return _react2.default.createElement(
     'div',
@@ -120,7 +121,7 @@ var IntroVideo = function IntroVideo(_ref) {
           ),
           _react2.default.createElement(
             _Button2.default,
-            { link: '#', style: 'secondary' },
+            { link: link, style: 'secondary' },
             cta
           )
         )

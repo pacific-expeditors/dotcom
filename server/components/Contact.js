@@ -9,6 +9,7 @@ const Contact = () => {
       <div className="contact">
         <div className="form-container">
           <form id="form" className="form">
+            <a name="contact"></a>
             <h2 className="form-heading">Contact Us</h2>
             <div id="msg" className="msg"></div>
 
