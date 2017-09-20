@@ -107,7 +107,8 @@ var Page = function (_Component) {
             })
           ),
           _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js' }),
-          _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js' })
+          _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js' }),
+          _react2.default.createElement('script', { src: '/static/global.min.js' })
         )
       );
     }
