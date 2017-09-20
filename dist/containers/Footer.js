@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query Footer($id: ID!) {\n    footer(id:$id) {\n      id\n      logo\n      copyright\n    }\n  }\n'], ['\n  query Footer($id: ID!) {\n    footer(id:$id) {\n      id\n      logo\n      copyright\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  query Footer($id: ID!) {\n    footer(id:$id) {\n      id\n      copyright\n    }\n  }\n'], ['\n  query Footer($id: ID!) {\n    footer(id:$id) {\n      id\n      copyright\n    }\n  }\n']);
 
 var _react = require('react');
 
@@ -14,7 +14,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactApollo = require('react-apollo');
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.get');
+
+var _lodash2 = _interopRequireDefault(_lodash);
 
 var _Footer = require('../components/Footer');
 
@@ -51,7 +53,7 @@ var FooterContainer = function (_Component) {
     value: function render() {
       var data = this.props.data;
 
-      var footer = (0, _lodash.get)(data, 'footer', {});
+      var footer = (0, _lodash2.default)(data, 'footer', {});
 
       return _react2.default.createElement(_Footer2.default, { logo: footer.logo, title: footer.copyright, copyright: footer.copyright });
     }

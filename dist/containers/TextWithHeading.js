@@ -14,7 +14,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactApollo = require('react-apollo');
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.get');
+
+var _lodash2 = _interopRequireDefault(_lodash);
 
 var _TextWithHeading = require('../components/TextWithHeading');
 
@@ -51,7 +53,7 @@ var TextWithHeadingContainer = function (_Component) {
     value: function render() {
       var data = this.props.data;
 
-      var textWithHeading = (0, _lodash.get)(data, 'textWithHeading', {});
+      var textWithHeading = (0, _lodash2.default)(data, 'textWithHeading', {});
 
       return _react2.default.createElement(_TextWithHeading2.default, { content: textWithHeading.content, title: textWithHeading.heading });
     }

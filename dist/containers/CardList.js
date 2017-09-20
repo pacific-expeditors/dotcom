@@ -16,7 +16,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactApollo = require('react-apollo');
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.get');
+
+var _lodash2 = _interopRequireDefault(_lodash);
 
 var _Cards = require('../components/Cards');
 
@@ -53,7 +55,7 @@ var CardListContainer = function (_Component) {
     value: function render() {
       var data = this.props.data;
 
-      var cardList = (0, _lodash.get)(data, 'cardList.cards', {});
+      var cardList = (0, _lodash2.default)(data, 'cardList.cards', {});
       var cards = cardList.map(function (card) {
         return _extends({}, card, {
           image: card.image.url + '?h=512&q=80'

@@ -45,7 +45,7 @@ var startServer = function startServer(client, schema) {
   app.use((0, _cors2.default)());
   app.use(_bodyParser2.default.json());
 
-  if (!process.env.OFFLINE) {
+  if (process.env.OFFLINE === 'false') {
     var ui = _cfGraphql2.default.helpers.graphiql({ title: 'GraphQL Server' });
     app.get('/graphiql', function (_, res) {
       return res.set(ui.headers).status(ui.statusCode).end(ui.body);

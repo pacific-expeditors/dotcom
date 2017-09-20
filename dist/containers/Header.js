@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      logo\n      mobileLogo\n      navigationLinks {\n        href\n        text\n        alignment\n        subNavigationLinks {\n          ... on NavigationLinks {\n            href\n            text\n          }\n        }\n      }\n    }\n  }\n'], ['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      logo\n      mobileLogo\n      navigationLinks {\n        href\n        text\n        alignment\n        subNavigationLinks {\n          ... on NavigationLinks {\n            href\n            text\n          }\n        }\n      }\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      siteTitle\n      logo {\n        title\n        description\n        url\n      }\n    }\n  }\n'], ['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      siteTitle\n      logo {\n        title\n        description\n        url\n      }\n    }\n  }\n']);
 
 var _react = require('react');
 
@@ -14,15 +14,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactApollo = require('react-apollo');
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.get');
+
+var _lodash2 = _interopRequireDefault(_lodash);
 
 var _Header = require('../components/Header');
 
 var _Header2 = _interopRequireDefault(_Header);
-
-var _SubPageHeader = require('../components/SubPageHeader');
-
-var _SubPageHeader2 = _interopRequireDefault(_SubPageHeader);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55,21 +53,9 @@ var HeaderContainer = function (_Component) {
     value: function render() {
       var data = this.props.data;
 
-      var header = (0, _lodash.get)(data, 'header', {});
+      var header = (0, _lodash2.default)(data, 'header', {});
 
-      if (header.id === 'sub-page-header') {
-        return _react2.default.createElement(_SubPageHeader2.default, {
-          logo: header.logo,
-          mobileLogo: header.mobileLogo,
-          navLinks: header.navigationLinks,
-          title: header.title });
-      }
-
-      return _react2.default.createElement(_Header2.default, {
-        logo: header.logo,
-        mobileLogo: header.mobileLogo,
-        navLinks: header.navigationLinks,
-        title: header.title });
+      return _react2.default.createElement(_Header2.default, { siteTitle: header.siteTitle, logo: header.logo.url });
     }
   }]);
 

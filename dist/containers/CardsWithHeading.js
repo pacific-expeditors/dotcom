@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query IntroVideo($id: ID!) {\n    introductionVideo(id:$id) {\n      id\n      heading\n      subHeading\n      cta\n      link\n      sources {\n        url\n      }\n    }\n  }\n'], ['\n  query IntroVideo($id: ID!) {\n    introductionVideo(id:$id) {\n      id\n      heading\n      subHeading\n      cta\n      link\n      sources {\n        url\n      }\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  query CardsWithHeading($id: ID!) {\n    cardsWithHeading(id:$id) {\n      id\n      heading\n      cards {\n        id\n        cards {\n          id\n          heading\n          link\n          cta\n          content\n          image {\n            url\n          }\n        }\n      }\n    }\n  }\n'], ['\n  query CardsWithHeading($id: ID!) {\n    cardsWithHeading(id:$id) {\n      id\n      heading\n      cards {\n        id\n        cards {\n          id\n          heading\n          link\n          cta\n          content\n          image {\n            url\n          }\n        }\n      }\n    }\n  }\n']);
 
 var _react = require('react');
 
@@ -18,9 +18,9 @@ var _lodash = require('lodash.get');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _IntroVideo = require('../components/IntroVideo');
+var _CardsWithHeading = require('../components/CardsWithHeading');
 
-var _IntroVideo2 = _interopRequireDefault(_IntroVideo);
+var _CardsWithHeading2 = _interopRequireDefault(_CardsWithHeading);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32,16 +32,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var IntroVideoContainer = function (_Component) {
-  _inherits(IntroVideoContainer, _Component);
+var CardsWithHeadingContainer = function (_Component) {
+  _inherits(CardsWithHeadingContainer, _Component);
 
-  function IntroVideoContainer() {
-    _classCallCheck(this, IntroVideoContainer);
+  function CardsWithHeadingContainer() {
+    _classCallCheck(this, CardsWithHeadingContainer);
 
-    return _possibleConstructorReturn(this, (IntroVideoContainer.__proto__ || Object.getPrototypeOf(IntroVideoContainer)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (CardsWithHeadingContainer.__proto__ || Object.getPrototypeOf(CardsWithHeadingContainer)).apply(this, arguments));
   }
 
-  _createClass(IntroVideoContainer, [{
+  _createClass(CardsWithHeadingContainer, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
       if (this.props.refetch) {
@@ -53,26 +53,13 @@ var IntroVideoContainer = function (_Component) {
     value: function render() {
       var data = this.props.data;
 
-      var introductionVideo = (0, _lodash2.default)(data, 'introductionVideo', { sources: [] });
-      var sources = introductionVideo.sources.map(function (source) {
-        return {
-          type: "video/mp4",
-          src: source.url
-        };
-      });
+      var cardsWithHeading = (0, _lodash2.default)(data, 'cardsWithHeading', {});
 
-      return _react2.default.createElement(_IntroVideo2.default, {
-        autoPlay: true,
-        loop: true,
-        heading: introductionVideo.heading,
-        subHeading: introductionVideo.subHeading,
-        cta: introductionVideo.cta,
-        link: introductionVideo.link,
-        sources: sources });
+      return _react2.default.createElement(_CardsWithHeading2.default, cardsWithHeading);
     }
   }]);
 
-  return IntroVideoContainer;
+  return CardsWithHeadingContainer;
 }(_react.Component);
 
 exports.default = (0, _reactApollo.graphql)((0, _reactApollo.gql)(_templateObject), {
@@ -83,4 +70,4 @@ exports.default = (0, _reactApollo.graphql)((0, _reactApollo.gql)(_templateObjec
       variables: { id: id }
     };
   }
-})(IntroVideoContainer);
+})(CardsWithHeadingContainer);

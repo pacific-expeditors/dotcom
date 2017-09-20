@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query List($id: ID!) {\n    list(id:$id) {\n      id\n      leftListItems\n      rightListItems\n    }\n  }\n'], ['\n  query List($id: ID!) {\n    list(id:$id) {\n      id\n      leftListItems\n      rightListItems\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  query CardsWithBackground($id: ID!) {\n    cardsWithBackground(id:$id) {\n      id\n      heading\n      image {\n        url\n      }\n      cards {\n        id\n        cards {\n          heading\n          subHeading\n          link\n          overlayImage\n          content\n          image {\n            title\n            description\n            url\n          }\n        }\n      }\n    }\n  }\n'], ['\n  query CardsWithBackground($id: ID!) {\n    cardsWithBackground(id:$id) {\n      id\n      heading\n      image {\n        url\n      }\n      cards {\n        id\n        cards {\n          heading\n          subHeading\n          link\n          overlayImage\n          content\n          image {\n            title\n            description\n            url\n          }\n        }\n      }\n    }\n  }\n']);
 
 var _react = require('react');
 
@@ -14,11 +14,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactApollo = require('react-apollo');
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.get');
 
-var _List = require('../components/List');
+var _lodash2 = _interopRequireDefault(_lodash);
 
-var _List2 = _interopRequireDefault(_List);
+var _CardsWithBackground = require('../components/CardsWithBackground');
+
+var _CardsWithBackground2 = _interopRequireDefault(_CardsWithBackground);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30,16 +32,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ListContainer = function (_Component) {
-  _inherits(ListContainer, _Component);
+var CardsWithBackgroundContainer = function (_Component) {
+  _inherits(CardsWithBackgroundContainer, _Component);
 
-  function ListContainer() {
-    _classCallCheck(this, ListContainer);
+  function CardsWithBackgroundContainer() {
+    _classCallCheck(this, CardsWithBackgroundContainer);
 
-    return _possibleConstructorReturn(this, (ListContainer.__proto__ || Object.getPrototypeOf(ListContainer)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (CardsWithBackgroundContainer.__proto__ || Object.getPrototypeOf(CardsWithBackgroundContainer)).apply(this, arguments));
   }
 
-  _createClass(ListContainer, [{
+  _createClass(CardsWithBackgroundContainer, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
       if (this.props.refetch) {
@@ -51,17 +53,13 @@ var ListContainer = function (_Component) {
     value: function render() {
       var data = this.props.data;
 
-      var list = (0, _lodash.get)(data, 'list', {});
-      var leftListItems = list.leftListItems.split(/\n- /);
-      leftListItems.shift();
-      var rightListItems = list.rightListItems.split(/\n- /);
-      rightListItems.shift();
+      var cardsWithBackground = (0, _lodash2.default)(data, 'cardsWithBackground', {});
 
-      return _react2.default.createElement(_List2.default, { leftItems: leftListItems, rightItems: rightListItems });
+      return _react2.default.createElement(_CardsWithBackground2.default, cardsWithBackground);
     }
   }]);
 
-  return ListContainer;
+  return CardsWithBackgroundContainer;
 }(_react.Component);
 
 exports.default = (0, _reactApollo.graphql)((0, _reactApollo.gql)(_templateObject), {
@@ -72,4 +70,4 @@ exports.default = (0, _reactApollo.graphql)((0, _reactApollo.gql)(_templateObjec
       variables: { id: id }
     };
   }
-})(ListContainer);
+})(CardsWithBackgroundContainer);

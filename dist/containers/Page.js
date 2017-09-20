@@ -12,7 +12,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.get');
+
+var _lodash2 = _interopRequireDefault(_lodash);
 
 var _reactApollo = require('react-apollo');
 
@@ -27,8 +29,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var typekit = 'try{Typekit.load({ async: true });}catch(e){}';
 
 var styles = {
   page: {}
@@ -57,9 +57,9 @@ var Page = function (_Component) {
 
       var data = this.props.data;
 
-      var title = (0, _lodash.get)(data, 'pages[0].title', '404');
-      var sections = (0, _lodash.get)(data, 'pages[0].sections', [{ __typename: '404', sys: { id: 0 } }]);
-      var description = (0, _lodash.get)(data, 'pages[0].metaDescription', "");
+      var title = (0, _lodash2.default)(data, 'pages[0].title', '404');
+      var sections = (0, _lodash2.default)(data, 'pages[0].sections', [{ __typename: '404', sys: { id: 0 } }]);
+      var description = (0, _lodash2.default)(data, 'pages[0].metaDescription', "");
 
       return _react2.default.createElement(
         'html',
@@ -78,18 +78,13 @@ var Page = function (_Component) {
             title
           ),
           _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css' }),
-          _react2.default.createElement('link', { rel: 'stylesheet', type: 'text/css', href: '/static/components.min.css' }),
+          _react2.default.createElement('link', { rel: 'stylesheet', type: 'text/css', href: '/static/components.css' }),
+          _react2.default.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,900', rel: 'stylesheet' }),
           _react2.default.createElement('link', { rel: 'shortcut icon', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=16' }),
           _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '60x60', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=60' }),
           _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '76x76', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=76' }),
           _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '120x120', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=120' }),
           _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '152x152', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=152' }),
-          _react2.default.createElement('script', { src: 'https://use.typekit.net/rnz3htj.js' }),
-          _react2.default.createElement(
-            'script',
-            null,
-            typekit
-          ),
           _react2.default.createElement('base', { href: '/' })
         ),
         _react2.default.createElement(
@@ -112,8 +107,7 @@ var Page = function (_Component) {
             })
           ),
           _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js' }),
-          _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js' }),
-          _react2.default.createElement('script', { src: '/static/global.min.js' })
+          _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js' })
         )
       );
     }

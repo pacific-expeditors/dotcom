@@ -6,23 +6,21 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query Contact($id: ID!) {\n    contact(id:$id) {\n      id\n      addresses {\n        ... on Address {\n          id\n          name\n          streetName\n          streetName2\n          city\n          state\n          zip\n          phoneNumber\n        }\n      }\n    }\n  }\n'], ['\n  query Contact($id: ID!) {\n    contact(id:$id) {\n      id\n      addresses {\n        ... on Address {\n          id\n          name\n          streetName\n          streetName2\n          city\n          state\n          zip\n          phoneNumber\n        }\n      }\n    }\n  }\n']);
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
 var _reactApollo = require('react-apollo');
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.get');
+
+var _lodash2 = _interopRequireDefault(_lodash);
 
 var _Contact = require('../components/Contact');
 
 var _Contact2 = _interopRequireDefault(_Contact);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -40,32 +38,13 @@ var ContactContainer = function (_Component) {
   }
 
   _createClass(ContactContainer, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      if (this.props.refetch) {
-        this.props.data.refetch();
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var data = this.props.data;
-
-      var addresses = (0, _lodash.get)(data, 'contact.addresses', {});
-
-      return _react2.default.createElement(_Contact2.default, { addresses: addresses });
+      return _react2.default.createElement(_Contact2.default, null);
     }
   }]);
 
   return ContactContainer;
 }(_react.Component);
 
-exports.default = (0, _reactApollo.graphql)((0, _reactApollo.gql)(_templateObject), {
-  options: function options(_ref) {
-    var id = _ref.id;
-
-    return {
-      variables: { id: id }
-    };
-  }
-})(ContactContainer);
+exports.default = ContactContainer;
