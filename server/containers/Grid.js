@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { gql, graphql } from 'react-apollo';
 import get from 'lodash.get';
-import Grids from '../components/Grids';
+import Grid from '../components/Grid';
 
 class GridContainer extends Component {
   componentWillMount() {
@@ -13,10 +13,10 @@ class GridContainer extends Component {
 
   render() {
     const { data } = this.props;
-    const columns = get(data, 'grid.columns', {});
+    const columns = get(data, 'grid', {});
 
     return (
-      <Grids columns={cards} />
+      <Grid {...columns} />
     );
   }
 }
@@ -25,6 +25,15 @@ export default graphql(gql`
   query Grid($id: ID!) {
     grid(id:$id) {
       id
+      heading
+      subText
+      content
+      cta
+      align
+      link
+      image {
+        url
+      }
     }
   }
 `, {

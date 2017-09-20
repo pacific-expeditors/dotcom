@@ -8,9 +8,7 @@ type FooterProps = {
 const Footer = ({copyright}:FooterProps) => {
   return (
     <footer className="footer">
-      <span className="copyright">
-        {copyright}
-      </span>
+      <span className="copyright" dangerouslySetInnerHTML={{__html: copyright}} />
     </footer>
   );
 };

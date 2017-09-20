@@ -3,13 +3,6 @@ import React, { Component } from 'react';
 import get from 'lodash.get';
 import { graphql, gql } from 'react-apollo';
 import { existsSync } from 'fs';
-import Contact from '../components/Contact';
-import Header from '../components/Header';
-import IntroVideo from '../components/IntroVideo';
-import Grid from '../components/Grid';
-import Cards from '../components/Cards';
-import CardWithBackground from '../components/CardWithBackground';
-import Footer from '../components/Footer';
 
 type Props = {
   data: [],

@@ -32,11 +32,16 @@ body {
   border: none;
   margin: 7px 0;
   padding: 7px;
+  display: block;
 }
 
 .textfield, .textarea {
   width: 100%;
   border-radius: 3px;
+}
+
+.textarea {
+  min-height: 200px;
 }
 
 /*================== BUTTONS *==================*/
@@ -80,22 +85,19 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-}
-
-@media (min-width: 768px) {
-  .grid {
-    flex-direction: row;
-  }
-
-  .grid.reverse {
-    flex-direction: row-reverse;
-  }
+  padding: 20px;
 }
 
 @media (min-width: 1200px) {
   .grid {
     width: 1170px;
     margin: 60px auto;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .grid.reverse {
+    flex-direction: row-reverse;
   }
 }
 
@@ -128,12 +130,29 @@ body {
 }
 
 .col-image-container {
-  margin-left: 40px;
+  margin: 20px 0;
   box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+}
+
+@media (min-width: 1200px) {
+  .col-image-container {
+    margin: 0 0 0 40px;
+  }
+
+  .reverse .col-image-container {
+    margin: 0 40px 0 0;
+  }
 }
 
 .col-image {
   display: block;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .col-image {
+    width: auto;
+  }
 }
 
 /*================== CARDS *==================*/
@@ -143,16 +162,11 @@ body {
   flex-direction: column;
 }
 
-@media (min-width: 768px) {
-  .cards {
-    flex-direction: row;
-  }
-}
-
 @media (min-width: 1200px) {
   .cards {
     width: 1170px;
     margin: 20px auto;
+    flex-direction: row;
   }
 }
 
@@ -238,15 +252,32 @@ body {
   padding: 20px;
 }
 
+.card-text {
+  white-space: pre-line;
+  padding-bottom: 12px;
+}
+
 /*================== CARDS WITH BACKGROUND *==================*/
+.cards-with-bg {
+  position: relative;
+}
+
 .cards-with-bg-container {
-  padding: 100px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-size: cover !important;
+  height: 600px;
 }
 
 .cards-with-bg-heading {
   color: #fff;
+  padding: 40px 20px;
   font-size: 42px;
   text-transform: uppercase;
+  position: relative;
+  z-index: 1;
 }
 
 .cards-with-bg-heading:after {
@@ -265,10 +296,33 @@ body {
   }
 }
 
+/*================== CARDS WITH HEADERS *==================*/
+.cards-header {
+  text-align: center;
+  background: transparent;
+  color: #0f4c61;
+  font-size: 42px;
+  text-transform: uppercase;
+}
+.cards-header span:first-child {
+  margin-right: 0;
+}
+
+@media (min-width: 1200px) {
+  .cards-header {
+    background: transparent url(//images.contentful.com/i9tcznuksxng/60Q9wge2JOu2O8MeAaSoau/286b99ed2470f3ec9caad9453af5ecb5/arrows.png) 51% center no-repeat;
+    background-size: contain;
+  }
+
+  .cards-header span:first-child {
+    margin-right: 100px;
+  }
+}
+
 /*================== FOOTER *==================*/
 .footer {
   background-color: #ebebeb;
-  padding: 20px 0;
+  padding: 20px;
   position: absolute;
   left: 0;
   right: 0;
@@ -303,7 +357,7 @@ body {
   text-align: center;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 1200px) {
   .video-overlay-container {
     width: 1170px !important;
   }
@@ -330,9 +384,14 @@ body {
 }
 
 /*================== CONTACT *==================*/
+.contact-wrapper {
+  width: 100%;
+}
+
 .contact {
   background-color: #0f4c61;
   margin-top: -20px;
+  padding: 0 20px 80px;
 }
 
 .contact-top {
@@ -369,6 +428,7 @@ body {
 }
 
 .form {
+  width: 100%;
   display: block;
 }
 

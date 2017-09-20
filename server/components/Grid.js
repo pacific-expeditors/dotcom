@@ -15,7 +15,7 @@ type GridProps = {
   columns: [ColumnProps]
 };
 
-const Grid = ({id, heading, content, subText, link, cata, image, srcset, align = 'normal'}:GridProps) => {
+const Grid = ({id, heading, content, subText, link, cta, image, srcset, align = 'normal'}:GridProps) => {
   return (
     <div className={`grid ${align}`}>
       <div className="col col-content">
@@ -29,7 +29,7 @@ const Grid = ({id, heading, content, subText, link, cata, image, srcset, align =
         {link && <Button link={link} style="primary">{cta}</Button>}
       </div>
       <div className="col col-image-container">
-        <img className="col-image" src={image} srcset={srcset} alt={heading} />
+        <img className="col-image" src={`${image.url}?w=610`} srcset={srcset} alt={heading} />
       </div>
     </div>
   );

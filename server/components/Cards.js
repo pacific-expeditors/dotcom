@@ -23,7 +23,7 @@ const Cards = ({cards = []}:CardsProps) => {
       {cards.map((card) => (
         <div key={card.id} className="card">
           <div className="card-image-container">
-            <img className="card-image" src={card.image} srcset={card.srcset} alt={card.heading} />
+            <img className="card-image" src={`${card.image.url}?w=1024`} srcset={card.srcset} alt={card.heading} />
             {card.overlayImage && (
               <div className="card-overlay">
                 <h3 className="card-heading">{card.heading}</h3>

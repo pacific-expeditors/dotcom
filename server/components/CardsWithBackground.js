@@ -19,13 +19,13 @@ type CardsProps = {
   cards: [CardProps]
 };
 
-const CardsWithBackground = ({heading, background, cards = []}:CardsProps) => {
+const CardsWithBackground = ({heading, image, cards = []}:CardsProps) => {
   return (
-    <div className="cards-with-bg" style={{background: `url(${background}?h=640)`}}>
-      <div className="cards-with-bg-container">
-        <h3 className="cards-with-bg-heading">{heading}</h3>
+    <div className="cards-with-bg">
+      <div className="cards-with-bg-container" style={{background: `url(${image.url}?h=1920)`}}>
       </div>
-      <Cards cards={cards} />
+      <h3 className="cards-with-bg-heading">{heading}</h3>
+      <Cards cards={cards.cards} />
     </div>
   );
 };
