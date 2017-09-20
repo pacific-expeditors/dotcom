@@ -27,13 +27,17 @@ var CardsWithHeading = function CardsWithHeading(_ref) {
     _react2.default.createElement(
       'h3',
       { className: 'cards-header' },
-      headings.map(function (heading) {
-        return _react2.default.createElement(
-          'span',
-          null,
-          heading
-        );
-      })
+      _react2.default.createElement(
+        'span',
+        null,
+        headings[0]
+      ),
+      _react2.default.createElement('img', { src: '//images.contentful.com/i9tcznuksxng/rOLTliS0gggQcE4miIICo/b3213715b01e719d4d8be05afdb54e57/c-d-arrows.svg', alt: '' }),
+      _react2.default.createElement(
+        'span',
+        null,
+        headings[1]
+      )
     ),
     _react2.default.createElement(_Cards2.default, { cards: cards.cards })
   );

@@ -41,7 +41,7 @@ var Contact = function Contact() {
             _react2.default.createElement(
               'label',
               { className: 'form-label' },
-              'Name'
+              'Name:'
             ),
             _react2.default.createElement('input', {
               className: 'textfield',
@@ -57,7 +57,7 @@ var Contact = function Contact() {
             _react2.default.createElement(
               'label',
               { className: 'form-label' },
-              'Email'
+              'Email:'
             ),
             _react2.default.createElement('input', {
               className: 'textfield',
@@ -73,7 +73,7 @@ var Contact = function Contact() {
             _react2.default.createElement(
               'label',
               { className: 'form-label' },
-              'Email'
+              'Phone Number:'
             ),
             _react2.default.createElement('input', {
               className: 'textfield',
@@ -88,7 +88,7 @@ var Contact = function Contact() {
             _react2.default.createElement(
               'label',
               { className: 'form-label' },
-              'Company'
+              'Company:'
             ),
             _react2.default.createElement('input', {
               className: 'textfield',
@@ -102,7 +102,7 @@ var Contact = function Contact() {
             _react2.default.createElement(
               'label',
               { className: 'form-label' },
-              'Preferred Method of Contact'
+              'Preferred Method of Contact:'
             ),
             _react2.default.createElement(
               'select',
