@@ -15,7 +15,7 @@ const Contact = () => {
 
             <div className="form-row">
               <label className="form-label">
-                Name
+                Name:
               </label>
               <input
                 className="textfield"
@@ -28,7 +28,7 @@ const Contact = () => {
 
             <div className="form-row">
               <label className="form-label">
-                Email
+                Email:
               </label>
               <input
                 className="textfield"
@@ -41,7 +41,7 @@ const Contact = () => {
 
             <div className="form-row">
               <label className="form-label">
-                Email
+                Phone Number:
               </label>
               <input
                 className="textfield"
@@ -53,7 +53,7 @@ const Contact = () => {
 
             <div className="form-row">
               <label className="form-label">
-                Company
+                Company:
               </label>
               <input
                 className="textfield"
@@ -64,7 +64,7 @@ const Contact = () => {
 
             <div className="form-row">
               <label className="form-label">
-                Preferred Method of Contact
+                Preferred Method of Contact:
               </label>
               <select className="select" name="contactMethod">
                 <option value="Email">Email</option>
