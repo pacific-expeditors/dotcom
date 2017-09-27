@@ -56,7 +56,11 @@ var Grid = function Grid(_ref) {
     _react2.default.createElement(
       'div',
       { className: 'col col-image-container' },
-      _react2.default.createElement('img', { className: 'col-image', src: image.url + '?w=610', srcset: srcset, alt: heading })
+      _react2.default.createElement('img', {
+        className: 'col-image lazyload',
+        'data-src': image.url + '?w=610',
+        'data-srcset': srcset,
+        alt: heading })
     )
   );
 };

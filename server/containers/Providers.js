@@ -5,6 +5,7 @@ import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apol
 import 'isomorphic-fetch';
 
 require('dotenv').config();
+console.log(createNetworkInterface({uri: process.env.GRAPHQL_ENDPOINT}));
 
 const networkInterface = createNetworkInterface({
   uri: process.env.GRAPHQL_ENDPOINT

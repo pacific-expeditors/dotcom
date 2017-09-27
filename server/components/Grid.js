@@ -29,7 +29,11 @@ const Grid = ({id, heading, content, subText, link, cta, image, srcset, align = 
         {link && <Button link={link} style="primary">{cta}</Button>}
       </div>
       <div className="col col-image-container">
-        <img className="col-image" src={`${image.url}?w=610`} srcset={srcset} alt={heading} />
+        <img
+          className="col-image lazyload"
+          data-src={`${image.url}?w=610`}
+          data-srcset={srcset}
+          alt={heading} />
       </div>
     </div>
   );

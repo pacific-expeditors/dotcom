@@ -28,7 +28,11 @@ var Cards = function Cards(_ref) {
         _react2.default.createElement(
           'div',
           { className: 'card-image-container' },
-          _react2.default.createElement('img', { className: 'card-image', src: card.image.url + '?w=1024', srcset: card.srcset, alt: card.heading }),
+          _react2.default.createElement('img', {
+            className: 'card-image lazyload',
+            'data-src': card.image.url + '?w=1024',
+            'data-srcset': card.srcset,
+            alt: card.heading }),
           card.overlayImage && _react2.default.createElement(
             'div',
             { className: 'card-overlay' },
