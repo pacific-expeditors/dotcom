@@ -70,7 +70,7 @@
     "relay-runtime": "^1.0.0",
     "style-loader": "^0.18.2",
     "uglify-js": "^3.0.25",
-    "webpack": "^3.2.0",
+    "webpack": "^3.7.1",
     "webpack-dashboard": "^0.4.0",
     "webpack-dev-server": "^2.5.1"
   }

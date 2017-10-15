@@ -37,7 +37,7 @@ var Contact = function Contact() {
           _react2.default.createElement('div', { id: 'msg', className: 'msg' }),
           _react2.default.createElement(
             'div',
-            { className: 'form-row' },
+            { className: 'form-row-1col' },
             _react2.default.createElement(
               'label',
               { className: 'form-label' },
@@ -55,67 +55,124 @@ var Contact = function Contact() {
             'div',
             { className: 'form-row' },
             _react2.default.createElement(
-              'label',
-              { className: 'form-label' },
-              'Email:'
-            ),
-            _react2.default.createElement('input', {
-              className: 'textfield',
-              type: 'email',
-              name: 'email',
-              pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$',
-              required: true,
-              placeholder: 'Email' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'form-row' },
-            _react2.default.createElement(
-              'label',
-              { className: 'form-label' },
-              'Phone Number:'
-            ),
-            _react2.default.createElement('input', {
-              className: 'textfield',
-              type: 'tel',
-              name: 'phoneNumber',
-              required: true,
-              placeholder: 'Phone Number' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'form-row' },
-            _react2.default.createElement(
-              'label',
-              { className: 'form-label' },
-              'Company:'
-            ),
-            _react2.default.createElement('input', {
-              className: 'textfield',
-              type: 'text',
-              name: 'company',
-              placeholder: 'Company' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'form-row' },
-            _react2.default.createElement(
-              'label',
-              { className: 'form-label' },
-              'Preferred Method of Contact:'
-            ),
-            _react2.default.createElement(
-              'select',
-              { className: 'select', name: 'contactMethod' },
+              'div',
+              { className: 'form-col' },
               _react2.default.createElement(
-                'option',
-                { value: 'Email' },
-                'Email'
+                'label',
+                { className: 'form-label' },
+                'Email:'
+              ),
+              _react2.default.createElement('input', {
+                className: 'textfield',
+                type: 'email',
+                name: 'email',
+                pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$',
+                required: true,
+                placeholder: 'Email' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'form-col' },
+              _react2.default.createElement(
+                'label',
+                { className: 'form-label' },
+                'Phone Number:'
+              ),
+              _react2.default.createElement('input', {
+                className: 'textfield',
+                type: 'tel',
+                name: 'phoneNumber',
+                required: true,
+                placeholder: 'Phone Number' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'form-row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'form-col' },
+              _react2.default.createElement(
+                'label',
+                { className: 'form-label' },
+                'Company:'
+              ),
+              _react2.default.createElement('input', {
+                className: 'textfield',
+                type: 'text',
+                name: 'company',
+                placeholder: 'Company' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'form-col' },
+              _react2.default.createElement(
+                'label',
+                { className: 'form-label' },
+                'Location:'
+              ),
+              _react2.default.createElement('input', {
+                className: 'textfield',
+                type: 'text',
+                name: 'location',
+                placeholder: 'Location' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'form-row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'form-col' },
+              _react2.default.createElement(
+                'label',
+                { className: 'form-label' },
+                'Segment (check all that apply):'
               ),
               _react2.default.createElement(
-                'option',
-                { value: 'Phone' },
-                'Phone'
+                'label',
+                { className: 'form-label' },
+                _react2.default.createElement('input', { className: 'checkbox', type: 'checkbox', name: 'segments[]', value: 'Cultivation' }),
+                'Cultivation'
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'form-label' },
+                _react2.default.createElement('input', { className: 'checkbox', type: 'checkbox', name: 'segments[]', value: 'Lab' }),
+                'Lab'
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'form-label' },
+                _react2.default.createElement('input', { className: 'checkbox', type: 'checkbox', name: 'segments[]', value: 'Manufacturing' }),
+                'Manufacturing'
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'form-label' },
+                _react2.default.createElement('input', { className: 'checkbox', type: 'checkbox', name: 'segments[]', value: 'Dispensary' }),
+                'Dispensary'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'form-col' },
+              _react2.default.createElement(
+                'label',
+                { className: 'form-label' },
+                'Services (check all that apply):'
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'form-label' },
+                _react2.default.createElement('input', { className: 'checkbox', type: 'checkbox', name: 'services[]', value: 'Consulting' }),
+                'Consulting'
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'form-label' },
+                _react2.default.createElement('input', { className: 'checkbox', type: 'checkbox', name: 'services[]', value: 'Distributing' }),
+                'Distributing'
               )
             )
           ),

@@ -18,13 +18,30 @@ window.onload = function () {
         email: 'input[name="email"]',
         phoneNumber: 'input[name="phoneNumber"]',
         company: 'input[name="company"]',
-        contactMethod: 'select[name="contactMethod"]',
+        location: 'input[name="location"]',
         msg: 'textarea[name="msg"]'
+      };
+
+      var checkboxes = {
+        segments: 'input[name^="segments"]:checked',
+        services: 'input[name^="services"]:checked'
       };
 
       var request = {};
       Object.keys(selectors).forEach(function (key) {
         request[key] = document.querySelector(selectors[key]).value;
+      });
+
+      Object.keys(checkboxes).forEach(function (key) {
+        request[key] = [];
+
+        document.querySelectorAll(checkboxes[key]).forEach(function (checkbox) {
+          if (checkbox && checkbox.value) {
+            request[key].push(checkbox.value);
+          }
+        });
+
+        request[key] = request[key].join(', ');
       });
 
       fetch('/contact', {

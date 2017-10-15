@@ -462,9 +462,27 @@ body {
   }
 }
 
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -10px;
+}
+
+@media (min-width: 1200px) {
+  .form-row {
+    flex-direction: row;
+  }
+}
+
+.form-col {
+  flex: 1;
+  margin: 0 10px;
+}
+
 .form {
   width: 100%;
   display: block;
+  position: relative;
 }
 
 .form-heading {
@@ -488,6 +506,11 @@ body {
   font-weight: 400;
   color: #fff;
   text-transform: uppercase;
+  display: block;
+}
+
+.checkbox {
+  margin-right: 5px;
 }
 
 .msg {
@@ -496,9 +519,27 @@ body {
 }
 
 .error {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  top: 40%;
+  padding: 12px;
+  background-color: rgb(169, 68, 66);
   color: #FFF;
+  text-align: center;
+  z-index: 1;
+  border-radius: 3px;
 }
 
 .success {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  top: 40%;
+  padding: 12px;
+  background-color: rgb(60, 118, 61);
   color: #FFF;
+  text-align: center;
+  z-index: 1;
+  border-radius: 3px;
 }
