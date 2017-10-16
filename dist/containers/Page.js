@@ -107,6 +107,9 @@ var Page = function (_Component) {
             })
           ),
           _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/3.0.0/lazysizes.min.js' }),
+          _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js' }),
+          _react2.default.createElement('script', { src: '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js' }),
+          _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js' }),
           _react2.default.createElement('script', { src: '/static/global.min.js' })
         )
       );

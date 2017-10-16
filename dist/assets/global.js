@@ -7,8 +7,19 @@ window.onload = function () {
     }, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
   })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
+  document.querySelector('.video-cta').style.transform = 'translateX(0%)';
+  document.querySelector('.video-cta').style.opacity = 1;
+
   ga('create', 'UA-107156593-1', 'auto');
   ga('send', 'pageview');
+
+  var controller = new ScrollMagic.Controller();
+  var ids = ['peace-of-mind', 'compliance', 'distribution', 'consulting', 'chris-coulombe', 'nick-caston'];
+  ids.forEach(function (id) {
+    new ScrollMagic.Scene({
+      triggerElement: '#' + id
+    }).setClassToggle('#' + id + ' .fade-in-obj', 'fade-in').addTo(controller);
+  });
 
   if (document.querySelector('#form')) {
     document.querySelector('#form').addEventListener('submit', function (e) {

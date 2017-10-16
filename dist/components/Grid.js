@@ -28,7 +28,7 @@ var Grid = function Grid(_ref) {
 
   return _react2.default.createElement(
     'div',
-    { className: 'grid ' + align },
+    { key: id, id: '' + id, className: 'grid ' + align },
     _react2.default.createElement(
       'div',
       { className: 'col col-content' },
@@ -55,7 +55,7 @@ var Grid = function Grid(_ref) {
     ),
     _react2.default.createElement(
       'div',
-      { className: 'col col-image-container' },
+      { className: 'col col-image-container fade-in-obj' },
       _react2.default.createElement('img', {
         className: 'col-image lazyload',
         'data-src': image.url + '?w=610',

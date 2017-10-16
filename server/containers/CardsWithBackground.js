@@ -32,6 +32,7 @@ export default graphql(gql`
       cards {
         id
         cards {
+          id
           heading
           subHeading
           link

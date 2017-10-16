@@ -24,10 +24,10 @@ var Cards = function Cards(_ref) {
     cards.map(function (card) {
       return _react2.default.createElement(
         'div',
-        { key: card.id, className: 'card' },
+        { id: card.id, key: card.id, className: 'card' },
         _react2.default.createElement(
           'div',
-          { className: 'card-image-container' },
+          { className: 'card-image-container fade-in-obj' },
           _react2.default.createElement('img', {
             className: 'card-image lazyload',
             'data-src': card.image.url + '?w=1024',

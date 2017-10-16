@@ -21,8 +21,8 @@ const Cards = ({cards = []}:CardsProps) => {
   return (
     <div className="cards">
       {cards.map((card) => (
-        <div key={card.id} className="card">
-          <div className="card-image-container">
+        <div id={card.id} key={card.id} className="card">
+          <div className="card-image-container fade-in-obj">
             <img
               className="card-image lazyload"
               data-src={`${card.image.url}?w=1024`}

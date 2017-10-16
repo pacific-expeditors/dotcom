@@ -390,6 +390,9 @@ body {
 .video-cta {
   width: 100% !important;
   text-align: center;
+  transition: 0.5s ease-out;
+  transform: translateX(50%);
+  opacity: 0;
 }
 
 @media (min-width: 1200px) {
@@ -542,4 +545,13 @@ body {
   text-align: center;
   z-index: 1;
   border-radius: 3px;
+}
+
+/*================== ANIMATION *==================*/
+.fade-in-obj {
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+}
+.fade-in {
+  opacity: 1;
 }
