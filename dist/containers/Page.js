@@ -20,6 +20,10 @@ var _reactApollo = require('react-apollo');
 
 var _fs = require('fs');
 
+var _Modal = require('../components/Modal');
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -93,6 +97,7 @@ var Page = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'page', style: styles.page },
+            _react2.default.createElement(_Modal2.default, null),
             sections.map(function (section) {
               var path = __dirname + '/' + section.__typename + '.js';
               if (!(0, _fs.existsSync)(path)) {

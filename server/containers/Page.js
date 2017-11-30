@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import get from 'lodash.get';
 import { graphql, gql } from 'react-apollo';
 import { existsSync } from 'fs';
+import Modal from '../components/Modal';
 
 type Props = {
   data: [],
@@ -53,6 +54,7 @@ class Page extends Component {
         </head>
         <body>
           <div className="page" style={styles.page}>
+            <Modal />
             {sections.map(section => {
               const path = `${__dirname}/${section.__typename}.js`;
               if (!existsSync(path)) {

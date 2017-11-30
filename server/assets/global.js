@@ -20,6 +20,18 @@ window.onload = function() {
       .addTo(controller);
   });
 
+  if (localStorage.getItem('isVerified')) {
+    document.querySelector('#modal').style.display = 'none';
+  } else {
+    document.querySelector('#modal').style.display = 'block';
+  }
+
+  document.querySelector('#modal a').addEventListener('click', function(e) {
+    localStorage.setItem('isVerified', true);
+    e.preventDefault();
+    document.querySelector('#modal').style.display = 'none';
+  });
+
   if (document.querySelector('#form')) {
     document.querySelector('#form').addEventListener('submit', function(e) {
       e.preventDefault();
