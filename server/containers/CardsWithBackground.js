@@ -53,7 +53,8 @@ export default graphql(gql`
 `, {
   options: ({id}) => {
     return {
-      variables: { id }
+      variables: { id },
+      fetchPolicy: 'network-only'
     }
   }
 })(CardsWithBackgroundContainer);

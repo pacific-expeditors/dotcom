@@ -62,7 +62,8 @@ const styles = {
     margin: 0,
     lineHeight: 1.5,
     color: '#fff',
-    margin: '20px 0'
+    margin: '20px 0',
+    fontWeight: 300
   }
 };
 

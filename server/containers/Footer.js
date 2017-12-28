@@ -14,12 +14,6 @@ class FooterContainer extends Component<void, Props, void> {
   props: Props;
   state: void;
 
-  componentWillMount() {
-    if (this.props.refetch) {
-      this.props.data.refetch();
-    }
-  }
-
   render() {
     const { data } = this.props;
     const footer = get(data, 'footer', {});
@@ -40,7 +34,8 @@ export default graphql(gql`
 `, {
   options: ({id}) => {
     return {
-      variables: { id }
+      variables: { id },
+      fetchPolicy: 'network-only'
     }
   }
 })(FooterContainer);

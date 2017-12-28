@@ -72,8 +72,10 @@ body {
 }
 
 .button.secondary {
-  background-color: #ebebeb;
-  color: #0f4c61;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  color: #fff;
 }
 
 .button.secondary:hover {

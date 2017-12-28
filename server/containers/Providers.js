@@ -10,11 +10,13 @@ import 'isomorphic-fetch';
 require('dotenv').config();
 
 const client = new ApolloClient({
-  ssrMode: true,
+  ssrMode: false,
   link: createHttpLink({
     uri: process.env.GRAPHQL_ENDPOINT
   }),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache({
+    dataIdFromObject: object => object.id
+  })
 });
 
 type Props = {

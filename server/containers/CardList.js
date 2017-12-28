@@ -14,12 +14,6 @@ class CardListContainer extends Component<void, Props, void> {
   props: Props;
   state: void;
 
-  componentWillMount() {
-    if (this.props.refetch) {
-      this.props.data.refetch();
-    }
-  }
-
   render() {
     const { data } = this.props;
     const cardList = get(data, 'cardList.cards', {});
@@ -55,7 +49,8 @@ export default graphql(gql`
 `, {
   options: ({id}) => {
     return {
-      variables: { id }
+      variables: { id },
+      fetchPolicy: 'network-only'
     }
   }
 })(CardListContainer);

@@ -19,12 +19,6 @@ class Page extends Component<void, Props, State> {
   props: Props;
   state: void;
 
-  componentWillMount() {
-    if (this.props.refetch) {
-      this.props.data.refetch();
-    }
-  }
-
   render() {
     const { data } = this.props;
     const title = get(data, 'pages[0].title', '404');
@@ -66,7 +60,6 @@ class Page extends Component<void, Props, State> {
               const Section = require(path).default;
               return (
                 <Section
-                  refetch={this.props.refetch}
                   key={section.sys.id}
                   id={section.sys.id} />
               );
@@ -98,5 +91,12 @@ export default graphql(gql`
     }
   }
 `, {
-  options: ({slug}) => ({ variables: { slug: `fields.id=${slug}` } })
+  options: ({slug}) => {
+    return {
+      variables: {
+        slug: `fields.id=${slug}`
+      },
+      fetchPolicy: 'network-only'
+    }
+  }
 })(Page);

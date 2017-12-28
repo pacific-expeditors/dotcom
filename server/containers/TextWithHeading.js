@@ -14,12 +14,6 @@ class TextWithHeadingContainer extends Component<void, Props, void> {
   props: Props;
   state: void;
 
-  componentWillMount() {
-    if (this.props.refetch) {
-      this.props.data.refetch();
-    }
-  }
-
   render() {
     const { data } = this.props;
     const textWithHeading = get(data, 'textWithHeading', {});

@@ -14,18 +14,12 @@ class HeaderContainer extends Component<void, Props, void> {
   props: Props;
   state: void;
 
-  componentWillMount() {
-    if (this.props.refetch) {
-      this.props.data.refetch();
-    }
-  }
-
   render() {
     const { data } = this.props;
     const header = get(data, 'header', {});
 
     return (
-      <Header siteTitle={header.siteTitle} logo={header.logo.url} />
+      <Header navLinks={header.navigationLinks} iteTitle={header.siteTitle} logo={header.logo.url} />
     );
   }
 }
@@ -40,12 +34,24 @@ export default graphql(gql`
         description
         url
       }
+      navigationLinks {
+        href
+        text
+        alignment
+        subNavigationLinks {
+          ... on NavigationLinks {
+            href
+            text
+          }
+        }
+      }
     }
   }
 `, {
   options: ({id}) => {
     return {
-      variables: { id }
+      variables: { id },
+      fetchPolicy: 'network-only'
     }
   }
 })(HeaderContainer);

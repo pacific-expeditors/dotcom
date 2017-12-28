@@ -14,12 +14,6 @@ class GridContainer extends Component<void, Props, void> {
   props: Props;
   state: void;
 
-  componentWillMount() {
-    if (this.props.refetch) {
-      this.props.data.refetch();
-    }
-  }
-
   render() {
     const { data } = this.props;
     const columns = get(data, 'grid', {});
@@ -48,7 +42,8 @@ export default graphql(gql`
 `, {
   options: ({id}) => {
     return {
-      variables: { id }
+      variables: { id },
+      fetchPolicy: 'network-only'
     }
   }
 })(GridContainer);
