@@ -14,6 +14,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactApollo = require('react-apollo');
 
+var _graphqlTag = require('graphql-tag');
+
+var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
+
 var _lodash = require('lodash.get');
 
 var _lodash2 = _interopRequireDefault(_lodash);
@@ -42,13 +46,6 @@ var IntroVideoContainer = function (_Component) {
   }
 
   _createClass(IntroVideoContainer, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      if (this.props.refetch) {
-        this.props.data.refetch();
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
       var data = this.props.data;
@@ -75,7 +72,7 @@ var IntroVideoContainer = function (_Component) {
   return IntroVideoContainer;
 }(_react.Component);
 
-exports.default = (0, _reactApollo.graphql)((0, _reactApollo.gql)(_templateObject), {
+exports.default = (0, _reactApollo.graphql)((0, _graphqlTag2.default)(_templateObject), {
   options: function options(_ref) {
     var id = _ref.id;
 

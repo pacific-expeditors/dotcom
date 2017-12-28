@@ -10,7 +10,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _apolloClient = require('apollo-client');
+
+var _apolloLinkHttp = require('apollo-link-http');
+
 var _reactApollo = require('react-apollo');
+
+var _apolloCacheInmemory = require('apollo-cache-inmemory');
 
 require('isomorphic-fetch');
 
@@ -24,16 +30,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 require('dotenv').config();
 
-var networkInterface = (0, _reactApollo.createNetworkInterface)({
-  uri: process.env.GRAPHQL_ENDPOINT
-});
-
-var client = new _reactApollo.ApolloClient({
+var client = new _apolloClient.ApolloClient({
   ssrMode: true,
-  dataIdFromObject: function dataIdFromObject(o) {
-    return o.id;
-  },
-  networkInterface: networkInterface
+  link: (0, _apolloLinkHttp.createHttpLink)({
+    uri: process.env.GRAPHQL_ENDPOINT
+  }),
+  cache: new _apolloCacheInmemory.InMemoryCache()
 });
 
 var _class = function (_Component) {

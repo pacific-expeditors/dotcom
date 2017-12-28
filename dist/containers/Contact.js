@@ -10,12 +10,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactApollo = require('react-apollo');
-
-var _lodash = require('lodash.get');
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
 var _Contact = require('../components/Contact');
 
 var _Contact2 = _interopRequireDefault(_Contact);

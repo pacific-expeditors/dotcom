@@ -18,6 +18,10 @@ var _lodash2 = _interopRequireDefault(_lodash);
 
 var _reactApollo = require('react-apollo');
 
+var _graphqlTag = require('graphql-tag');
+
+var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
+
 var _fs = require('fs');
 
 var _Modal = require('../components/Modal');
@@ -71,9 +75,9 @@ var Page = function (_Component) {
         _react2.default.createElement(
           'head',
           null,
-          _react2.default.createElement('meta', { charset: 'UTF-8' }),
+          _react2.default.createElement('meta', { charSet: 'UTF-8' }),
           _react2.default.createElement('meta', { name: 'robots', content: 'noodp' }),
-          _react2.default.createElement('meta', { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' }),
+          _react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge,chrome=1' }),
           _react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0' }),
           _react2.default.createElement('meta', { name: 'description', content: description }),
           _react2.default.createElement(
@@ -124,7 +128,7 @@ var Page = function (_Component) {
   return Page;
 }(_react.Component);
 
-exports.default = (0, _reactApollo.graphql)((0, _reactApollo.gql)(_templateObject), {
+exports.default = (0, _reactApollo.graphql)((0, _graphqlTag2.default)(_templateObject), {
   options: function options(_ref) {
     var slug = _ref.slug;
     return { variables: { slug: 'fields.id=' + slug } };

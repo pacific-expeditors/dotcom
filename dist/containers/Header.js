@@ -14,6 +14,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactApollo = require('react-apollo');
 
+var _graphqlTag = require('graphql-tag');
+
+var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
+
 var _lodash = require('lodash.get');
 
 var _lodash2 = _interopRequireDefault(_lodash);
@@ -62,7 +66,7 @@ var HeaderContainer = function (_Component) {
   return HeaderContainer;
 }(_react.Component);
 
-exports.default = (0, _reactApollo.graphql)((0, _reactApollo.gql)(_templateObject), {
+exports.default = (0, _reactApollo.graphql)((0, _graphqlTag2.default)(_templateObject), {
   options: function options(_ref) {
     var id = _ref.id;
 
