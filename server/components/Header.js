@@ -26,18 +26,15 @@ const styles = {
   },
   navLeft: {
     flex: 1,
-    marginLeft: '-20px'
+    display: 'flex'
   },
   navRight: {
-    marginRight: 'auto',
-    textAlign: 'right',
-    flex: 1,
-    marginLeft: '-20px'
+    display: 'flex',
+    flex: 1
   },
   navLinkContainer: {
     position: 'relative',
-    display: 'inline-flex',
-    marginLeft: '20px'
+    margin: '0 auto'
   },
   navLink: {
     fontSize: 14,

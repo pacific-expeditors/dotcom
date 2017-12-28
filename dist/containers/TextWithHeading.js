@@ -46,13 +46,6 @@ var TextWithHeadingContainer = function (_Component) {
   }
 
   _createClass(TextWithHeadingContainer, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      if (this.props.refetch) {
-        this.props.data.refetch();
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
       var data = this.props.data;

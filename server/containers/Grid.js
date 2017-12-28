@@ -6,8 +6,7 @@ import get from 'lodash.get';
 import Grid from '../components/Grid';
 
 type Props = {
-  data: any,
-  refetch: boolean
+  data: any
 };
 
 class GridContainer extends Component<void, Props, void> {

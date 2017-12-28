@@ -6,8 +6,7 @@ import get from 'lodash.get';
 import IntroVideo from '../components/IntroVideo';
 
 type Props = {
-  data: any,
-  refetch: boolean
+  data: any
 };
 
 class IntroVideoContainer extends Component<void, Props, void> {

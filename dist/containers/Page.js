@@ -52,17 +52,8 @@ var Page = function (_Component) {
   }
 
   _createClass(Page, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      if (this.props.refetch) {
-        this.props.data.refetch();
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var data = this.props.data;
 
       var title = (0, _lodash2.default)(data, 'pages[0].title', '404');
@@ -110,7 +101,6 @@ var Page = function (_Component) {
 
               var Section = require(path).default;
               return _react2.default.createElement(Section, {
-                refetch: _this2.props.refetch,
                 key: section.sys.id,
                 id: section.sys.id });
             })
@@ -131,6 +121,12 @@ var Page = function (_Component) {
 exports.default = (0, _reactApollo.graphql)((0, _graphqlTag2.default)(_templateObject), {
   options: function options(_ref) {
     var slug = _ref.slug;
-    return { variables: { slug: 'fields.id=' + slug } };
+
+    return {
+      variables: {
+        slug: 'fields.id=' + slug
+      },
+      fetchPolicy: 'network-only'
+    };
   }
 })(Page);

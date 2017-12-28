@@ -7,8 +7,7 @@ import { existsSync } from 'fs';
 import Modal from '../components/Modal';
 
 type Props = {
-  data: any,
-  refetch: boolean
+  data: any
 };
 
 const styles = {

@@ -63,12 +63,15 @@ body {
 }
 
 .button.primary {
-  background-color: #0f4c61;
-  color: #FFF;
+  background-color: transparent;
+  border: 1px solid #0f4c61;
+  border-radius: 3px;
+  color: #0f4c61;
 }
 
 .button.primary:hover {
-  background-color: #0F4C5F;
+  border: 1px solid #0F4C5F;
+  color: #0F4C5F;
 }
 
 .button.secondary {
@@ -79,7 +82,8 @@ body {
 }
 
 .button.secondary:hover {
-  background-color: #ccc;
+  border: 1px solid #eee;
+  color: #eee;
 }
 
 /*================== GRIDS *==================*/
@@ -111,20 +115,11 @@ body {
 
 .col-heading {
   font-size: 32px;
-  font-weight: 900;
+  font-weight: 500;
   line-height: 1.25;
   text-transform: uppercase;
   color: #0f4c61;
   margin: 0;
-}
-
-.col-heading:after {
-  content: "";
-  background: #0f4c61;
-  width: 132px;
-  height: 4px;
-  margin: 20px 0;
-  display: block;
 }
 
 .col-text {

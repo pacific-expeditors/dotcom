@@ -6,8 +6,7 @@ import get from 'lodash.get';
 import Cards from '../components/Cards';
 
 type Props = {
-  data: any,
-  refetch: boolean
+  data: any
 };
 
 class CardListContainer extends Component<void, Props, void> {

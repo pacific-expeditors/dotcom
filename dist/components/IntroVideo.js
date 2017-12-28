@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _subHeading;
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -59,12 +61,12 @@ var styles = {
     height: '4px',
     margin: '20px 0'
   },
-  subHeading: _defineProperty({
+  subHeading: (_subHeading = {
     fontSize: '22px',
     margin: 0,
     lineHeight: 1.5,
     color: '#fff'
-  }, 'margin', '20px 0')
+  }, _defineProperty(_subHeading, 'margin', '20px 0'), _defineProperty(_subHeading, 'fontWeight', 300), _subHeading)
 };
 
 var IntroVideo = function IntroVideo(_ref) {

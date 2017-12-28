@@ -31,11 +31,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 require('dotenv').config();
 
 var client = new _apolloClient.ApolloClient({
-  ssrMode: true,
+  ssrMode: false,
   link: (0, _apolloLinkHttp.createHttpLink)({
     uri: process.env.GRAPHQL_ENDPOINT
   }),
-  cache: new _apolloCacheInmemory.InMemoryCache()
+  cache: new _apolloCacheInmemory.InMemoryCache({
+    dataIdFromObject: function dataIdFromObject(object) {
+      return object.id;
+    }
+  })
 });
 
 var _class = function (_Component) {

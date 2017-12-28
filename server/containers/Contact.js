@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import Contact from '../components/Contact';
 
 type Props = {
-  data: any,
-  refetch: boolean
+  data: any
 };
 
 class ContactContainer extends Component<void, Props, void> {

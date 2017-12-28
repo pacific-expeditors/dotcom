@@ -6,8 +6,7 @@ import get from 'lodash.get';
 import Header from '../components/Header';
 
 type Props = {
-  data: any,
-  refetch: boolean
+  data: any
 };
 
 class HeaderContainer extends Component<void, Props, void> {

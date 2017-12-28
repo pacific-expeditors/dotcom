@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      siteTitle\n      logo {\n        title\n        description\n        url\n      }\n    }\n  }\n'], ['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      siteTitle\n      logo {\n        title\n        description\n        url\n      }\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      siteTitle\n      logo {\n        title\n        description\n        url\n      }\n      navigationLinks {\n        href\n        text\n        alignment\n        subNavigationLinks {\n          ... on NavigationLinks {\n            href\n            text\n          }\n        }\n      }\n    }\n  }\n'], ['\n  query Header($id: ID!) {\n    header(id:$id) {\n      id\n      siteTitle\n      logo {\n        title\n        description\n        url\n      }\n      navigationLinks {\n        href\n        text\n        alignment\n        subNavigationLinks {\n          ... on NavigationLinks {\n            href\n            text\n          }\n        }\n      }\n    }\n  }\n']);
 
 var _react = require('react');
 
@@ -46,20 +46,13 @@ var HeaderContainer = function (_Component) {
   }
 
   _createClass(HeaderContainer, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      if (this.props.refetch) {
-        this.props.data.refetch();
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
       var data = this.props.data;
 
       var header = (0, _lodash2.default)(data, 'header', {});
 
-      return _react2.default.createElement(_Header2.default, { siteTitle: header.siteTitle, logo: header.logo.url });
+      return _react2.default.createElement(_Header2.default, { navLinks: header.navigationLinks, iteTitle: header.siteTitle, logo: header.logo.url });
     }
   }]);
 
@@ -71,7 +64,8 @@ exports.default = (0, _reactApollo.graphql)((0, _graphqlTag2.default)(_templateO
     var id = _ref.id;
 
     return {
-      variables: { id: id }
+      variables: { id: id },
+      fetchPolicy: 'network-only'
     };
   }
 })(HeaderContainer);

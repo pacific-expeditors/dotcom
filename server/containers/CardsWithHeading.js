@@ -6,8 +6,7 @@ import get from 'lodash.get';
 import CardsWithHeading from '../components/CardsWithHeading';
 
 type Props = {
-  data: any,
-  refetch: boolean
+  data: any
 };
 
 class CardsWithHeadingContainer extends Component<void, Props, void> {

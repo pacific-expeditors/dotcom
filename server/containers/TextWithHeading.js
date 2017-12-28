@@ -6,8 +6,7 @@ import get from 'lodash.get';
 import TextWithHeading from '../components/TextWithHeading';
 
 type Props = {
-  data: any,
-  refetch: boolean
+  data: any
 };
 
 class TextWithHeadingContainer extends Component<void, Props, void> {

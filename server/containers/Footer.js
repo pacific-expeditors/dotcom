@@ -6,8 +6,7 @@ import get from 'lodash.get';
 import Footer from '../components/Footer';
 
 type Props = {
-  data: any,
-  refetch: boolean
+  data: any
 };
 
 class FooterContainer extends Component<void, Props, void> {

@@ -46,13 +46,6 @@ var FooterContainer = function (_Component) {
   }
 
   _createClass(FooterContainer, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      if (this.props.refetch) {
-        this.props.data.refetch();
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
       var data = this.props.data;
@@ -71,7 +64,8 @@ exports.default = (0, _reactApollo.graphql)((0, _graphqlTag2.default)(_templateO
     var id = _ref.id;
 
     return {
-      variables: { id: id }
+      variables: { id: id },
+      fetchPolicy: 'network-only'
     };
   }
 })(FooterContainer);
