@@ -4,5 +4,5 @@ node_modules/
 .cache
 npm-debug.log
 .yarnclean
-.flowconfig
 yarn-error.log
+ignore
