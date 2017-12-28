@@ -1,12 +1,13 @@
 /* @flow */
 import React, { Component } from 'react';
 import get from 'lodash.get';
-import { graphql, gql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 import { existsSync } from 'fs';
 import Modal from '../components/Modal';
 
 type Props = {
-  data: [],
+  data: any,
   refetch: boolean
 };
 
@@ -14,8 +15,9 @@ const styles = {
   page: {}
 }
 
-class Page extends Component {
+class Page extends Component<void, Props, State> {
   props: Props;
+  state: void;
 
   componentWillMount() {
     if (this.props.refetch) {
@@ -32,9 +34,9 @@ class Page extends Component {
     return (
       <html lang="en">
         <head>
-          <meta charset="UTF-8" />
+          <meta charSet="UTF-8" />
           <meta name="robots" content="noodp" />
-          <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0" />
           <meta name="description" content={description} />
           <title>{title}</title>

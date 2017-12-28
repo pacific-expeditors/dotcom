@@ -7,9 +7,10 @@ type Props = {
   refetch?: boolean
 };
 
-class Root extends Component {
+class Root extends Component<void, Props, State> {
   props: Props;
-  
+  state: void;
+
   render() {
     return (
       <Providers>

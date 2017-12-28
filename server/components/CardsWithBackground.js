@@ -13,10 +13,15 @@ type CardProps = {
   overlayImage: boolean
 };
 
+type ImageProps = {
+  url: string
+};
+
 type CardsProps = {
   heading: string,
+  image: ImageProps,
   background: string,
-  cards: [CardProps]
+  cards?: [CardProps]
 };
 
 const CardsWithBackground = ({heading, image, cards = []}:CardsProps) => {

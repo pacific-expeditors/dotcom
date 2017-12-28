@@ -15,7 +15,7 @@ type CardProps = {
 
 type CardsProps = {
   heading: string,
-  cards: [CardProps]
+  cards?: [CardProps]
 };
 
 const CardsWithHeading = ({heading, cards = []}:CardsProps) => {

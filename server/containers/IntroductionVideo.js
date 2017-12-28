@@ -1,15 +1,18 @@
 /* @flow */
 import React, { Component } from 'react';
-import { graphql, gql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 import get from 'lodash.get';
 import IntroVideo from '../components/IntroVideo';
 
-class IntroVideoContainer extends Component {
-  componentWillMount() {
-    if (this.props.refetch) {
-      this.props.data.refetch();
-    }
-  }
+type Props = {
+  data: any,
+  refetch: boolean
+};
+
+class IntroVideoContainer extends Component<void, Props, void> {
+  props: Props;
+  state: void;
 
   render() {
     const { data } = this.props;

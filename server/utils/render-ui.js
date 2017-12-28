@@ -14,8 +14,8 @@ const renderUi = (req) => {
     const Component = createElement(Root, { slug, refetch });
 
     renderToStringWithData(Component)
-      .then(body => res.send(`<!doctype>${body}`))
-      .catch(err => res.send(err));
+      .then((body:string) => res.send(`<!doctype>${body}`))
+      .catch((err:string) => res.send(err));
   });
 
   return app;

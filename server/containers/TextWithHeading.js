@@ -1,10 +1,19 @@
 /* @flow */
 import React, { Component } from 'react';
-import { graphql, gql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 import get from 'lodash.get';
 import TextWithHeading from '../components/TextWithHeading';
 
-class TextWithHeadingContainer extends Component {
+type Props = {
+  data: any,
+  refetch: boolean
+};
+
+class TextWithHeadingContainer extends Component<void, Props, void> {
+  props: Props;
+  state: void;
+
   componentWillMount() {
     if (this.props.refetch) {
       this.props.data.refetch();

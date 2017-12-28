@@ -1,10 +1,19 @@
 /* @flow */
 import React, { Component } from 'react';
-import { gql, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 import get from 'lodash.get';
 import Grid from '../components/Grid';
 
-class GridContainer extends Component {
+type Props = {
+  data: any,
+  refetch: boolean
+};
+
+class GridContainer extends Component<void, Props, void> {
+  props: Props;
+  state: void;
+
   componentWillMount() {
     if (this.props.refetch) {
       this.props.data.refetch();

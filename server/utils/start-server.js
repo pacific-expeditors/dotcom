@@ -1,3 +1,4 @@
+/* @flow */
 import express from 'express';
 import expressGraphQL from 'express-graphql';
 import bodyParser from 'body-parser';

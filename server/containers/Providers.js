@@ -1,27 +1,29 @@
 /* @flow */
 import React, { Component, cloneElement } from 'react';
 import type { Children } from 'react';
-import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo';
+import { ApolloClient } from 'apollo-client';
+import { createHttpLink } from 'apollo-link-http';
+import { ApolloProvider } from 'react-apollo';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 import 'isomorphic-fetch';
 
 require('dotenv').config();
 
-const networkInterface = createNetworkInterface({
-  uri: process.env.GRAPHQL_ENDPOINT
-});
-
 const client = new ApolloClient({
   ssrMode: true,
-  dataIdFromObject: o => o.id,
-  networkInterface
+  link: createHttpLink({
+    uri: process.env.GRAPHQL_ENDPOINT
+  }),
+  cache: new InMemoryCache()
 });
 
 type Props = {
   children: Children
 };
 
-export default class extends Component {
+export default class extends Component<void, Props, void> {
   props: Props;
+  state: void;
 
   render() {
     return (

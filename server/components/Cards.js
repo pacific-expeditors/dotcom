@@ -14,13 +14,13 @@ type CardProps = {
 };
 
 type CardsProps = {
-  cards: [CardProps]
+  cards?: [CardProps]
 };
 
 const Cards = ({cards = []}:CardsProps) => {
   return (
     <div className="cards">
-      {cards.map((card) => (
+      {cards.map((card:CardProps) => (
         <div id={card.id} key={card.id} className="card">
           <div className="card-image-container fade-in-obj">
             <img

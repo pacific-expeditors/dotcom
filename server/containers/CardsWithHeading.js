@@ -1,15 +1,18 @@
 /* @flow */
 import React, { Component } from 'react';
-import { gql, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 import get from 'lodash.get';
 import CardsWithHeading from '../components/CardsWithHeading';
 
-class CardsWithHeadingContainer extends Component {
-  componentWillMount() {
-    if (this.props.refetch) {
-      this.props.data.refetch();
-    }
-  }
+type Props = {
+  data: any,
+  refetch: boolean
+};
+
+class CardsWithHeadingContainer extends Component<void, Props, void> {
+  props: Props;
+  state: void;
 
   render() {
     const { data } = this.props;

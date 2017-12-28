@@ -1,3 +1,4 @@
+/* @flow */
 const cloudflare = require('cloudflare')({
   email: process.env.CF_EMAIL,
   key: process.env.CF_AUTH_KEY

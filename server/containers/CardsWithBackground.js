@@ -1,15 +1,18 @@
 /* @flow */
 import React, { Component } from 'react';
-import { gql, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 import get from 'lodash.get';
 import CardsWithBackground from '../components/CardsWithBackground';
 
-class CardsWithBackgroundContainer extends Component {
-  componentWillMount() {
-    if (this.props.refetch) {
-      this.props.data.refetch();
-    }
-  }
+type Props = {
+  data: any,
+  refetch: boolean
+};
+
+class CardsWithBackgroundContainer extends Component<void, Props, void> {
+  props: Props;
+  state: void;
 
   render() {
     const { data } = this.props;

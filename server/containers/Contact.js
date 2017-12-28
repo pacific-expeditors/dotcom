@@ -1,10 +1,16 @@
 /* @flow */
 import React, { Component } from 'react';
-import { gql, graphql } from 'react-apollo';
-import get from 'lodash.get';
 import Contact from '../components/Contact';
 
-class ContactContainer extends Component {
+type Props = {
+  data: any,
+  refetch: boolean
+};
+
+class ContactContainer extends Component<void, Props, void> {
+  props: Props;
+  state: void;
+
   render() {
     return (
       <Contact />
