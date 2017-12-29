@@ -14,6 +14,13 @@
   -webkit-appearance: none;
 }
 
+a:link,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -346,12 +353,30 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .copyright {
   font-size: 16px;
+  flex: 1;
   color: #999;
   display: block;
+}
+
+.footer-links {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.footer-links a {
+  color: #0f4c61;
+  text-transform: uppercase;
+}
+
+.footer-links a:hover {
+  color: #0F4C5F;
 }
 
 @media (min-width: 768px) {

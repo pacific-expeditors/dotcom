@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query Footer($id: ID!) {\n    footer(id:$id) {\n      id\n      copyright\n    }\n  }\n'], ['\n  query Footer($id: ID!) {\n    footer(id:$id) {\n      id\n      copyright\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  query Footer($id: ID!) {\n    footer(id:$id) {\n      id\n      copyright\n      footerLinks {\n        href\n        text\n      }\n    }\n  }\n'], ['\n  query Footer($id: ID!) {\n    footer(id:$id) {\n      id\n      copyright\n      footerLinks {\n        href\n        text\n      }\n    }\n  }\n']);
 
 var _react = require('react');
 
@@ -52,7 +52,11 @@ var FooterContainer = function (_Component) {
 
       var footer = (0, _lodash2.default)(data, 'footer', {});
 
-      return _react2.default.createElement(_Footer2.default, { logo: footer.logo, title: footer.copyright, copyright: footer.copyright });
+      return _react2.default.createElement(_Footer2.default, {
+        footerLinks: footer.footerLinks,
+        logo: footer.logo,
+        title: footer.copyright,
+        copyright: footer.copyright });
     }
   }]);
 

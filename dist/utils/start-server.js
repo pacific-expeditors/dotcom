@@ -40,7 +40,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var startServer = function startServer(client, schema) {
   var app = (0, _express2.default)();
-  app.use('/static', _express2.default.static('dist/assets'));
+  app.use('/static', _express2.default.static(process.env.NODE_ENV === 'development' ? 'server/assets' : 'dist/assets'));
 
   app.use((0, _cors2.default)());
   app.use(_bodyParser2.default.json());

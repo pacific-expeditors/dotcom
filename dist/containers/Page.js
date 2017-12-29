@@ -52,6 +52,11 @@ var Page = function (_Component) {
   }
 
   _createClass(Page, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.props.data.refetch();
+    }
+  }, {
     key: 'render',
     value: function render() {
       var data = this.props.data;
@@ -77,7 +82,7 @@ var Page = function (_Component) {
             title
           ),
           _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css' }),
-          _react2.default.createElement('link', { rel: 'stylesheet', type: 'text/css', href: '/static/components.min.css?v=1' }),
+          _react2.default.createElement('link', { rel: 'stylesheet', type: 'text/css', href: '/static/components.css' }),
           _react2.default.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,900', rel: 'stylesheet' }),
           _react2.default.createElement('link', { rel: 'shortcut icon', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=16' }),
           _react2.default.createElement('link', { rel: 'apple-touch-icon-precomposed', sizes: '60x60', href: '//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=60' }),
@@ -109,7 +114,7 @@ var Page = function (_Component) {
           _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js' }),
           _react2.default.createElement('script', { src: '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js' }),
           _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js' }),
-          _react2.default.createElement('script', { src: '/static/global.min.js' })
+          _react2.default.createElement('script', { src: '/static/global.js' })
         )
       );
     }
