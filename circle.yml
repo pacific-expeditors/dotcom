@@ -18,7 +18,7 @@ test:
 
 deployment:
   staging:
-    branch: homepage-redesign
+    branch: master
     commands:
       - |
         cat >~/.netrc <<EOF
