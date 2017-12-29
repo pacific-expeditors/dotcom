@@ -34,4 +34,4 @@ deployment:
       - git config user.email "davidsims15@gmail.com"
       - git add .
       - git commit -m 'built'
-      - git push --force git@heroku.com:pacex-dev.git HEAD:refs/heads/dev2
+      - git push --force git@heroku.com:pacex-dev.git HEAD:refs/heads/homepage-redesign
