@@ -10,8 +10,7 @@ const renderUi = (req) => {
 
   app.get('/:slug?', (req, res) => {
     const slug = req.params.slug ? req.params.slug : 'home';
-    const refetch = !!req.query.refetch;
-    const Component = createElement(Root, { slug, refetch });
+    const Component = createElement(Root, { slug });
 
     renderToStringWithData(Component)
       .then((body:string) => res.send(`<!doctype>${body}`))

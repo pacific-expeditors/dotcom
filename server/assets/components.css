@@ -51,6 +51,33 @@ body {
   min-height: 200px;
 }
 
+/*================== HEADERS *==================*/
+.header {
+  display: none;
+}
+
+.header-mobile {
+  display: none;
+}
+
+.mobile-menu-link {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+}
+
+@media (min-width: 1200px) {
+  .header {
+    display: flex;
+  }
+
+  .mobile-menu-link {
+    display: none;
+  }
+}
+
+
 /*================== BUTTONS *==================*/
 .button {
   font-size: 16px;

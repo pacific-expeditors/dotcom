@@ -34,6 +34,10 @@ class IntroVideoContainer extends Component<void, Props, void> {
   }
 }
 
+curl -n -X DELETE https://api.heroku.com/apps/pacex-dev/dynos \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/vnd.heroku+json; version=3"
+
 export default graphql(gql`
   query IntroVideo($id: ID!) {
     introductionVideo(id:$id) {

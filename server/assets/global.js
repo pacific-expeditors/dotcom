@@ -10,6 +10,14 @@ window.onload = function() {
   ga('create', 'UA-107156593-1', 'auto');
   ga('send', 'pageview');
 
+  document.querySelector('.mobile-menu-link').addEventListener('click', function(e) {
+    document.querySelector('.header-mobile').style.display = 'block';
+  });
+
+  document.querySelector('.close-icon-link').addEventListener('click', function(e) {
+    document.querySelector('.header-mobile').style.display = 'none';
+  });
+
   var controller = new ScrollMagic.Controller();
   var ids = ['peace-of-mind', 'compliance', 'distribution', 'consulting', 'chris-coulombe', 'nick-caston'];
   ids.forEach(function(id) {
