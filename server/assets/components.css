@@ -380,15 +380,22 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.footer-container {
   display: flex;
   justify-content: space-between;
 }
 
-.copyright {
+.copyright-text {
   font-size: 16px;
-  flex: 1;
   color: #999;
   display: block;
+}
+
+.copyright-logo {
+  height: 40px;
+  margin-bottom: 20px;
 }
 
 .footer-links {
@@ -407,21 +414,24 @@ body {
 }
 
 @media (min-width: 768px) {
-  .copyright {
+  .footer-container {
     margin: 0 auto;
     width: 640px;
   }
 }
 
 @media (min-width: 1024px) {
-  .copyright {
+  .footer-container {
     margin: 0 auto;
     width: 980px;
+  }
+  .footer-links {
+    margin: 0 20px;
   }
 }
 
 @media (min-width: 1200px) {
-  .copyright {
+  .footer-container {
     width: 1170px;
   }
 }
