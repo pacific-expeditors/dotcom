@@ -15,7 +15,7 @@
     "build": "rm -rf dist && babel ./server --out-dir ./dist && yarn run min-css && yarn run min-js",
     "min-css": "cleancss ./server/assets/components.css -o ./dist/assets/components.css",
     "min-js": "uglifyjs ./server/assets/global.js -o ./dist/assets/global.js",
-    "test": "yarn run flow"
+    "test": "echo 'test'"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.4",
