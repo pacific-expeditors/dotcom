@@ -12,9 +12,9 @@ test:
   override:
     - yarn test
 
-compile:
-  override:
-    - yarn run build
+# compile:
+#   override:
+#     - yarn run build
 
 deployment:
   staging:
@@ -30,8 +30,8 @@ deployment:
           password $HEROKU_API_KEY
         EOF
       - chmod 600 ~/.netrc # Heroku cli complains about permissions without this
-      - git config user.name "davidsims9t"
-      - git config user.email "davidsims15@gmail.com"
-      - git add .
-      - git commit -m 'built'
-      - git push --force git@heroku.com:pacex-dev.git HEAD:refs/heads/homepage-redesign
+      - heroku maintenance:on --app pacex-dev
+      - heroku scale worker=0 --app pacex-dev
+      - git push --force git@heroku.com:pacex-dev.git $CIRCLE_SHA1:refs/heads/homepage-redesign
+      - heroku scale worker=x --app pacex-dev
+      - heroku maintenance:off --app pacex-dev
