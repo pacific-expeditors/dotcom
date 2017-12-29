@@ -11,7 +11,7 @@ import offline from './offline';
 
 const startServer = (client, schema) => {
   const app = express();
-  app.use('/static', express.static('dist/assets'));
+  app.use('/static', express.static(process.env.NODE_ENV === 'development' ? 'server/assets' : 'dist/assets'));
 
   app.use(cors());
   app.use(bodyParser.json());
