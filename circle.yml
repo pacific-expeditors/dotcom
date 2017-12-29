@@ -30,5 +30,5 @@ deployment:
           password $HEROKU_API_KEY
         EOF
       - chmod 600 ~/.netrc # Heroku cli complains about permissions without this
-      - "[[ -e \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+      - "[[ -e \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --all --unshallow"
       - git push --force git@heroku.com:pacex-dev.git $CIRCLE_SHA1:refs/heads/master
