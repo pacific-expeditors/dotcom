@@ -29,5 +29,6 @@ deployment:
           login $HEROKU_LOGIN
           password $HEROKU_API_KEY
         EOF
-      - git fetch --all --unshallow
-      - git push --force git@heroku.com:pacex-dev.git $CIRCLE_SHA1:refs/heads/master
+      - chmod 600 ~/.netrc
+      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --all --unshallow"
+      - git push --force git@heroku.com:pacex-staging.git $CIRCLE_SHA1:refs/heads/master
