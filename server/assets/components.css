@@ -120,6 +120,41 @@ body {
   color: #eee;
 }
 
+/*================== LEFT ALIGNED TEXT CARD *==================*/
+.left-card-container {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100% top;
+}
+.left-card-text-container {
+  padding: 100px 20px 100px 0;
+  flex: 1;
+  background-color: #fff;
+}
+.left-card-image-container {
+  flex: 1;
+}
+.left-card-image {
+  width: 100%;
+}
+.left-card-heading {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #0f4c61;
+}
+.left-card-text {
+  white-space: pre-wrap;
+}
+@media (min-width: 1024px) {
+  .left-card {
+    display: flex;
+    margin: 0 auto;
+    width: 980px;
+  }
+}
+
 /*================== GRIDS *==================*/
 .grid {
   display: flex;

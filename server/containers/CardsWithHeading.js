@@ -13,6 +13,12 @@ class CardsWithHeadingContainer extends Component<void, Props, void> {
   props: Props;
   state: void;
 
+  constructor(props:Props) {
+    super(props)
+
+    props.data.refetch()
+  }
+
   render() {
     const { data } = this.props;
     const cardsWithHeading = get(data, 'cardsWithHeading', {});

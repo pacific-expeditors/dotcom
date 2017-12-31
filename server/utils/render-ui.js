@@ -9,6 +9,10 @@ const renderUi = (req) => {
   app.use('/static', express.static('server/assets'));
 
   app.get('/:slug?', (req, res) => {
+    if (req.query.refetch) {
+      return res.send();
+    }
+
     const slug = req.params.slug ? req.params.slug : 'home';
     const Component = createElement(Root, { slug });
 

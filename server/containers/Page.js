@@ -18,6 +18,12 @@ class Page extends Component<void, Props, State> {
   props: Props;
   state: void;
 
+  constructor(props:Props) {
+    super(props)
+
+    props.data.refetch()
+  }
+
   render() {
     const { data } = this.props;
     const title = get(data, 'pages[0].title', '404');
