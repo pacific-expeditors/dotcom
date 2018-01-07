@@ -29,7 +29,7 @@ html {
 body {
   font: normal 16px/1.5 "Montserrat", sans-serif;
   color: #222;
-  margin-bottom: 64px;
+  margin-bottom: 128px;
 }
 
 /*================== FORMS *==================*/
@@ -121,21 +121,39 @@ body {
 }
 
 /*================== LEFT ALIGNED TEXT CARD *==================*/
-.left-card-container {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 100% top;
+.left-card-container,
+.left-card {
+  position: relative;
 }
 .left-card-text-container {
   padding: 100px 20px 100px 0;
   flex: 1;
   background-color: #fff;
 }
+.left-card-alt {
+  background: transparent;
+}
+.left-card-alt .left-card-heading,
+.left-card-alt .left-card-text {
+  color: #fff;
+}
 .left-card-image-container {
   flex: 1;
+  display: flex;
+  position: relative;
+}
+.left-card-background-images {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: hidden;
 }
 .left-card-image {
   width: 100%;
+  align-self: center;
+  position: relative;
+  z-index: 1;
 }
 .left-card-heading {
   font-size: 32px;
@@ -150,6 +168,64 @@ body {
 @media (min-width: 1024px) {
   .left-card {
     display: flex;
+    margin: 0 auto;
+    width: 980px;
+  }
+}
+
+/*================== RIGHT ALIGNED TEXT CARD *==================*/
+.right-card-container {
+  position: relative;
+}
+.right-card {
+  display: flex;
+  position: relative;
+}
+.right-card-heading {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.right-card-alt .right-card-heading {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #0f4c61;
+}
+.right-card-text {
+  flex: 1;
+  margin-left: auto;
+  color: #fff;
+  padding: 100px 0;
+}
+.right-card-alt .right-card-text {
+  color: #222;
+}
+.right-card-images {
+  flex: 1;
+  position: relative;
+  display: flex;
+}
+.right-card-image {
+  width: 100%;
+  position: relative;
+  align-self: center;
+}
+.right-card-background-images {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: hidden;
+}
+.right-card-background-image {
+  height: 100%;
+}
+.right-card-alt .right-card-background-images {
+  left: auto;
+}
+@media (min-width: 1024px) {
+  .right-card {
     margin: 0 auto;
     width: 980px;
   }
@@ -424,6 +500,7 @@ body {
 
 .copyright-text {
   font-size: 16px;
+  font-weight: 300;
   color: #999;
   display: block;
 }

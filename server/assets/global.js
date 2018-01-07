@@ -19,7 +19,13 @@ window.onload = function() {
   });
 
   var controller = new ScrollMagic.Controller();
-  var ids = ['peace-of-mind', 'compliance', 'distribution', 'consulting', 'chris-coulombe', 'nick-caston'];
+  var ids = [
+    'world-class-supply-chain-support',
+    'relationships-that-drive-success',
+    'consulting',
+    'it-starts-with-leadership',
+    'a-vision-for-success-in-cannabis'
+  ];
   ids.forEach(function(id) {
     new ScrollMagic.Scene({
       triggerElement: '#' + id

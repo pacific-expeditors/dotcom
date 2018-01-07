@@ -14,11 +14,19 @@ const LeftAlignedTextCard = ({id, heading, content, background, image, srcset = 
   return (
     <div
       key={id}
-      id={`${id}`}
-      style={{backgroundImage: `url(${background.url}?w=610)`}}
+      id={id}
       className="left-card-container">
+        {background && !image && (
+          <div className="left-card-background-images fade-in-obj">
+            <img
+              className="left-card-background-image lazyload"
+              data-src={`${background.url}?w=1920`}
+              data-srcset={srcset}
+              alt={heading} />
+          </div>
+        )}
         <div className="left-card">
-          <div className="left-card-text-container">
+          <div className={`left-card-text-container${!image ? " left-card-alt" : ''}`}>
             <h3 className="left-card-heading">{heading}</h3>
             <div className="left-card-text">
               {content}
@@ -26,6 +34,15 @@ const LeftAlignedTextCard = ({id, heading, content, background, image, srcset = 
           </div>
           {image && (
             <div className="left-card-image-container fade-in-obj">
+              {background && (
+                <div className="left-card-background-images">
+                  <img
+                    className="left-card-background-image lazyload"
+                    data-src={`${background.url}?w=1920`}
+                    data-srcset={srcset}
+                    alt={heading} />
+                </div>
+              )}
               <img
                 className="left-card-image lazyload"
                 data-src={`${image.url}?w=610`}
