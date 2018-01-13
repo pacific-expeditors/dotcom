@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query CardsWithHeading($id: ID!) {\n    cardsWithHeading(id:$id) {\n      id\n      heading\n      cards {\n        id\n        cards {\n          id\n          heading\n          link\n          cta\n          content\n          image {\n            url\n          }\n        }\n      }\n    }\n  }\n'], ['\n  query CardsWithHeading($id: ID!) {\n    cardsWithHeading(id:$id) {\n      id\n      heading\n      cards {\n        id\n        cards {\n          id\n          heading\n          link\n          cta\n          content\n          image {\n            url\n          }\n        }\n      }\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  query FeaturedArticles($date: String!) {\n    articles(q:$date) {\n      id\n      title\n      excerpt\n      attachments {\n        url\n      }\n    }\n  }\n'], ['\n  query FeaturedArticles($date: String!) {\n    articles(q:$date) {\n      id\n      title\n      excerpt\n      attachments {\n        url\n      }\n    }\n  }\n']);
 
 var _react = require('react');
 
@@ -22,9 +22,9 @@ var _lodash = require('lodash.get');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _CardsWithHeading = require('../components/CardsWithHeading');
+var _FeaturedArticles = require('../components/FeaturedArticles');
 
-var _CardsWithHeading2 = _interopRequireDefault(_CardsWithHeading);
+var _FeaturedArticles2 = _interopRequireDefault(_FeaturedArticles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36,39 +36,37 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var CardsWithHeadingContainer = function (_Component) {
-  _inherits(CardsWithHeadingContainer, _Component);
+var FeaturedArticlesContainer = function (_Component) {
+  _inherits(FeaturedArticlesContainer, _Component);
 
-  function CardsWithHeadingContainer(props) {
-    _classCallCheck(this, CardsWithHeadingContainer);
+  function FeaturedArticlesContainer() {
+    _classCallCheck(this, FeaturedArticlesContainer);
 
-    var _this = _possibleConstructorReturn(this, (CardsWithHeadingContainer.__proto__ || Object.getPrototypeOf(CardsWithHeadingContainer)).call(this, props));
-
-    props.data.refetch();
-    return _this;
+    return _possibleConstructorReturn(this, (FeaturedArticlesContainer.__proto__ || Object.getPrototypeOf(FeaturedArticlesContainer)).apply(this, arguments));
   }
 
-  _createClass(CardsWithHeadingContainer, [{
+  _createClass(FeaturedArticlesContainer, [{
     key: 'render',
     value: function render() {
       var data = this.props.data;
 
-      var cardsWithHeading = (0, _lodash2.default)(data, 'cardsWithHeading', {});
+      var articles = (0, _lodash2.default)(data, 'articles', {});
 
-      return _react2.default.createElement(_CardsWithHeading2.default, cardsWithHeading);
+      return _react2.default.createElement(_FeaturedArticles2.default, { articles: articles });
     }
   }]);
 
-  return CardsWithHeadingContainer;
+  return FeaturedArticlesContainer;
 }(_react.Component);
 
 exports.default = (0, _reactApollo.graphql)((0, _graphqlTag2.default)(_templateObject), {
-  options: function options(_ref) {
-    var id = _ref.id;
-
+  options: function options() {
+    var date = new Date();
     return {
-      variables: { id: id },
+      variables: {
+        date: 'fields.publishDate[lte]=' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+      },
       fetchPolicy: 'network-only'
     };
   }
-})(CardsWithHeadingContainer);
+})(FeaturedArticlesContainer);

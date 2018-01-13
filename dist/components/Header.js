@@ -205,7 +205,12 @@ var Header = function Header(props) {
     'div',
     { className: 'header-container', style: styles.headerContainer },
     _react2.default.createElement(DesktopHeader, props),
-    _react2.default.createElement(MobileHeader, props)
+    _react2.default.createElement(MobileHeader, props),
+    _react2.default.createElement(
+      'a',
+      { href: '#', className: 'mobile-menu-link', style: styles.menuIconLink },
+      _react2.default.createElement('span', { style: styles.menuIcon, dangerouslySetInnerHTML: { __html: menuIcon } })
+    )
   );
 };
 

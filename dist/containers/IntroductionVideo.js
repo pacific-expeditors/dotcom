@@ -39,10 +39,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var IntroVideoContainer = function (_Component) {
   _inherits(IntroVideoContainer, _Component);
 
-  function IntroVideoContainer() {
+  function IntroVideoContainer(props) {
     _classCallCheck(this, IntroVideoContainer);
 
-    return _possibleConstructorReturn(this, (IntroVideoContainer.__proto__ || Object.getPrototypeOf(IntroVideoContainer)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (IntroVideoContainer.__proto__ || Object.getPrototypeOf(IntroVideoContainer)).call(this, props));
+
+    props.data.refetch();
+    return _this;
   }
 
   _createClass(IntroVideoContainer, [{

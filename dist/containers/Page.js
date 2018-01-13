@@ -45,18 +45,16 @@ var styles = {
 var Page = function (_Component) {
   _inherits(Page, _Component);
 
-  function Page() {
+  function Page(props) {
     _classCallCheck(this, Page);
 
-    return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).call(this, props));
+
+    props.data.refetch();
+    return _this;
   }
 
   _createClass(Page, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.props.data.refetch();
-    }
-  }, {
     key: 'render',
     value: function render() {
       var data = this.props.data;
