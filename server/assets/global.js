@@ -4,12 +4,25 @@ window.onload = function() {
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  document.querySelector('.video-cta').style.transform = 'translateX(0%)';
-  document.querySelector('.video-cta').style.opacity = 1;
-
   ga('create', 'UA-107156593-1', 'auto');
   ga('send', 'pageview');
 
+  animateVideoCta();
+  toggleMobileMenu();
+  showAgeVerification();
+  handleContactFormSubmission();
+  fadeInImages();
+};
+
+function animateVideoCta() {
+  const videoCta = document.querySelector('.video-cta');
+  if (videoCta) {
+    document.querySelector('.video-cta').style.transform = 'translateX(0%)';
+    document.querySelector('.video-cta').style.opacity = 1;
+  }
+}
+
+function toggleMobileMenu() {
   document.querySelector('.mobile-menu-link').addEventListener('click', function(e) {
     document.querySelector('.header-mobile').style.display = 'block';
   });
@@ -17,28 +30,9 @@ window.onload = function() {
   document.querySelector('.close-icon-link').addEventListener('click', function(e) {
     document.querySelector('.header-mobile').style.display = 'none';
   });
+}
 
-  var controller = new ScrollMagic.Controller();
-  var ids = [
-    'world-class-supply-chain-support',
-    'relationships-that-drive-success',
-    'consulting',
-    'it-starts-with-leadership',
-    'a-vision-for-success-in-cannabis',
-    'third-party-sales',
-    'third-party-sales-no-overhead',
-    'sales-force',
-    'distribution-optimized-order-fulfillment',
-    'secure-cash-transport',
-  ];
-  ids.forEach(function(id) {
-    new ScrollMagic.Scene({
-      triggerElement: '#' + id
-    })
-      .setClassToggle('#' + id + ' .fade-in-obj', 'fade-in')
-      .addTo(controller);
-  });
-
+function showAgeVerification() {
   if (localStorage.getItem('isVerified')) {
     document.querySelector('#modal').style.display = 'none';
   } else {
@@ -50,7 +44,18 @@ window.onload = function() {
     e.preventDefault();
     document.querySelector('#modal').style.display = 'none';
   });
+}
 
+function fadeInImages() {
+  var controller = new ScrollMagic.Controller();
+  new ScrollMagic.Scene({
+    triggerElement: '.fade-in-obj'
+  })
+    .setClassToggle('.fade-in-obj', 'fade-in')
+    .addTo(controller);
+}
+
+function handleContactFormSubmission() {
   if (document.querySelector('#form')) {
     document.querySelector('#form').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -107,4 +112,4 @@ window.onload = function() {
       });
     });
   }
-};
+}

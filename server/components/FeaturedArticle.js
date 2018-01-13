@@ -13,7 +13,7 @@ const FeaturedArticle = ({id, attachments, title, excerpt}:FeaturedPostProps) =>
   return (
     <div
       key={id}
-      id={id}
+      id="featured-article"
       className="featured-article-container">
       <div className="featured-article">
         <div className="featured-article-attachments fade-in-obj">

@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react';
+import Button from './Button';
 
 type ArticleProps = {
   id: string,
@@ -17,17 +18,22 @@ const FeaturedArticlesGrid = ({articles}:FeaturedPostProps) => {
     <div className="featured-articles-container">
       {articles.map(article => {
         return (
-          <article id={article.id} className="featured-article">
+          <article id={article.id} className="featured-article-col">
             <div className="featured-article-attachments fade-in-obj">
-              <img
-                className="featured-article-attachment-image lazyload"
-                data-src={`${article.length && article.attachments[0].url}?w=1920`} />
+              {article.attachments && (
+                <img
+                  className="featured-article-attachment-image lazyload"
+                  data-src={`${article.attachments[0].url}?w=1920`} />
+              )}
             </div>
-            <section className="featured-article-text">
-              <h2 className="featured-article-heading">{article.title}</h2>
-              <p className="featured-article-text-excerpt">
+            <section className="featured-article-col-text">
+              <h2 className="featured-article-col-heading">{article.title}</h2>
+              <p className="featured-article-col-text-excerpt">
                 {article.excerpt}
               </p>
+              <Button link={article.id}>
+                More
+              </Button>
             </section>
           </article>
         );
