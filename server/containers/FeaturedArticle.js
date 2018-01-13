@@ -15,16 +15,16 @@ class FeaturedArticleContainer extends Component<void, Props, void> {
 
   render() {
     const { data } = this.props;
-    const article = get(data, 'articles', {});
+    const article = get(data, 'articles[0]', {});
 
     return (
-      <FeaturedArticleContainer article={article} />
+      <FeaturedArticle {...article} />
     );
   }
 }
 
 export default graphql(gql`
-  query FeaturedArticle() {
+  query FeaturedArticle {
     articles(q:"fields.featured=true") {
       id
       title

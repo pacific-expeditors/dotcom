@@ -29,6 +29,7 @@ class Page extends Component<void, Props, State> {
     const title = get(data, 'pages[0].title', '404');
     const sections = get(data, 'pages[0].sections', [{__typename: '404', sys: {id: 0}}]);
     const description = get(data, 'pages[0].metaDescription', "");
+    const url = "http://www.pacificexpeditors.com/";
 
     return (
       <html lang="en">
@@ -38,6 +39,18 @@ class Page extends Component<void, Props, State> {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0" />
           <meta name="description" content={description} />
+
+          <meta property="og:title" content={title} />
+          <meta property="og:url" content={url} />
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="Pacific Expeditors" />
+
+          <meta property="twitter:site" content="@Pac_Ex" />
+          <meta property="twitter:url" content={url} />
+          <meta property="twitter:title" content={title} />
+          <meta property="twitter:card" content="summary" />
+          <meta property="twitter:description" content={description} />
+
           <title>{title}</title>
 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />

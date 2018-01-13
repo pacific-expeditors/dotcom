@@ -777,8 +777,24 @@ body {
   margin: 0 auto;
 }
 
+@media (min-width: 1024px) {
+  .featured-article {
+    width: 980px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .featured-article {
+    width: 1170px;
+  }
+}
+
 .featured-article-attachments {
   flex: 1;
+}
+
+.featured-article-attachment-image {
+  width: 100%;
 }
 
 .featured-article-text {
@@ -787,7 +803,9 @@ body {
 
 .featured-article-heading {
   font-size: 32px;
-  font-weight: bold;
+  letter-spacing: 1px;
+  font-weight: normal;
+  text-transform: uppercase;
   color: #fff;
 }
 

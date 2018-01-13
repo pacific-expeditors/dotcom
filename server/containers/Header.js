@@ -18,7 +18,10 @@ class HeaderContainer extends Component<void, Props, void> {
     const header = get(data, 'header', {});
 
     return (
-      <Header navLinks={header.navigationLinks} iteTitle={header.siteTitle} logo={header.logo.url} />
+      <Header
+        navLinks={header.navigationLinks}
+        siteTitle={header.siteTitle}
+        logo={header.logo.url} />
     );
   }
 }

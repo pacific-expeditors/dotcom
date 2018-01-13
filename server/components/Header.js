@@ -100,7 +100,7 @@ const MobileHeader = ({mobileLogo, title, navLinks}:HeaderProps) => {
           <span style={styles.closeIcon} dangerouslySetInnerHTML={{__html: closeIcon}} />
         </a>
       </div>
-      <nav style={styles.mobileMenuLinks} className="header-mobile-menu">
+      <nav key="mobileNav" style={styles.mobileMenuLinks} className="header-mobile-menu">
         {navLinks.map(navLink => {
           return (
             <a

@@ -1,0 +1,39 @@
+/* @flow */
+import React from 'react';
+
+type ArticleProps = {
+  id: string,
+  attachments: [any],
+  title: string,
+  excerpt: string
+};
+
+type FeaturedPostProps = {
+  articles: [ArticleProps]
+};
+
+const FeaturedArticlesGrid = ({articles}:FeaturedPostProps) => {
+  return (
+    <div className="featured-articles-container">
+      {articles.map(article => {
+        return (
+          <article id={article.id} className="featured-article">
+            <div className="featured-article-attachments fade-in-obj">
+              <img
+                className="featured-article-attachment-image lazyload"
+                data-src={`${article.length && article.attachments[0].url}?w=1920`} />
+            </div>
+            <section className="featured-article-text">
+              <h2 className="featured-article-heading">{article.title}</h2>
+              <p className="featured-article-text-excerpt">
+                {article.excerpt}
+              </p>
+            </section>
+          </article>
+        );
+      })}
+    </div>
+  );
+};
+
+export default FeaturedArticlesGrid;

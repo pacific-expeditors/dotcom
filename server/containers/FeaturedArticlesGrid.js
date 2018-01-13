@@ -3,28 +3,28 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import get from 'lodash.get';
-import FeaturedArticles from '../components/FeaturedArticles';
+import FeaturedArticlesGrid from '../components/FeaturedArticlesGrid';
 
 type Props = {
   data: any
 };
 
-class FeaturedArticlesContainer extends Component<void, Props, void> {
+class FeaturedArticlesGridContainer extends Component<void, Props, void> {
   props: Props;
   state: void;
 
   render() {
     const { data } = this.props;
-    const articles = get(data, 'articles', {});
+    const articles = get(data, 'articles', []);
 
     return (
-      <FeaturedArticles articles={articles} />
+      <FeaturedArticlesGrid articles={articles} />
     );
   }
 }
 
 export default graphql(gql`
-  query FeaturedArticles($date: String!) {
+  query FeaturedArticlesGrid($date: String!) {
     articles(q:$date) {
       id
       title
@@ -36,12 +36,13 @@ export default graphql(gql`
   }
 `, {
   options: () => {
-    const date = new Date()
+    const date = new Date();
+    const ymd = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, 0)}-${date.getDate()}`;
     return {
       variables: {
-        date: `fields.publishDate[lte]=${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+        date: `fields.publishDate[lte]=${ymd}`
       },
       fetchPolicy: 'network-only'
     }
   }
-})(FeaturedArticlesContainer);
+})(FeaturedArticlesGridContainer);
