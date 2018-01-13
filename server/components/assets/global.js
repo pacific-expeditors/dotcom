@@ -24,7 +24,12 @@ window.onload = function() {
     'relationships-that-drive-success',
     'consulting',
     'it-starts-with-leadership',
-    'a-vision-for-success-in-cannabis'
+    'a-vision-for-success-in-cannabis',
+    'third-party-sales',
+    'third-party-sales-no-overhead',
+    'sales-force',
+    'distribution-optimized-order-fulfillment',
+    'secure-cash-transport',
   ];
   ids.forEach(function(id) {
     new ScrollMagic.Scene({

@@ -120,6 +120,21 @@ body {
   color: #eee;
 }
 
+/*================== CENTERED TEXT WITH BACKGROUND *==================*/
+.text-with-background-container {
+  position: relative;
+}
+.text-with-background {
+  padding: 20px 0;
+}
+.text-with-background-text {
+  color: #fff;
+  font-weight: 300;
+  font-size: 42px;
+  text-align: center;
+  position: relative;
+}
+
 /*================== LEFT ALIGNED TEXT CARD *==================*/
 .left-card-container,
 .left-card {
@@ -746,4 +761,36 @@ body {
 }
 .modal-heading {
   margin-top: 0;
+}
+
+/*================== FEATURED ARTICLES *==================*/
+
+
+/*================== FEATURED ARTICLE *==================*/
+.featured-article-container {
+  background-color: #0073a2;
+  padding: 20px 0;
+}
+
+.featured-article {
+  display: flex;
+  margin: 0 auto;
+}
+
+.featured-article-attachments {
+  flex: 1;
+}
+
+.featured-article-text {
+  flex: 1;
+}
+
+.featured-article-heading {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.featured-article-text-excerpt {
+  color: #fff;
 }
