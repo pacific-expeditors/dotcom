@@ -26,7 +26,7 @@ var RightAlignedTextCard = function RightAlignedTextCard(_ref) {
 
   return _react2.default.createElement(
     'div',
-    { key: id, id: '' + id, className: 'right-card-container' + (image ? ' right-card-alt' : '') },
+    { key: id, id: '' + id, className: 'right-card-container' + (opaqueTextBackground ? ' right-card-alt' : '') },
     !opaqueTextBackground && background && _react2.default.createElement(
       'div',
       { className: 'right-card-background-images fade-in-obj' },

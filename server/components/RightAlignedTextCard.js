@@ -12,7 +12,7 @@ type RightCardProps = {
 
 const RightAlignedTextCard = ({id, heading, content, background, image, callToActionLink, callToActionText, opaqueTextBackground}:RightCardProps) => {
   return (
-    <div key={id} id={`${id}`} className={`right-card-container${image ? ' right-card-alt' : ''}`}>
+    <div key={id} id={`${id}`} className={`right-card-container${opaqueTextBackground ? ' right-card-alt' : ''}`}>
       {!opaqueTextBackground && background && (
         <div className="right-card-background-images fade-in-obj">
           <img
@@ -38,7 +38,7 @@ const RightAlignedTextCard = ({id, heading, content, background, image, callToAc
               alt={heading} />
           )}
         </div>
-        <div className="right-card-text-container">
+        <div className={`right-card-text-container`}>
           <h3 className="right-card-heading">{heading}</h3>
           <div className="right-card-text">
             {content}

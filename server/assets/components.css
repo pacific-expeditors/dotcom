@@ -162,7 +162,7 @@ body {
 .text-with-background {
   flex: 1;
   position: relative;
-  padding: 100px 0;
+  padding: 100px;
 }
 .text-with-background-cta {
   display: flex;
@@ -185,8 +185,13 @@ body {
 }
 .text-with-background-text {
   color: #fff;
+  font-weight: 300;
+  font-size: 24px;
   text-align: center;
   white-space: pre-wrap;
+}
+.text-with-background-heading + .text-with-background-text {
+  font-size: 16px;
 }
 
 /*================== LEFT ALIGNED TEXT CARD *==================*/
@@ -225,11 +230,15 @@ body {
   }
   .left-card-text-container {
     order: 1;
-    padding: 100px 20px 100px 0;
+    padding: 100px 0;
   }
   .left-card-image-container {
     order: 2;
     display: flex;
+  }
+  .left-card-text,
+  .left-card-heading {
+    padding-right: 20px;
   }
 }
 .left-card-background-images {
@@ -330,7 +339,12 @@ body {
   }
 
   .right-card-text-container {
-    padding: 100px 0 100px 20px;
+    padding: 100px 0;
+  }
+
+  .right-card-text,
+  .right-card-heading {
+    padding-left: 20px;
   }
 }
 @media (min-width: 1200px) {

@@ -21,9 +21,11 @@ const CenteredTextWithBackground = ({id, heading, content, background, callToAct
         </div>
       )}
       <div className="text-with-background">
-        <h2 className="text-with-background-heading">
-          {heading}
-        </h2>
+        {heading && (
+          <h2 className="text-with-background-heading">
+            {heading}
+          </h2>
+        )}
         <p className="text-with-background-text">
           {content}
         </p>

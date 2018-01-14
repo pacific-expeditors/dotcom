@@ -38,7 +38,7 @@ var CenteredTextWithBackground = function CenteredTextWithBackground(_ref) {
     _react2.default.createElement(
       'div',
       { className: 'text-with-background' },
-      _react2.default.createElement(
+      heading && _react2.default.createElement(
         'h2',
         { className: 'text-with-background-heading' },
         heading
