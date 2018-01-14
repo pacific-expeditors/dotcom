@@ -31,22 +31,22 @@ const LeftAlignedTextCard = ({id, heading, content, background, image, opaqueTex
               {content}
             </div>
           </div>
-          {opaqueTextBackground && image && (
-            <div className="left-card-image-container fade-in-obj">
-              {background && (
-                <div className="left-card-background-images">
-                  <img
-                    className="left-card-background-image lazyload"
-                    data-src={`${background.url}?w=1920`}
-                    alt={heading} />
-                </div>
-              )}
+          <div className="left-card-image-container fade-in-obj">
+            {opaqueTextBackground && background && (
+              <div className="left-card-background-images">
+                <img
+                  className="left-card-background-image-opaque lazyload"
+                  data-src={`${background.url}?w=1920`}
+                  alt={heading} />
+              </div>
+            )}
+            {opaqueTextBackground && image && (
               <img
                 className="left-card-image lazyload"
                 data-src={`${image.url}?w=610`}
                 alt={heading} />
-            </div>
-          )}
+            )}
+          </div>
         </div>
     </div>
   );

@@ -30,6 +30,8 @@ export default graphql(gql`
       heading
       content
       opaqueTextBackground
+      callToActionText
+      callToActionLink
       background {
         url
       }

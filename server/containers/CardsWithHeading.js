@@ -34,6 +34,8 @@ export default graphql(gql`
     cardsWithHeading(id:$id) {
       id
       heading
+      callToActionLink
+      callToActionText
       cards {
         id
         cards {

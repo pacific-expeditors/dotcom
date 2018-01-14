@@ -30,6 +30,7 @@ body {
   font: normal 16px/1.5 "Montserrat", sans-serif;
   color: #222;
   margin-bottom: 340px;
+  overflow-x: hidden;
 }
 
 @media (min-width: 1024px) {
@@ -209,6 +210,9 @@ body {
   bottom: 0;
   overflow-y: hidden;
 }
+.left-card-background-image {
+  width: 100%;
+}
 .left-card-image {
   width: 100%;
   align-self: center;
@@ -257,10 +261,12 @@ body {
 }
 .right-card-text-container {
   flex: 1;
-  margin-left: auto;
   color: #fff;
   padding: 0 20px 40px;
   white-space: pre-wrap;
+}
+.right-card-text {
+  padding-bottom: 20px;
 }
 .right-card-alt .right-card-text {
   color: #222;
@@ -295,7 +301,7 @@ body {
   }
 
   .right-card-text-container {
-    padding: 100px 0;
+    padding: 100px 0 100px 20px;
   }
 }
 @media (min-width: 1200px) {
@@ -535,6 +541,12 @@ body {
 .cards-header img {
   width: 50px;
   margin: 0 20px;
+}
+
+.cards-with-header-cta {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 1024px) {

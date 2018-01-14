@@ -49,18 +49,18 @@ var LeftAlignedTextCard = function LeftAlignedTextCard(_ref) {
           content
         )
       ),
-      opaqueTextBackground && image && _react2.default.createElement(
+      _react2.default.createElement(
         "div",
         { className: "left-card-image-container fade-in-obj" },
-        background && _react2.default.createElement(
+        opaqueTextBackground && background && _react2.default.createElement(
           "div",
           { className: "left-card-background-images" },
           _react2.default.createElement("img", {
-            className: "left-card-background-image lazyload",
+            className: "left-card-background-image-opaque lazyload",
             "data-src": background.url + "?w=1920",
             alt: heading })
         ),
-        _react2.default.createElement("img", {
+        opaqueTextBackground && image && _react2.default.createElement("img", {
           className: "left-card-image lazyload",
           "data-src": image.url + "?w=610",
           alt: heading })
