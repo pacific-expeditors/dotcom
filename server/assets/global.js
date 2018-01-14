@@ -15,7 +15,7 @@ window.onload = function() {
 };
 
 function animateVideoCta() {
-  const videoCta = document.querySelector('.video-cta');
+  var videoCta = document.querySelector('.video-cta');
   if (videoCta) {
     document.querySelector('.video-cta').style.transform = 'translateX(0%)';
     document.querySelector('.video-cta').style.opacity = 1;

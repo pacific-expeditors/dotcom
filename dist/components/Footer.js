@@ -30,23 +30,23 @@ var Footer = function Footer(_ref) {
       ),
       _react2.default.createElement(
         "nav",
-        { className: "footer-links" },
+        { key: "footerLinks", className: "footer-links" },
         footerLinks.map(function (link) {
           return _react2.default.createElement(
             "a",
-            { href: link.href },
+            { key: link.href, href: link.href },
             link.text
           );
         })
       ),
       _react2.default.createElement(
         "nav",
-        { className: "social-media-links" },
+        { key: "socialMediaLinks", className: "social-media-links" },
         socialMediaLinks.map(function (link) {
           return _react2.default.createElement(
             "a",
-            { href: link.link },
-            link.title
+            { key: link.href, href: link.link },
+            _react2.default.createElement("img", { src: link.icon.url, alt: link.title })
           );
         })
       )

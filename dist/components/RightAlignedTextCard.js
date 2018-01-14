@@ -54,7 +54,7 @@ var RightAlignedTextCard = function RightAlignedTextCard(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'right-card-text' },
+        { className: 'right-card-text-container' },
         _react2.default.createElement(
           'h3',
           { className: 'right-card-heading' },

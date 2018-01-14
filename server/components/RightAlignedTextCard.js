@@ -41,7 +41,7 @@ const RightAlignedTextCard = ({id, heading, content, background, image, srcset =
               alt={heading} />
           )}
         </div>
-        <div className="right-card-text">
+        <div className="right-card-text-container">
           <h3 className="right-card-heading">{heading}</h3>
           <div className="right-card-text">
             {content}

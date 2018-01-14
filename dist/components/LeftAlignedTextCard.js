@@ -16,8 +16,7 @@ var LeftAlignedTextCard = function LeftAlignedTextCard(_ref) {
       content = _ref.content,
       background = _ref.background,
       image = _ref.image,
-      _ref$srcset = _ref.srcset,
-      srcset = _ref$srcset === undefined ? [] : _ref$srcset;
+      opaqueTextBackground = _ref.opaqueTextBackground;
 
   return _react2.default.createElement(
     "div",
@@ -25,13 +24,12 @@ var LeftAlignedTextCard = function LeftAlignedTextCard(_ref) {
       key: id,
       id: id,
       className: "left-card-container" },
-    background && !image && _react2.default.createElement(
+    !opaqueTextBackground && background && _react2.default.createElement(
       "div",
       { className: "left-card-background-images fade-in-obj" },
       _react2.default.createElement("img", {
         className: "left-card-background-image lazyload",
         "data-src": background.url + "?w=1920",
-        "data-srcset": srcset,
         alt: heading })
     ),
     _react2.default.createElement(
@@ -39,7 +37,7 @@ var LeftAlignedTextCard = function LeftAlignedTextCard(_ref) {
       { className: "left-card" },
       _react2.default.createElement(
         "div",
-        { className: "left-card-text-container" + (!image ? " left-card-alt" : '') },
+        { className: "left-card-text-container" + (!opaqueTextBackground ? " left-card-alt" : '') },
         _react2.default.createElement(
           "h3",
           { className: "left-card-heading" },
@@ -51,7 +49,7 @@ var LeftAlignedTextCard = function LeftAlignedTextCard(_ref) {
           content
         )
       ),
-      image && _react2.default.createElement(
+      opaqueTextBackground && image && _react2.default.createElement(
         "div",
         { className: "left-card-image-container fade-in-obj" },
         background && _react2.default.createElement(
@@ -60,13 +58,11 @@ var LeftAlignedTextCard = function LeftAlignedTextCard(_ref) {
           _react2.default.createElement("img", {
             className: "left-card-background-image lazyload",
             "data-src": background.url + "?w=1920",
-            "data-srcset": srcset,
             alt: heading })
         ),
         _react2.default.createElement("img", {
           className: "left-card-image lazyload",
           "data-src": image.url + "?w=610",
-          "data-srcset": srcset,
           alt: heading })
       )
     )

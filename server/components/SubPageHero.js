@@ -12,7 +12,7 @@ const styles = {
     overflow: 'hidden'
   },
   subPageHero: {
-    height: '100%',
+    height: '80vh',
     display: 'flex',
     flexDirection: 'column',
     margin: '0 auto',
@@ -20,13 +20,14 @@ const styles = {
     alignItems: 'center'
   },
   subPageHeading: {
-    fontSize: '48px',
+    fontSize: '32px',
     margin: 0,
     fontWeight: 500,
     letterSpacing: '1.5px',
     lineHeight: 1,
     color: '#fff',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    textAlign: 'center'
   },
   hr: {
     background: '#fff',

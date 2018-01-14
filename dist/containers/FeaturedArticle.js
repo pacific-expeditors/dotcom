@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query FeaturedArticle() {\n    articles(q:"fields.featured=true") {\n      id\n      title\n      excerpt\n      attachments {\n        url\n      }\n    }\n  }\n'], ['\n  query FeaturedArticle() {\n    articles(q:"fields.featured=true") {\n      id\n      title\n      excerpt\n      attachments {\n        url\n      }\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  query FeaturedArticle {\n    articles(q:"fields.featured=true") {\n      id\n      title\n      excerpt\n      attachments {\n        url\n      }\n    }\n  }\n'], ['\n  query FeaturedArticle {\n    articles(q:"fields.featured=true") {\n      id\n      title\n      excerpt\n      attachments {\n        url\n      }\n    }\n  }\n']);
 
 var _react = require('react');
 
@@ -50,9 +50,9 @@ var FeaturedArticleContainer = function (_Component) {
     value: function render() {
       var data = this.props.data;
 
-      var article = (0, _lodash2.default)(data, 'articles', {});
+      var article = (0, _lodash2.default)(data, 'articles[0]', {});
 
-      return _react2.default.createElement(FeaturedArticleContainer, { article: article });
+      return _react2.default.createElement(_FeaturedArticle2.default, article);
     }
   }]);
 

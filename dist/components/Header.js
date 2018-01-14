@@ -113,7 +113,7 @@ var MobileHeader = function MobileHeader(_ref) {
     ),
     _react2.default.createElement(
       'nav',
-      { style: styles.mobileMenuLinks, className: 'header-mobile-menu' },
+      { key: 'mobileNav', style: styles.mobileMenuLinks, className: 'header-mobile-menu' },
       navLinks.map(function (navLink) {
         return _react2.default.createElement(
           'a',

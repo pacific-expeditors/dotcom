@@ -29,12 +29,12 @@ html {
 body {
   font: normal 16px/1.5 "Montserrat", sans-serif;
   color: #222;
-  margin-bottom: 208px;
+  margin-bottom: 340px;
 }
 
 @media (min-width: 1024px) {
   body {
-    margin-bottom: 124px;
+    margin-bottom: 164px;
   }
 }
 
@@ -128,6 +128,10 @@ body {
 
 /*================== SUBPAGE HERO *==================*/
 @media (min-width: 1024px) {
+  .subpage-hero-heading {
+    text-align: left !important;
+    font-size: 48px !important;
+  }
   .subpage-hero {
     width: 980px;
     align-items: flex-start !important;
@@ -160,10 +164,18 @@ body {
 .left-card {
   position: relative;
 }
+.left-card {
+  display: flex;
+  min-height: 600px;
+  flex-direction: column;
+}
 .left-card-text-container {
-  padding: 100px 20px 100px 0;
+  padding: 0 20px 40px;
   flex: 1;
   background-color: #fff;
+  position: relative;
+  z-index: 2;
+  order: 2;
 }
 .left-card-alt {
   background: transparent;
@@ -174,8 +186,21 @@ body {
 }
 .left-card-image-container {
   flex: 1;
-  display: flex;
   position: relative;
+  order: 1;
+}
+@media (min-width: 1024px) {
+  .left-card {
+    flex-direction: row;
+  }
+  .left-card-text-container {
+    order: 1;
+    padding: 100px 20px 100px 0;
+  }
+  .left-card-image-container {
+    order: 2;
+    display: flex;
+  }
 }
 .left-card-background-images {
   position: absolute;
@@ -202,9 +227,13 @@ body {
 }
 @media (min-width: 1024px) {
   .left-card {
-    display: flex;
     margin: 0 auto;
     width: 980px;
+  }
+}
+@media (min-width: 1200px) {
+  .left-card {
+    width: 1170px;
   }
 }
 
@@ -215,22 +244,23 @@ body {
 .right-card {
   display: flex;
   position: relative;
+  flex-direction: column;
 }
 .right-card-heading {
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
+  font-size: 32px;
+  font-weight: normal;
 }
 .right-card-alt .right-card-heading {
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 1.25;
   color: #0f4c61;
 }
-.right-card-text {
+.right-card-text-container {
   flex: 1;
   margin-left: auto;
   color: #fff;
-  padding: 100px 0;
+  padding: 0 20px 40px;
+  white-space: pre-wrap;
 }
 .right-card-alt .right-card-text {
   color: #222;
@@ -244,6 +274,7 @@ body {
   width: 100%;
   position: relative;
   align-self: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .3);
 }
 .right-card-background-images {
   position: absolute;
@@ -253,9 +284,6 @@ body {
   bottom: 0;
   overflow-y: hidden;
 }
-.right-card-background-image {
-  height: 100%;
-}
 .right-card-alt .right-card-background-images {
   left: auto;
 }
@@ -263,6 +291,16 @@ body {
   .right-card {
     margin: 0 auto;
     width: 980px;
+    flex-direction: row;
+  }
+
+  .right-card-text-container {
+    padding: 100px 0;
+  }
+}
+@media (min-width: 1200px) {
+  .right-card {
+    width: 1170px;
   }
 }
 
@@ -544,11 +582,13 @@ body {
   flex: 1;
   justify-content: space-between;
   margin: 20px 0;
+  flex-direction: column;
 }
 
 @media (min-width: 1024px) {
   .footer-links {
     margin: 0;
+    flex-direction: row;
   }
 }
 

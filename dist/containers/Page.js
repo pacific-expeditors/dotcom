@@ -62,6 +62,7 @@ var Page = function (_Component) {
       var title = (0, _lodash2.default)(data, 'pages[0].title', '404');
       var sections = (0, _lodash2.default)(data, 'pages[0].sections', [{ __typename: '404', sys: { id: 0 } }]);
       var description = (0, _lodash2.default)(data, 'pages[0].metaDescription', "");
+      var url = "http://www.pacificexpeditors.com/";
 
       return _react2.default.createElement(
         'html',
@@ -74,6 +75,15 @@ var Page = function (_Component) {
           _react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge,chrome=1' }),
           _react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0' }),
           _react2.default.createElement('meta', { name: 'description', content: description }),
+          _react2.default.createElement('meta', { property: 'og:title', content: title }),
+          _react2.default.createElement('meta', { property: 'og:url', content: url }),
+          _react2.default.createElement('meta', { property: 'og:type', content: 'website' }),
+          _react2.default.createElement('meta', { property: 'og:site_name', content: 'Pacific Expeditors' }),
+          _react2.default.createElement('meta', { property: 'twitter:site', content: '@Pac_Ex' }),
+          _react2.default.createElement('meta', { property: 'twitter:url', content: url }),
+          _react2.default.createElement('meta', { property: 'twitter:title', content: title }),
+          _react2.default.createElement('meta', { property: 'twitter:card', content: 'summary' }),
+          _react2.default.createElement('meta', { property: 'twitter:description', content: description }),
           _react2.default.createElement(
             'title',
             null,

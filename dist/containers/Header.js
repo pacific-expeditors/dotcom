@@ -52,7 +52,10 @@ var HeaderContainer = function (_Component) {
 
       var header = (0, _lodash2.default)(data, 'header', {});
 
-      return _react2.default.createElement(_Header2.default, { navLinks: header.navigationLinks, iteTitle: header.siteTitle, logo: header.logo.url });
+      return _react2.default.createElement(_Header2.default, {
+        navLinks: header.navigationLinks,
+        siteTitle: header.siteTitle,
+        logo: header.logo.url });
     }
   }]);
 
