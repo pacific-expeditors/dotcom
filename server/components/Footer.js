@@ -14,14 +14,18 @@ const Footer = ({copyright, logo, footerLinks, socialMediaLinks}:FooterProps) =>
           <img className="copyright-logo" src={logo.url} alt={logo.title} />
           <span className="copyright-text" dangerouslySetInnerHTML={{__html: copyright}} />
         </div>
-        <nav className="footer-links">
+        <nav key="footerLinks" className="footer-links">
           {footerLinks.map(link => {
-            return (<a href={link.href}>{link.text}</a>)
+            return (<a key={link.href} href={link.href}>{link.text}</a>)
           })}
         </nav>
-        <nav className="social-media-links">
+        <nav key="socialMediaLinks" className="social-media-links">
           {socialMediaLinks.map(link => {
-            return (<a href={link.link}>{link.title}</a>)
+            return (
+              <a key={link.href} href={link.link}>
+                <img src={link.icon.url} alt={link.title} />
+              </a>
+            )
           })}
         </nav>
       </div>

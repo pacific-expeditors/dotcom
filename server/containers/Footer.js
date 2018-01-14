@@ -46,6 +46,9 @@ export default graphql(gql`
         id
         title
         link
+        icon {
+          url
+        }
       }
     }
   }

@@ -12,12 +12,12 @@ const styles = {
     overflow: 'hidden'
   },
   subPageHero: {
-    width: '1170px',
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
     margin: '0 auto',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   subPageHeading: {
     fontSize: '48px',
