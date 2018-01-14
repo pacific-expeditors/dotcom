@@ -34,6 +34,9 @@ export default graphql(gql`
     centeredTextWithBackground(id:$id) {
       id
       content
+      heading
+      callToActionLink
+      callToActionText
       background {
         url
       }
