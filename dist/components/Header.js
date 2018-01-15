@@ -41,7 +41,6 @@ var styles = {
   navLink: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#0f4c61',
     textTransform: 'uppercase',
     textDecoration: 'none',
     letterSpacing: '2px'
