@@ -201,7 +201,6 @@ body {
 }
 .left-card {
   display: flex;
-  min-height: 600px;
   flex-direction: column;
 }
 .left-card-text-container {
@@ -249,7 +248,7 @@ body {
   overflow-y: hidden;
 }
 .left-card-background-image {
-  width: 100%;
+  height: 100%;
 }
 .left-card-image {
   width: 100%;
@@ -271,6 +270,10 @@ body {
   .left-card {
     margin: 0 auto;
     width: 980px;
+  }
+
+  .left-card-background-image {
+    width: 100%;
   }
 }
 @media (min-width: 1200px) {
@@ -312,7 +315,6 @@ body {
 .right-card-images {
   flex: 1;
   position: relative;
-  display: flex;
 }
 .right-card-image {
   width: 100%;
@@ -345,6 +347,14 @@ body {
   .right-card-text,
   .right-card-heading {
     padding-left: 20px;
+  }
+
+  .right-card-text-container .button {
+    margin-left: 20px;
+  }
+
+  .right-card-images {
+    display: flex;
   }
 }
 @media (min-width: 1200px) {
