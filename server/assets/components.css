@@ -29,13 +29,13 @@ html {
 body {
   font: normal 16px/1.5 "Montserrat", sans-serif;
   color: #222;
-  margin-bottom: 340px;
+  margin-bottom: 300px;
   overflow-x: hidden;
 }
 
 @media (min-width: 1024px) {
   body {
-    margin-bottom: 164px;
+    margin-bottom: 124px;
   }
 }
 
@@ -140,6 +140,7 @@ body {
     text-align: left !important;
     font-size: 48px !important;
   }
+
   .subpage-hero {
     width: 980px;
     align-items: flex-start !important;
@@ -740,6 +741,49 @@ body {
   }
 }
 
+/*================== ADDRESS *==================*/
+.address-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-info {
+  flex: 1;
+  padding: 60px 0;
+}
+
+.address-heading {
+  padding: 0 100px;
+}
+
+.address-address {
+  padding: 20px 100px;
+  font-style: normal;
+}
+
+.address-map {
+  flex: 1;
+}
+
+.address-map iframe {
+  width: 100%;
+}
+
+.address-heading {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #0f4c61;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .address-container {
+    flex-direction: row;
+  }
+}
+
 /*================== CONTACT *==================*/
 .contact-wrapper {
   width: 100%;
@@ -750,26 +794,6 @@ body {
   margin-top: -20px;
   padding: 0 20px 80px;
 }
-
-.contact-top {
-  width: 100%;
-  height: 100px;
-  overflow: hidden;
-  position: relative;
-}
-
-.contact-top:before {
-  content: "";
-  display: block;
-  border-radius: 50%;
-  background-color: #0f4c61;
-  width: 200%;
-  left: -50%;
-  top: 0;
-  position: absolute;
-  height: 604px;
-}
-
 
 .form-container {
   display: flex;

@@ -18,7 +18,6 @@ var Contact = function Contact() {
   return _react2.default.createElement(
     'div',
     { className: 'contact-wrapper' },
-    _react2.default.createElement('div', { className: 'contact-top' }),
     _react2.default.createElement(
       'div',
       { className: 'contact' },

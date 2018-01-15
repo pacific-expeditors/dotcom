@@ -5,7 +5,6 @@ import Button from './Button';
 const Contact = () => {
   return (
     <div className="contact-wrapper">
-      <div className="contact-top"></div>
       <div className="contact">
         <div className="form-container">
           <form id="form" className="form">
