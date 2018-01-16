@@ -13,7 +13,7 @@ class Root extends Component<void, Props, State> {
   render() {
     return (
       <Providers>
-        <Page slug={this.props.slug} />
+        <Page slug={this.props.slug} article={this.props.article} />
       </Providers>
     );
   }

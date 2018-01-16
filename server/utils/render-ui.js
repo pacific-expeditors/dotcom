@@ -8,13 +8,10 @@ const renderUi = (req) => {
   const app = express();
   app.use('/static', express.static('server/assets'));
 
-  app.get('/:slug?', (req, res) => {
-    if (req.query.refetch) {
-      return res.send();
-    }
-
+  app.get('/:slug?/:article?', (req, res) => {
     const slug = req.params.slug ? req.params.slug : 'home';
-    const Component = createElement(Root, { slug });
+    const article = req.params.article ? req.params.article : '';
+    const Component = createElement(Root, { slug, article });
 
     renderToStringWithData(Component)
       .then((body:string) => res.send(`<!doctype>${body}`))

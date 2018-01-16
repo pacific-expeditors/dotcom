@@ -31,7 +31,7 @@ const FeaturedArticlesGrid = ({articles}:FeaturedPostProps) => {
               <p className="featured-article-col-text-excerpt">
                 {article.excerpt}
               </p>
-              <Button link={article.id}>
+              <Button link={`article/${article.id}`}>
                 More
               </Button>
             </section>

@@ -46,7 +46,7 @@ var FeaturedArticlesGrid = function FeaturedArticlesGrid(_ref) {
           ),
           _react2.default.createElement(
             _Button2.default,
-            { link: article.id },
+            { link: 'article/' + article.id },
             'More'
           )
         )

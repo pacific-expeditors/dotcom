@@ -38,10 +38,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var styles = {
-  page: {}
-};
-
 var Page = function (_Component) {
   _inherits(Page, _Component);
 
@@ -57,6 +53,8 @@ var Page = function (_Component) {
   _createClass(Page, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var data = this.props.data;
 
       var title = (0, _lodash2.default)(data, 'pages[0].title', '404');
@@ -104,7 +102,7 @@ var Page = function (_Component) {
           null,
           _react2.default.createElement(
             'div',
-            { className: 'page', style: styles.page },
+            { className: 'page' },
             _react2.default.createElement(_Modal2.default, null),
             sections.map(function (section) {
               var path = __dirname + '/' + section.__typename + '.js';
@@ -114,6 +112,7 @@ var Page = function (_Component) {
 
               var Section = require(path).default;
               return _react2.default.createElement(Section, {
+                article: _this2.props.article,
                 key: section.sys.id,
                 id: section.sys.id });
             })

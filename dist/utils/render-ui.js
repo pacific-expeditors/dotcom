@@ -18,13 +18,10 @@ var renderUi = function renderUi(req) {
   var app = (0, _express2.default)();
   app.use('/static', _express2.default.static('server/assets'));
 
-  app.get('/:slug?', function (req, res) {
-    if (req.query.refetch) {
-      return res.send();
-    }
-
+  app.get('/:slug?/:article?', function (req, res) {
     var slug = req.params.slug ? req.params.slug : 'home';
-    var Component = (0, _react.createElement)(_Root2.default, { slug: slug });
+    var article = req.params.article ? req.params.article : '';
+    var Component = (0, _react.createElement)(_Root2.default, { slug: slug, article: article });
 
     (0, _reactApollo.renderToStringWithData)(Component).then(function (body) {
       return res.send('<!doctype>' + body);

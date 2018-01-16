@@ -10,10 +10,6 @@ type Props = {
   data: any
 };
 
-const styles = {
-  page: {}
-}
-
 class Page extends Component<void, Props, State> {
   props: Props;
   state: void;
@@ -67,7 +63,7 @@ class Page extends Component<void, Props, State> {
           <base href="/" />
         </head>
         <body>
-          <div className="page" style={styles.page}>
+          <div className="page">
             <Modal />
             {sections.map(section => {
               const path = `${__dirname}/${section.__typename}.js`;
@@ -78,6 +74,7 @@ class Page extends Component<void, Props, State> {
               const Section = require(path).default;
               return (
                 <Section
+                  article={this.props.article}
                   key={section.sys.id}
                   id={section.sys.id} />
               );
