@@ -3017,6 +3017,12 @@ he@1.1.1, he@1.1.x:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
+heroku.node@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/heroku.node/-/heroku.node-0.2.1.tgz#48c41f9a08a33856c8e9ee650c4cd521d2668bfe"
+  dependencies:
+    rest.node "~0.4.1"
+
 history@^4.6.3:
   version "4.7.2"
   resolved "https://registry.yarnpkg.com/history/-/history-4.7.2.tgz#22b5c7f31633c5b8021c7f4a8a954ac139ee8d5b"
@@ -4925,6 +4931,10 @@ punycode@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.0.tgz#5f863edc89b96db09074bad7947bf09056ca4e7d"
 
+q@0.9.7:
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/q/-/q-0.9.7.tgz#4de2e6cb3b29088c9e4cbc03bf9d42fb96ce2f75"
+
 q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
@@ -5265,7 +5275,7 @@ request@2.81.0:
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
-request@^2.70.0, request@^2.83.0:
+request@2.x.x, request@^2.70.0, request@^2.83.0:
   version "2.83.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.83.0.tgz#ca0b65da02ed62935887808e6f510381034e3356"
   dependencies:
@@ -5317,6 +5327,13 @@ resolve-from@^3.0.0:
 resolve-pathname@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/resolve-pathname/-/resolve-pathname-2.2.0.tgz#7e9ae21ed815fd63ab189adeee64dc831eefa879"
+
+rest.node@~0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/rest.node/-/rest.node-0.4.1.tgz#ccb62710437926be44271889256bb207e3c8e657"
+  dependencies:
+    q "0.9.7"
+    request "2.x.x"
 
 right-align@^0.1.1:
   version "0.1.3"

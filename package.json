@@ -34,6 +34,7 @@
     "graphql-tag": "^2.6.1",
     "graphql-tools": "^1.1.0",
     "graphql-type-factory": "^0.1.0",
+    "heroku.node": "^0.2.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash.get": "^4.4.2",
     "node-ses": "^2.0.5",
