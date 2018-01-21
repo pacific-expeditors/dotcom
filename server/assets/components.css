@@ -204,6 +204,12 @@ body {
   .card:last-child {
     margin-right: 0;
   }
+  .card-single {
+    justify-content: center;
+  }
+  .card-single .card {
+    max-width: 565px;
+  }
 }
 
 .card-image-container {

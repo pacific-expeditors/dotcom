@@ -19,7 +19,7 @@ type CardsProps = {
 
 const Cards = ({cards = []}:CardsProps) => {
   return (
-    <div className="cards">
+    <div className={`cards${cards.length === 1 ? ' card-single' : ''}`}>
       {cards.map((card:CardProps) => (
         <div id={card.id} key={card.id} className="card">
           <div className="card-image-container fade-in-obj">

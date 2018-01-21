@@ -20,7 +20,7 @@ var Cards = function Cards(_ref) {
 
   return _react2.default.createElement(
     'div',
-    { className: 'cards' },
+    { className: 'cards' + (cards.length === 1 ? ' card-single' : '') },
     cards.map(function (card) {
       return _react2.default.createElement(
         'div',
