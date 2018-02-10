@@ -204,6 +204,7 @@ body {
 .left-card-container,
 .left-card {
   position: relative;
+  overflow-y: hidden;
 }
 .left-card {
   display: flex;
@@ -250,8 +251,6 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  bottom: 0;
-  overflow-y: hidden;
 }
 .left-card-background-image {
   height: 100%;
