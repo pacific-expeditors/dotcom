@@ -14,7 +14,7 @@ window.onload = function () {
   ga('send', 'pageview');
 
   var controller = new ScrollMagic.Controller();
-  var ids = ['peace-of-mind', 'compliance', 'distribution', 'consulting', 'chris-coulombe', 'nick-caston'];
+  var ids = ['peace-of-mind', 'compliance', 'distribution', 'consulting', 'chris-coulombe', 'kenneth-kulaga'];
   ids.forEach(function (id) {
     new ScrollMagic.Scene({
       triggerElement: '#' + id

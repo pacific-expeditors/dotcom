@@ -309,17 +309,27 @@ body {
     width: 640px;
     margin: 0 auto;
   }
+  #chris-coulombe .card-image-container {
+    max-height: 420px;
+    overflow: hidden;
+  }
 }
 
 @media (min-width: 1024px) {
   .cards-with-bg-heading {
     width: 980px;
   }
+  #chris-coulombe .card-image-container {
+    max-height: 658px;
+  }
 }
 
 @media (min-width: 1200px) {
   .cards-with-bg-heading {
     width: 1170px;
+  }
+  #chris-coulombe .card-image-container {
+    max-height: 791px;
   }
 }
 
