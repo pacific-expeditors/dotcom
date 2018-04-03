@@ -53,7 +53,8 @@ class Page extends Component<void, Props, State> {
 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
           <link rel="stylesheet" type="text/css" href="/static/main.css" />
-          <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,900" rel="stylesheet" />
+          <link rel="stylesheet" type="text/css" href="/static/home.css" />
+          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900" rel="stylesheet" />
 
           <link rel="shortcut icon" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=16" />
 

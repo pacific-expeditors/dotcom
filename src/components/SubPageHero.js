@@ -22,7 +22,7 @@ const styles = {
   subPageHeading: {
     fontSize: '32px',
     margin: 0,
-    fontWeight: 500,
+    fontWeight: 600,
     letterSpacing: '1.5px',
     lineHeight: 1,
     color: '#fff',
@@ -41,7 +41,7 @@ const styles = {
     lineHeight: 1.5,
     color: '#fff',
     margin: '20px 0',
-    fontWeight: 300
+    fontWeight: 'normal'
   }
 }
 

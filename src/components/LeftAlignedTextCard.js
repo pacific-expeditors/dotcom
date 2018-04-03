@@ -44,6 +44,7 @@ const LeftAlignedTextCard = ({id, heading, content, background, image, opaqueTex
               <img
                 className="left-card-image lazyload"
                 data-src={`${image.url}?w=610`}
+                data-scroll="toggle(.visible, .invisible)"
                 alt={heading} />
             )}
           </div>

@@ -16,7 +16,7 @@ const styles = {
     textAlign: 'center',
     fontFamily: 'Europa',
     fontSize: 16,
-    fontWeight: 300,
+    fontWeight: 'normal',
     color: '#A6A6A6',
     padding: '8px 0'
   }
