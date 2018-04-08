@@ -22,7 +22,7 @@ class IntroVideoContainer extends Component<void, Props, void> {
   render() {
     const { data } = this.props
     const introductionVideo = get(data, 'introductionVideo', {sources:[]})
-    const sources = introductionVideo.sources.map(source => ({
+    const sources = introductionVideo.sources.map((source) => ({
       type: "video/mp4",
       src: source.url
     }))

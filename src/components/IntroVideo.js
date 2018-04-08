@@ -94,7 +94,7 @@ const IntroVideo = ({
             <h1 style={styles.heading} className="video-cta-heading">{heading}</h1>
             <div style={styles.hr} className="video-hr"></div>
             <div style={styles.subHeading} className="video-cta-subheading">{subHeading}</div>
-            <Button link={link} style="secondary">{cta}</Button>
+            {cta && link && <Button link={link} style="secondary">{cta}</Button>}
           </div>
         </div>
       </div>

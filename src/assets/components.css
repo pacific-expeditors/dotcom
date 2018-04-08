@@ -396,22 +396,42 @@ body {
 
 /*================== GRIDS *==================*/
 
+.grid-container {
+    position: relative;
+}
+
+.grid-container-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.grid-image {
+    height: 100%;
+}
+
+.grid-image-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 .grid {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 20px;
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px;
 }
 
 @media (min-width: 1024px) {
     .grid {
         width: 980px;
-        margin: 60px auto;
-        flex-direction: row;
-        padding: 0;
-    }
-    .grid.reverse {
-        flex-direction: row-reverse;
+        margin: 0 auto;
+        padding: 60px 0;
     }
 }
 
@@ -421,49 +441,88 @@ body {
     }
 }
 
-.col-heading {
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 1.25;
+.grid-heading {
+    color: #FFF;
     text-transform: uppercase;
-    color: #0f4c61;
-    margin: 0;
+    letter-spacing: 1px;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 20px;
 }
 
-.col-text {
+.grid-content {
+    color: #FFF;
     font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.grid-cta {
+    text-align: center;
+}
+
+.col-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 60px 0;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 1024px) {
+    .col-container {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    .col-wrapper {
+        width: 33.3333%;
+    }
+}
+
+.col:first-child,
+.col:nth-child(2),
+.col:nth-child(3) {
+    border-top: 1px solid #FFF;
+}
+
+.col {
+    background-color: #0f4c61;
+    border: 1px solid #FFF;
+    display: flex;
+    height: 150px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.col-gray {
+    background-color: #56575A;
+    border: 1px solid #FFF;
+    text-align: center;
+    padding: 20px;
+    height: 150px;
+}
+
+.col-gray-content {
+    color: #FFF;
+    font-size: 14px;
+}
+
+.col-icon {
+    color: #82BAD0;
+    font-size: 64px;
+    padding-bottom: 10px;
+}
+
+.col-heading {
+    font-size: 18px;
+    font-weight: bold;
     line-height: 1.25;
-    margin: 12px 0;
-}
-
-.col-sub-text {
-    color: #0f4c61;
-}
-
-.col-image-container {
-    margin: 20px 0;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .3);
-}
-
-@media (min-width: 1024px) {
-    .col-image-container {
-        margin: 0 0 0 40px;
-        align-self: center;
-    }
-    .reverse .col-image-container {
-        margin: 0 40px 0 0;
-    }
-}
-
-.col-image {
-    display: block;
-    width: 100%;
-}
-
-@media (min-width: 1024px) {
-    .col-image {
-        width: auto;
-    }
+    color: #FFF;
+    margin: 0;
 }
 
 /*================== CARDS *==================*/
@@ -652,15 +711,19 @@ body {
     bottom: 0;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
 @media (min-width: 1024px) {
     .footer-container {
+        display: flex;
+        justify-content: space-between;
         flex-direction: row;
+        margin: 0 auto;
+        width: 980px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer-container {
+        width: 1170px;
     }
 }
 
@@ -686,7 +749,7 @@ body {
 
 @media (min-width: 1024px) {
     .footer-links {
-        margin: 0;
+        margin: 0 100px;
         flex-direction: row;
     }
 }
@@ -712,15 +775,13 @@ body {
 }
 
 .footer-associations {
-    display: flex;
-    justify-content: center;
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #999;
 }
 
 .footer-association-logo {
-    margin: 0 auto 20px;
+    margin: 0 0 20px;
 }
 
 .footer-bottom {
@@ -728,18 +789,13 @@ body {
 }
 
 @media (min-width: 1024px) {
-    .footer-container {
-        margin: 0 auto;
-        width: 980px;
+    .footer-associations {
+        display: flex;
+        justify-content: center;
     }
-    .footer-links {
-        margin: 0 100px;
-    }
-}
 
-@media (min-width: 1200px) {
-    .footer-container {
-        width: 1170px;
+    .footer-association-logo {
+        margin: 0;
     }
 }
 

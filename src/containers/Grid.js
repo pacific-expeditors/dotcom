@@ -15,10 +15,10 @@ class GridContainer extends Component<void, Props, void> {
 
   render() {
     const { data } = this.props
-    const columns = get(data, 'grid', {})
+    const grid = get(data, 'grid', {})
 
     return (
-      <Grid {...columns} />
+      <Grid {...grid} />
     )
   }
 }
@@ -37,6 +37,13 @@ export default graphql(gql`
       cta
       align
       link
+      columns {
+        id
+        icon
+        style
+        content
+        heading
+      }
       image {
         url
       }
