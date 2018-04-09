@@ -7,12 +7,25 @@ type CenteredTextWithBackgroundProps = {
   background: any
 }
 
-const CenteredTextWithBackground = ({id, heading, content, background, callToActionText, callToActionLink}:CenteredTextWithBackgroundProps) => {
+const CenteredTextWithBackground = ({
+  id, 
+  heading, 
+  content, 
+  background, 
+  callToActionText,
+  callToActionLink,
+  backgroundColor
+}:CenteredTextWithBackgroundProps) => {
+  const backgroundColors = {
+    gray: ' text-with-background-gray',
+    blue: ' text-with-background-blue'
+  }
+
   return (
     <div
       key={id}
       id={id}
-      className="text-with-background-container">
+      className={`text-with-background-container${backgroundColor ? backgroundColors[backgroundColor] : ''}`}>
       {background && (
         <div className="text-with-background-images fade-in-obj">
           <img

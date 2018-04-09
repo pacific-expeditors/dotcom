@@ -37,7 +37,7 @@ const styles = {
   },
   navLink: {
     fontSize: 14,
-    fontWeight: 600,
+    fontWeight: 900,
     textTransform: 'uppercase',
     textDecoration: 'none',
     letterSpacing: '2px'
@@ -60,7 +60,6 @@ const styles = {
   mobileNavLink: {
     fontSize: '36px',
     fontWeight: 600,
-    textAlign: 'center',
     textTransform: 'uppercase',
     textDecoration: 'none',
     marginBottom: '24px',

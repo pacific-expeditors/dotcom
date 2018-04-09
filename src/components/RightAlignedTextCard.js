@@ -12,9 +12,9 @@ type RightCardProps = {
 
 const RightAlignedTextCard = ({id, heading, content, background, image, callToActionLink, callToActionText, opaqueTextBackground}:RightCardProps) => {
   return (
-    <div key={id} id={`${id}`} className={`right-card-container${opaqueTextBackground ? ' right-card-alt' : ''}`}>
+    <div key={id} id={id} className={`right-card-container${opaqueTextBackground ? ' right-card-alt' : ''}`}>
       {!opaqueTextBackground && background && (
-        <div className="right-card-background-images fade-in-obj">
+        <div className="right-card-background-images">
           <img
             className="right-card-background-image lazyload"
             data-src={`${background.url}?w=1920`}
@@ -22,7 +22,7 @@ const RightAlignedTextCard = ({id, heading, content, background, image, callToAc
         </div>
       )}
       <div className="right-card">
-        <div className="right-card-images fade-in-obj">
+        <div className="right-card-images">
           {background && opaqueTextBackground && (
             <div className="right-card-background-images">
               <img
@@ -38,9 +38,9 @@ const RightAlignedTextCard = ({id, heading, content, background, image, callToAc
               alt={heading} />
           )}
         </div>
-        <div className={`right-card-text-container`}>
-          <h3 className="right-card-heading">{heading}</h3>
-          <div className="right-card-text">
+        <div className="right-card-text-container">
+          <h3 className="right-card-heading invisible">{heading}</h3>
+          <div className="right-card-text invisible">
             {content}
           </div>
           {callToActionLink && callToActionText && (

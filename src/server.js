@@ -12,7 +12,7 @@ require('dotenv').load()
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
-app.use('/static', express.static('dist'));
+app.use('/static', express.static('dist'))
 
 if (process.env.OFFLINE === 'false') {
   const client = cfGraphql.createClient({

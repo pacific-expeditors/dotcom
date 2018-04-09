@@ -16,7 +16,7 @@ type GridProps = {
   columns: [ColumnProps]
 }
 
-const Grid = ({id, columns, heading, content, image, cta, link, srcset = []}:GridProps) => {
+const Grid = ({id, columns = [], heading, content, image, cta, link, srcset = []}:GridProps) => {
   return (
     <div key={id} id={id} className="grid-container">
       <div className="grid-container-image">

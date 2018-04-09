@@ -16,8 +16,9 @@ const LeftAlignedTextCard = ({id, heading, content, background, image, opaqueTex
       key={id}
       id={id}
       className="left-card-container">
+        <div className="swipe invisible"></div>
         {!opaqueTextBackground && background && (
-          <div className="left-card-background-images fade-in-obj">
+          <div className="left-card-background-images">
             <img
               className="left-card-background-image lazyload"
               data-src={`${background.url}?w=1920`}
@@ -26,12 +27,15 @@ const LeftAlignedTextCard = ({id, heading, content, background, image, opaqueTex
         )}
         <div className="left-card">
           <div className={`left-card-text-container${!opaqueTextBackground ? " left-card-alt" : ''}`}>
-            <h3 className="left-card-heading">{heading}</h3>
+            <h3 className="left-card-heading">
+              {heading}
+              <div className="left-card-heading"></div>
+            </h3>
             <div className="left-card-text">
               {content}
             </div>
           </div>
-          <div className="left-card-image-container fade-in-obj">
+          <div className="left-card-image-container">
             {opaqueTextBackground && background && (
               <div className="left-card-background-images">
                 <img
@@ -42,9 +46,8 @@ const LeftAlignedTextCard = ({id, heading, content, background, image, opaqueTex
             )}
             {opaqueTextBackground && image && (
               <img
-                className="left-card-image lazyload"
+                className="left-card-image lazyload invisible"
                 data-src={`${image.url}?w=610`}
-                data-scroll="toggle(.visible, .invisible)"
                 alt={heading} />
             )}
           </div>

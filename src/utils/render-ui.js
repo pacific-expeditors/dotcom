@@ -4,7 +4,7 @@ import { createElement } from 'react'
 import Root from '../containers/Root'
 import { renderToStringWithData } from 'react-apollo'
 
-export default (req) => {
+export default (req:any) => {
   const app = express()
   app.use('/static', express.static('server/assets'))
 

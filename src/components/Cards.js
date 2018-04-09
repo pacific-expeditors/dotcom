@@ -20,9 +20,10 @@ type CardsProps = {
 const Cards = ({cards = []}:CardsProps) => {
   return (
     <div className="cards">
+      <div></div>
       {cards.map((card:CardProps) => (
-        <div id={card.id} key={card.id} className="card">
-          <div className="card-image-container fade-in-obj">
+        <div id={card.id} key={card.id} className="card invisible">
+          <div className="card-image-container">
             <img
               className="card-image lazyload"
               data-src={`${card.image.url}?w=1024`}

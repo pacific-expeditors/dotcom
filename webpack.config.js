@@ -1,11 +1,12 @@
 const path = require('path')
+const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = [
   // server
   {
     entry: './src/server.js',
-    target: "node",
+    target: 'node',
     node: {
       __dirname: true
     },

@@ -41,6 +41,7 @@ export default graphql(gql`
       heading
       callToActionLink
       callToActionText
+      backgroundColor
       background {
         url
       }

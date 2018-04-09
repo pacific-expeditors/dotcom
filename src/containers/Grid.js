@@ -16,10 +16,13 @@ class GridContainer extends Component<void, Props, void> {
   render() {
     const { data } = this.props
     const grid = get(data, 'grid', {})
+    console.log(grid)
 
-    return (
-      <Grid {...grid} />
-    )
+    return <div></div>
+
+    // return (
+    //   <Grid {...grid} />
+    // )
   }
 }
 

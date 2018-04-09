@@ -1,4 +1,4 @@
-/*================== LEFT CARD *==================*/
+/*================== WORLD CLASS SUPPORT *==================*/
 #world-class-supply-chain-support {
 	position: relative;
 }
@@ -17,24 +17,31 @@
 	opacity: 0;
 }
 
-#relationships-that-drive-success {
-	height: 700px;
+#world-class-supply-chain-support .swipe {
+	display: block;
+	background-color: #ffffff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	transition: left .5s ease-in 1s;
+	will-change: left;
 }
 
-#relationships-that-drive-success h3 {
-	position: relative;
-	color: #fff;
-	z-index: 1;
+#world-class-supply-chain-support .swipe.visible {
+	left: 100%;
+}
+
+/*================== RELATIONSHIPS THAT DRIVE SUCCESS *==================*/
+#relationships-that-drive-success .right-card-heading {
+	max-width: 0px;
 	overflow: hidden;
-	white-space: pre;
-	margin-bottom: 0;
+	white-space: pre-wrap;
 }
 
-#relationships-that-drive-success h3.invisible {
-	max-width:0px;
-}
-
-#relationships-that-drive-success h3.visible {
+#relationships-that-drive-success .right-card-heading.visible {
 	max-width: 400px;
 	animation-name: reveal-right;
 	animation-duration: .5s;
@@ -45,14 +52,8 @@
 }
 
 #relationships-that-drive-success .right-card-text {
-	position: relative;
-	color: #fff;
-	z-index: 1;
 	overflow: hidden;
-}
-
-#relationships-that-drive-success .right-card-text.invisible {
-	max-height:0;
+	max-height: 0;
 }
 
 #relationships-that-drive-success .right-card-text.visible {
@@ -65,74 +66,35 @@
 	animation-fill-mode: both;
 }
 
-#relationships-that-drive-success .button {
-	z-index: 2;
-	display: inline-block !important; /* prevents scroll script from stretching button to 100% width */
-	color: #fff;
-	margin-left: 0;
-}
-
-#relationships-that-drive-success .button.invisible {
+/*================== CONSULTING *==================*/
+#consulting.card,
+#distribution.card {
 	opacity: 0;
-	color: #fff;
 }
 
-#relationships-that-drive-success .button.visible {
-	animation-name: btn-fadein, text-color;
-	animation-duration: 1s, .5s;
-	animation-timing-function: ease-in;
-	animation-iteration-count: 1;
-	animation-delay: 2s, 3s;
-	animation-fill-mode: both;
-}
-
-#relationships-that-drive-success .button:after {
-	width: 0%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	right: 0;
-	background: #fff;
-}
-
-#relationships-that-drive-success .button.btn1.invisible:after {
-	width: 0;
-}
-
-#relationships-that-drive-success .button.btn1.visible:after {
-	animation-name: fill-in;
+#consulting.card.visible,
+#distribution.card.visible {
+	opacity: 1;
+	animation-name: fadein-bottom;
 	animation-duration: .5s;
-	animation-timing-function: ease-in;
+	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1;
-	animation-delay: 3s;
+	animation-delay: 1.5s;
 	animation-fill-mode: both;
 }
 
-#relationships-that-drive-success .button.btn1.is-visible:before {
-	animation-name: hollow-out;
-	animation-duration: .5s;
-	animation-timing-function: ease-in;
-	animation-iteration-count: 1;
-	animation-delay: 8s;
-	animation-fill-mode: both;
-}
-
-#relationships-that-drive-success .button:hover,
-#relationships-that-drive-success .button:active {
-	color: #0072a2;
-}
-
-#it-starts-with-leadership img.left-card-background-image {
+/*================== IT STARTS WITH LEADERSHIP *==================*/
+#it-starts-with-leadership .left-card-background-image {
 	height: 100%;
 	width: 100%;
 	object-fit: contain;
 }
 
-#it-starts-with-leadership img.left-card-background-image.invisible {
+#it-starts-with-leadership .left-card-background-image {
 	opacity: 0;
 }
 
-#it-starts-with-leadership img.left-card-background-image.visible {
+#it-starts-with-leadership .left-card-background-image.visible {
 	animation-name: fadein-zoomin;
 	animation-duration: .5s;
 	animation-timing-function: ease-in;
@@ -141,57 +103,54 @@
 	animation-fill-mode: both;
 }
 
-#it-starts-with-leadership h3 {
+#it-starts-with-leadership .left-card-heading {
 	position: relative;
 	color: #fff;
 	overflow: hidden;
 	height: 86px;
 }
 
-#it-starts-with-leadership h3 span {
+#it-starts-with-leadership .left-card-heading .swipe {
 	position: absolute;
 	white-space: pre;
 	right: 0;
 	top: 0;
-	width: 100%;
+	width: 0;
 }
 
 @media (max-width: 1200px) {
-	#it-starts-with-leadership h3 span {
+	#it-starts-with-leadership .left-card-heading .swipe {
 		position: relative;
 		white-space: normal;
 	}
 }
 
 @media (max-width: 1023px) {
-	#it-starts-with-leadership h3 {
+	#it-starts-with-leadership .left-card-heading {
 		height: auto;
 	}
-	#it-starts-with-leadership h3 span {
+
+	#it-starts-with-leadership .left-card-heading .swipe {
 		position: relative;
 		white-space: normal;
 	}
 }
 
 @media (min-width: 1024px) {
-	#it-starts-with-leadership img.left-card-background-image {
+	#it-starts-with-leadership .left-card-background-image {
 		object-fit: cover;
 	}
 }
 
 @media (max-width: 480px) {
-	#it-starts-with-leadership img.left-card-background-image {
+	#it-starts-with-leadership .left-card-background-image {
 		height: 100%;
 		width: auto;
 		object-fit: cover;
 	}
 }
 
-#it-starts-with-leadership h3 span.invisible {
-	width: 0px;
-}
-
-#it-starts-with-leadership h3 span.visible {
+#it-starts-with-leadership .left-card-heading .swipe {
 	width: 585px;
 	animation-name: reveal-left;
 	animation-duration: .5s;
@@ -203,12 +162,11 @@
 
 #it-starts-with-leadership .left-card-text {
 	position: relative;
-	color: #fff;
 	z-index: 1;
 	overflow: hidden;
 }
 
-#it-starts-with-leadership .left-card-text.invisible {
+#it-starts-with-leadership .left-card-text {
 	max-height: 0px;
 }
 
@@ -222,11 +180,12 @@
 	animation-fill-mode: both;
 }
 
+/*================== A VISION FOR SUCCESS *==================*/
 #a-vision-for-success-in-cannabis .right-card-images {
 	min-height: 654px;
 }
 
-#a-vision-for-success-in-cannabis .right-card-image.invisible {
+#a-vision-for-success-in-cannabis .right-card-image {
 	opacity: 0;
 }
 
@@ -293,7 +252,7 @@
 
 #a-vision-for-success-in-cannabis .button {
 	z-index: 2;
-	display: inline-block !important; /* prevents scroll script from stretching button to 100% width */
+	display: inline-block !important;
 	color: #0072a2;
 	margin-left: 0;
 }
