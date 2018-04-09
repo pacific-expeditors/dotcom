@@ -16,7 +16,7 @@ const RightAlignedTextCard = ({id, heading, content, background, image, callToAc
       {!opaqueTextBackground && background && (
         <div className="right-card-background-images">
           <img
-            className="right-card-background-image lazyload"
+            className="right-card-background-image invisible lazyload"
             data-src={`${background.url}?w=1920`}
             alt={heading} />
         </div>
@@ -26,28 +26,32 @@ const RightAlignedTextCard = ({id, heading, content, background, image, callToAc
           {background && opaqueTextBackground && (
             <div className="right-card-background-images">
               <img
-                className="right-card-background-image lazyload"
+                className="right-card-background-image invisible lazyload"
                 data-src={`${background.url}?w=1920`}
                 alt={heading} />
             </div>
           )}
           {image && (
             <img
-              className="right-card-image lazyload"
+              className="right-card-image invisible lazyload"
               data-src={`${image.url}?w=610`}
               alt={heading} />
           )}
         </div>
         <div className="right-card-text-container">
-          <h3 className="right-card-heading invisible">{heading}</h3>
-          <div className="right-card-text invisible">
-            {content}
+          <div className="right-card-text-inner">
+            <h3 className="right-card-heading invisible">{heading}</h3>
+            <div className="right-card-text invisible">
+              <div className="right-card-text-content">
+                {content}
+              </div>
+              {callToActionLink && callToActionText && (
+                <Button style={opaqueTextBackground ? 'primary' : 'secondary'} link={callToActionLink}>
+                  {callToActionText}
+                </Button>
+              )}
+            </div>
           </div>
-          {callToActionLink && callToActionText && (
-            <Button style={opaqueTextBackground ? 'primary' : 'secondary'} link={callToActionLink}>
-              {callToActionText}
-            </Button>
-          )}
         </div>
       </div>
     </div>

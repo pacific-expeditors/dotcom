@@ -38,7 +38,8 @@ const fadeInImages = () => {
     '#relationships-that-drive-success',
     '#consulting',
     '#distribution',
-    '#it-starts-with-leadership'
+    '#it-starts-with-leadership',
+    '#a-vision-for-success-in-cannabis'
   ];
 
   ids.forEach((id) => {

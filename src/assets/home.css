@@ -35,10 +35,15 @@
 }
 
 /*================== RELATIONSHIPS THAT DRIVE SUCCESS *==================*/
+#relationships-that-drive-success {
+	height: 700px;
+}
+
 #relationships-that-drive-success .right-card-heading {
 	max-width: 0px;
 	overflow: hidden;
 	white-space: pre-wrap;
+	max-height: 96px;
 }
 
 #relationships-that-drive-success .right-card-heading.visible {
@@ -54,6 +59,11 @@
 #relationships-that-drive-success .right-card-text {
 	overflow: hidden;
 	max-height: 0;
+}
+
+#relationships-that-drive-success .right-card-text-content {
+	white-space: pre-wrap;
+	padding-bottom: 20px;
 }
 
 #relationships-that-drive-success .right-card-text.visible {
@@ -88,6 +98,7 @@
 	height: 100%;
 	width: 100%;
 	object-fit: contain;
+	height: 494px;
 }
 
 #it-starts-with-leadership .left-card-background-image {
@@ -101,6 +112,7 @@
 	animation-iteration-count: 1;
 	animation-delay: 0;
 	animation-fill-mode: both;
+	opacity: 1;
 }
 
 #it-starts-with-leadership .left-card-heading {

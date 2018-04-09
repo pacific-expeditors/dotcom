@@ -20,7 +20,7 @@ const LeftAlignedTextCard = ({id, heading, content, background, image, opaqueTex
         {!opaqueTextBackground && background && (
           <div className="left-card-background-images">
             <img
-              className="left-card-background-image lazyload"
+              className="left-card-background-image invisible lazyload"
               data-src={`${background.url}?w=1920`}
               alt={heading} />
           </div>
@@ -31,7 +31,7 @@ const LeftAlignedTextCard = ({id, heading, content, background, image, opaqueTex
               {heading}
               <div className="left-card-heading"></div>
             </h3>
-            <div className="left-card-text">
+            <div className="left-card-text invisible">
               {content}
             </div>
           </div>
