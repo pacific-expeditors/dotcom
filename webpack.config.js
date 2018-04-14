@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const NodemonPlugin = require('nodemon-webpack-plugin')
 
 module.exports = [
   // server
@@ -25,7 +26,11 @@ module.exports = [
           }
         }
       ]
-    }
+    },
+    plugins: [
+      new NodemonPlugin(),
+      new webpack.HotModuleReplacementPlugin()
+    ]
   },
   // client
   {

@@ -99,7 +99,7 @@ const MobileHeader = ({mobileLogo, title, navLinks}:HeaderProps) => {
         </a>
       </div>
       <nav key="mobileNav" style={styles.mobileMenuLinks} className="header-mobile-menu">
-        {navLinks.map(navLink => {
+        {navLinks.map((navLink) => {
           return (
             <a
               className="header-mobile-nav-link"
@@ -115,22 +115,6 @@ const MobileHeader = ({mobileLogo, title, navLinks}:HeaderProps) => {
   )
 }
 
-const SubNavLinks = (navLink) => {
-  if (navLink.subNavigationLinks && navLink.subNavigationLinks.length) {
-    return (
-      <nav key={navLink.id} className="header-sub-nav">
-        {navLink.subNavigationLinks.map(link => {
-          return (
-            <a href={link.href} key={link.id} className="header-sub-nav-link">{link.text}</a>
-          )
-        })}
-      </nav>
-    )
-  }
-
-  return null
-}
-
 const NavSection = ({navLink}) => {
   return (
     <div
@@ -138,7 +122,6 @@ const NavSection = ({navLink}) => {
       key={navLink.id}
       style={styles.navLinkContainer}>
         <a style={styles.navLink} href={navLink.href}>{navLink.text}</a>
-        <SubNavLinks navLink={navLink} />
     </div>
   )
 }

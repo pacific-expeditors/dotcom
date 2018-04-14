@@ -7,6 +7,7 @@ import Loadable from 'react-loadable'
 import { existsSync } from 'fs'
 import Modal from '../components/Modal'
 import * as Containers from './index'
+import 'isomorphic-fetch'
 
 type Props = {
   data: any

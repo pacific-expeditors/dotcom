@@ -1,16 +1,11 @@
 /*================== WORLD CLASS SUPPORT *==================*/
-#world-class-supply-chain-support {
-	position: relative;
-}
-
 #world-class-supply-chain-support .left-card-image.visible {
-  opacity: 1;
-  animation-name: fadein-bottom;
-  animation-duration: .5s;
-  animation-timing-function: ease-in;
-  animation-iteration-count: 1;
-  animation-delay: 1.5s;
-  animation-fill-mode: both;
+	opacity: 1;
+	animation-name: fadein-bottom;
+	animation-duration: .25s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: 1;
+	animation-fill-mode: both;
 }
 
 #world-class-supply-chain-support .left-card-image.invisible {
@@ -26,7 +21,7 @@
 	right: 0;
 	left: 0;
 	z-index: 100;
-	transition: left .5s ease-in 1s;
+	transition: left .25s ease-in 1s;
 	will-change: left;
 }
 
@@ -35,10 +30,6 @@
 }
 
 /*================== RELATIONSHIPS THAT DRIVE SUCCESS *==================*/
-#relationships-that-drive-success {
-	height: 700px;
-}
-
 #relationships-that-drive-success .right-card-heading {
 	max-width: 0px;
 	overflow: hidden;

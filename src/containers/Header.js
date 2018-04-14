@@ -41,6 +41,7 @@ export default graphql(gql`
         url
       }
       navigationLinks {
+        id
         href
         text
         alignment
