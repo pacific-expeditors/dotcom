@@ -33,7 +33,9 @@ type Options = {
 export default graphql(gql`
   query Header($id: ID!) {
     header(id:$id) {
-      id
+      sys {
+        id
+      }
       siteTitle
       logo {
         title
@@ -41,7 +43,9 @@ export default graphql(gql`
         url
       }
       navigationLinks {
-        id
+        sys {
+          id
+        }
         href
         text
         alignment
@@ -57,8 +61,7 @@ export default graphql(gql`
 `, {
   options: ({id}:Options) => {
     return {
-      variables: { id },
-      fetchPolicy: 'network-only'
+      variables: { id }
     }
   }
 })(HeaderContainer)

@@ -82,17 +82,6 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./sr
 
 /***/ }),
 
-/***/ "./src/assets/home.css":
-/*!*****************************!*\
-  !*** ./src/assets/home.css ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/assets/home.css?");
-
-/***/ }),
-
 /***/ "./src/client.js":
 /*!***********************!*\
   !*** ./src/client.js ***!
@@ -101,7 +90,7 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./sr
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./assets/components.css */ \"./src/assets/components.css\");\n\n__webpack_require__(/*! ./assets/home.css */ \"./src/assets/home.css\");\n\nwindow.onload = function () {\n  toggleMobileMenu();\n  showAgeVerification();\n  fadeInImages();\n};\n\nvar toggleMobileMenu = function toggleMobileMenu() {\n  document.querySelector('.mobile-menu-link').addEventListener('click', function (e) {\n    document.querySelector('.header-mobile').style.display = 'block';\n  });\n\n  document.querySelector('.close-icon-link').addEventListener('click', function (e) {\n    document.querySelector('.header-mobile').style.display = 'none';\n  });\n};\n\nvar showAgeVerification = function showAgeVerification() {\n  if (localStorage.getItem('isVerified')) {\n    document.querySelector('#modal').style.display = 'none';\n  } else {\n    document.querySelector('#modal').style.display = 'block';\n  }\n\n  document.querySelector('#modal a').addEventListener('click', function (e) {\n    localStorage.setItem('isVerified', true);\n    e.preventDefault();\n    document.querySelector('#modal').style.display = 'none';\n  });\n};\n\nvar fadeInImages = function fadeInImages() {\n  var ids = ['#world-class-supply-chain-support', '#relationships-that-drive-success', '#consulting', '#distribution', '#it-starts-with-leadership', '#a-vision-for-success-in-cannabis'];\n\n  ids.forEach(function (id) {\n    new ScrollMagic.Scene({\n      triggerElement: id\n    }).setClassToggle('.invisible', 'visible').addTo(new ScrollMagic.Controller());\n  });\n};\n\n//# sourceURL=webpack:///./src/client.js?");
+eval("\n\n__webpack_require__(/*! ./assets/components.css */ \"./src/assets/components.css\");\n\nwindow.onload = function () {\n  toggleMobileMenu();\n  showAgeVerification();\n};\n\n\nvar toggleMobileMenu = function toggleMobileMenu() {\n  document.querySelector('.mobile-menu-link').addEventListener('click', function (e) {\n    document.querySelector('.header-mobile').style.display = 'block';\n  });\n\n  document.querySelector('.close-icon-link').addEventListener('click', function (e) {\n    document.querySelector('.header-mobile').style.display = 'none';\n  });\n};\n\nvar showAgeVerification = function showAgeVerification() {\n  if (localStorage.getItem('isVerified')) {\n    document.querySelector('#modal').style.display = 'none';\n  } else {\n    document.querySelector('#modal').style.display = 'block';\n  }\n\n  document.querySelector('#modal a').addEventListener('click', function (e) {\n    localStorage.setItem('isVerified', true);\n    e.preventDefault();\n    document.querySelector('#modal').style.display = 'none';\n  });\n};\n\n//# sourceURL=webpack:///./src/client.js?");
 
 /***/ })
 

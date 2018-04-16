@@ -32,7 +32,9 @@ type Options = {
 export default graphql(gql`
   query Grid($id: ID!) {
     grid(id:$id) {
-      id
+      sys {
+        id
+      }
       heading
       subText
       content
@@ -54,8 +56,7 @@ export default graphql(gql`
 `, {
   options: ({id}:Options) => {
     return {
-      variables: { id },
-      fetchPolicy: 'network-only'
+      variables: { id }
     }
   }
 })(GridContainer)

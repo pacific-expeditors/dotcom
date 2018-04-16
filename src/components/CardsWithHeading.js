@@ -19,14 +19,14 @@ type CardsProps = {
   cards?: [CardProps]
 }
 
-const CardsWithHeading = ({heading, cards = [], callToActionText, callToActionLink}:CardsProps) => {
+const CardsWithHeading = ({sys, heading, cards = [], callToActionText, callToActionLink}:CardsProps) => {
   return (
-    <div className="cards-with-header">
+    <div id={`section${sys.id}`} className="cards-with-header">
       <h3 className="cards-header">
         {heading}
       </h3>
       <Cards cards={cards.cards} />
-      <div className="cards-with-header-cta">
+      <div className="cards-with-header-cta invisible">
         {callToActionText && callToActionLink && (
           <Button link={callToActionLink}>
             {callToActionText}

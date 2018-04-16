@@ -41,7 +41,7 @@ body {
 
 @media (min-width: 1024px) {
     body {
-        margin-bottom: 265px;
+        margin-bottom: 285px;
     }
 }
 
@@ -129,6 +129,7 @@ body {
 .button.primary:hover {
     border: 1px solid #0F4C5F;
     color: #0F4C5F;
+    transition: all .25s ease-in;
 }
 
 .button.secondary {
@@ -136,11 +137,12 @@ body {
     border: 1px solid #fff;
     border-radius: 3px;
     color: #fff;
+    transition: all .25s ease-in;
 }
 
 .button.secondary:hover {
-    border: 1px solid #eee;
-    color: #eee;
+    background-color: #fff;
+    color: #0F4C5F;
 }
 
 /*================== SUBPAGE HERO *==================*/
@@ -240,6 +242,22 @@ body {
     order: 2;
 }
 
+.left-card-container .swipe {
+	background-color: #ffffff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	transition: left .25s ease-in 1s;
+	will-change: left;
+}
+
+.left-card-container .swipe.visible {
+	left: 100%;
+}
+
 .left-card-alt {
     background: transparent;
 }
@@ -261,6 +279,40 @@ body {
     top: 0;
     bottom: 0;
     overflow-y: hidden;
+}
+
+.left-card-image.invisible {
+	opacity: 0;
+}
+
+.left-card-image.visible {
+    opacity: 1;
+	animation-name: fadein-bottom;
+	animation-duration: .25s;
+	animation-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-delay: 1.5s;
+}
+
+.left-card-background-image-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.left-card-background-image.visible {
+    opacity: 1;
+    animation-name: fadein-zoomin;
+    animation-duration: .5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+.left-card-background-image.invisible {
+    opacity: 0;
 }
 
 .left-card-image {
@@ -323,6 +375,35 @@ body {
     flex-direction: column;
 }
 
+.right-card-container .fade-in.invisible {
+    opacity: 0;
+}
+
+.right-card-container .fade-in.visible {
+    opacity: 1;
+}
+
+.right-card-container .fade-in {
+    transition: opacity .5s ease-in 1s;
+    will-change: opacity;
+}
+
+.right-card-container .swipe {
+	background-color: #ffffff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	transition: right .25s ease-in 1s;
+	will-change: right;
+}
+
+.right-card-container .swipe.visible {
+    right: 100%;
+}
+
 .right-card-heading {
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -370,6 +451,15 @@ body {
     top: 0;
     bottom: 0;
     overflow-y: hidden;
+}
+
+.right-card-background-image-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .right-card-alt .right-card-background-images {
@@ -553,8 +643,22 @@ body {
     margin: 20px;
     position: relative;
     flex: 1;
+    opacity: 0;
     background-color: #fff;
     box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+}
+
+.card.visible {
+    opacity: 1;
+    animation-name: fadein-bottom;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1.75s;
+    animation-fill-mode: both;
+}
+
+.card.visible:first-child {
+    animation-delay: 1.5s;
 }
 
 @media (min-width: 1024px) {
@@ -685,15 +789,23 @@ body {
     justify-content: center;
 }
 
-.cards-header img {
-    width: 50px;
-    margin: 0 20px;
-}
-
 .cards-with-header-cta {
     margin: 40px 0;
     display: flex;
     justify-content: center;
+}
+
+.cards-with-header-cta.invisible .button {
+    opacity: 0;
+}
+
+.cards-with-header-cta.visible .button {
+    opacity: 1;
+    animation-name: fadein;
+    animation-duration: .5s;
+    animation-timing-function: ease-in;
+    animation-delay: 2.5s;
+    animation-fill-mode: both;
 }
 
 @media (min-width: 1024px) {
@@ -821,7 +933,6 @@ body {
     animation-name: fadein-right;
     animation-duration: .5s;
     animation-timing-function: ease-in;
-    animation-iteration-count: 1;
     animation-delay: .75s;
     animation-fill-mode: both;
     opacity: 0;
@@ -883,17 +994,6 @@ body {
     }
 }
 
-@keyframes fadein-right {
-	from {
-        transform: translateX(300px);
-        opacity: 0;
-	}
-	to {
-        transform: translateX(0);
-        opacity: 1;
-	}
-}
-
 @keyframes fadein-zoomin {
 	from {
         transform: scale(1.8);
@@ -901,6 +1001,17 @@ body {
 	}
 	to {
         transform: scale(1.4);
+        opacity: 1;
+	}
+}
+
+@keyframes fadein-right {
+	from {
+        transform: translateX(300px);
+        opacity: 0;
+	}
+	to {
+        transform: translateX(0);
         opacity: 1;
 	}
 }
@@ -916,23 +1027,6 @@ body {
 	}
 }
 
-@keyframes reveal-right {
-	from {
-        max-width: 0px;
-    }
-	to {
-        max-width: 485px;
-    }
-}
-
-@keyframes reveal-left {
-	from {
-        max-width: 0px;
-    }
-	to {
-        max-width: 585px;
-    }
-}
 
 @keyframes fadein-bottom {
 	from {
@@ -942,33 +1036,6 @@ body {
 	to {
         transform: translateY(0);
         opacity: 1;
-	}
-}
-
-@keyframes reveal-btm {
-	from {
-        max-height: 0px;
-    }
-	to {
-        max-height: 500px;
-    }
-}
-
-@keyframes text-color {
-	0% {
-	    color: #ffffff;
-	}
-	100% {
-	    color: #0072a2;
-	}
-}
-
-@keyframes text-color-rvrs {
-	0% {
-	    color: #0072a2;
-	}
-	100% {
-	    color: #ffffff;
 	}
 }
 
@@ -989,14 +1056,5 @@ body {
 	100% {
         width: 0%;
         right: 0;
-	}
-}
-
-@keyframes pass-through {
-	0% {
-	    width: 0%;
-	}
-	100% {
-	    width: 100%;
 	}
 }

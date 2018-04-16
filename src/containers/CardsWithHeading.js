@@ -36,7 +36,9 @@ type Options = {
 export default graphql(gql`
   query CardsWithHeading($id: ID!) {
     cardsWithHeading(id:$id) {
-      id
+      sys {
+        id
+      }
       heading
       callToActionLink
       callToActionText
@@ -58,8 +60,7 @@ export default graphql(gql`
 `, {
   options: ({id}:Options) => {
     return {
-      variables: { id },
-      fetchPolicy: 'network-only'
+      variables: { id }
     }
   }
 })(CardsWithHeadingContainer)

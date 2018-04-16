@@ -10,19 +10,20 @@ type LeftCardProps = {
   opaqueTextBackground: boolean
 }
 
-const LeftAlignedTextCard = ({id, heading, content, background, image, opaqueTextBackground}:LeftCardProps) => {
+const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTextBackground}:LeftCardProps) => {
   return (
     <div
-      key={id}
-      id={id}
+      key={sys.id}
+      id={`section${sys.id}`}
       className="left-card-container">
-        <div className="swipe invisible"></div>
+        {opaqueTextBackground && background && <div className="swipe invisible"></div>}
         {!opaqueTextBackground && background && (
           <div className="left-card-background-images">
             <img
               className="left-card-background-image invisible lazyload"
               data-src={`${background.url}?w=1920`}
               alt={heading} />
+            <div className="left-card-background-image-overlay"></div>
           </div>
         )}
         <div className="left-card">
@@ -31,7 +32,7 @@ const LeftAlignedTextCard = ({id, heading, content, background, image, opaqueTex
               {heading}
               <div className="left-card-heading"></div>
             </h3>
-            <div className="left-card-text invisible">
+            <div className="left-card-text">
               {content}
             </div>
           </div>
@@ -42,6 +43,7 @@ const LeftAlignedTextCard = ({id, heading, content, background, image, opaqueTex
                   className="left-card-background-image-opaque lazyload"
                   data-src={`${background.url}?w=1920`}
                   alt={heading} />
+                <div className="left-card-background-image-overlay"></div>
               </div>
             )}
             {opaqueTextBackground && image && (

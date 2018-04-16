@@ -30,7 +30,9 @@ type Options = {
 export default graphql(gql`
   query SubPageHero($id: ID!) {
     subPageHero(id:$id) {
-      id
+      sys {
+        id
+      }
       heading
       subText
       background {
@@ -41,8 +43,7 @@ export default graphql(gql`
 `, {
   options: ({id}:Options) => {
     return {
-      variables: { id },
-      fetchPolicy: 'network-only'
+      variables: { id }
     }
   }
 })(SubPageHeroContainer)

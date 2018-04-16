@@ -30,7 +30,9 @@ type Options = {
 export default graphql(gql`
   query Article($article: String!) {
     articles(q:$article) {
-      id
+      sys {
+        id
+      }
       title
       description
       attachments {
@@ -41,8 +43,7 @@ export default graphql(gql`
 `, {
   options: ({article}:Options) => {
     return {
-      variables: { article: `fields.id=${article}` },
-      fetchPolicy: 'network-only'
+      variables: { article: `fields.id=${article}` }
     }
   }
 })(ArticleContainer)

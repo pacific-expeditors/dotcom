@@ -36,7 +36,9 @@ type Options = {
 export default graphql(gql`
   query Footer($id: ID!) {
     footer(id:$id) {
-      id
+      sys {
+        id
+      }
       copyright
       logo {
         title
@@ -64,8 +66,7 @@ export default graphql(gql`
 `, {
   options: ({id}:Options) => {
     return {
-      variables: { id },
-      fetchPolicy: 'network-only'
+      variables: { id }
     }
   }
 })(FooterContainer)

@@ -1,11 +1,9 @@
 /* @flow */
 import './assets/components.css'
-import './assets/home.css'
 
 window.onload = () => {
   toggleMobileMenu();
   showAgeVerification();
-  fadeInImages();
 };
 
 const toggleMobileMenu = () => {
@@ -29,24 +27,5 @@ const showAgeVerification = () => {
     localStorage.setItem('isVerified', true);
     e.preventDefault();
     document.querySelector('#modal').style.display = 'none';
-  });
-}
-
-const fadeInImages = () => {
-  const ids = [
-    '#world-class-supply-chain-support',
-    '#relationships-that-drive-success',
-    '#consulting',
-    '#distribution',
-    '#it-starts-with-leadership',
-    '#a-vision-for-success-in-cannabis'
-  ];
-
-  ids.forEach((id) => {
-    new ScrollMagic.Scene({
-      triggerElement: id
-    })
-      .setClassToggle('.invisible', 'visible')
-      .addTo(new ScrollMagic.Controller());
   });
 }

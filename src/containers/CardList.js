@@ -34,10 +34,14 @@ type Options = {
 export default graphql(gql`
   query CardList($id: ID!) {
     cardList(id:$id) {
-      id
+      sys {
+        id
+      }
       cards {
         ... on Card {
-          id
+          sys {
+            id
+          }
           heading
           link
           image {
@@ -52,8 +56,7 @@ export default graphql(gql`
 `, {
   options: ({id}:Options) => {
     return {
-      variables: { id },
-      fetchPolicy: 'network-only'
+      variables: { id }
     }
   }
 })(CardListContainer)

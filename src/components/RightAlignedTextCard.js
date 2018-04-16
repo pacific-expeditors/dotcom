@@ -10,15 +10,20 @@ type RightCardProps = {
   image: any
 }
 
-const RightAlignedTextCard = ({id, heading, content, background, image, callToActionLink, callToActionText, opaqueTextBackground}:RightCardProps) => {
+const RightAlignedTextCard = ({sys, heading, content, background, image, callToActionLink, callToActionText, opaqueTextBackground}:RightCardProps) => {
   return (
-    <div key={id} id={id} className={`right-card-container${opaqueTextBackground ? ' right-card-alt' : ''}`}>
+    <div 
+    key={sys.id} 
+    id={`section${sys.id}`}
+    className={`right-card-container${opaqueTextBackground ? ' right-card-alt' : ''}`}>
+      {opaqueTextBackground && background && <div className="swipe invisible"></div>}
       {!opaqueTextBackground && background && (
-        <div className="right-card-background-images">
+        <div className="right-card-background-images fade-in invisible">
           <img
-            className="right-card-background-image invisible lazyload"
+            className="right-card-background-image invisible fade-in lazyload"
             data-src={`${background.url}?w=1920`}
             alt={heading} />
+          <div className="right-card-background-image-overlay"></div>
         </div>
       )}
       <div className="right-card">
@@ -29,6 +34,7 @@ const RightAlignedTextCard = ({id, heading, content, background, image, callToAc
                 className="right-card-background-image invisible lazyload"
                 data-src={`${background.url}?w=1920`}
                 alt={heading} />
+              <div className="right-card-background-image-overlay"></div>
             </div>
           )}
           {image && (
@@ -40,8 +46,8 @@ const RightAlignedTextCard = ({id, heading, content, background, image, callToAc
         </div>
         <div className="right-card-text-container">
           <div className="right-card-text-inner">
-            <h3 className="right-card-heading invisible">{heading}</h3>
-            <div className="right-card-text invisible">
+            <h3 className="right-card-heading">{heading}</h3>
+            <div className="right-card-text">
               <div className="right-card-text-content">
                 {content}
               </div>

@@ -26,7 +26,9 @@ class FeaturedArticleContainer extends Component<void, Props, void> {
 export default graphql(gql`
   query FeaturedArticle {
     articles(q:"fields.featured=true") {
-      id
+      sys {
+        id
+      }
       title
       excerpt
       attachments {
@@ -36,8 +38,6 @@ export default graphql(gql`
   }
 `, {
   options: () => {
-    return {
-      fetchPolicy: 'network-only'
-    }
+    return {}
   }
 })(FeaturedArticleContainer)

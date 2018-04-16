@@ -30,7 +30,9 @@ type Options = {
 export default graphql(gql`
   query TextWithHeading($id: ID!) {
     textWithHeading(id:$id) {
-      id
+      sys {
+        id
+      }
       content
       heading
     }

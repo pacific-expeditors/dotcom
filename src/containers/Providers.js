@@ -15,7 +15,7 @@ const client = new ApolloClient({
     uri: process.env.GRAPHQL_ENDPOINT
   }),
   cache: new InMemoryCache({
-    dataIdFromObject: object => object.id
+    dataIdFromObject: object => object.sys && object.sys.id
   })
 })
 
@@ -26,6 +26,14 @@ type Props = {
 export default class extends Component<void, Props, void> {
   props: Props
   state: void
+
+  constructor(props:Props) {
+    super(props)
+
+    if (props.children.props.slug === 'reset-cache') {
+      client.cache.reset()
+    }
+  }
 
   render() {
     return (

@@ -30,7 +30,9 @@ type Options = {
 export default graphql(gql`
   query CardsWithBackground($id: ID!) {
     cardsWithBackground(id:$id) {
-      id
+      sys {
+        id
+      }
       heading
       image {
         url
@@ -56,8 +58,7 @@ export default graphql(gql`
 `, {
   options: ({id}:Options) => {
     return {
-      variables: { id },
-      fetchPolicy: 'network-only'
+      variables: { id }
     }
   }
 })(CardsWithBackgroundContainer)

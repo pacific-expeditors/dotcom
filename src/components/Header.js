@@ -103,7 +103,7 @@ const MobileHeader = ({mobileLogo, title, navLinks}:HeaderProps) => {
           return (
             <a
               className="header-mobile-nav-link"
-              key={navLink.id}
+              key={navLink.sys.id}
               href={navLink.href}
               style={styles.mobileNavLink}>
                 {navLink.text}
@@ -119,7 +119,7 @@ const NavSection = ({navLink}) => {
   return (
     <div
       className="header-nav-link"
-      key={navLink.id}
+      key={navLink.sys.id}
       style={styles.navLinkContainer}>
         <a style={styles.navLink} href={navLink.href}>{navLink.text}</a>
     </div>

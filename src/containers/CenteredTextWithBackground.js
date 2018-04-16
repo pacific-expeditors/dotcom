@@ -36,7 +36,9 @@ type Options = {
 export default graphql(gql`
   query CenteredTextWithBackground($id: ID!) {
     centeredTextWithBackground(id:$id) {
-      id
+      sys {
+        id
+      }
       content
       heading
       callToActionLink
@@ -50,8 +52,7 @@ export default graphql(gql`
 `, {
   options: ({id}:Options) => {
     return {
-      variables: { id },
-      fetchPolicy: 'network-only'
+      variables: { id }
     }
   }
 })(CenteredTextWithBackgroundContainer)

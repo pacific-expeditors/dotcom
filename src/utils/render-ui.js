@@ -8,14 +8,18 @@ export default (req:any) => {
   const app = express()
   app.use('/static', express.static('server/assets'))
 
-  app.get('/:slug?/:article?', (req, res) => {
+  app.get('/:slug?/:article?', (req:any, res:any) => {
     const slug = req.params.slug ? req.params.slug : 'home'
     const article = req.params.article ? req.params.article : ''
     const Component = createElement(Root, { slug, article })
 
     renderToStringWithData(Component)
-      .then((body:string) => res.send(`<!doctype>${body}`))
-      .catch((err:string) => res.send(err))
+      .then((body:string) => {
+        res.send(`<!doctype>${body}`)
+      })
+      .catch((err:string) => {
+        res.send(err)
+      })
   })
 
   return app

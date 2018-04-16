@@ -49,7 +49,7 @@ const SubPageHero = ({heading, subText, background}:SubPageHeroProps) => {
   return (
     <div className="subpage-hero-container" style={{
         ...styles.container,
-        background: `url(${background.url})`
+        background: `url(${background ? background.url : null})`
     }}>
       <div className="subpage-hero" style={styles.subPageHero}>
         <h1 className="subpage-hero-heading" style={styles.subPageHeading}>

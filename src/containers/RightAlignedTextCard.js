@@ -30,7 +30,9 @@ type Options = {
 export default graphql(gql`
   query RightAlignedTextCard($id: ID!) {
     rightAlignedTextCard(id:$id) {
-      id
+      sys {
+        id
+      }
       heading
       content
       opaqueTextBackground
@@ -47,8 +49,7 @@ export default graphql(gql`
 `, {
   options: ({id}:Options) => {
     return {
-      variables: { id },
-      fetchPolicy: 'network-only'
+      variables: { id }
     }
   }
 })(RightAlignedTextCardContainer)

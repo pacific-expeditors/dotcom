@@ -30,7 +30,9 @@ type Options = {
 export default graphql(gql`
   query Address($id: ID!) {
     address(id:$id) {
-      id
+      sys {
+        id
+      }
       name
       streetName
       city
@@ -44,8 +46,7 @@ export default graphql(gql`
 `, {
   options: ({id}:Options) => {
     return {
-      variables: { id },
-      fetchPolicy: 'network-only'
+      variables: { id }
     }
   }
 })(AddressContainer)

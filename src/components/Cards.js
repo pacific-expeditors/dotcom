@@ -8,7 +8,7 @@ type CardProps = {
   heading: string,
   subHeading?: string,
   content: string,
-  image: string,
+  image: any,
   srcset: [string],
   overlayImage: boolean
 }
@@ -20,9 +20,8 @@ type CardsProps = {
 const Cards = ({cards = []}:CardsProps) => {
   return (
     <div className="cards">
-      <div></div>
       {cards.map((card:CardProps) => (
-        <div id={card.id} key={card.id} className="card invisible">
+        <div id={card.sys && card.sys.id} key={card.sys && card.sys.id} className="card invisible">
           <div className="card-image-container">
             <img
               className="card-image lazyload"
