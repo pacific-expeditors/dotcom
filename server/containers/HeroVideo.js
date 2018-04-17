@@ -10,14 +10,14 @@ type Props = {
   refetch: boolean
 };
 
-class IntroVideoContainer extends Component<void, Props, void> {
+class HeroVideoContainer extends Component<void, Props, void> {
   props: Props;
   state: void;
 
   render() {
     const { data } = this.props;
-    const introductionVideo = get(data, 'introductionVideo', {sources:[]});
-    const sources = introductionVideo.sources.map(source => ({
+    const heroVideo = get(data, 'heroVideo', {sources:[]});
+    const sources = heroVideo.sources.map(source => ({
       type: "video/mp4",
       src: source.url
     }));
@@ -36,8 +36,8 @@ class IntroVideoContainer extends Component<void, Props, void> {
 }
 
 export default graphql(gql`
-  query IntroVideo($id: ID!) {
-    introductionVideo(id:$id) {
+  query HeroVideo($id: ID!) {
+    heroVideo(id:$id) {
       id
       heading
       subHeading
@@ -54,4 +54,4 @@ export default graphql(gql`
       variables: { id }
     }
   }
-})(IntroVideoContainer);
+})(HeroVideoContainer);
