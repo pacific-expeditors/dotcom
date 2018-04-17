@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  query IntroVideo($id: ID!) {\n    introductionVideo(id:$id) {\n      id\n      heading\n      subHeading\n      cta\n      link\n      sources {\n        url\n      }\n    }\n  }\n'], ['\n  query IntroVideo($id: ID!) {\n    introductionVideo(id:$id) {\n      id\n      heading\n      subHeading\n      cta\n      link\n      sources {\n        url\n      }\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  query HeroVideo($id: ID!) {\n    heroVideo(id:$id) {\n      id\n      heading\n      subHeading\n      cta\n      link\n      sources {\n        url\n      }\n    }\n  }\n'], ['\n  query HeroVideo($id: ID!) {\n    heroVideo(id:$id) {\n      id\n      heading\n      subHeading\n      cta\n      link\n      sources {\n        url\n      }\n    }\n  }\n']);
 
 var _react = require('react');
 
@@ -36,22 +36,22 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var IntroVideoContainer = function (_Component) {
-  _inherits(IntroVideoContainer, _Component);
+var HeroVideoContainer = function (_Component) {
+  _inherits(HeroVideoContainer, _Component);
 
-  function IntroVideoContainer() {
-    _classCallCheck(this, IntroVideoContainer);
+  function HeroVideoContainer() {
+    _classCallCheck(this, HeroVideoContainer);
 
-    return _possibleConstructorReturn(this, (IntroVideoContainer.__proto__ || Object.getPrototypeOf(IntroVideoContainer)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (HeroVideoContainer.__proto__ || Object.getPrototypeOf(HeroVideoContainer)).apply(this, arguments));
   }
 
-  _createClass(IntroVideoContainer, [{
+  _createClass(HeroVideoContainer, [{
     key: 'render',
     value: function render() {
       var data = this.props.data;
 
-      var introductionVideo = (0, _lodash2.default)(data, 'introductionVideo', { sources: [] });
-      var sources = introductionVideo.sources.map(function (source) {
+      var heroVideo = (0, _lodash2.default)(data, 'heroVideo', { sources: [] });
+      var sources = heroVideo.sources.map(function (source) {
         return {
           type: "video/mp4",
           src: source.url
@@ -61,15 +61,15 @@ var IntroVideoContainer = function (_Component) {
       return _react2.default.createElement(_IntroVideo2.default, {
         autoPlay: true,
         loop: true,
-        heading: introductionVideo.heading,
-        subHeading: introductionVideo.subHeading,
-        cta: introductionVideo.cta,
-        link: introductionVideo.link,
+        heading: heroVideo.heading,
+        subHeading: heroVideo.subHeading,
+        cta: heroVideo.cta,
+        link: heroVideo.link,
         sources: sources });
     }
   }]);
 
-  return IntroVideoContainer;
+  return HeroVideoContainer;
 }(_react.Component);
 
 exports.default = (0, _reactApollo.graphql)((0, _graphqlTag2.default)(_templateObject), {
@@ -80,4 +80,4 @@ exports.default = (0, _reactApollo.graphql)((0, _graphqlTag2.default)(_templateO
       variables: { id: id }
     };
   }
-})(IntroVideoContainer);
+})(HeroVideoContainer);
