@@ -25,7 +25,6 @@ const CardsWithHeading = ({heading, cards = []}:CardsProps) => {
     <div className="cards-with-header">
       <h3 className="cards-header">
         <span>{headings[0]}</span>
-        <img src="//images.contentful.com/i9tcznuksxng/rOLTliS0gggQcE4miIICo/b3213715b01e719d4d8be05afdb54e57/c-d-arrows.svg" alt="" />
         <span>{headings[1]}</span>
       </h3>
       <Cards cards={cards.cards} />
