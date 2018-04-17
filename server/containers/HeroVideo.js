@@ -26,10 +26,10 @@ class HeroVideoContainer extends Component<void, Props, void> {
       <IntroVideo
         autoPlay
         loop
-        heading={introductionVideo.heading}
-        subHeading={introductionVideo.subHeading}
-        cta={introductionVideo.cta}
-        link={introductionVideo.link}
+        heading={heroVideo.heading}
+        subHeading={heroVideo.subHeading}
+        cta={heroVideo.cta}
+        link={heroVideo.link}
         sources={sources} />
     );
   }
