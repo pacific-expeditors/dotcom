@@ -32,7 +32,6 @@ var CardsWithHeading = function CardsWithHeading(_ref) {
         null,
         headings[0]
       ),
-      _react2.default.createElement('img', { src: '//images.contentful.com/i9tcznuksxng/rOLTliS0gggQcE4miIICo/b3213715b01e719d4d8be05afdb54e57/c-d-arrows.svg', alt: '' }),
       _react2.default.createElement(
         'span',
         null,
