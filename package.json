@@ -11,8 +11,8 @@
   },
   "scripts": {
     "start": "node ./server.js",
-    "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production && node dist/main.js",
+    "dev": "webpack --env.NODE_ENV=development --mode development --watch",
+    "build": "webpack --env.NODE_ENV=production --mode production && node dist/main.js",
     "test": "echo 'test'"
   },
   "dependencies": {

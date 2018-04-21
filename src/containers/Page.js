@@ -71,12 +71,12 @@ class Page extends Component<void, Props, State> {
             {sections.map((section) => {
               const Section = Containers[section.__typename]
 
-              // return (
-              //   <Section
-              //     article={this.props.article}
-              //     key={section.sys.id}
-              //     id={section.sys.id} />
-              // )
+              return (
+                <Section
+                  article={this.props.article}
+                  key={section.sys.id}
+                  id={section.sys.id} />
+              )
             })}
           </div>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/3.0.0/lazysizes.min.js"></script>

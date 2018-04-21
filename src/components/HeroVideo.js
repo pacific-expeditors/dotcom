@@ -77,7 +77,6 @@ const HeroVideo = ({
   cta,
   link
 }:HeroVideoProps) => {
-  console.log(sources)
   return (
     <div className="video-container" style={styles.container}>
       <video

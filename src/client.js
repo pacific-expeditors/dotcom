@@ -8,11 +8,8 @@ window.onload = () => {
 
 const toggleMobileMenu = () => {
   document.querySelector('.mobile-menu-link').addEventListener('click', (e) => {
-    document.querySelector('.header-mobile').style.display = 'block';
-  });
-
-  document.querySelector('.close-icon-link').addEventListener('click', (e) => {
-    document.querySelector('.header-mobile').style.display = 'none';
+    document.querySelector('.header-mobile').classList.toggle('visible');
+    document.querySelector('.mobile-menu-link').classList.toggle('is-active');
   });
 }
 

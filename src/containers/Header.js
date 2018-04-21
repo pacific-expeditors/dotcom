@@ -21,7 +21,8 @@ class HeaderContainer extends Component<void, Props, void> {
       <Header
         navLinks={header.navigationLinks}
         siteTitle={header.siteTitle}
-        logo={header.logo.url} />
+        logo={header.logo.url}
+        mobileLogo={header.mobileLogo.url} />
     )
   }
 }
@@ -38,6 +39,11 @@ export default graphql(gql`
       }
       siteTitle
       logo {
+        title
+        description
+        url
+      }
+      mobileLogo {
         title
         description
         url
