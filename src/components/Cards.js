@@ -24,6 +24,7 @@ const Cards = ({cards = []}:CardsProps) => {
         <div id={card.sys && card.sys.id} key={card.sys && card.sys.id} className="card invisible">
           <div className="card-image-container">
             <img
+              key={card.image.url}
               className="card-image lazyload"
               data-src={`${card.image.url}?w=1024`}
               data-srcset={card.srcset}

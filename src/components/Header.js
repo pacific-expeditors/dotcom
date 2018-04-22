@@ -89,7 +89,7 @@ const styles = {
 const MobileHeader = ({mobileLogo, logo, title, navLinks}:HeaderProps) => {
   return (
     <header style={styles.mobileMenu} className="header-mobile">
-      <img className="logo" style={styles.logo} src={logo} alt={title} />
+      <img key={logo} className="logo" style={styles.logo} src={logo} alt={title} />
       <nav key="mobileNav" style={styles.mobileMenuLinks} className="header-mobile-menu-links">
         {navLinks.map((navLink) => {
           return (
@@ -122,12 +122,13 @@ const DesktopHeader = (props:Props) => {
   return (
     <header className="header" style={styles.header}>
       <nav className="header-left-nav" key="leftNav" style={styles.navLeft}>
-        {props.navLinks.filter(navLink => navLink.alignment === 'left').map(navLink => {
+        {props.navLinks.filter(navLink => navLink.alignment === 'left').map((navLink) => {
           return <NavSection navLink={navLink} />
         })}
       </nav>
       <a href="/" style={styles.logoLink} className="logo-link">
         <img
+          key={props.logo}
           className="logo"
           style={styles.logo}
           src={props.logo}
@@ -135,7 +136,7 @@ const DesktopHeader = (props:Props) => {
           alt={props.siteTitle} />
       </a>
       <nav className="header-right-nav" key="rightNav" style={styles.navRight}>
-        {props.navLinks.filter(navLink => navLink.alignment === 'right').map(navLink => {
+        {props.navLinks.filter(navLink => navLink.alignment === 'right').map((navLink) => {
           return <NavSection navLink={navLink} />
         })}
       </nav>

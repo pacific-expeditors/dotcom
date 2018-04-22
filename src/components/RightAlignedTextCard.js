@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import {markdown} from 'markdown'
 import Button from './Button'
 
 type RightCardProps = {
@@ -20,6 +21,7 @@ const RightAlignedTextCard = ({sys, heading, content, background, image, callToA
       {!opaqueTextBackground && background && (
         <div className="right-card-background-images fade-in invisible">
           <img
+            key={background.url}
             className="right-card-background-image invisible fade-in lazyload"
             data-src={`${background.url}?w=1920`}
             alt={heading} />
@@ -31,6 +33,7 @@ const RightAlignedTextCard = ({sys, heading, content, background, image, callToA
           {background && opaqueTextBackground && (
             <div className="right-card-background-images">
               <img
+                key={background.url}
                 className="right-card-background-image invisible lazyload"
                 data-src={`${background.url}?w=1920`}
                 alt={heading} />
@@ -39,6 +42,7 @@ const RightAlignedTextCard = ({sys, heading, content, background, image, callToA
           )}
           {image && (
             <img
+              key={image.url}
               className="right-card-image invisible lazyload"
               data-src={`${image.url}?w=610`}
               alt={heading} />
@@ -48,8 +52,7 @@ const RightAlignedTextCard = ({sys, heading, content, background, image, callToA
           <div className="right-card-text-inner">
             <h3 className="right-card-heading">{heading}</h3>
             <div className="right-card-text">
-              <div className="right-card-text-content">
-                {content}
+              <div className="right-card-text-content" dangerouslySetInnerHTML={{__html: markdown.toHTML(content)}}>
               </div>
               {callToActionLink && callToActionText && (
                 <Button style={opaqueTextBackground ? 'primary' : 'secondary'} link={callToActionLink}>

@@ -299,6 +299,19 @@ body {
     overflow-y: hidden;
 }
 
+.text-with-background-image {
+    width: 100%;
+}
+
+.text-with-background-image-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 .text-with-background-heading {
     color: #fff;
     font-size: 42px;
