@@ -48,7 +48,7 @@ const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTe
                 <div className="left-card-background-image-overlay"></div>
               </div>
             )}
-            {opaqueTextBackground && image && (
+            {opaqueTextBackground && background && image && (
               <img
                 key={background.url}
                 className="left-card-image lazyload invisible"

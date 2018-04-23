@@ -22,7 +22,7 @@ const RightAlignedTextCard = ({sys, heading, content, background, image, callToA
         <div className="right-card-background-images fade-in invisible">
           <img
             key={background.url}
-            className="right-card-background-image invisible fade-in lazyload"
+            className="right-card-background-image full-width invisible fade-in lazyload"
             data-src={`${background.url}?w=1920`}
             alt={heading} />
           <div className="right-card-background-image-overlay"></div>
