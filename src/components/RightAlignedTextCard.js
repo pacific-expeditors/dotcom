@@ -48,9 +48,9 @@ const RightAlignedTextCard = ({sys, heading, content, background, image, callToA
               alt={heading} />
           )}
         </div>
-        <div className={`right-card-text-container${opaqueTextBackground ? ' right-card-text-padded' : ''}`}>
-          <h3 className="right-card-heading">{heading}</h3>
-          <div className="right-card-text">
+        <div className="right-card-text-container">
+          <h3 className={`right-card-heading${image ? ' right-card-text-padded' : ''}`}>{heading}</h3>
+          <div className={`right-card-text${image ? ' right-card-text-padded' : ''}`}>
             <div className="right-card-text-content" dangerouslySetInnerHTML={{__html: markdown.toHTML(content)}}>
             </div>
             {callToActionLink && callToActionText && (

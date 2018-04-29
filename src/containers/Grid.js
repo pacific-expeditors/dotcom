@@ -17,11 +17,9 @@ class GridContainer extends Component<void, Props, void> {
     const { data } = this.props
     const grid = get(data, 'grid', {})
 
-    return <div></div>
-
-    // return (
-    //   <Grid {...grid} />
-    // )
+    return (
+      <Grid {...grid} />
+    )
   }
 }
 

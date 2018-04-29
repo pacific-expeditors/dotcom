@@ -474,6 +474,7 @@ body {
 
 .right-card-container {
     position: relative;
+    padding: 20px 0;
 }
 
 .right-card {
@@ -538,7 +539,7 @@ body {
     }
 
     .right-card-text-padded {
-        padding-left: 20px;
+        padding: 0 0 0 20px;
     }
 }
 
@@ -614,7 +615,8 @@ body {
 
 @media (min-width: 1024px) {
     .right-card-background-image.full-width {
-        width: 100%;
+        min-width: 100%;
+        min-height: 100%;
     }
 
     .right-card {
@@ -937,7 +939,7 @@ body {
 }
 
 .cards-with-header-cta {
-    margin: 40px 0;
+    padding: 40px 0;
     display: flex;
     justify-content: center;
 }
