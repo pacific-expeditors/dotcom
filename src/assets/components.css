@@ -519,6 +519,10 @@ body {
     font-weight: 600;
 }
 
+.right-card-alt {
+    padding: 0;
+}
+
 .right-card-alt .right-card-heading {
     color: #0f4c61;
 }
