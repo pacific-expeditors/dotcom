@@ -24,9 +24,9 @@ type CardsProps = {
   cards?: [CardProps]
 }
 
-const CardsWithBackground = ({heading, image, cards = []}:CardsProps) => {
+const CardsWithBackground = ({sys, heading, image, cards = []}:CardsProps) => {
   return (
-    <div className="cards-with-bg">
+    <div id={`section${sys.id}`} className="cards-with-bg">
       <div className="cards-with-bg-container" style={{background: `url(${image.url}?h=1920)`}}>
       </div>
       <h3 className="cards-with-bg-heading">{heading}</h3>

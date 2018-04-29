@@ -1,0 +1,164 @@
+/*================== CONTACT FORM *==================*/
+
+.contact-wrapper {
+    width: 100%;
+}
+
+.contact {
+    background-color: #0f4c61;
+    margin-top: -20px;
+    padding: 0 20px 80px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 1200px) {
+    .form-container {
+        width: 1170px;
+        margin: 20px auto 0;
+        flex-direction: row;
+    }
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin: 0 -10px;
+}
+
+@media (min-width: 1200px) {
+    .form-row {
+        flex-direction: row;
+    }
+}
+
+.form-col {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.form {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.form-heading {
+    color: #fff;
+    font-size: 42px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.form-heading:after {
+    content: "";
+    width: 132px;
+    height: 4px;
+    background-color: #fff;
+    margin: 20px 0;
+    display: block;
+}
+
+.form-label {
+    font-size: 17px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+}
+
+.checkbox {
+    margin-right: 5px;
+}
+
+.msg {
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+.error {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 40%;
+    padding: 12px;
+    background-color: rgb(169, 68, 66);
+    color: #FFF;
+    text-align: center;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.success {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 40%;
+    padding: 12px;
+    background-color: rgb(60, 118, 61);
+    color: #FFF;
+    text-align: center;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+/*================== ADDRESS *==================*/
+
+.address-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 450px;
+}
+
+@media (min-width: 1024px) {
+    .address-container {
+        width: 980px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .address-container {
+        width: 1170px;
+    }
+}
+
+.address-info {
+    flex: 1;
+    padding: 60px 0;
+}
+
+.address-address {
+    padding: 20px 0;
+    font-style: normal;
+}
+
+.address-map {
+    flex: 1;
+    position: relative;
+}
+
+.address-map iframe {
+    width: calc(100vw / 2);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.address-heading {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: #0f4c61;
+    margin: 0;
+}
+
+@media (min-width: 1024px) {
+    .address-container {
+        flex-direction: row;
+    }
+}

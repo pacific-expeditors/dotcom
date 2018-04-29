@@ -31,16 +31,12 @@ const styles = {
     zIndex: 1
   },
   overlayContainer: {
-    width: '1170px',
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
     margin: '0 auto',
     justifyContent: 'center',
     alignItems: 'flex-start'
-  },
-  cta: {
-    width: '400px'
   },
   heading: {
     fontSize: '48px',
@@ -54,8 +50,7 @@ const styles = {
   hr: {
     background: '#fff',
     width: '132px',
-    height: '4px',
-    margin: '20px 0'
+    height: '4px'
   },
   subHeading: {
     fontSize: '22px',
@@ -75,6 +70,7 @@ const HeroVideo = ({
   heading,
   subHeading,
   cta,
+  repeat,
   link
 }:HeroVideoProps) => {
   return (
@@ -84,7 +80,7 @@ const HeroVideo = ({
         style={styles.video}
         poster={styles.poster}
         autoPlay
-        loop={loop}
+        loop={repeat}
         src={src}>
         {sources.map(({type = "video/mp4", src}) => <source key={src} style={styles.source} type={type} src={src} />)}
       </video>

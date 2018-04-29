@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import {markdown} from 'markdown'
 import Button from './Button'
 
 type CardProps = {
@@ -40,8 +41,7 @@ const Cards = ({cards = []}:CardsProps) => {
             {!card.overlayImage && (
               <h3 className="card-heading">{card.heading}</h3>
             )}
-            <div className="card-text">
-              {card.content}
+            <div className="card-text" dangerouslySetInnerHTML={{__html: markdown.toHTML(card.content)}}>
             </div>
             {card.link && <Button link={card.link} style="primary">{card.cta}</Button>}
           </div>

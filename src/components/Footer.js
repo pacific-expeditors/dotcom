@@ -12,7 +12,7 @@ const Footer = ({copyright, logo, footerLinks, socialMediaLinks, associationLogo
       <div className="footer-container footer-associations">
         {associationLogos.map((logo) => {
           return (
-            <img key={logo.url} className="footer-association-logo" src={`${logo.url}?h=100`} alt={logo.title} />
+            <img key={logo.url} className="footer-association-logo lazyload" data-src={`${logo.url}?h=100`} alt={logo.title} />
           )
         })}
       </div>

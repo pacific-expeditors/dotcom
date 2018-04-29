@@ -1,5 +1,7 @@
 /* @flow */
 import './assets/components.css'
+import './assets/blog.css'
+import './assets/contact.css'
 
 window.onload = () => {
   toggleMobileMenu();

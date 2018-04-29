@@ -48,18 +48,16 @@ const RightAlignedTextCard = ({sys, heading, content, background, image, callToA
               alt={heading} />
           )}
         </div>
-        <div className="right-card-text-container">
-          <div className="right-card-text-inner">
-            <h3 className="right-card-heading">{heading}</h3>
-            <div className="right-card-text">
-              <div className="right-card-text-content" dangerouslySetInnerHTML={{__html: markdown.toHTML(content)}}>
-              </div>
-              {callToActionLink && callToActionText && (
-                <Button style={opaqueTextBackground ? 'primary' : 'secondary'} link={callToActionLink}>
-                  {callToActionText}
-                </Button>
-              )}
+        <div className={`right-card-text-container${opaqueTextBackground ? ' right-card-text-padded' : ''}`}>
+          <h3 className="right-card-heading">{heading}</h3>
+          <div className="right-card-text">
+            <div className="right-card-text-content" dangerouslySetInnerHTML={{__html: markdown.toHTML(content)}}>
             </div>
+            {callToActionLink && callToActionText && (
+              <Button style={opaqueTextBackground ? 'primary invisible' : 'secondary invisible'} link={callToActionLink}>
+                {callToActionText}
+              </Button>
+            )}
           </div>
         </div>
       </div>

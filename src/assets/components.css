@@ -86,6 +86,7 @@ body {
     transition: opacity .25s ease-in 0s;
     will-change: opacity;
     opacity: 0;
+    display: none;
 }
 
 .header-mobile.visible {
@@ -216,19 +217,13 @@ body {
     border: 1px solid #0f4c61;
     border-radius: 3px;
     color: #0f4c61;
+    transition: all .25s ease-in;
 }
 
 .button.primary:hover {
     border: 1px solid #0F4C5F;
-    color: #0F4C5F;
-    transition: all .25s ease-in;
-    width: 100%;
-}
-
-@media (min-width: 1024px) {
-    .button.primary {
-        width: auto;
-    }
+    background-color: #0F4C5F;
+    color: #fff;
 }
 
 .button.secondary {
@@ -326,7 +321,6 @@ body {
     font-weight: 300;
     font-size: 24px;
     text-align: center;
-    white-space: pre-wrap;
 }
 
 .text-with-background-heading+.text-with-background-text {
@@ -381,8 +375,14 @@ body {
 
 .left-card-image-container {
     flex: 1;
+    display: flex;
     position: relative;
     order: 1;
+    min-height: 75vh;
+}
+
+.left-card-image-container.empty {
+    min-height: initial;
 }
 
 .left-card-background-images {
@@ -425,7 +425,6 @@ body {
 
 .left-card-background-image.invisible {
     opacity: 0;
-    height: 100%;
 }
 
 .left-card-image {
@@ -443,10 +442,6 @@ body {
     color: #0f4c61;
 }
 
-.left-card-text {
-    white-space: pre-wrap;
-}
-
 @media (min-width: 1024px) {
     .left-card {
         flex-direction: row;
@@ -461,16 +456,11 @@ body {
 
     .left-card-image-container {
         order: 2;
-        display: flex;
+        min-height: initial;
     }
 
-    .left-card-text,
-    .left-card-heading {
+    .left-card-padded {
         padding-right: 20px;
-    }
-
-    .left-card-background-image {
-        width: 100%;
     }
 }
 
@@ -533,26 +523,39 @@ body {
 }
 
 .right-card-text-container {
-    width: 100%;
     color: #fff;
+    padding: 20px;
 }
 
-.right-card-text-inner {
+.right-card-text-padded {
     padding: 0 20px 40px;
 }
 
 @media (min-width: 1024px) {
     .right-card-text-container {
         width: 50%;
+        padding: 100px 0;
     }
 
-    .right-card-text-inner {
+    .right-card-text-padded {
         padding-left: 20px;
     }
 }
 
 .right-card-text-content {
     padding-bottom: 20px;
+}
+
+.right-card-text .button.secondary.invisible {
+    background-color: #fff;
+    color: #0F4C5F;
+    opacity: 0;
+}
+
+.right-card-text .button.secondary.visible {
+    opacity: 1;
+    background-color: inherit;
+    color: inherit;
 }
 
 .right-card-alt .right-card-text {
@@ -596,10 +599,6 @@ body {
     overflow: hidden;
 }
 
-.right-card-background-image.full-width {
-    width: 100%;
-}
-
 .right-card-background-image-overlay {
     background-color: rgba(0, 0, 0, .5);
     position: absolute;
@@ -614,14 +613,16 @@ body {
 }
 
 @media (min-width: 1024px) {
+    .right-card-background-image.full-width {
+        width: 100%;
+    }
+
     .right-card {
         margin: 0 auto;
         width: 980px;
         flex-direction: row;
     }
-    .right-card-text-container {
-        padding: 100px 0;
-    }
+    
     .right-card-images {
         display: flex;
     }
@@ -873,7 +874,6 @@ body {
 }
 
 .card-text {
-    white-space: pre-line;
     padding-bottom: 12px;
 }
 
@@ -1054,11 +1054,11 @@ body {
 @media (min-width: 1024px) {
     .footer-association-logo {
         max-width: inherit;
-        margin: 0;
+        margin: 0 0 0 20px;
     }
 
     .footer-association-logo:first-child {
-        margin-bottom: 0;
+        margin: 0;
     }
 }
 
@@ -1071,10 +1071,6 @@ body {
         display: flex;
         justify-content: center;
     }
-
-    .footer-association-logo {
-        margin: 0;
-    }
 }
 
 /*================== VIDEO *==================*/
@@ -1084,31 +1080,31 @@ body {
 }
 
 .video-hr {
-    margin: 20px auto !important;
+    margin: 20px auto;
 }
 
 .video-overlay-container {
-    width: 100% !important;
+    width: 100%;
 }
 
 .video-cta {
-    width: 100% !important;
-    text-align: center;
+    width: 100%;
     animation-name: fadein-right;
     animation-duration: .5s;
     animation-timing-function: ease-in;
     animation-delay: .75s;
     animation-fill-mode: both;
     opacity: 0;
+    text-align: center;
 }
 
 @media (min-width: 1200px) {
     .video-overlay-container {
-        width: 1170px !important;
+        width: 1170px;
     }
     
     .video-cta {
-        width: 400px !important;
+        width: 700px;
         text-align: left;
     }
 

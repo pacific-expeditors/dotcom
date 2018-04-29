@@ -52,6 +52,7 @@ export default graphql(gql`
       subHeading
       cta
       link
+      repeat
       sources {
         url
       }
