@@ -17,6 +17,7 @@ const RightAlignedTextCard = ({sys, heading, content, background, image, callToA
     key={sys.id} 
     id={`section${sys.id}`}
     className={`right-card-container${opaqueTextBackground ? ' right-card-alt' : ''}`}>
+      <div id={`trigger${sys.id}`} className="trigger"></div>
       {opaqueTextBackground && background && <div className="swipe invisible"></div>}
       {!opaqueTextBackground && background && (
         <div className="right-card-background-images fade-in invisible">

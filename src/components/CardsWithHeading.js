@@ -22,6 +22,7 @@ type CardsProps = {
 const CardsWithHeading = ({sys, heading, cards = [], callToActionText, callToActionLink}:CardsProps) => {
   return (
     <div id={`section${sys.id}`} className="cards-with-header">
+      <div id={`trigger${sys.id}`} className="trigger"></div>
       <h3 className="cards-header">
         {heading}
       </h3>
