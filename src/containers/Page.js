@@ -6,6 +6,7 @@ import gql from 'graphql-tag'
 import Loadable from 'react-loadable'
 import { existsSync } from 'fs'
 import Modal from '../components/Modal'
+import Loading from '../components/Loading'
 import * as Containers from './index'
 import 'isomorphic-fetch'
 
@@ -68,6 +69,7 @@ class Page extends Component<void, Props, State> {
         <body>
           <div className="page">
             <Modal />
+            <Loading />
             {sections.map((section) => {
               const Section = Containers[section.__typename]
 

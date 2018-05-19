@@ -76,6 +76,41 @@ body {
     min-height: 200px;
 }
 
+/*================== PAGE LOAD *==================*/
+.loading-overlay {
+    background-color: #0f4c61;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    animation-name: fadeout;
+	animation-duration: .25s;
+	animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    animation-delay: 1.5s;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+}
+
+.loading-logo {
+    width: 25%;
+    animation-name: fadein;
+	animation-duration: .25s;
+	animation-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+.loading-logo path {
+    fill: #fff;
+}
+
 /*================== HEADERS *==================*/
 
 .header-left-nav,
@@ -1173,6 +1208,16 @@ body {
 }
 
 /*================== ANIMATIONS *==================*/
+@keyframes fadeout {
+	from {
+        opacity: 1;
+    }
+
+	to {
+        opacity: 0;
+    }
+}
+
 @keyframes fadein {
 	from {
         opacity: 0;
