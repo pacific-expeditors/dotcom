@@ -1,0 +1,142 @@
+/*================== LEFT ALIGNED TEXT CARD *==================*/
+
+.left-card-container,
+.left-card {
+    position: relative;
+}
+
+.left-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-card-text-container {
+    padding: 0 20px 40px;
+    flex: 1;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+    order: 2;
+}
+
+.left-card-container .swipe {
+	background-color: #ffffff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 3;
+	transition: left .25s ease-in 1s;
+	will-change: left;
+}
+
+.left-card-container .swipe.visible {
+	left: 100%;
+}
+
+.left-card-alt {
+    background: transparent;
+}
+
+.left-card-alt .left-card-heading,
+.left-card-alt .left-card-text {
+    color: #fff;
+}
+
+.left-card-image-container {
+    flex: 1;
+    display: flex;
+    position: relative;
+    order: 1;
+    min-height: 75vh;
+}
+
+.left-card-image-container.empty {
+    min-height: initial;
+}
+
+.left-card-background-images {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: hidden;
+}
+
+.left-card-image.invisible {
+	opacity: 0;
+}
+
+.left-card-image.visible {
+    opacity: 1;
+	animation-name: fadein-bottom;
+	animation-duration: .25s;
+	animation-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-delay: 1.5s;
+}
+
+.left-card-background-image-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.left-card-background-image.visible {
+    opacity: 1;
+    animation-name: fadein-zoomin;
+    animation-duration: .5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+.left-card-background-image.invisible {
+    opacity: 0;
+}
+
+.left-card-image {
+    width: 100%;
+    align-self: center;
+    position: relative;
+    z-index: 1;
+}
+
+.left-card-heading {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: #0f4c61;
+}
+
+@media (min-width: 1024px) {
+    .left-card {
+        flex-direction: row;
+        margin: 0 auto;
+        width: 980px;
+    }
+
+    .left-card-text-container {
+        order: 1;
+        padding: 100px 0;
+    }
+
+    .left-card-image-container {
+        order: 2;
+        min-height: initial;
+    }
+
+    .left-card-padded {
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .left-card {
+        width: 1170px;
+    }
+}

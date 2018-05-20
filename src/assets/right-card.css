@@ -1,0 +1,169 @@
+/*================== RIGHT ALIGNED TEXT CARD *==================*/
+
+.right-card-container {
+    position: relative;
+    padding: 20px 0;
+}
+
+.right-card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.right-card-container .fade-in.invisible {
+    opacity: 0;
+}
+
+.right-card-container .fade-in.visible {
+    opacity: 1;
+}
+
+.right-card-container .fade-in {
+    transition: opacity .5s ease-in 1s;
+    will-change: opacity;
+}
+
+.right-card-container .swipe {
+	background-color: #ffffff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 3;
+	transition: right .25s ease-in 1s;
+	will-change: right;
+}
+
+.right-card-container .swipe.visible {
+    right: 100%;
+}
+
+.right-card-heading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.right-card-alt {
+    padding: 0;
+}
+
+.right-card-alt .right-card-heading {
+    color: #0f4c61;
+}
+
+.right-card-text-container {
+    color: #fff;
+    padding: 20px;
+}
+
+.right-card-text-padded {
+    padding: 0 20px 40px;
+}
+
+@media (min-width: 1024px) {
+    .right-card-text-container {
+        width: 50%;
+        padding: 100px 0;
+    }
+
+    .right-card-text-padded {
+        padding: 0 0 0 20px;
+    }
+}
+
+.right-card-text-content {
+    padding-bottom: 20px;
+}
+
+.right-card-text .button.secondary.invisible {
+    background-color: #fff;
+    color: #0F4C5F;
+    opacity: 0;
+}
+
+.right-card-text .button.secondary.visible {
+    opacity: 1;
+    background-color: inherit;
+    color: inherit;
+}
+
+.right-card-alt .right-card-text {
+    color: #222;
+}
+
+.right-card-images {
+    width: 100%;
+    position: relative;
+}
+
+@media (min-width: 1024px) {
+    .right-card-images {
+        width: 50%;
+    }
+}
+
+.right-card-image {
+    width: 100%;
+    position: relative;
+    align-self: center;
+    opacity: 0;
+}
+
+.right-card-image.visible {
+    opacity: 1;
+    animation-name: fadein-bottom;
+    animation-duration: .5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+}
+
+.right-card-background-images {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.right-card-background-image-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.right-card-alt .right-card-background-images {
+    left: auto;
+}
+
+@media (min-width: 1024px) {
+    .right-card-background-image.full-width {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .right-card {
+        margin: 0 auto;
+        width: 980px;
+        flex-direction: row;
+    }
+    
+    .right-card-images {
+        display: flex;
+    }
+}
+
+@media (min-width: 1200px) {
+    .right-card {
+        width: 1170px;
+    }
+}

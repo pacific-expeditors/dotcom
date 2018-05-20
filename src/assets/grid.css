@@ -1,0 +1,130 @@
+/*================== GRIDS *==================*/
+
+.grid-container {
+    position: relative;
+}
+
+.grid-container-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.grid-image {
+    height: 100%;
+}
+
+.grid-image-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.grid {
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px;
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        width: 980px;
+        margin: 0 auto;
+        padding: 60px 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid {
+        width: 1170px;
+    }
+}
+
+.grid-heading {
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 20px;
+}
+
+.grid-content {
+    color: #FFF;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.grid-cta {
+    text-align: center;
+}
+
+.col-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 60px 0;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 1024px) {
+    .col-container {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    .col-wrapper {
+        width: 33.3333%;
+    }
+}
+
+.col:first-child,
+.col:nth-child(2),
+.col:nth-child(3) {
+    border-top: 1px solid #FFF;
+}
+
+.col {
+    background-color: #0f4c61;
+    border: 1px solid #FFF;
+    display: flex;
+    height: 150px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.col-gray {
+    background-color: #56575A;
+    border: 1px solid #FFF;
+    text-align: center;
+    padding: 20px;
+    height: 150px;
+}
+
+.col-gray-content {
+    color: #FFF;
+    font-size: 14px;
+}
+
+.col-icon {
+    color: #82BAD0;
+    font-size: 64px;
+    padding-bottom: 10px;
+}
+
+.col-heading {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.25;
+    color: #FFF;
+    margin: 0;
+}

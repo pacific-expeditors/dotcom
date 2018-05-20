@@ -27,6 +27,7 @@ class HeroVideoContainer extends Component<void, Props, void> {
 
     return (
       <HeroVideo
+        id={heroVideo.sys.id}
         autoPlay
         loop
         heading={heroVideo.heading}

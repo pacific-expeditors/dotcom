@@ -1,10 +1,14 @@
 /* @flow */
-import React from 'react'
+import * as React from 'react'
+
+type NavProps = {
+
+}
 
 type HeaderProps = {
   logo: string,
   mobileLogo: string,
-  siteTitle: string
+  title: string
 }
 
 const styles = {
@@ -20,7 +24,7 @@ const styles = {
   },
   logo: {
     display: 'block',
-    height: '52px'
+    width: '195px'
   },
   navLeft: {
     flex: 1,
@@ -49,7 +53,9 @@ const styles = {
     right: 0,
     top: 0,
     bottom: 0,
-    zIndex: 4
+    zIndex: 4,
+    display: 'flex',
+    flexDirection: 'column'
   },
   mobileTopRow: {
     display: 'flex',
@@ -61,13 +67,20 @@ const styles = {
     top: '20px'
   },
   mobileNavLink: {
-    fontSize: '36px',
+    fontSize: '28px',
     fontWeight: 600,
     textTransform: 'uppercase',
     textDecoration: 'none',
-    marginBottom: '24px',
+    marginBottom: '12px',
     color: '#4F4F4F',
     display: 'block'
+  },
+  mobileHeader: {
+    position: 'absolute',
+    top: '28px',
+    left: '28px',
+    right: 0,
+    zIndex: 4
   },
   closeIconLink: {
     marginLeft: 'auto'
@@ -82,13 +95,16 @@ const styles = {
     height: '28px'
   },
   mobileMenuLinks: {
-    margin: '20px 0'
+    display: 'flex',
+    flex: 1,
+    justifyContent: 'center',
+    flexDirection: 'column'
   }
 }
 
-const MobileHeader = ({mobileLogo, logo, title, navLinks}:HeaderProps) => {
+const MobileMenu = ({logo, title, navLinks}:HeaderProps):React.Node => {
   return (
-    <header style={styles.mobileMenu} className="header-mobile">
+    <div style={styles.mobileMenu} className="header-mobile-menu">
       <img key={logo} className="logo" style={styles.logo} src={logo} alt={title} />
       <nav key="mobileNav" style={styles.mobileMenuLinks} className="header-mobile-menu-links">
         {navLinks.map((navLink) => {
@@ -103,11 +119,26 @@ const MobileHeader = ({mobileLogo, logo, title, navLinks}:HeaderProps) => {
           )
         })}
       </nav>
-    </header>
+    </div>
   )
 }
 
-const NavSection = ({navLink}) => {
+const MobileHeader = ({siteTitle, mobileLogo}:HeaderProps):React.Node => {
+  return (
+    <div style={styles.mobileHeader} className="header-mobile">
+      <a href="/" style={styles.logoLink} className="header-mobile-link">
+          <img
+            key={mobileLogo}
+            className="header-mobile-logo"
+            style={styles.logo}
+            src={mobileLogo}
+            alt={siteTitle} />
+        </a>
+    </div>
+  )
+}
+
+const NavSection = ({navLink}):React.Node => {
   return (
     <div
       className="header-nav-link"
@@ -118,7 +149,20 @@ const NavSection = ({navLink}) => {
   )
 }
 
-const DesktopHeader = (props:Props) => {
+const MobileIcon = ():React.Node => {
+  return (
+    <a href="javascript:void(0);" className="mobile-menu-link" style={styles.menuIconLink}>
+      <div className="mobile-menu-icon">
+        <div className="mobile-menu-icon-inner">
+          <div className="mobile-menu-icon-before"></div>
+          <div className="mobile-menu-icon-after"></div>
+        </div>
+      </div>
+    </a>
+  )
+}
+
+const DesktopHeader = (props:Props):React.Node => {
   return (
     <header className="header" style={styles.header}>
       <nav className="header-left-nav" key="leftNav" style={styles.navLeft}>
@@ -144,19 +188,13 @@ const DesktopHeader = (props:Props) => {
   )
 }
 
-const Header = (props:HeaderProps) => {
+const Header = (props:HeaderProps):React.Node => {
   return (
     <div className="header-container">
       <DesktopHeader {...props} />
       <MobileHeader {...props} />
-      <a href="javascript:void(0);" className="mobile-menu-link" style={styles.menuIconLink}>
-        <div className="mobile-menu-icon">
-          <div className="mobile-menu-icon-inner">
-            <div className="mobile-menu-icon-before"></div>
-            <div className="mobile-menu-icon-after"></div>
-          </div>
-        </div>
-      </a>
+      <MobileMenu {...props} />
+      <MobileIcon />
     </div>
   )
 }

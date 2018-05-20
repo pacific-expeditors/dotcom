@@ -63,6 +63,7 @@ const styles = {
 }
 
 const HeroVideo = ({
+  id,
   autoplay = true,
   loop = true,
   src,
@@ -70,17 +71,16 @@ const HeroVideo = ({
   heading,
   subHeading,
   cta,
-  repeat,
   link
 }:HeroVideoProps) => {
   return (
-    <div className="video-container" style={styles.container}>
+    <div id={`section${id}`} className="video-container" style={styles.container}>
       <video
         className="video"
         style={styles.video}
         poster={styles.poster}
         autoPlay
-        loop={repeat}
+        loop
         src={src}>
         {sources.map(({type = "video/mp4", src}) => <source key={src} style={styles.source} type={type} src={src} />)}
       </video>

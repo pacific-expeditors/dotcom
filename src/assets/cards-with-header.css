@@ -1,0 +1,42 @@
+/*================== CARDS WITH HEADERS *==================*/
+
+.cards-with-header {
+    position: relative;
+}
+
+.cards-header {
+    text-align: center;
+    background: transparent;
+    color: #0f4c61;
+    font-size: 42px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards-with-header-cta {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cards-with-header-cta.invisible .button {
+    opacity: 0;
+}
+
+.cards-with-header-cta.visible .button {
+    opacity: 1;
+    animation-name: fadein;
+    animation-duration: .5s;
+    animation-timing-function: ease-in;
+    animation-delay: 2.5s;
+    animation-fill-mode: both;
+}
+
+@media (min-width: 1024px) {
+    .cards-header {
+        flex-direction: row;
+    }
+}
