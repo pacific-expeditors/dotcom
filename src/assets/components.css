@@ -131,12 +131,12 @@ body {
     transition: opacity .25s ease-in 0s;
     will-change: opacity;
     opacity: 0;
-    display: none;
+    display: none !important;
 }
 
 .header-mobile-menu.visible {
     opacity: 1;
-    display: block;
+    display: flex !important;
 }
 
 @media (min-width: 1200px) {
@@ -256,6 +256,14 @@ body {
 
 .full-width {
     display: block;
+}
+
+.contain {
+    height: 100%;
+}
+
+.cover {
+    width: 100%;
 }
 
 .button.primary {
@@ -435,8 +443,6 @@ body {
     .video {
         width: 100%;
         height: auto;
-        margin-left: 0;
-        margin-bottom: 0;
     }
 
     .video-container {

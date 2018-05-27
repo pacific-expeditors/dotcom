@@ -100,7 +100,7 @@ class Page extends Component<void, Props, State> {
             return `
               ${typeof code === 'string' ? code : ''}
               new ScrollMagic.Scene({
-                triggerElement: '#trigger${section.sys.id}'
+                triggerElement: '#section${section.sys.id}'
               })
                 .setClassToggle('#section${section.sys.id} .invisible', 'visible')
                 .addTo(controller)`

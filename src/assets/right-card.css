@@ -20,7 +20,7 @@
 }
 
 .right-card-container .fade-in {
-    transition: opacity .5s ease-in 1s;
+    transition: opacity .5s ease-in 0s;
     will-change: opacity;
 }
 
@@ -82,11 +82,10 @@
 .right-card-text .button.secondary.invisible {
     background-color: #fff;
     color: #0F4C5F;
-    opacity: 0;
+    transition-delay: 1.25s;
 }
 
 .right-card-text .button.secondary.visible {
-    opacity: 1;
     background-color: inherit;
     color: inherit;
 }
@@ -159,6 +158,10 @@
     
     .right-card-images {
         display: flex;
+    }
+
+    .right-card-alt .right-card-text-container {
+        margin-left: 20px;
     }
 }
 

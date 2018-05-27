@@ -18,8 +18,8 @@
     padding: 40px 20px;
     font-size: 42px;
     text-transform: uppercase;
+    margin: 0;
     position: relative;
-    z-index: 1;
 }
 
 .cards-with-bg-heading:after {
@@ -34,6 +34,8 @@
 @media (min-width: 1024px) {
     .cards-with-bg-heading {
         width: 980px;
+        padding: 40px 0;
+        margin: 0 auto;
     }
 }
 

@@ -8,22 +8,32 @@ type RightCardProps = {
   heading: string,
   content: string,
   background: any,
-  image: any
+  image: any,
+  backgroundSize: 'cover' | 'contain' | ''
 }
 
-const RightAlignedTextCard = ({sys, heading, content, background, image, callToActionLink, callToActionText, opaqueTextBackground}:RightCardProps) => {
+const RightAlignedTextCard = ({
+  sys,
+  heading,
+  content,
+  background,
+  image,
+  callToActionLink,
+  callToActionText,
+  opaqueTextBackground,
+  backgroundSize
+}:RightCardProps) => {
   return (
     <div 
     key={sys.id} 
     id={`section${sys.id}`}
     className={`right-card-container${opaqueTextBackground ? ' right-card-alt' : ''}`}>
-      <div id={`trigger${sys.id}`} className="trigger"></div>
       {opaqueTextBackground && background && <div className="swipe invisible"></div>}
       {!opaqueTextBackground && background && (
         <div className="right-card-background-images fade-in invisible">
           <img
             key={background.url}
-            className="right-card-background-image full-width invisible fade-in lazyload"
+            className={`right-card-background-image full-width invisible fade-in lazyload${backgroundSize == 'contain' ? " contain" : ""}${backgroundSize == 'cover' ? " cover" : ""}`}
             data-src={`${background.url}?w=1920`}
             alt={heading} />
           <div className="right-card-background-image-overlay"></div>

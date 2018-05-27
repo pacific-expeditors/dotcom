@@ -34,12 +34,12 @@
     animation-name: fadein-bottom;
     animation-duration: .5s;
     animation-timing-function: ease-in-out;
-    animation-delay: 1.75s;
+    animation-delay: .25s;
     animation-fill-mode: both;
 }
 
 .card.visible:first-child {
-    animation-delay: 1.5s;
+    animation-delay: .5s;
 }
 
 @media (min-width: 1024px) {

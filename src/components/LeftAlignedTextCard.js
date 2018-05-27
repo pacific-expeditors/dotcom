@@ -17,7 +17,6 @@ const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTe
       key={sys.id}
       id={`section${sys.id}`}
       className="left-card-container">
-        <div id={`trigger${sys.id}`} className="trigger"></div>
         {opaqueTextBackground && background && <div className="swipe invisible"></div>}
         {!opaqueTextBackground && background && (
           <div className="left-card-background-images">

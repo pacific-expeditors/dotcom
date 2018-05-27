@@ -27,7 +27,7 @@
 	right: 0;
 	left: 0;
 	z-index: 3;
-	transition: left .25s ease-in 1s;
+	transition: left .25s ease-in .5s;
 	will-change: left;
 }
 
@@ -74,7 +74,7 @@
 	animation-duration: .25s;
 	animation-timing-function: ease-in;
     animation-fill-mode: both;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 .left-card-background-image-overlay {

@@ -13,6 +13,16 @@ import './assets/right-card.css'
 window.onload = () => {
   toggleMobileMenu();
   showAgeVerification();
+  hideLoading();
+};
+
+const hideLoading = () => {
+  var intervalId = window.setInterval(() => {
+    if (document.getElementsByTagName('body')[0] !== undefined) {
+      window.clearInterval(intervalId);
+      document.querySelector('.loading-overlay').style.opacity = 0;
+    }
+  }, 1000);
 };
 
 const toggleMobileMenu = () => {

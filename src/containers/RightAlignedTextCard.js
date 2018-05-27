@@ -38,6 +38,7 @@ export default graphql(gql`
       opaqueTextBackground
       callToActionText
       callToActionLink
+      backgroundSize
       background {
         url
       }

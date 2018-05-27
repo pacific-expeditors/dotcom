@@ -27,7 +27,6 @@ type CardsProps = {
 const CardsWithBackground = ({sys, heading, image, cards = []}:CardsProps) => {
   return (
     <div id={`section${sys.id}`} className="cards-with-bg">
-      <div id={`trigger${sys.id}`} className="trigger"></div>
       <div className="cards-with-bg-container" style={{background: `url(${image.url}?h=1920)`}}>
       </div>
       <h3 className="cards-with-bg-heading">{heading}</h3>
