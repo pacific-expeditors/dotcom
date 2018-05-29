@@ -128,7 +128,13 @@
 
 .address-info {
     flex: 1;
-    padding: 60px 0;
+    padding: 60px 20px;
+}
+
+@media (min-width: 1024px) {
+    .address-info {
+        padding: 60px 0;
+    }
 }
 
 .address-address {
@@ -141,11 +147,13 @@
     position: relative;
 }
 
-.address-map iframe {
-    width: calc(100vw / 2);
-    position: absolute;
-    top: 0;
-    left: 0;
+@media (min-width: 1024px) {
+    .address-map iframe {
+        width: 50vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
 
 .address-heading {
