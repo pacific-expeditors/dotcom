@@ -147,6 +147,11 @@
     position: relative;
 }
 
+.address-map iframe {
+    width: 100%;
+    height: 100%;
+}
+
 @media (min-width: 1024px) {
     .address-map iframe {
         width: 50vw;

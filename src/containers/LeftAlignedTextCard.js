@@ -36,6 +36,7 @@ export default graphql(gql`
       heading
       content
       opaqueTextBackground
+      backgroundSize
       background {
         url
       }

@@ -70,6 +70,10 @@
     overflow-y: hidden;
 }
 
+.left-card-background-images.full-width {
+    right: 0;
+}
+
 .left-card-image.invisible {
 	opacity: 0;
 }
@@ -144,5 +148,11 @@
 @media (min-width: 1200px) {
     .left-card {
         width: 1170px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #section4bEaJF5fhSIWgEOas22eAs {
+        min-height: 686px;
     }
 }

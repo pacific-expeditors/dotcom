@@ -8,10 +8,11 @@ type LeftCardProps = {
   content: string,
   background: any,
   image: any,
-  opaqueTextBackground: boolean
+  opaqueTextBackground: boolean,
+  backgroundSize: 'cover' | 'contain' | ''
 }
 
-const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTextBackground}:LeftCardProps) => {
+const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTextBackground, backgroundSize}:LeftCardProps) => {
   return (
     <div
       key={sys.id}
@@ -19,10 +20,10 @@ const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTe
       className="left-card-container">
         {opaqueTextBackground && background && <div className="swipe invisible"></div>}
         {!opaqueTextBackground && background && (
-          <div className="left-card-background-images">
+          <div className="left-card-background-images full-width">
             <img
               key={background.url}
-              className="left-card-background-image invisible lazyload"
+              className={`left-card-background-image invisible lazyload${backgroundSize ? ` ${backgroundSize}` : ''}`}
               data-src={`${background.url}?w=1920`}
               alt={heading} />
             <div className="left-card-background-image-overlay"></div>
