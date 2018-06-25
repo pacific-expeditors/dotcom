@@ -39,7 +39,7 @@ const styles = {
     alignItems: 'flex-start'
   },
   heading: {
-    fontSize: '48px',
+    fontSize: '42px',
     margin: 0,
     fontWeight: 600,
     letterSpacing: '1.5px',
@@ -80,6 +80,7 @@ const HeroVideo = ({
         style={styles.video}
         poster={styles.poster}
         autoPlay
+        muted
         loop
         src={src}>
         {sources.map(({type = "video/mp4", src}) => <source key={src} style={styles.source} type={type} src={src} />)}

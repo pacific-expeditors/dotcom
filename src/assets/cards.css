@@ -6,6 +6,10 @@
     flex-wrap: wrap;
 }
 
+.cards.col-3 .card {
+    width: auto;
+}
+
 @media (min-width: 1024px) {
     .cards {
         width: 980px;
@@ -18,19 +22,25 @@
     .cards {
         width: 1170px;
     }
-}
 
-.cards.col-3 .card {
-    width: 32%;
+    .cards.col-3 .card {
+        width: 32%;
+    }
 }
 
 .card {
     position: relative;
     opacity: 0;
-    width: 48%;
     background-color: #fff;
     box-shadow: 0 0 30px rgba(0, 0, 0, .3);
-    margin-bottom: 20px;
+    margin: 20px;
+}
+
+@media (min-width: 1200px) {
+    .card {
+        width: 48%;
+        margin: 0 0 20px;
+    }
 }
 
 .card.visible {

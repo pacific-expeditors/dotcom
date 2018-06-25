@@ -293,12 +293,14 @@ body {
     display: block;
 }
 
-.contain {
+.left-card-background-image.visible.contain {
+    width: auto;
     height: 100%;
 }
 
-.cover {
+.left-card-background-image.visible.cover {
     width: 100%;
+    height: auto;
 }
 
 .button.primary {

@@ -2,6 +2,7 @@
 .right-card-container {
     position: relative;
     padding: 20px 0;
+    background-color: #fff;
 }
 
 .right-card {
@@ -179,5 +180,15 @@
 @media (min-width: 1200px) {
     .right-card {
         width: 1170px;
+    }
+}
+
+#sectionq4D96dCkgKWGMQQcmSE2Y .right-card-background-image {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    #sectionq4D96dCkgKWGMQQcmSE2Y .right-card-background-image {
+        width: auto;
     }
 }
