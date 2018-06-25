@@ -20,7 +20,7 @@ type CardsProps = {
 
 const Cards = ({cards = []}:CardsProps) => {
   return (
-    <div className="cards">
+    <div className={`cards${cards.length > 2 ? " col-3" : " col-2"}`}>
       {cards.map((card:CardProps) => (
         <div id={card.sys && card.sys.id} key={card.sys && card.sys.id} className="card invisible">
           <div className="card-image-container">
@@ -43,7 +43,7 @@ const Cards = ({cards = []}:CardsProps) => {
             )}
             <div className="card-text" dangerouslySetInnerHTML={{__html: markdown.toHTML(card.content)}}>
             </div>
-            {card.link && <Button link={card.link} style="primary">{card.cta}</Button>}
+            {card.link && card.cta && <Button link={card.link} style="primary">{card.cta}</Button>}
           </div>
         </div>
       ))}
