@@ -1,6 +1,7 @@
 /*================== LEFT ALIGNED TEXT CARD *==================*/
 .left-card-container {
     background-color: #fff;
+    overflow: hidden;
 }
 
 .left-card-container,
@@ -100,7 +101,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: -100%;
+    right: 0;
     bottom: 0;
 }
 
