@@ -1,5 +1,4 @@
 /*================== LEFT ALIGNED TEXT CARD *==================*/
-
 .left-card-container,
 .left-card {
     position: relative;
@@ -50,11 +49,19 @@
     position: relative;
     order: 1;
     min-height: 50vh;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .left-card-image-container {
+        min-height: 75vh;
+        overflow: initial;
+    }
 }
 
 @media (min-width: 1024px) {
     .left-card-image-container {
-        min-height: 75vh;
+        min-height: 0;
     }
 }
 
@@ -72,6 +79,7 @@
 
 .left-card-background-images.full-width {
     right: 0;
+    overflow: hidden;
 }
 
 .left-card-image.invisible {
@@ -85,6 +93,18 @@
 	animation-timing-function: ease-in;
     animation-fill-mode: both;
     animation-delay: 1s;
+}
+
+@media (min-width: 768px) {
+    .left-card-image.visible {
+        width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .left-card-image.visible {
+        width: 100%;
+    }
 }
 
 .left-card-background-image-overlay {
@@ -102,10 +122,25 @@
     animation-duration: .5s;
     animation-timing-function: ease-in;
     animation-fill-mode: both;
+    height: 100%;
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+    .left-card-background-image.visible {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .left-card-background-image.invisible {
     opacity: 0;
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+    .left-card-background-image.visible {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .left-card-image {
@@ -137,7 +172,6 @@
 
     .left-card-image-container {
         order: 2;
-        min-height: initial;
     }
 
     .left-card-padded {

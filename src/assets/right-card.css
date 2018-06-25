@@ -1,5 +1,4 @@
 /*================== RIGHT ALIGNED TEXT CARD *==================*/
-
 .right-card-container {
     position: relative;
     padding: 20px 0;
@@ -110,6 +109,18 @@
     position: relative;
     align-self: center;
     opacity: 0;
+}
+
+@media (min-width: 768px) {
+    .right-card-image.visible {
+        width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .right-card-image.visible {
+        width: 100%;
+    }
 }
 
 .right-card-image.visible {

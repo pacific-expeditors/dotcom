@@ -26,9 +26,9 @@ const hideLoading = () => {
 };
 
 const toggleMobileMenu = () => {
-  document.querySelector('.mobile-menu-link').addEventListener('click', (e:Event) => {
+  document.querySelector('.mobile-close-link').addEventListener('click', (e:Event) => {
     document.querySelector('.header-mobile-menu').classList.toggle('visible');
-    document.querySelector('.mobile-menu-link').classList.toggle('is-active');
+    document.querySelector('.mobile-close-link').classList.toggle('is-active');
   });
 }
 
