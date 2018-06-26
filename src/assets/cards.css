@@ -30,7 +30,6 @@
 
 .card {
     position: relative;
-    opacity: 0;
     background-color: #fff;
     box-shadow: 0 0 30px rgba(0, 0, 0, .3);
     margin: 20px;
@@ -41,19 +40,6 @@
         width: 48%;
         margin: 0 0 20px;
     }
-}
-
-.card.visible {
-    opacity: 1;
-    animation-name: fadein-bottom;
-    animation-duration: .5s;
-    animation-timing-function: ease-in-out;
-    animation-delay: .25s;
-    animation-fill-mode: both;
-}
-
-.card.visible:first-child {
-    animation-delay: .5s;
 }
 
 .card-image-container {

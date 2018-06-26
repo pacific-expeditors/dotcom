@@ -24,22 +24,6 @@
     will-change: opacity;
 }
 
-.right-card-container .swipe {
-	background-color: #ffffff;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	z-index: 3;
-	transition: right .25s ease-in 1s;
-	will-change: right;
-}
-
-.right-card-container .swipe.visible {
-    right: 100%;
-}
-
 .right-card-heading {
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -109,29 +93,18 @@
     width: 100%;
     position: relative;
     align-self: center;
-    opacity: 0;
 }
 
 @media (min-width: 768px) {
-    .right-card-image.visible {
+    .right-card-image {
         width: auto;
     }
 }
 
 @media (min-width: 1024px) {
-    .right-card-image.visible {
+    .right-card-image {
         width: 100%;
     }
-}
-
-.right-card-image.visible {
-    opacity: 1;
-    animation-name: fadein-bottom;
-    animation-duration: .5s;
-    animation-timing-function: ease-in;
-    animation-iteration-count: 1;
-    animation-delay: 1s;
-    animation-fill-mode: both;
 }
 
 .right-card-background-images {

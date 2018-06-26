@@ -18,7 +18,6 @@ const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTe
       key={sys.id}
       id={`section${sys.id}`}
       className="left-card-container">
-        {opaqueTextBackground && background && <div className="swipe invisible"></div>}
         {!opaqueTextBackground && background && (
           <div className="left-card-background-images full-width">
             <img
@@ -53,7 +52,7 @@ const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTe
             {image && (
               <img
                 key={image.url}
-                className="left-card-image lazyload invisible"
+                className="left-card-image lazyload"
                 data-src={`${image.url}?w=610`}
                 alt={heading} />
             )}

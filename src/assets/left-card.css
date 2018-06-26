@@ -24,22 +24,6 @@
     order: 2;
 }
 
-.left-card-container .swipe {
-	background-color: #ffffff;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	z-index: 3;
-	transition: left .25s ease-in .5s;
-	will-change: left;
-}
-
-.left-card-container .swipe.visible {
-	left: 100%;
-}
-
 .left-card-alt {
     background: transparent;
 }
@@ -77,21 +61,8 @@
     right: 0;
 }
 
-.left-card-image.invisible {
-	opacity: 0;
-}
-
-.left-card-image.visible {
-    opacity: 1;
-	animation-name: fadein-bottom;
-	animation-duration: .25s;
-	animation-timing-function: ease-in;
-    animation-fill-mode: both;
-    animation-delay: 1s;
-}
-
 @media (min-width: 768px) {
-    .left-card-image.visible {
+    .left-card-image {
         width: 100%;
     }
 }
@@ -105,29 +76,20 @@
     bottom: 0;
 }
 
-.left-card-background-image.visible {
-    opacity: 1;
-    animation-name: fadein-zoomin;
-    animation-duration: .5s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: both;
-    height: 100%;
-}
-
 @media (min-width: 1024px) and (orientation: landscape) {
-    .left-card-background-image.visible {
+    .left-card-background-image {
         height: 100%;
     }
 }
 
 @media (min-width: 1200px) and (orientation: landscape) {
-    .left-card-background-image.visible {
+    .left-card-background-image {
         width: 100%;
         height: auto;
     }
 }
 
-#section4bEaJF5fhSIWgEOas22eAs .left-card-background-image.visible {
+#section4bEaJF5fhSIWgEOas22eAs .left-card-background-image {
     width: auto;
     height: auto;
 }
@@ -143,7 +105,7 @@
         min-height: 365px;
     }
     
-    #section4bEaJF5fhSIWgEOas22eAs .left-card-background-image.visible {
+    #section4bEaJF5fhSIWgEOas22eAs .left-card-background-image {
         width: 100%;
     }
 }
@@ -152,10 +114,6 @@
     #section4bEaJF5fhSIWgEOas22eAs {
         min-height: 685px;
     }
-}
-
-.left-card-background-image.invisible {
-    opacity: 0;
 }
 
 .left-card-image {

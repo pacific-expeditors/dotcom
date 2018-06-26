@@ -293,12 +293,12 @@ body {
     display: block;
 }
 
-.left-card-background-image.visible.contain {
+.left-card-background-image.contain {
     width: auto;
     height: 100%;
 }
 
-.left-card-background-image.visible.cover {
+.left-card-background-image.cover {
     width: 100%;
     height: auto;
 }
@@ -515,11 +515,6 @@ body {
     top: 0;
     bottom: 0;
     z-index: 2;
-    animation-name: fadein;
-    animation-duration: .5s;
-    animation-timing-function: ease-in;
-    animation-delay: .75s;
-    animation-fill-mode: both;
     opacity: 0;
 }
 

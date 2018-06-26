@@ -28,12 +28,11 @@ const RightAlignedTextCard = ({
     key={sys.id} 
     id={`section${sys.id}`}
     className={`right-card-container${opaqueTextBackground ? ' right-card-alt' : ''}`}>
-      {opaqueTextBackground && background && <div className="swipe invisible"></div>}
       {!opaqueTextBackground && background && (
-        <div className="right-card-background-images fade-in invisible">
+        <div className="right-card-background-images fade-in">
           <img
             key={background.url}
-            className={`right-card-background-image full-width invisible fade-in lazyload${backgroundSize == 'contain' ? " contain" : ""}${backgroundSize == 'cover' ? " cover" : ""}`}
+            className={`right-card-background-image full-width fade-in lazyload${backgroundSize == 'contain' ? " contain" : ""}${backgroundSize == 'cover' ? " cover" : ""}`}
             data-src={`${background.url}?w=1920`}
             alt={heading} />
           <div className="right-card-background-image-overlay"></div>
@@ -45,7 +44,7 @@ const RightAlignedTextCard = ({
             <div className="right-card-background-images">
               <img
                 key={background.url}
-                className="right-card-background-image invisible lazyload"
+                className="right-card-background-image lazyload"
                 data-src={`${background.url}?w=1920`}
                 alt={heading} />
               <div className="right-card-background-image-overlay"></div>
@@ -54,7 +53,7 @@ const RightAlignedTextCard = ({
           {image && (
             <img
               key={image.url}
-              className="right-card-image invisible lazyload"
+              className="right-card-image lazyload"
               data-src={`${image.url}?w=610`}
               alt={heading} />
           )}
