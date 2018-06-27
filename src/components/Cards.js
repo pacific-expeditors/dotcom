@@ -22,7 +22,7 @@ const Cards = ({cards = []}:CardsProps) => {
   return (
     <div className={`cards${cards.length > 2 ? " col-3" : " col-2"}`}>
       {cards.map((card:CardProps) => (
-        <div id={card.sys && card.sys.id} key={card.sys && card.sys.id} className="card invisible">
+        <div id={card.sys && card.sys.id} key={card.sys && card.sys.id} className="card">
           <div className="card-image-container">
             <img
               key={card.image.url}

@@ -1,9 +1,8 @@
 /*================== CENTERED TEXT WITH BACKGROUND *==================*/
-
 .text-with-background-container {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: center;
 }
 
@@ -16,7 +15,6 @@
 }
 
 .text-with-background {
-    flex: 1;
     position: relative;
     padding: 20px;
 }
@@ -28,7 +26,7 @@
 }
 
 .text-with-background-cta {
-    display: flex;
+    display: grid;
     justify-content: center;
 }
 

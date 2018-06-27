@@ -6,22 +6,9 @@
 }
 
 .right-card {
-    display: flex;
+    display: grid;
     position: relative;
-    flex-direction: column;
-}
-
-.right-card-container .fade-in.invisible {
-    opacity: 0;
-}
-
-.right-card-container .fade-in.visible {
-    opacity: 1;
-}
-
-.right-card-container .fade-in {
-    transition: opacity .5s ease-in 0s;
-    will-change: opacity;
+    grid-template-columns: 1fr;
 }
 
 .right-card-heading {
@@ -50,7 +37,6 @@
 
 @media (min-width: 1024px) {
     .right-card-text-container {
-        width: 50%;
         padding: 100px 0;
     }
 
@@ -63,15 +49,9 @@
     padding-bottom: 20px;
 }
 
-.right-card-text .button.secondary.invisible {
+.right-card-text .button.secondary {
     background-color: #fff;
     color: #0F4C5F;
-    transition-delay: 1.25s;
-}
-
-.right-card-text .button.secondary.visible {
-    background-color: inherit;
-    color: inherit;
 }
 
 .right-card-alt .right-card-text {
@@ -81,12 +61,6 @@
 .right-card-images {
     width: 100%;
     position: relative;
-}
-
-@media (min-width: 1024px) {
-    .right-card-images {
-        width: 50%;
-    }
 }
 
 .right-card-image {
@@ -129,6 +103,16 @@
     left: auto;
 }
 
+.right-card-background-image {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .right-card-background-image {
+        height: auto;
+    }
+}
+
 @media (min-width: 1024px) {
     .right-card-background-image.full-width {
         min-width: 100%;
@@ -138,11 +122,11 @@
     .right-card {
         margin: 0 auto;
         width: 980px;
-        flex-direction: row;
+        grid-template-columns: 1fr 1fr;
     }
     
     .right-card-images {
-        display: flex;
+        display: grid;
     }
 
     .right-card-alt .right-card-text-container {
@@ -156,6 +140,7 @@
     }
 }
 
+/*================== CUSTOM STYLES *==================*/
 #sectioniFfnGQ8RDUywwASq4sMAy .right-card-background-image,
 #sectionq4D96dCkgKWGMQQcmSE2Y .right-card-background-image {
     height: 100%;

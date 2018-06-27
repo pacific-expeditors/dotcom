@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 import get from 'lodash.get'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import Loadable from 'react-loadable'
-import { existsSync } from 'fs'
 import Modal from '../components/Modal'
 import Loading from '../components/Loading'
 import * as Containers from './index'
@@ -26,7 +24,7 @@ class Page extends Component<void, Props, State> {
     const { data } = this.props
     const title = get(data, 'pages[0].title', '404')
     const sections = get(data, 'pages[0].sections', [{__typename: '404', sys: {id: 0}}])
-    const description = get(data, 'pages[0].metaDescription', "")
+    const description = get(data, 'pages[0].metaDescription', '')
     const url = "http://www.pacificexpeditors.com/"
 
     return (
@@ -52,9 +50,7 @@ class Page extends Component<void, Props, State> {
           <title>{title}</title>
 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
           <link rel="stylesheet" type="text/css" href="/static/main.css" />
-          <link rel="stylesheet" type="text/css" href="/static/home.css" />
           <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900" rel="stylesheet" />
 
           <link rel="shortcut icon" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=16" />
@@ -65,6 +61,199 @@ class Page extends Component<void, Props, State> {
           <link rel="apple-touch-icon-precomposed" sizes="152x152" href="//images.contentful.com/i9tcznuksxng/6sOqPxBI2I6W8YOywA8MMS/175367657312135a673789aeaa3685b1/favicon.png?h=152" />
 
           <base href="/" />
+          
+          <style dangerouslySetInnerHTML={{ __html:
+            `
+            .header {
+              display: none;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              padding: 24px 0;
+              grid-template-columns: 1fr;
+            }
+            .header-left-nav,
+            .header-right-nav {
+              display: none;
+              font-size: 14;
+              font-weight: 900;
+              text-transform: uppercase;
+              text-decoration: none;
+              letter-spacing: 2px;
+            }
+            .header-nav-link {
+              padding: 10px;
+            }
+            .logo-link {
+              display: block;
+              margin: 0 auto;
+            }
+            .logo {
+              display: block;
+              width: 195px;
+            }
+            .header-mobile {
+              position: absolute;
+              top: 28px;
+              left: 28px;
+              right: 0;
+              z-index: 4;
+            }
+            @media (min-width: 1024px) {
+              .header,
+              .header-left-nav,
+              .header-right-nav {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+              }
+              .header-left-nav {
+                grid-template-columns: 1fr 1fr;
+              }
+              .header-mobile {
+                display: none;
+              }
+            }
+
+            .loading-overlay {
+              background-color: #0f4c61;
+              position: fixed;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              z-index: 5;
+              animation-name: fadeout;
+              animation-duration: .25s;
+              animation-timing-function: ease-out;
+              animation-fill-mode: both;
+              animation-delay: 1.5s;
+            }
+          
+            .loading-container {
+              display: grid;
+              justify-content: center;
+              align-content: center;
+              height: 100%;
+            }
+          
+            .loading-logo {
+              width: 100%;
+              animation-name: fadein;
+              animation-duration: .25s;
+              animation-timing-function: ease-in;
+              animation-fill-mode: both;
+            }
+          
+            .loading-logo path {
+              fill: #fff;
+            }
+
+            .video-container {
+              position: relative;
+              overflow: hidden;
+            }
+
+            .video {
+              height: 90vh;
+            }
+
+            .video-hr {
+              margin: 20px auto;
+              background: #fff;
+              width: 132px;
+              height: 4px;
+            }
+
+            .video-overlay-container {
+              width: 100%;
+              height: 100%;
+              display: grid;
+              grid-template-columns: 1fr;
+              margin: 0 auto;
+              align-items: center;
+            }
+
+            .video-overlay {
+              background: rgba(0, 0, 0, .5);
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              z-index: 1;
+            }
+
+            .video-cta {
+              width: 100%;
+              animation-name: fadein-right;
+              animation-duration: .5s;
+              animation-timing-function: ease-in;
+              animation-delay: 2.25s;
+              animation-fill-mode: both;
+              opacity: 0;
+              text-align: center;
+            }
+
+            .video-cta-heading {
+              fontSize: 42px;
+              margin: 0;
+              fontWeight: 600;
+              letterSpacing: 1.5px;
+              lineHeight: 1;
+              color: #fff;
+              textTransform: uppercase;
+            }
+
+            .video-cta-heading,
+            .video-cta-subheading {
+              padding: 0 20px;
+            }
+
+            .video-cta-subheading {
+              font-size: 22px;
+              margin: 0;
+              line-height: 1.5;
+              color: #fff;
+              margin: 20px 0;
+              font-weight: normal;
+            }
+
+            @media (min-width: 480px) {
+              .video-cta-heading,
+              .video-cta-subheading {
+                  padding: 0;
+              }
+            }
+
+            @media (min-width: 768px) and (orientation: landscape) {
+              .video {
+                  width: 100%;
+                  height: auto;
+              }
+            }
+
+            @media (min-width: 1200px) {
+              .video-overlay-container {
+                  width: 1170px;
+              }
+              
+              .video-cta {
+                  width: 700px;
+                  text-align: left;
+              }
+
+              .video-hr {
+                  margin: 20px 0;
+              }
+            }
+
+            @media (min-width: 1200px) and (orientation: portrait) {
+              .video-container {
+                  height: 90vh;
+              }
+            }
+          `.replace(/\n\s*/g, '') }}>
+          </style>
         </head>
         <body>
           <div className="page">
@@ -82,9 +271,6 @@ class Page extends Component<void, Props, State> {
             })}
           </div>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/3.0.0/lazysizes.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-          <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
           <script src={`/static/client.js`}></script>
           <script dangerouslySetInnerHTML={{__html: `(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -94,18 +280,6 @@ class Page extends Component<void, Props, State> {
           ga('create', 'UA-107156593-1', 'auto');
           ga('send', 'pageview');`}}>
           </script>
-          <script dangerouslySetInnerHTML={{__html: `
-          const controller = new ScrollMagic.Controller()
-          ${sections.reduce((code, section) => {
-            return `
-              ${typeof code === 'string' ? code : ''}
-              new ScrollMagic.Scene({
-                triggerElement: '#section${section.sys.id}'
-              })
-                .setClassToggle('#section${section.sys.id} .invisible', 'visible')
-                .addTo(controller)`
-          })}
-          `}}></script>
         </body>
       </html>
     )

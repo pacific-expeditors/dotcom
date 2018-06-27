@@ -29,10 +29,10 @@ const RightAlignedTextCard = ({
     id={`section${sys.id}`}
     className={`right-card-container${opaqueTextBackground ? ' right-card-alt' : ''}`}>
       {!opaqueTextBackground && background && (
-        <div className="right-card-background-images fade-in">
+        <div className="right-card-background-images">
           <img
             key={background.url}
-            className={`right-card-background-image full-width fade-in lazyload${backgroundSize == 'contain' ? " contain" : ""}${backgroundSize == 'cover' ? " cover" : ""}`}
+            className={`right-card-background-image full-width lazyload${backgroundSize == 'contain' ? " contain" : ""}${backgroundSize == 'cover' ? " cover" : ""}`}
             data-src={`${background.url}?w=1920`}
             alt={heading} />
           <div className="right-card-background-image-overlay"></div>

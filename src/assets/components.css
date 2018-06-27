@@ -66,64 +66,7 @@ body {
     min-height: 200px;
 }
 
-/*================== PAGE LOAD *==================*/
-.loading-overlay {
-    background-color: #0f4c61;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 5;
-    animation-name: fadeout;
-	animation-duration: .25s;
-	animation-timing-function: ease-out;
-    animation-fill-mode: both;
-    animation-delay: 1.5s;
-}
-
-.loading-container {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    height: 100%;
-}
-
-.loading-logo {
-    width: 25%;
-    animation-name: fadein;
-	animation-duration: .25s;
-	animation-timing-function: ease-in;
-    animation-fill-mode: both;
-}
-
-.loading-logo path {
-    fill: #fff;
-}
-
-/*================== HEADERS *==================*/
-.header {
-    display: none !important;
-}
-
-@media (min-width: 1024px) {
-    .header {
-        display: flex !important;
-    }
-}
-
-.header-left-nav,
-.header-right-nav {
-    display: none !important;
-}
-
-@media (min-width: 1024px) {
-    .header-left-nav,
-    .header-right-nav {
-        display: flex !important;
-    }
-}
-
+/*================== HEADER MOBILE MENU *==================*/
 .header-mobile-menu {
     transition: opacity .25s ease-in 0s;
     opacity: 0;
@@ -140,22 +83,14 @@ body {
 
 .header-mobile-menu.visible {
     opacity: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-@media (min-width: 1024px) {
-    .header-mobile {
-        display: none;
-    }
+    display: grid;
+    align-items: start;
 }
 
 .mobile-menu-links {
-    display: flex;
-    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: center;
-    flex-direction: column;
 }
 
 .mobile-logo {
@@ -342,9 +277,8 @@ body {
 
 @media (min-width: 1024px) {
     .footer-container {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
         margin: 0 auto;
         width: 980px;
     }
@@ -369,17 +303,14 @@ body {
 }
 
 .footer-links {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
+    display: grid;
     margin: 20px 0;
-    flex-direction: column;
 }
 
 @media (min-width: 1024px) {
     .footer-links {
         margin: 0 100px;
-        flex-direction: row;
+        grid-auto-flow: column;
     }
 }
 
@@ -407,12 +338,13 @@ body {
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #999;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
 }
 
 .footer-association-logo {
     max-width: 100%;
-    margin: 0 auto;
-    display: block;
 }
 
 .footer-association-logo:first-child {
@@ -420,9 +352,12 @@ body {
 }
 
 @media (min-width: 1024px) {
+    .footer-associations {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .footer-association-logo {
         max-width: inherit;
-        margin: 0 0 0 20px;
     }
 
     .footer-association-logo:first-child {
@@ -432,78 +367,6 @@ body {
 
 .footer-bottom {
     padding-top: 20px;
-}
-
-@media (min-width: 1024px) {
-    .footer-associations {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-/*================== VIDEO *==================*/
-
-.video {
-    height: 90vh;
-}
-
-.video-hr {
-    margin: 20px auto;
-}
-
-.video-overlay-container {
-    width: 100%;
-}
-
-.video-cta {
-    width: 100%;
-    animation-name: fadein-right;
-    animation-duration: .5s;
-    animation-timing-function: ease-in;
-    animation-delay: 2.25s;
-    animation-fill-mode: both;
-    opacity: 0;
-    text-align: center;
-}
-
-.video-cta-heading,
-.video-cta-subheading {
-    padding: 0 20px;
-}
-
-@media (min-width: 480px) {
-    .video-cta-heading,
-    .video-cta-subheading {
-        padding: 0;
-    }
-}
-
-@media (min-width: 768px) and (orientation: landscape) {
-    .video {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (min-width: 1200px) {
-    .video-overlay-container {
-        width: 1170px;
-    }
-    
-    .video-cta {
-        width: 700px;
-        text-align: left;
-    }
-
-    .video-hr {
-        margin: 20px 0 !important;
-    }
-}
-
-@media (min-width: 1200px) and (orientation: portrait) {
-    .video-container {
-        height: 90vh;
-    }
 }
 
 /*================== MODAL *==================*/

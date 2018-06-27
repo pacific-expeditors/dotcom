@@ -1,42 +1,35 @@
 /*================== CONTACT FORM *==================*/
-.contact-wrapper {
-    width: 100%;
-    margin-top: 20px;
-}
-
 .contact {
     background-color: #0f4c61;
-    margin-top: -20px;
-    padding: 0 20px 80px;
+    padding: 20px 20px 80px;
 }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
+@media (min-width: 1200px) {
+    .contact {
+        padding: 20px 0 80px;
+    }
 }
 
 @media (min-width: 1200px) {
     .form-container {
         width: 1170px;
-        margin: 20px auto 0;
-        flex-direction: row;
+        margin: 0 auto;
     }
 }
 
 .form-row {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     margin: 0 -10px;
 }
 
 @media (min-width: 1200px) {
     .form-row {
-        flex-direction: row;
+        grid-template-columns: 1fr;
     }
 }
 
 .form-col {
-    flex: 1;
     margin: 0 10px;
 }
 
@@ -53,7 +46,7 @@
     text-transform: uppercase;
 }
 
-.form-heading:after {
+.form-heading::after {
     content: "";
     width: 132px;
     height: 4px;
@@ -106,10 +99,9 @@
 }
 
 /*================== ADDRESS *==================*/
-
 .address-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     min-height: 450px;
 }
 
@@ -127,7 +119,6 @@
 }
 
 .address-info {
-    flex: 1;
     padding: 60px 20px;
 }
 
@@ -143,13 +134,11 @@
 }
 
 .address-map {
-    flex: 1;
     position: relative;
 }
 
 .address-map iframe {
     width: 100%;
-    height: 100%;
 }
 
 @media (min-width: 1024px) {
@@ -172,6 +161,6 @@
 
 @media (min-width: 1024px) {
     .address-container {
-        flex-direction: row;
+        grid-template-columns: 1fr 1fr;
     }
 }

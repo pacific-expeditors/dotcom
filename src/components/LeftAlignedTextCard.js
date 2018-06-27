@@ -19,10 +19,10 @@ const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTe
       id={`section${sys.id}`}
       className="left-card-container">
         {!opaqueTextBackground && background && (
-          <div className="left-card-background-images full-width">
+          <div className="left-card-background-images">
             <img
               key={background.url}
-              className={`left-card-background-image invisible lazyload${backgroundSize ? ` ${backgroundSize}` : ''}`}
+              className={`left-card-background-image lazyload${backgroundSize ? ` ${backgroundSize}` : ''}`}
               data-src={`${background.url}?w=1920`}
               alt={heading} />
             <div className="left-card-background-image-overlay"></div>

@@ -1,9 +1,8 @@
 /*================== CARDS *==================*/
 .cards {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 2%;
 }
 
 .cards.col-3 .card {
@@ -14,17 +13,17 @@
     .cards {
         width: 980px;
         margin: 20px auto;
-        flex-direction: row;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cards.col-3 {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
 @media (min-width: 1200px) {
     .cards {
         width: 1170px;
-    }
-
-    .cards.col-3 .card {
-        width: 32%;
     }
 }
 
@@ -35,9 +34,8 @@
     margin: 20px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
     .card {
-        width: 48%;
         margin: 0 0 20px;
     }
 }
