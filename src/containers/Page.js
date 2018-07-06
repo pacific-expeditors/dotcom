@@ -22,8 +22,12 @@ class Page extends Component<void, Props, State> {
 
   render() {
     const { data } = this.props
-    const title = get(data, 'pages[0].title', '404')
-    const sections = get(data, 'pages[0].sections', [{__typename: '404', sys: {id: 0}}])
+    const title = get(data, 'pages[0].title', 'Page Not Found')
+    const sections = get(data, 'pages[0].sections', [
+      { sys: { id: '1GgdoWfYEQW84U4MIWMw8K' }, __typename: 'Header' },
+      { sys: { id: '5dCae4OehyeEkeY8Oue6UA' }, __typename: 'HeroVideo' },
+      { sys: { id: '7CbqJVaCNUgUgKAQ4K0Sky' }, __typename: 'Footer' }
+    ])
     const description = get(data, 'pages[0].metaDescription', '')
     const url = "http://www.pacificexpeditors.com/"
 
