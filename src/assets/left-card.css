@@ -1,0 +1,181 @@
+/*================== LEFT ALIGNED TEXT CARD *==================*/
+.left-card-container {
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.left-card-container,
+.left-card {
+    position: relative;
+}
+
+.left-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 385px;
+}
+
+.left-card-text-container {
+    padding: 0 20px 40px;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+    order: 2;
+}
+
+@media (min-width: 1024px) {
+    .left-card {
+        margin: 0 auto;
+        width: 980px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .left-card-text-container {
+        padding: 100px 0;
+        order: 1;
+    }
+
+    .left-card-padded {
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .left-card {
+        width: 1170px;
+    }
+}
+
+.left-card-alt {
+    background: transparent;
+}
+
+.left-card-alt .left-card-heading,
+.left-card-alt .left-card-text {
+    color: #fff;
+}
+
+.left-card-image-container {
+    display: grid;
+    position: relative;
+    min-height: 300px;
+    order: 1;
+}
+
+@media (min-width: 1024px) {
+    .left-card-image-container {
+        order: 2;
+    }
+}
+
+.left-card-image-container.empty {
+    min-height: initial;
+}
+
+.left-card-background-images {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.left-card-background-images.full-width {
+    right: 0;
+}
+
+.left-card-background-images.full-width .left-card-background-image {
+    width: 100%;
+    height: auto;
+}
+
+.left-card-background-image-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+    .left-card-background-image {
+        height: 100%;
+    }
+}
+
+@media (min-width: 1200px) and (orientation: landscape) {
+    .left-card-background-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.left-card-image {
+    align-self: center;
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+}
+
+.left-card-heading {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: #0f4c61;
+}
+
+/*================== CUSTOM STYLES *==================*/
+#section4bEaJF5fhSIWgEOas22eAs .left-card-background-image {
+    width: auto;
+    height: auto;
+}
+
+#section1P65s3qugE2cUcA8oOAiMU .left-card-background-image-opaque {
+    height: 100%;
+}
+
+#sectionoj5yhEivzUaW8eSGwUCUw .left-card-background-image {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    #sectionoj5yhEivzUaW8eSGwUCUw .left-card-background-image {
+        width: 100%;
+        height: auto;
+    }
+
+    #sectionoj5yhEivzUaW8eSGwUCUw .left-card-background-image-opaque {
+        width: 100%;
+    }
+
+    #section1P65s3qugE2cUcA8oOAiMU .left-card-background-image-opaque {
+        width: 100%;
+        height: auto;
+    }
+
+    #section4bEaJF5fhSIWgEOas22eAs .left-card {
+        min-height: 365px;
+    }
+    
+    #section4bEaJF5fhSIWgEOas22eAs .left-card-background-image {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+    #section4bEaJF5fhSIWgEOas22eAs {
+        min-height: 385px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #section4bEaJF5fhSIWgEOas22eAs {
+        min-height: 685px;
+    }
+
+    #section1P65s3qugE2cUcA8oOAiMU .left-card-background-image-opaque {
+        width: auto;
+        height: 100%;
+    }
+}

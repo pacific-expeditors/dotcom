@@ -1,0 +1,153 @@
+/*================== RIGHT ALIGNED TEXT CARD *==================*/
+.right-card-container {
+    position: relative;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.right-card {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr;
+}
+
+.right-card-heading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.right-card-alt {
+    padding: 0;
+}
+
+.right-card-alt .right-card-heading {
+    color: #0f4c61;
+}
+
+.right-card-text-container {
+    color: #fff;
+    padding: 20px;
+}
+
+.right-card-text-padded {
+    padding: 0 20px 40px;
+}
+
+@media (min-width: 1024px) {
+    .right-card-text-container {
+        padding: 100px 0;
+    }
+
+    .right-card-text-padded {
+        padding: 0 0 0 20px;
+    }
+}
+
+.right-card-text-content {
+    padding-bottom: 20px;
+}
+
+.right-card-text .button.secondary {
+    background-color: #fff;
+    color: #0F4C5F;
+}
+
+.right-card-alt .right-card-text {
+    color: #222;
+}
+
+.right-card-images {
+    width: 100%;
+    position: relative;
+}
+
+.right-card-image {
+    width: 100%;
+    position: relative;
+    align-self: center;
+}
+
+@media (min-width: 768px) {
+    .right-card-image {
+        width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .right-card-image {
+        width: 100%;
+    }
+}
+
+.right-card-background-images {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.right-card-background-image-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.right-card-alt .right-card-background-images {
+    left: auto;
+}
+
+.right-card-background-image {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .right-card-background-image {
+        height: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .right-card-background-image.full-width {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .right-card {
+        margin: 0 auto;
+        width: 980px;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .right-card-images {
+        display: grid;
+    }
+
+    .right-card-alt .right-card-text-container {
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .right-card {
+        width: 1170px;
+    }
+}
+
+/*================== CUSTOM STYLES *==================*/
+#sectioniFfnGQ8RDUywwASq4sMAy .right-card-background-image,
+#sectionq4D96dCkgKWGMQQcmSE2Y .right-card-background-image {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    #sectionq4D96dCkgKWGMQQcmSE2Y .right-card-background-image {
+        width: auto;
+    }
+}

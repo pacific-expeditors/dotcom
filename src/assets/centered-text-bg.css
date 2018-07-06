@@ -1,0 +1,78 @@
+/*================== CENTERED TEXT WITH BACKGROUND *==================*/
+.text-with-background-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+.text-with-background-blue {
+    background-color: #0f4c61;
+}
+
+.text-with-background-gray {
+    background-color: #666;
+}
+
+.text-with-background {
+    position: relative;
+    padding: 20px;
+}
+
+@media (min-width: 1024px) {
+    .text-with-background {
+        padding: 80px;
+    }
+}
+
+.text-with-background-cta {
+    display: grid;
+    justify-content: center;
+}
+
+.text-with-background-images {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: hidden;
+}
+
+.text-with-background-image {
+    height: 100%;
+}
+
+@media (min-width: 1024px) {
+    .text-with-background-image {
+        width: 100%;
+    }
+}
+
+.text-with-background-image-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.text-with-background-heading {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.text-with-background-text {
+    color: #fff;
+    font-weight: 300;
+    font-size: 24px;
+    text-align: center;
+}
+
+.text-with-background-heading+.text-with-background-text {
+    font-size: 16px;
+}

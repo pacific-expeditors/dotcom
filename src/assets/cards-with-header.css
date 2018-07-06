@@ -1,0 +1,18 @@
+/*================== CARDS WITH HEADERS *==================*/
+.cards-with-header {
+    position: relative;
+}
+
+.cards-header {
+    text-align: center;
+    background: transparent;
+    color: #0f4c61;
+    font-size: 42px;
+    text-transform: uppercase;
+}
+
+.cards-with-header-cta {
+    padding: 40px 0;
+    display: grid;
+    justify-content: center;
+}

@@ -1,0 +1,46 @@
+/*================== CARDS WITH BACKGROUND *==================*/
+
+.cards-with-bg {
+    position: relative;
+}
+
+.cards-with-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-size: cover !important;
+    height: 600px;
+}
+
+.cards-with-bg-heading {
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 42px;
+    text-transform: uppercase;
+    margin: 0;
+    position: relative;
+}
+
+.cards-with-bg-heading:after {
+    content: "";
+    display: block;
+    width: 132px;
+    height: 4px;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+@media (min-width: 1024px) {
+    .cards-with-bg-heading {
+        width: 980px;
+        padding: 40px 0;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cards-with-bg-heading {
+        width: 1170px;
+    }
+}

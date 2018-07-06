@@ -15,8 +15,7 @@
 
 ## Requirements
 
-* Node.js 7.10.x
-* Yarn 0.24.4
+* Node.js 9.9.0
 
 ## Configuration
 
@@ -34,7 +33,7 @@ GRAPHQL_ENDPOINT=http://localhost:3000/graphql
 Run
 
 ```
-yarn install
+npm install
 ```
 
 ## Running Tests
@@ -46,7 +45,7 @@ There are currently no tests in place, because most of the code does not require
 Run:
 
 ```
-yarn run flow
+npm run flow
 ```
 
 This will run flow, which is a static type checker.
@@ -78,7 +77,7 @@ When you're ready to deploy to production. It's important to make sure you recor
 To update the version of the build use:
 
 ```
-yarn version
+npm version
 ```
 
 Use this format:
@@ -113,7 +112,5 @@ Once your code as passed review it will be merged into master and pushed to the 
 If you need to upgrade a package run:
 
 ```
-yarn upgrade-interactive
+npm update
 ```
-
-This will prompt you with an interactive means of upgrading yarn packages.
