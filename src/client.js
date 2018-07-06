@@ -17,10 +17,13 @@ window.onload = () => {
 };
 
 const hideLoading = () => {
-  var intervalId = window.setInterval(() => {
+  let intervalId = window.setInterval(() => {
     if (document.getElementsByTagName('body')[0] !== undefined) {
       window.clearInterval(intervalId);
       document.querySelector('.loading-overlay').style.opacity = 0;
+      setTimeout(() => {
+        document.querySelector('.loading-overlay').style.display = 'none';
+      }, 500);
     }
   }, 1000);
 };
