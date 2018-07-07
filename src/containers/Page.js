@@ -105,6 +105,8 @@ class Page extends Component<void, Props, State> {
               .header {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
+                margin: 0 auto;
+                width: 980px;
               }
               .header-left-nav,
               .header-right-nav {
@@ -113,6 +115,19 @@ class Page extends Component<void, Props, State> {
               }
               .header-mobile {
                 display: none;
+              }
+            }
+
+            @media (min-width: 1200px) {
+              .header-container {
+                position: sticky;
+                top: 0;
+                background-color: rgba(255, 255, 255, .7);
+                z-index: 3;
+              }
+        
+              .header {
+                width: 1170px;
               }
             }
 
