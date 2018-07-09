@@ -10,6 +10,7 @@
     right: 0;
     bottom: 0;
     overflow: hidden;
+    z-index: -1;
 }
 
 .grid-image {
@@ -27,8 +28,6 @@
 }
 
 .grid {
-    position: relative;
-    z-index: 1;
     padding: 60px 20px;
 }
 
@@ -92,6 +91,10 @@
     text-align: center;
 }
 
+.col:hover {
+    background-color: #092d39;
+}
+
 .col-gray {
     background-color: #56575A;
     border-left: 1px solid #FFF;
@@ -99,6 +102,10 @@
     text-align: center;
     padding: 20px;
     height: 150px;
+}
+
+.col-gray:hover {
+    background-color: #414244;
 }
 
 .col-gray-content {

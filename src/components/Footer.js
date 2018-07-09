@@ -12,7 +12,9 @@ const Footer = ({copyright, logo, footerLinks, socialMediaLinks, associationLogo
       <div className="footer-container footer-associations">
         {associationLogos.map((logo) => {
           return (
-            <img key={logo.url} className="footer-association-logo lazyload" data-src={`${logo.url}?h=100`} alt={logo.title} />
+            <a href={logo.description} target="_blank">
+              <img key={logo.url} className="footer-association-logo lazyload" data-src={`${logo.url}?h=100`} alt={logo.title} />
+            </a>
           )
         })}
       </div>
@@ -29,7 +31,7 @@ const Footer = ({copyright, logo, footerLinks, socialMediaLinks, associationLogo
         <nav key="socialMediaLinks" className="social-media-links">
           {socialMediaLinks.map((link) => {
             return (
-              <a key={link.href} href={link.link}>
+              <a key={link.link} href={link.link}>
                 <img key={logo.url} src={link.icon.url} alt={link.title} />
               </a>
             )
