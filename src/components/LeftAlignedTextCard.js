@@ -32,7 +32,6 @@ const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTe
           <div className={`left-card-text-container${!opaqueTextBackground ? ' left-card-alt' : ''}`}>
             <h3 className={`left-card-heading${image ? ' left-card-padded' : ''}`}>
               {heading}
-              <div className="left-card-heading"></div>
             </h3>
             <div className={`left-card-text${image ? ' left-card-padded' : ''}`}
               dangerouslySetInnerHTML={{__html: markdown.toHTML(content)}}>
