@@ -9,11 +9,13 @@ import './assets/centered-text-bg.css'
 import './assets/grid.css'
 import './assets/left-card.css'
 import './assets/right-card.css'
+import handleContactFormSubmission from './js/contact';
 
 window.onload = () => {
   toggleMobileMenu();
   showAgeVerification();
   hideLoading();
+  handleContactFormSubmission();
 };
 
 const hideLoading = () => {

@@ -54,3 +54,5 @@ const handleContactFormSubmission = () => {
       });
     }
   }
+
+  export default handleContactFormSubmission;
