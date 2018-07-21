@@ -19,7 +19,7 @@ export default (req, res) => {
     Email: ${req.body.email}<br />
     Phone: ${req.body.phoneNumber}<br />
     Company: ${req.body.company}<br />
-    Preferred Method of Contact: ${req.body.contactMethod}<br />
+    Segments: ${req.body.segments}<br />
     Message: <p>${req.body.msg}</p>
   `
 

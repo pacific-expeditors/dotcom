@@ -12,8 +12,7 @@ const handleContactFormSubmission = () => {
         };
   
         const checkboxes = {
-          segments: 'input[name^="segments"]:checked',
-          services: 'input[name^="services"]:checked'
+          segments: 'input[name^="segments"]:checked'
         };
   
         let request = {};
