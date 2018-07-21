@@ -6,3 +6,4 @@ npm-debug.log
 .yarnclean
 yarn-error.log
 ignore
+package-lock.json

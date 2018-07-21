@@ -6,6 +6,9 @@ import cors from 'cors'
 import cfGraphql from 'cf-graphql'
 import getSchema from './schema'
 import renderUi from './utils/render-ui'
+import contact from './utils/contact'
+import restart from './utils/restart'
+import cache from './utils/cache'
 
 require('dotenv').load()
 
@@ -30,6 +33,9 @@ if (process.env.OFFLINE === 'false') {
     const ext = cfGraphql.helpers.expressGraphqlExtension(client, schema, opts)
     app.use('/graphql', expressGraphQL(ext))
     app.use('/', renderUi())
+    app.post('/contact', contact)
+    app.post('/purge_cache', cache)
+    app.post('/restart', restart)
   })
   .catch((err:String) => {
     console.log(err)
