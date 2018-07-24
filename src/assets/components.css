@@ -364,7 +364,7 @@ body {
     top: 0;
     bottom: 0;
     z-index: 2;
-    opacity: 0;
+    display: none;
 }
 
 .modal {
