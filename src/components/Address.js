@@ -25,9 +25,7 @@ export default ({name, map, streetName, city, state, zip, phoneNumber, email, te
           <a href={`mailto:${email}`}>{email}</a>
         </address>
 
-        <div className="address-text-below">
-          {textBelowAddress}
-        </div>
+        <div className="address-text-below" dangerouslySetInnerHTML={{__html: textBelowAddress}} />
       </div>
       <div className="address-map" dangerouslySetInnerHTML={{__html: map}} />
     </div>
