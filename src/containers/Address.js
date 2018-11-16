@@ -41,6 +41,7 @@ export default graphql(gql`
       phoneNumber
       email
       map
+      textBelowAddress
     }
   }
 `, {

@@ -11,7 +11,7 @@ type AddressProps = {
   email: string
 }
 
-export default ({name, map, streetName, city, state, zip, phoneNumber, email}:AddressProps) => {
+export default ({name, map, streetName, city, state, zip, phoneNumber, email, textBelowAddress}:AddressProps) => {
   return (
     <div className="address-container">
       <div className="address-info">
@@ -24,6 +24,10 @@ export default ({name, map, streetName, city, state, zip, phoneNumber, email}:Ad
           {phoneNumber}<br />
           <a href={`mailto:${email}`}>{email}</a>
         </address>
+
+        <div className="address-text-below">
+          {textBelowAddress}
+        </div>
       </div>
       <div className="address-map" dangerouslySetInnerHTML={{__html: map}} />
     </div>
