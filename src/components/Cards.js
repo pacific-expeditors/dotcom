@@ -20,7 +20,7 @@ type CardsProps = {
 
 const Cards = ({cards = []}:CardsProps) => {
   return (
-    <div className={`cards${cards.length > 2 ? " col-3" : " col-2"}`}>
+    <div className={`cards col-${cards.length}`}>
       {cards.map((card:CardProps) => (
         <div id={card.sys && card.sys.id} key={card.sys && card.sys.id} className="card">
           <div className="card-image-container">

@@ -9,6 +9,15 @@
     width: auto;
 }
 
+.cards.col-1 {
+    grid-template-columns: 1fr;
+}
+
+.cards.col-1 .card {
+    width: 750px;
+    justify-self: center;
+}
+
 @media (min-width: 1024px) {
     .cards {
         width: 980px;
