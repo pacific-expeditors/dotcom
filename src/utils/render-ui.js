@@ -18,6 +18,7 @@ export default (req:any) => {
         res.send(`<!doctype>${body}`)
       })
       .catch((err:string) => {
+        console.log(err);
         res.send(err)
       })
   })

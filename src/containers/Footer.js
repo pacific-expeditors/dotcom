@@ -21,7 +21,6 @@ class FooterContainer extends Component<void, Props, void> {
       <Footer
         socialMediaLinks={footer.socialMediaLinks}
         footerLinks={footer.footerLinks}
-        associationLogos={footer.associationLogos}
         logo={footer.logo}
         title={footer.copyright}
         copyright={footer.copyright} />
@@ -56,11 +55,6 @@ export default graphql(gql`
         icon {
           url
         }
-      }
-      associationLogos {
-        url
-        title
-        description
       }
     }
   }

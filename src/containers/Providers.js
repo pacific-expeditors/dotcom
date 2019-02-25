@@ -30,7 +30,7 @@ export default class extends Component<void, Props, void> {
   constructor(props:Props) {
     super(props)
 
-    if (props.children.props.slug === 'reset-cache') {
+    if (props.children && props.children.props && props.children.props.slug === 'reset-cache') {
       client.cache.reset()
     }
   }

@@ -6,18 +6,9 @@ type FooterProps = {
   footerLinks: any
 }
 
-const Footer = ({copyright, logo, footerLinks, socialMediaLinks, associationLogos}:FooterProps) => {
+const Footer = ({copyright, logo, footerLinks, socialMediaLinks}:FooterProps) => {
   return (
     <footer className="footer">
-      <div className="footer-container footer-associations">
-        {associationLogos.map((logo) => {
-          return (
-            <a href={logo.description} target="_blank">
-              <img key={logo.url} className="footer-association-logo lazyload" data-src={`${logo.url}?h=100`} alt={logo.title} />
-            </a>
-          )
-        })}
-      </div>
       <div className="footer-container footer-bottom">
         <div className="copyright">
           <img key={logo.url} className="copyright-logo" src={logo.url} alt={logo.title} />
