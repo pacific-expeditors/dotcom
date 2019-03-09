@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import uuid from 'uuid/v4'
 import Button from './Button'
 
 type Source = {
@@ -86,7 +87,7 @@ const IntroVideo = ({
         autoPlay
         loop={loop}
         src={src}>
-        {sources.map(({type = "video/mp4", src}) => <source key={src} style={styles.source} type={type} src={src} />)}
+        {sources.map(({type = "video/mp4", src}) => <source key={uuid()} style={styles.source} type={type} src={src} />)}
       </video>
       <div className="video-overlay" style={styles.overlay}>
         <div className="video-overlay-container" style={styles.overlayContainer}>

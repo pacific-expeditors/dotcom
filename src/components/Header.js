@@ -1,5 +1,6 @@
 /* @flow */
 import * as React from 'react'
+import uuid from 'uuid/v4'
 
 type HeaderProps = {
   logo: string,
@@ -10,8 +11,8 @@ type HeaderProps = {
 const MobileMenu = ({logo, title, navLinks}:HeaderProps):React.Node => {
   return (
     <div className="header-mobile-menu">
-      <img key="mobileLogo" className="mobile-logo" src={logo} alt={title} />
-      <nav key="mobileNav" className="mobile-menu-links">
+      <img className="mobile-logo" src={logo} alt={title} />
+      <nav className="mobile-menu-links">
         {navLinks.map((navLink) => {
           return (
             <a
@@ -32,7 +33,6 @@ const MobileHeader = ({siteTitle, mobileLogo}:HeaderProps):React.Node => {
     <div className="header-mobile">
       <a href="/" className="header-mobile-link">
           <img
-            key={mobileLogo}
             className="logo"
             src={mobileLogo}
             alt={siteTitle} />
@@ -63,22 +63,21 @@ const MobileIcon = ():React.Node => {
 const DesktopHeader = (props:Props):React.Node => {
   return (
     <header className="header">
-      <nav className="header-left-nav" key="leftNav">
+      <nav className="header-left-nav">
         {props.navLinks.filter(navLink => navLink.alignment === 'left').map((navLink) => {
-          return <NavSection navLink={navLink} />
+          return <NavSection key={uuid()} navLink={navLink} />
         })}
       </nav>
       <a href="/" className="logo-link">
         <img
-          key={props.logo}
           className="logo"
           src={props.logo}
           setset={props.srcset}
           alt={props.siteTitle} />
       </a>
-      <nav className="header-right-nav" key="rightNav">
+      <nav className="header-right-nav">
         {props.navLinks.filter(navLink => navLink.alignment === 'right').map((navLink) => {
-          return <NavSection navLink={navLink} />
+          return <NavSection key={uuid()} navLink={navLink} />
         })}
       </nav>
     </header>

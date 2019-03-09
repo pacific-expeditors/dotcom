@@ -1,6 +1,7 @@
 /* @flow */
 import React from 'react'
 import {markdown} from 'markdown'
+import uuid from 'uuid/v4'
 import Button from './Button'
 
 type CardProps = {
@@ -22,10 +23,9 @@ const Cards = ({cards = []}:CardsProps) => {
   return (
     <div className={`cards col-${cards.length}`}>
       {cards.map((card:CardProps) => (
-        <div id={card.sys && card.sys.id} key={card.sys && card.sys.id} className="card">
+        <div id={card.sys && card.sys.id} key={uuid()} className="card">
           <div className="card-image-container">
             <img
-              key={card.image.url}
               className="card-image lazyload"
               data-src={`${card.image.url}?w=1024`}
               data-srcset={card.srcset}

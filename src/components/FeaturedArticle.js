@@ -12,13 +12,11 @@ type FeaturedArticleProps = {
 const FeaturedArticle = ({id, attachments, title, excerpt}:FeaturedPostProps) => {
   return (
     <div
-      key={id}
       id="featured-article"
       className="featured-article-container">
       <div className="featured-article">
         <div className="featured-article-attachments fade-in-obj">
           <img
-            key={attachments[0].url}
             className="featured-article-attachment-image lazyload"
             data-src={`${attachments[0].url}?w=1080`} />
         </div>

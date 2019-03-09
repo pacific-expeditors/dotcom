@@ -18,11 +18,10 @@ const FeaturedArticlesGrid = ({articles}:FeaturedPostProps) => {
     <div className="featured-articles-container">
       {articles.map(article => {
         return (
-          <article id={article.sys.id} className="featured-article-col">
+          <article key={article.sys.id} id={article.sys.id} className="featured-article-col">
             <div className="featured-article-col-attachments fade-in-obj">
               {article.attachments && (
                 <img
-                  key={article.attachments[0].url}
                   className="featured-article-col-attachment-image lazyload"
                   data-src={`${article.attachments[0].url}?w=1920`} />
               )}

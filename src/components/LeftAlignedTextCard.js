@@ -15,13 +15,11 @@ type LeftCardProps = {
 const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTextBackground, backgroundSize}:LeftCardProps) => {
   return (
     <div
-      key={sys.id}
       id={`section${sys.id}`}
       className="left-card-container">
         {!opaqueTextBackground && background && (
           <div className="left-card-background-images">
             <img
-              key={background.url}
               className={`left-card-background-image lazyload${backgroundSize ? ` ${backgroundSize}` : ''}`}
               data-src={`${background.url}?w=1920`}
               alt={heading} />
@@ -41,7 +39,6 @@ const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTe
             {opaqueTextBackground && background && (
               <div className="left-card-background-images">
                 <img
-                  key={background.url}
                   className="left-card-background-image-opaque lazyload"
                   data-src={`${background.url}?w=1920`}
                   alt={heading} />
@@ -50,7 +47,6 @@ const LeftAlignedTextCard = ({sys, heading, content, background, image, opaqueTe
             )}
             {image && (
               <img
-                key={image.url}
                 className="left-card-image lazyload"
                 data-src={`${image.url}?w=610`}
                 alt={heading} />

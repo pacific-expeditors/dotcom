@@ -23,13 +23,11 @@ const CenteredTextWithBackground = ({
 
   return (
     <div
-      key={id}
       id={id}
       className={`text-with-background-container${backgroundColor ? backgroundColors[backgroundColor] : ''}`}>
       {background && (
         <div className="text-with-background-images">
           <img
-            key={background.url}
             className="text-with-background-image lazyload invisible"
             data-src={`${background.url}?w=1920`} />
           <div className="text-with-background-image-overlay"></div>

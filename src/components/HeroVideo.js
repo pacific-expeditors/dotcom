@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import uuid from 'uuid/v4'
 import Button from './Button'
 
 type Source = {
@@ -31,7 +32,7 @@ const HeroVideo = ({
         muted
         loop
         src={src}>
-        {sources.map(({type = "video/mp4", src}) => <source key={src} type={type} src={src} />)}
+        {sources.map(({type = "video/mp4", src}) => <source key={uuid()} type={type} src={src} />)}
       </video>
       <div className="video-overlay">
         <div className="video-overlay-container">

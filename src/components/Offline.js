@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import uuid from 'uuid/v4'
 
 const styles = {
   container: {
@@ -81,7 +82,7 @@ const Offline = () => {
             autoPlay={true}
             loop={false}
             src={src}>
-            {sources.map(({type, src}) => <source key={type} style={styles.source} type={type} src={src} />)}
+            {sources.map(({type, src}) => <source key={uuid()} style={styles.source} type={type} src={src} />)}
           </video>
           <div className="video-overlay" style={styles.overlay} />
           <img className="video-logo" style={styles.logo} src={logo} alt="Pacific Expeditors" />
