@@ -5,5 +5,7 @@ node_modules/
 npm-debug.log
 .yarnclean
 yarn-error.log
+yarn.lock
 ignore
 package-lock.json
+dist
