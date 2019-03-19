@@ -26,15 +26,17 @@ const FeaturedArticlesGrid = ({articles}:FeaturedPostProps) => {
                   data-src={`${article.attachments[0].url}?w=1920`} />
               )}
             </div>
-            <section className="featured-article-col-text">
-              <h2 className="featured-article-col-heading">{article.title}</h2>
-              <p className="featured-article-col-text-excerpt">
-                {article.excerpt}
-              </p>
-              <Button link={`article/${article.id}`}>
-                More
-              </Button>
-            </section>
+            <h2 className="featured-article-col-heading">
+              <a href={`article/${article.id}`}>
+                {article.title}
+              </a>
+            </h2>
+            <p className="featured-article-col-text-excerpt">
+              {article.excerpt}
+            </p>
+            <Button link={`article/${article.id}`}>
+              Read
+            </Button>
           </article>
         )
       })}

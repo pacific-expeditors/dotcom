@@ -26,6 +26,7 @@ class FeaturedArticlesGridContainer extends Component<void, Props, void> {
 export default graphql(gql`
   query FeaturedArticlesGrid($date: String!) {
     articles(q:$date) {
+      id
       sys {
         id
       }

@@ -25,8 +25,8 @@ const FeaturedArticle = ({id, attachments, title, excerpt}:FeaturedPostProps) =>
           <p className="featured-article-text-excerpt">
             {excerpt}
           </p>
-          <Button link="/more" style="secondary">
-            More
+          <Button link={`/article/${id}`} style="secondary">
+            Read
           </Button>
         </div>
       </div>

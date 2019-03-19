@@ -26,6 +26,7 @@ class FeaturedArticleContainer extends Component<void, Props, void> {
 export default graphql(gql`
   query FeaturedArticle {
     articles(q:"fields.featured=true") {
+      id
       sys {
         id
       }
