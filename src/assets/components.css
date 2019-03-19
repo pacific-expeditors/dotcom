@@ -34,13 +34,13 @@ html {
 body {
     font: normal 16px/1.5 "Montserrat", sans-serif;
     color: #222;
-    margin-bottom: 656px;
+    margin-bottom: 296px;
     overflow-x: hidden;
 }
 
 @media (min-width: 1024px) {
     body {
-        margin-bottom: 285px;
+        margin-bottom: 144px;
     }
 }
 

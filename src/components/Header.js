@@ -18,7 +18,10 @@ const MobileMenu = ({logo, title, navLinks}:HeaderProps):React.Node => {
             <a
               className="mobile-nav-link"
               key={navLink.sys.id}
-              href={navLink.href}>
+              target={navLink.href.startsWith("http") ? "_self" : "_blank"}
+              rel={navLink.href.startsWith("http") ? "noopener noreferrer" : ""}
+              href={navLink.href}
+            >
                 {navLink.text}
             </a>
           )
@@ -43,7 +46,15 @@ const MobileHeader = ({siteTitle, mobileLogo}:HeaderProps):React.Node => {
 
 const NavSection = ({navLink}):React.Node => {
   return (
-    <a href={navLink.href} className="header-nav-link" key={`link${navLink.sys.id}`}>{navLink.text}</a>
+    <a
+      href={navLink.href}
+      target={navLink.href.startsWith("http") ? "_blank" : "_self"}
+      rel={navLink.href.startsWith("http") ? "noopener noreferrer" : ""}
+      className="header-nav-link"
+      key={`link${navLink.sys.id}`}
+    >
+      {navLink.text}
+    </a>
   )
 }
 
