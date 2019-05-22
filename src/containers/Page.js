@@ -38,18 +38,19 @@ class Page extends Component<void, Props, State> {
           <meta name="robots" content="noodp" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0" />
-          <meta name="description" content={description} />
+          <meta name="description" content={this.props.metaDescription || description} />
 
-          <meta property="og:title" content={title} />
+          <meta property="og:title" content={this.props.title || title} />
+          <meta property="og:description" content={this.props.metaDescription || description} />
           <meta property="og:url" content={url} />
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="Pacific Expeditors" />
 
           <meta property="twitter:site" content="@Pac_Ex" />
           <meta property="twitter:url" content={url} />
-          <meta property="twitter:title" content={title} />
+          <meta property="twitter:title" content={this.props.title || title} />
           <meta property="twitter:card" content="summary" />
-          <meta property="twitter:description" content={description} />
+          <meta property="twitter:description" content={this.props.metaDescription || description} />
 
           <title>{title}</title>
 
