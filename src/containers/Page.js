@@ -81,7 +81,7 @@ class Page extends Component<void, Props, State> {
             .header-left-nav,
             .header-right-nav {
               display: none;
-              font-size: 14;
+              font-size: 12px;
               font-weight: 900;
               text-transform: uppercase;
               text-decoration: none;
@@ -125,6 +125,11 @@ class Page extends Component<void, Props, State> {
                 top: 0;
                 background-color: rgba(255, 255, 255, .7);
                 z-index: 3;
+              }
+
+              .header-left-nav,
+              .header-right-nav {
+                font-size: 14px;
               }
         
               .header {
