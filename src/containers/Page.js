@@ -9,7 +9,8 @@ import * as Containers from './index'
 import 'isomorphic-fetch'
 
 type Props = {
-  data: any
+  data: any,
+  article: any
 }
 
 class Page extends Component<void, Props, State> {
